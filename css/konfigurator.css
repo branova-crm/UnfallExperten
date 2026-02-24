@@ -1,0 +1,351 @@
+/* ============================
+   UNFALLEXPERTEN WhatsApp Form UI
+   Primary: var(--clr-primary) -> #1641A6
+   ============================ */
+
+.unfall-wa {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.unfall-wa-card {
+    background: var(--clr-white);
+    border-radius: 20px;
+    padding: 32px 28px;
+    border: 1px solid rgba(22, 65, 166, 0.15);
+    box-shadow: var(--shadow-md);
+}
+
+/* Header */
+.unfall-wa-header {
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.unfall-wa-title {
+    margin: 0 0 8px;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--clr-text);
+}
+
+.unfall-wa-subtitle {
+    margin: 0;
+    color: var(--clr-text-muted);
+    font-size: .95rem;
+}
+
+/* Stepper */
+.unfall-wa-progress {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.unfall-wa-stepper {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.unfall-wa-stepper-dot {
+    width: 32px;
+    height: 32px;
+    border-radius: 999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: .9rem;
+    background: var(--clr-offwhite);
+    color: var(--clr-text-muted);
+    border: 2px solid rgba(22, 65, 166, 0.20);
+    transition: var(--trans-fast);
+}
+
+.unfall-wa-stepper-dot.is-active {
+    background: var(--clr-primary);
+    color: var(--clr-white);
+    border-color: var(--clr-primary);
+}
+
+.unfall-wa-stepper-dot.is-done {
+    background: rgba(22, 65, 166, 0.10);
+    color: var(--clr-primary);
+    border-color: var(--clr-primary);
+}
+
+.unfall-wa-stepper-line {
+    width: 40px;
+    height: 2px;
+    border-radius: 999px;
+    background: rgba(22, 65, 166, 0.15);
+}
+
+.unfall-wa-stepper-line.is-active {
+    background: var(--clr-primary);
+}
+
+.unfall-wa-stepper-labels {
+    width: 260px;
+    display: flex;
+    justify-content: space-between;
+    color: var(--clr-text-muted);
+    font-size: .85rem;
+}
+
+/* Steps */
+.unfall-wa-step {
+    display: none;
+}
+
+.unfall-wa-step.is-active {
+    display: block;
+    animation: unfallFadeIn 0.3s ease;
+}
+
+@keyframes unfallFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.unfall-wa-h3 {
+    margin: 16px 0 6px;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--clr-text);
+}
+
+.unfall-wa-text {
+    margin: 0 0 16px;
+    color: var(--clr-text-muted);
+    font-size: .95rem;
+}
+
+/* Grid options */
+.unfall-wa-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+@media(max-width:420px) {
+    .unfall-wa-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.unfall-wa-option {
+    position: relative;
+    overflow: hidden;
+    border-radius: 14px;
+    border: 1px solid rgba(22, 65, 166, 0.15);
+    background: var(--clr-white);
+    padding: 14px 10px;
+    min-height: 78px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    cursor: pointer;
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+    transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease, background .18s ease, color .18s ease;
+    color: var(--clr-text);
+    font-family: inherit;
+}
+
+.unfall-wa-option:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--clr-primary);
+}
+
+.unfall-wa-ico {
+    font-size: 20px;
+}
+
+.unfall-wa-label {
+    font-weight: 600;
+    font-size: .88rem;
+    line-height: 1.15;
+}
+
+.unfall-wa-option.is-selected {
+    border-color: var(--clr-primary);
+    background: linear-gradient(135deg, var(--clr-primary), var(--clr-primary-light));
+    color: var(--clr-white);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Shimmer / Glint */
+.unfall-wa-option.is-selected.is-glint::after {
+    content: "";
+    position: absolute;
+    inset: -2px;
+    border-radius: 14px;
+    pointer-events: none;
+    background: linear-gradient(120deg,
+            rgba(255, 255, 255, 0) 35%,
+            rgba(255, 255, 255, .38) 50%,
+            rgba(255, 255, 255, 0) 65%);
+    transform: translateX(-120%);
+    animation: unfallGlint .65s ease-out forwards;
+}
+
+@keyframes unfallGlint {
+    0% {
+        transform: translateX(-120%);
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    85% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(120%);
+        opacity: 0;
+    }
+}
+
+/* Fields */
+.unfall-wa-fields {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px 14px;
+    margin-top: 12px;
+}
+
+@media(max-width:768px) {
+    .unfall-wa-fields {
+        grid-template-columns: 1fr;
+    }
+}
+
+.unfall-wa-field {
+    display: flex;
+    flex-direction: column;
+}
+
+.unfall-wa-lbl {
+    font-weight: 600;
+    color: var(--clr-text);
+    font-size: .9rem;
+    margin-bottom: 4px;
+}
+
+.unfall-wa-input,
+.unfall-wa-textarea {
+    width: 100%;
+    font: inherit;
+    font-size: .95rem;
+    border-radius: var(--radius-full);
+    border: 1px solid rgba(22, 65, 166, 0.20);
+    background: var(--clr-offwhite);
+    padding: 10px 14px;
+    outline: none;
+    color: var(--clr-text);
+    transition: var(--trans-fast);
+}
+
+.unfall-wa-textarea {
+    border-radius: 12px;
+    min-height: 100px;
+    resize: vertical;
+}
+
+.unfall-wa-input:focus,
+.unfall-wa-textarea:focus {
+    border-color: var(--clr-primary);
+    background: var(--clr-white);
+    box-shadow: 0 0 0 2px rgba(22, 65, 166, 0.15);
+}
+
+/* Privacy */
+.unfall-wa-privacy {
+    margin: 12px 0 6px;
+}
+
+.unfall-wa-privacy-row {
+    display: flex;
+    gap: 8px;
+    align-items: flex-start;
+    color: var(--clr-text-muted);
+    font-size: .85rem;
+    line-height: 1.4;
+}
+
+.unfall-wa-privacy-row input[type="checkbox"] {
+    margin-top: 3px;
+}
+
+.unfall-wa-privacy-row a {
+    color: var(--clr-primary);
+    text-decoration: underline;
+}
+
+/* Consent */
+.unfall-wa-consent {
+    margin: 8px 0 0;
+    color: var(--clr-text-muted);
+    font-size: .85rem;
+    line-height: 1.4;
+}
+
+/* Nav buttons */
+.unfall-wa-nav {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 16px;
+}
+
+.unfall-wa-btn {
+    border-radius: var(--radius-full);
+    padding: 10px 18px;
+    font-size: .95rem;
+    font-weight: 700;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: var(--trans-fast);
+}
+
+.unfall-wa-btn-primary {
+    margin-left: auto;
+    /* Weiter immer rechts */
+    background: var(--clr-primary);
+    color: var(--clr-white);
+    box-shadow: var(--shadow-sm);
+}
+
+.unfall-wa-btn-primary:hover {
+    background: var(--clr-primary-light);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.unfall-wa-btn-ghost {
+    background: transparent;
+    border-color: var(--clr-primary);
+    color: var(--clr-primary);
+}
+
+.unfall-wa-btn-ghost:hover {
+    background: rgba(22, 65, 166, 0.08);
+}

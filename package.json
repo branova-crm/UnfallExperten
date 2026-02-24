@@ -1,0 +1,11 @@
+{
+  "dependencies": {
+    "body-parser": "^2.2.2",
+    "cors": "^2.8.6",
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "node-fetch": "^3.3.2",
+    "nodemailer": "^6.9.15",
+    "smtp-connection": "^4.0.2"
+  }
+}
