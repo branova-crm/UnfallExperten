@@ -71,7 +71,7 @@ export default function ReparaturbestaetigungPage() {
                     <p className="section-subtitle mx-auto">Wenn Sie bei uns ein Unfallgutachten beauftragen, erhalten Sie die Reparaturbestätigung nach erfolgter Reparatur inklusive – ohne zusätzliche Kosten. So stellen wir sicher, dass Ihre Reparatur ordnungsgemäß dokumentiert wird.</p>
                     <div style={{ marginTop: '2rem', display: 'flex', flexWrap: 'wrap', gap: '1rem', justifyContent: 'center' }}>
                         <a href="tel:+4902111234567" className="btn btn-primary">📞 Jetzt kostenlos anfragen</a>
-                        <a href="https://wa.me/4902111234567" className="btn btn-whatsapp" target="_blank">💬 WhatsApp – Antwort in 15 Min.</a>
+                        <a href="https://wa.me/4902111234567" className="btn btn-whatsapp" target="_blank">💬 WhatsApp – Schnelle Rückmeldung!</a>
                     </div>
                 </div>
             </section>

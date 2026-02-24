@@ -5,6 +5,7 @@ import Konfigurator from '@/components/Konfigurator';
 import FaqSection from '@/components/FaqSection';
 import BarChartSection from '@/components/BarChartSection';
 import TrustindexWidget from '@/components/TrustindexWidget';
+import ProcessSection from '@/components/ProcessSection';
 
 export default function Home() {
   return (
@@ -55,60 +56,15 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 3) 3-STEP PROCESS */}
-      <section className="steps-section" id="process">
-        <div className="container text-center">
-          <span className="section-label">So einfach geht's</span>
-          <h2 className="section-title">In 3 Schritten zu Ihrem Gutachten</h2>
-          <p className="section-subtitle mx-auto">Unkompliziert, schnell und transparent – wir begleiten Sie vom ersten Anruf bis zur Auszahlung.</p>
-          <div className="steps-grid">
-            <div className="step-card animate-on-scroll">
-              <div className="step-number">1</div>
-              <div className="step-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                  <rect x="3" y="4" width="18" height="18" rx="2" />
-                  <line x1="16" y1="2" x2="16" y2="6" />
-                  <line x1="8" y1="2" x2="8" y2="6" />
-                  <line x1="3" y1="10" x2="21" y2="10" />
-                </svg>
-              </div>
-              <h3>Termin vereinbaren</h3>
-              <p>Per Telefon oder WhatsApp flexiblen Termin sichern – wir sind schnell vor Ort in ganz NRW.</p>
-            </div>
-            <div className="step-card animate-on-scroll">
-              <div className="step-number">2</div>
-              <div className="step-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                  <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" />
-                  <circle cx="12" cy="13" r="4" />
-                </svg>
-              </div>
-              <h3>Begutachtung vor Ort</h3>
-              <p>Unser Gutachter dokumentiert alle Schäden gründlich direkt am Unfallort oder bei Ihnen.</p>
-            </div>
-            <div className="step-card animate-on-scroll">
-              <div className="step-number">3</div>
-              <div className="step-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-                  <polyline points="14 2 14 8 20 8" />
-                  <line x1="16" y1="13" x2="8" y2="13" />
-                  <line x1="16" y1="17" x2="8" y2="17" />
-                </svg>
-              </div>
-              <h3>Gutachten erhalten</h3>
-              <p>Sie erhalten Ihr Gutachten innerhalb von 24–72 Stunden zur Regulierung mit der Versicherung.</p>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* 3) 3-STEP PROCESS (Animated on Scroll) */}
+      <ProcessSection />
 
       {/* 4) EXPERTISE & BENEFITS */}
       <section className="expertise-section">
         <div className="container">
           <div className="expertise-grid">
             <div className="expertise-image animate-on-scroll">
-              <img src="/images/hero-bg.png" alt="Kfz-Sachverständiger bei der Begutachtung" loading="lazy" />
+              <img src="/images/gutachten.png" alt="Kfz-Sachverständiger bei der Begutachtung" loading="lazy" />
               <div className="expertise-ribbon">⚙ Experten für Kfz-Schäden</div>
             </div>
             <div>
@@ -278,7 +234,7 @@ export default function Home() {
             <Link href="https://wa.me/4902111234567?text=Hallo%2C%20ich%20brauche%20Hilfe%20nach%20einem%20Unfall." className="btn btn-whatsapp" target="_blank">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
-              </svg> WhatsApp – Antwort in 15 Min.
+              </svg> WhatsApp – Schnelle Rückmeldung!
             </Link>
           </div>
         </div>

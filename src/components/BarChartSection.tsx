@@ -50,7 +50,9 @@ export default function BarChartSection() {
                             <div className="bar-item">
                                 <div className="bar-label">UnfallExperten NRW Gutachten</div>
                                 <div className="bar-track">
-                                    <div className={`bar-fill high ${isVisible ? 'animated' : ''}`} style={{ width: isVisible ? '95%' : '0%' }}>5.700 €</div>
+                                    <div className={`bar-fill high ${isVisible ? 'animated' : ''} shine-bar`} style={{ width: isVisible ? '95%' : '0%', position: 'relative', overflow: 'hidden' }}>
+                                        5.700 €
+                                    </div>
                                 </div>
                             </div>
                         </div>

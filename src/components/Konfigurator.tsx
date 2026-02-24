@@ -157,6 +157,7 @@ export default function Konfigurator() {
                         tabIndex={-1}
                         aria-hidden="true"
                         style={{ position: 'absolute', left: '-9999px', opacity: '0', height: '0', width: '0' }}
+                        suppressHydrationWarning
                     />
 
                     {/* STEP 1 */}
@@ -171,6 +172,7 @@ export default function Konfigurator() {
                                         type="button"
                                         className={`unfall-wa-option ${isSelected ? 'is-selected is-glint' : ''}`}
                                         onClick={() => toggleInterest(item.id)}
+                                        suppressHydrationWarning
                                     >
                                         <span className="unfall-wa-ico">{item.icon}</span>
                                         <span className="unfall-wa-label">{item.label}</span>
@@ -179,7 +181,7 @@ export default function Konfigurator() {
                             })}
                         </div>
                         <div className="unfall-wa-nav">
-                            <button type="button" className="unfall-wa-btn unfall-wa-btn-primary" onClick={() => nextStep(2)}>Weiter</button>
+                            <button type="button" className="unfall-wa-btn unfall-wa-btn-primary" onClick={() => nextStep(2)} suppressHydrationWarning>Weiter</button>
                         </div>
                     </section>
 
@@ -218,7 +220,7 @@ export default function Konfigurator() {
 
                         <div className="unfall-wa-nav">
                             <button type="button" className="unfall-wa-btn unfall-wa-btn-ghost" onClick={() => prevStep(1)}>Zurück</button>
-                            <button type="button" className="unfall-wa-btn unfall-wa-btn-primary" onClick={() => nextStep(3)}>Weiter</button>
+                            <button type="button" className="unfall-wa-btn unfall-wa-btn-primary" onClick={() => nextStep(3)} suppressHydrationWarning>Weiter</button>
                         </div>
                     </section>
 

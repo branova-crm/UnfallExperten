@@ -59,7 +59,7 @@ export default function FaqSection() {
                 <div className="faq-list">
                     {FAQ_DATA.map((faq, index) => (
                         <div key={index} className={`faq-item ${activeIndex === index ? 'active' : ''}`}>
-                            <button className="faq-question" onClick={() => toggle(index)}>
+                            <button className="faq-question" onClick={() => toggle(index)} suppressHydrationWarning>
                                 {faq.q}
                                 <span className="faq-toggle">
                                     <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9" /></svg>

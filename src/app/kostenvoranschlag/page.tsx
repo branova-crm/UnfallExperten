@@ -84,7 +84,7 @@ export default function KostenvoranschlagPage() {
                     <p>Schnelle und präzise Schadenskalkulation – vor Ort in ganz NRW.</p>
                     <div className="cta-banner-buttons">
                         <a href="tel:+4902111234567" className="btn btn-accent">📞 Jetzt anrufen</a>
-                        <a href="https://wa.me/4902111234567" className="btn btn-whatsapp" target="_blank">💬 WhatsApp – Antwort in 15 Min.</a>
+                        <a href="https://wa.me/4902111234567" className="btn btn-whatsapp" target="_blank">💬 WhatsApp – Schnelle Rückmeldung!</a>
                     </div>
                 </div>
             </section>

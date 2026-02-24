@@ -56,7 +56,7 @@ export default function Header() {
               <line x1="5" y1="12" x2="19" y2="12" />
             </svg> Rückruf anfordern
           </Link>
-          <button className="hamburger" aria-label="Menü">
+          <button className="hamburger" aria-label="Menü" suppressHydrationWarning>
             <span></span><span></span><span></span>
           </button>
         </div>
