@@ -1,0 +1,9 @@
+@import './css/style.css';
+@import './css/konfigurator.css';
+@import './css/whatsapp.css';
+
+:root {
+  /* Globale Next.js Migration Primärfarbe */
+  --primary-color: #1641A6;
+  --primary-color-hover: #13388E;
+}
