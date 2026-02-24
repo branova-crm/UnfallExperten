@@ -188,12 +188,15 @@ export default function Home() {
                 <span className="city-tag">📍 Wuppertal</span>
                 <span className="city-tag">📍 Bielefeld</span>
                 <span className="city-tag">📍 Aachen</span>
+                <span className="city-tag">📍 Euskirchen</span>
+                <span className="city-tag">📍 Hagen</span>
                 <span className="city-tag">📍 Duisburg</span>
                 <span className="city-tag">📍 Bochum</span>
                 <span className="city-tag">📍 Gelsenkirchen</span>
                 <span className="city-tag">📍 Mönchengladbach</span>
                 <span className="city-tag">📍 Krefeld</span>
                 <span className="city-tag">📍 Oberhausen</span>
+                <span className="city-tag">📍 uvm.</span>
               </div>
             </div>
             {/* Custom Interactive Map Component */}

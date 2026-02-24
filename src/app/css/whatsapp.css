@@ -1,15 +1,29 @@
 /* ========== WHATSAPP WIDGET ========== */
 .wa-widget {
     position: fixed;
-    bottom: 80px;
+    bottom: 30px;
     right: 20px;
     z-index: 9999;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
+@media (max-width: 1023px) {
+    .wa-widget {
+        bottom: 80px;
+        right: 15px;
+    }
+}
+
 @media (max-width: 768px) {
     .wa-widget {
-        bottom: 90px;
+        bottom: 80px;
+        right: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .wa-widget {
+        bottom: 80px;
         right: 15px;
     }
 }
@@ -84,7 +98,7 @@
 
 .wa-widget-popup {
     position: absolute;
-    bottom: 80px;
+    bottom: 75px;
     right: 0;
     width: 320px;
     background: #fff;
@@ -150,9 +164,17 @@
 }
 
 .wa-header-text span {
-    font-size: 12px;
+    font-size: 11px;
     color: #e5ddd5;
-    margin-top: 2px;
+    margin-top: 1px;
+    line-height: 1.2;
+}
+
+.wa-header-text .wa-subtitle {
+    font-size: 12px;
+    font-weight: 500;
+    color: #ffffff;
+    margin-top: 1px;
 }
 
 .wa-close {
@@ -350,7 +372,7 @@
 
 @media (max-width: 480px) {
     .wa-widget-popup {
-        bottom: 80px;
+        bottom: 75px;
         right: 0;
         width: 300px;
     }

@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import Link from 'next/link';
 import Konfigurator from '@/components/Konfigurator';
 
 export const metadata: Metadata = {
@@ -9,10 +10,15 @@ export const metadata: Metadata = {
 export default function KontaktPage() {
     return (
         <>
-            <section className="page-hero">
-                <div className="container">
-                    <h1>Kontakt</h1>
-                    <p>Schnell erreichbar in ganz NRW – wir helfen sofort nach Ihrem Unfall. Kostenlos und unverbindlich.</p>
+            <section className="hero" style={{ minHeight: '60vh', padding: '120px 0 80px 0' }}>
+                <div className="hero-bg"><img src="/images/hero-bg.png" alt="Kontakt - UnfallExperten NRW" loading="eager" /></div>
+                <div className="hero-overlay"></div>
+                <div className="container" style={{ display: 'flex', justifyContent: 'center' }}>
+                    <div className="hero-content" style={{ maxWidth: '800px', textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                        <p className="breadcrumb" style={{ color: 'rgba(255,255,255,0.7)', marginBottom: '15px' }}><Link href="/">Startseite</Link> / Kontakt</p>
+                        <h1 style={{ color: 'var(--clr-white)', marginBottom: '20px' }}>Kontakt</h1>
+                        <p className="hero-subheadline mx-auto" style={{ fontSize: 'var(--fs-lg)' }}>Schnell erreichbar in ganz NRW – wir helfen sofort nach Ihrem Unfall. Kostenlos und unverbindlich.</p>
+                    </div>
                 </div>
             </section>
 

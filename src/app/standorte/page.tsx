@@ -9,10 +9,15 @@ export const metadata: Metadata = {
 export default function StandortePage() {
     return (
         <>
-            <section className="page-hero">
-                <div className="container">
-                    <h1>Unsere Standorte in NRW</h1>
-                    <p>Immer in Ihrer Nähe – wir kommen zu Ihnen an den Unfallort oder nach Hause, überall in Nordrhein-Westfalen.</p>
+            <section className="hero" style={{ minHeight: '60vh', padding: '120px 0 80px 0' }}>
+                <div className="hero-bg"><img src="/images/hero-bg.png" alt="Standorte NRW - UnfallExperten" loading="eager" /></div>
+                <div className="hero-overlay"></div>
+                <div className="container" style={{ display: 'flex', justifyContent: 'center' }}>
+                    <div className="hero-content" style={{ maxWidth: '800px', textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                        <p className="breadcrumb" style={{ color: 'rgba(255,255,255,0.7)', marginBottom: '15px' }}><Link href="/">Startseite</Link> / Standorte</p>
+                        <h1 style={{ color: 'var(--clr-white)', marginBottom: '20px' }}>Unsere Standorte in NRW</h1>
+                        <p className="hero-subheadline mx-auto" style={{ fontSize: 'var(--fs-lg)' }}>Immer in Ihrer Nähe – wir kommen zu Ihnen an den Unfallort oder nach Hause, überall in Nordrhein-Westfalen.</p>
+                    </div>
                 </div>
             </section>
 

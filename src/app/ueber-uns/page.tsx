@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import Link from 'next/link';
 
 export const metadata: Metadata = {
     title: 'Über uns – Erfahrene Kfz-Sachverständige in NRW | UnfallExperten',
@@ -8,10 +9,15 @@ export const metadata: Metadata = {
 export default function UeberUnsPage() {
     return (
         <>
-            <section className="page-hero">
-                <div className="container">
-                    <h1>Über uns</h1>
-                    <p>Unabhängige Kfz-Sachverständige und Experten für Kfz-Schäden – Ihr Partner nach dem Unfall in ganz NRW.</p>
+            <section className="hero" style={{ minHeight: '60vh', padding: '120px 0 80px 0' }}>
+                <div className="hero-bg"><img src="/images/hero-bg.png" alt="Über uns - UnfallExperten NRW" loading="eager" /></div>
+                <div className="hero-overlay"></div>
+                <div className="container" style={{ display: 'flex', justifyContent: 'center' }}>
+                    <div className="hero-content" style={{ maxWidth: '800px', textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                        <p className="breadcrumb" style={{ color: 'rgba(255,255,255,0.7)', marginBottom: '15px' }}><Link href="/">Startseite</Link> / Über uns</p>
+                        <h1 style={{ color: 'var(--clr-white)', marginBottom: '20px' }}>Über uns</h1>
+                        <p className="hero-subheadline mx-auto" style={{ fontSize: 'var(--fs-lg)' }}>Unabhängige Kfz-Sachverständige und Experten für Kfz-Schäden – Ihr Partner nach dem Unfall in ganz NRW.</p>
+                    </div>
                 </div>
             </section>
 

@@ -127,7 +127,8 @@ export default function WhatsAppWidget() {
                         <span className="wa-online-dot"></span>
                     </div>
                     <div className="wa-header-text">
-                        <strong>Berkay - Ihre Gutachter-Experten</strong>
+                        <strong>Berkay</strong>
+                        <span className="wa-subtitle">Ihre Gutachter-Experten</span>
                         <span>Online</span>
                     </div>
                     <button className="wa-close" id="wa-close" onClick={() => setIsOpen(false)}>&times;</button>
