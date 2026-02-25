@@ -68,27 +68,14 @@ export default function ProcessSection() {
 
     // We decide the view mode based on mount state and width
     const effectiveIsMobile = hasMounted ? isMobile : false;
-    const effectiveHeight = (hasMounted && !effectiveIsMobile) ? '300vh' : 'auto';
 
     return (
         <div
             ref={containerRef}
             className="process-parallax-container"
-            style={{
-                height: effectiveHeight,
-                position: 'relative'
-            }}
         >
             <section className="steps-section" style={{
-                position: (hasMounted && !effectiveIsMobile) ? 'sticky' : 'relative',
-                top: 0,
-                height: (hasMounted && !effectiveIsMobile) ? '100vh' : 'auto',
-                display: 'flex',
-                alignItems: 'center',
-                overflow: 'hidden',
-                perspective: effectiveIsMobile ? 'none' : '2000px',
-                background: 'var(--clr-offwhite)',
-                padding: effectiveIsMobile ? '80px 0 200px 0' : '0'
+                perspective: (hasMounted && !effectiveIsMobile) ? '2000px' : 'none',
             }}>
                 {/* Background Image (Desktop has parallax, mobile has CSS positioning) */}
                 {hasMounted && (

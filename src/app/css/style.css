@@ -82,7 +82,7 @@
 
 html,
 body {
-    overflow-x: hidden;
+    overflow-x: clip;
     width: 100%;
     position: relative;
 }
@@ -843,11 +843,45 @@ button {
 /* ============================================
    3) 3-STEP PROCESS
    ============================================ */
+.process-parallax-container {
+    position: relative;
+    width: 100%;
+    /* Desktop default */
+    height: 300vh;
+}
+
+@media (max-width: 767px) {
+    .process-parallax-container {
+        height: auto !important;
+    }
+}
+
 .steps-section {
     padding: var(--sp-4xl) 0;
     background: var(--clr-offwhite);
     position: relative;
-    overflow: hidden;
+    overflow: clip;
+    /* Desktop sticky behavior */
+    display: flex;
+    align-items: center;
+}
+
+@media (min-width: 768px) {
+    .steps-section {
+        position: sticky;
+        top: 0;
+        height: 100vh;
+        perspective: 2000px;
+        padding: 0;
+    }
+}
+
+@media (max-width: 767px) {
+    .steps-section {
+        position: relative;
+        height: auto;
+        padding: 80px 0 200px 0;
+    }
 }
 
 .steps-section::before {
