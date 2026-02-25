@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef, useEffect, useState } from "react";
-import { motion, useScroll, useTransform, useSpring, Variants } from "framer-motion";
+import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 
 export default function ProcessSection() {
     const containerRef = useRef<HTMLDivElement>(null);
@@ -55,16 +55,6 @@ export default function ProcessSection() {
     // Background scale
     const bgScale = useTransform(smoothProgress, [0, 1], [1, 1.05]);
 
-    // Mobile Variants
-    const mobileVariant: Variants = {
-        hidden: { opacity: 0, y: 30, scale: 0.95 },
-        visible: {
-            opacity: 1,
-            y: 0,
-            scale: 1,
-            transition: { duration: 0.6, ease: "easeOut" }
-        }
-    };
 
     // We decide the view mode based on mount state and width
     const effectiveIsMobile = hasMounted ? isMobile : false;
@@ -109,29 +99,8 @@ export default function ProcessSection() {
                         {[1, 2, 3].map((step, idx) => {
                             const desktopAnim = idx === 0 ? anim1 : idx === 1 ? anim2 : anim3;
 
-                            // Important: Only apply motion styles if mounted
-                            const motionProps = hasMounted ? (effectiveIsMobile ? {
-                                initial: "hidden",
-                                whileInView: "visible",
-                                viewport: { once: true, margin: "-50px" },
-                                variants: mobileVariant
-                            } : {
-                                style: {
-                                    ...desktopAnim,
-                                    transformStyle: 'preserve-3d' as any,
-                                    boxShadow: '0 20px 50px rgba(0,0,0,0.1)',
-                                    backfaceVisibility: 'hidden' as any,
-                                    position: 'relative' as any,
-                                    overflow: 'hidden' as any
-                                }
-                            }) : {};
-
-                            return (
-                                <motion.div
-                                    key={step}
-                                    className="step-card shine-effect"
-                                    {...motionProps}
-                                >
+                            const stepContent = (
+                                <>
                                     <div className="step-number">{step}</div>
                                     <div className="step-icon">
                                         {step === 1 && (
@@ -153,9 +122,38 @@ export default function ProcessSection() {
                                     </div>
                                     <h3>{step === 1 ? "Termin vereinbaren" : step === 2 ? "Begutachtung vor Ort" : "Gutachten erhalten"}</h3>
                                     <p>{step === 1 ? "Per Telefon oder WhatsApp flexiblen Termin sichern." : step === 2 ? "Unser Gutachter dokumentiert alle Schäden gründlich." : "Sie erhalten Ihr Gutachten innerhalb von 24–72 Stunden."}</p>
+                                </>
+                            );
+
+                            // Mobile: plain div, no animations at all
+                            if (effectiveIsMobile) {
+                                return (
+                                    <div key={step} className="step-card">
+                                        {stepContent}
+                                    </div>
+                                );
+                            }
+
+                            // Desktop: scroll-driven framer-motion animation
+                            return (
+                                <motion.div
+                                    key={step}
+                                    className="step-card shine-effect"
+                                    {...(hasMounted ? {
+                                        style: {
+                                            ...desktopAnim,
+                                            transformStyle: 'preserve-3d' as any,
+                                            boxShadow: '0 20px 50px rgba(0,0,0,0.1)',
+                                            backfaceVisibility: 'hidden' as any,
+                                            position: 'relative' as any,
+                                            overflow: 'hidden' as any
+                                        }
+                                    } : {})}
+                                >
+                                    {stepContent}
 
                                     {/* Shine decoration (Desktop only after mount) */}
-                                    {hasMounted && !effectiveIsMobile && (
+                                    {hasMounted && (
                                         <motion.div
                                             className="shine-line"
                                             animate={{ left: ["-100%", "200%"] }}
@@ -173,42 +171,62 @@ export default function ProcessSection() {
                     </div>
 
                     {/* WhatsApp CTA */}
-                    <motion.div
-                        {...(hasMounted ? (effectiveIsMobile ? {
-                            initial: "hidden",
-                            whileInView: "visible",
-                            viewport: { once: true },
-                            variants: mobileVariant
-                        } : {
-                            style: {
-                                opacity: anim4Opacity,
-                                scale: anim4Scale,
-                                y: anim4Y
-                            }
-                        }) : {})}
-                        style={{ display: 'flex', justifyContent: 'center' }}
-                    >
-                        <a
-                            href="https://wa.me/4902111234567"
-                            className="btn btn-whatsapp"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            style={{
-                                padding: '16px 32px',
-                                fontSize: '18px',
-                                borderRadius: '50px',
-                                boxShadow: '0 10px 30px rgba(37, 211, 102, 0.3)',
-                                display: 'flex',
-                                alignItems: 'center',
-                                gap: '10px'
-                            }}
+                    {effectiveIsMobile ? (
+                        <div style={{ display: 'flex', justifyContent: 'center' }}>
+                            <a
+                                href="https://wa.me/4902111234567"
+                                className="btn btn-whatsapp"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                style={{
+                                    padding: '16px 32px',
+                                    fontSize: '18px',
+                                    borderRadius: '50px',
+                                    boxShadow: '0 10px 30px rgba(37, 211, 102, 0.3)',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    gap: '10px'
+                                }}
+                            >
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12.05 21.785h-.005a9.868 9.868 0 0 1-5.031-1.378l-.361-.214-3.741.982.999-3.648-.235-.374A9.86 9.86 0 0 1 2.17 12.06c0-5.456 4.436-9.893 9.9-9.893a9.827 9.827 0 0 1 7.001 2.902 9.828 9.828 0 0 1 2.893 7.003c-.004 5.456-4.44 9.893-9.913 9.893zM20.52 3.449C18.24 1.245 15.24 0 12.05 0 5.463 0 .104 5.334.101 11.893a11.793 11.793 0 0 0 1.587 5.946L0 24l6.335-1.652A11.882 11.882 0 0 0 12.05 24c6.584 0 11.94-5.335 11.943-11.893a11.808 11.808 0 0 0-3.473-8.658z" />
+                                </svg>
+                                WhatsApp schreiben
+                            </a>
+                        </div>
+                    ) : (
+                        <motion.div
+                            {...(hasMounted ? {
+                                style: {
+                                    opacity: anim4Opacity,
+                                    scale: anim4Scale,
+                                    y: anim4Y
+                                }
+                            } : {})}
+                            style={{ display: 'flex', justifyContent: 'center' }}
                         >
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12.05 21.785h-.005a9.868 9.868 0 0 1-5.031-1.378l-.361-.214-3.741.982.999-3.648-.235-.374A9.86 9.86 0 0 1 2.17 12.06c0-5.456 4.436-9.893 9.9-9.893a9.827 9.827 0 0 1 7.001 2.902 9.828 9.828 0 0 1 2.893 7.003c-.004 5.456-4.44 9.893-9.913 9.893zM20.52 3.449C18.24 1.245 15.24 0 12.05 0 5.463 0 .104 5.334.101 11.893a11.793 11.793 0 0 0 1.587 5.946L0 24l6.335-1.652A11.882 11.882 0 0 0 12.05 24c6.584 0 11.94-5.335 11.943-11.893a11.808 11.808 0 0 0-3.473-8.658z" />
-                            </svg>
-                            WhatsApp schreiben
-                        </a>
-                    </motion.div>
+                            <a
+                                href="https://wa.me/4902111234567"
+                                className="btn btn-whatsapp"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                style={{
+                                    padding: '16px 32px',
+                                    fontSize: '18px',
+                                    borderRadius: '50px',
+                                    boxShadow: '0 10px 30px rgba(37, 211, 102, 0.3)',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    gap: '10px'
+                                }}
+                            >
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12.05 21.785h-.005a9.868 9.868 0 0 1-5.031-1.378l-.361-.214-3.741.982.999-3.648-.235-.374A9.86 9.86 0 0 1 2.17 12.06c0-5.456 4.436-9.893 9.9-9.893a9.827 9.827 0 0 1 7.001 2.902 9.828 9.828 0 0 1 2.893 7.003c-.004 5.456-4.44 9.893-9.913 9.893zM20.52 3.449C18.24 1.245 15.24 0 12.05 0 5.463 0 .104 5.334.101 11.893a11.793 11.793 0 0 0 1.587 5.946L0 24l6.335-1.652A11.882 11.882 0 0 0 12.05 24c6.584 0 11.94-5.335 11.943-11.893a11.808 11.808 0 0 0-3.473-8.658z" />
+                                </svg>
+                                WhatsApp schreiben
+                            </a>
+                        </motion.div>
+                    )}
                 </div>
             </section>
         </div>
