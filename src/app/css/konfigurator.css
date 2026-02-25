@@ -254,7 +254,8 @@
 .unfall-wa-textarea {
     width: 100%;
     font: inherit;
-    font-size: .95rem;
+    font-size: 16px;
+    /* Minimum 16px to prevent iOS zoom */
     border-radius: var(--radius-full);
     border: 1px solid rgba(22, 65, 166, 0.20);
     background: var(--clr-offwhite);

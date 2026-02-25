@@ -24,7 +24,7 @@ export default function WhatsAppWidget() {
         // Set actual time on client to prevent hydration errors
         setMessages(prev => [{ ...prev[0], time: new Date() }, ...prev.slice(1)]);
 
-        // Auto-open logic after 2 seconds
+        // Auto-open logic after 4 seconds
         const timer1 = setTimeout(() => {
             if (!autoOpened && !isOpen) {
                 setShowBadge(true);
@@ -37,7 +37,7 @@ export default function WhatsAppWidget() {
                 }, 800);
                 return () => clearTimeout(timer2);
             }
-        }, 2000);
+        }, 4000);
 
         return () => clearTimeout(timer1);
     }, [autoOpened, isOpen]);

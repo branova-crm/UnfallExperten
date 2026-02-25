@@ -67,7 +67,7 @@
 
     /* Layout */
     --container-max: 1200px;
-    --header-height: 130px;
+    --header-height: 120px;
     --topbar-height: 40px;
 }
 
@@ -80,9 +80,11 @@
     box-sizing: border-box;
 }
 
-html {
-    scroll-behavior: smooth;
-    -webkit-text-size-adjust: 100%;
+html,
+body {
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
 }
 
 body {
@@ -92,7 +94,6 @@ body {
     background: var(--clr-white);
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
-    overflow-x: hidden;
 }
 
 img {
@@ -332,8 +333,9 @@ button {
 .site-header.scrolled {
     position: fixed;
     top: 0;
-    background: var(--clr-white);
-    box-shadow: var(--shadow-md);
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: var(--shadow-sm);
 }
 
 .site-header .container {
@@ -341,6 +343,17 @@ button {
     align-items: center;
     justify-content: space-between;
     height: 100%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.site-header.scrolled {
+    height: 85px;
+}
+
+.site-header.scrolled .container {
+    padding-top: 0;
+    padding-bottom: 0;
 }
 
 .logo {
@@ -357,15 +370,28 @@ button {
 }
 
 .logo img {
-    height: 110px;
+    height: 80px;
     width: auto;
     object-fit: contain;
     filter: brightness(0) invert(1);
-    transition: filter 0.4s ease;
+    transition: all 0.4s ease;
+}
+
+@media (min-width: 1024px) {
+    .logo img {
+        height: 120px;
+    }
 }
 
 .site-header.scrolled .logo img {
     filter: none;
+    height: 65px;
+}
+
+@media (min-width: 1024px) {
+    .site-header.scrolled .logo img {
+        height: 85px;
+    }
 }
 
 .nav-links {
@@ -418,34 +444,76 @@ button {
     color: var(--clr-primary);
 }
 
+/* Header Actions & Mobile Optimizations */
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--sp-sm);
+}
+
+@media (min-width: 768px) {
+    .header-actions {
+        gap: var(--sp-md);
+    }
+}
+
 .header-cta {
-    display: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    font-size: 14px;
+    font-weight: 700;
+    border-radius: 50px;
+    background: var(--clr-white);
+    color: var(--clr-primary);
+    transition: all 0.3s ease;
 }
 
 @media (min-width: 1024px) {
     .header-cta {
-        display: inline-flex;
+        padding: 10px 20px;
     }
 }
 
-.site-header .header-cta {
-    background: var(--clr-white);
-    color: #1641A6;
-    box-shadow: none !important;
-    transition: background 0.4s ease, color 0.4s ease;
-}
-
 .site-header.scrolled .header-cta {
-    background: #1641A6;
+    background: var(--clr-primary);
     color: var(--clr-white);
 }
 
-.site-header .header-cta:hover {
-    background: var(--clr-offwhite);
+.header-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
-.site-header.scrolled .header-cta:hover {
-    background: var(--clr-primary);
+.hide-mobile-cta {
+    display: none;
+}
+
+@media (min-width: 480px) {
+    .hide-mobile-cta {
+        display: inline;
+    }
+}
+
+.hide-mobile {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .hide-mobile {
+        display: inline;
+    }
+}
+
+.topbar-hidden {
+    transform: translateY(-100%);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.topbar {
+    transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 .hamburger {
@@ -486,36 +554,101 @@ button {
     transform: rotate(-45deg) translate(5px, -5px);
 }
 
-/* Mobile Menu */
-.mobile-menu {
-    display: none;
+/* Modern Off-Canvas Menu */
+.menu-overlay {
     position: fixed;
-    top: var(--header-height);
-    left: 0;
-    right: 0;
-    bottom: 0;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(4px);
+    z-index: 99998;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease;
+}
+
+.menu-overlay.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.offcanvas-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 320px;
+    max-width: 85%;
+    height: 100%;
     background: var(--clr-white);
-    z-index: 999;
-    padding: var(--sp-xl);
-    flex-direction: column;
-    gap: var(--sp-md);
-    overflow-y: auto;
-}
-
-.mobile-menu.open {
+    z-index: 99999;
+    transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
     display: flex;
+    flex-direction: column;
+    padding: 30px;
 }
 
-.mobile-menu a {
-    font-size: var(--fs-lg);
-    font-weight: 600;
-    color: var(--clr-text);
-    padding: var(--sp-md) 0;
-    border-bottom: 1px solid var(--clr-border);
+.offcanvas-menu.open {
+    right: 0;
 }
 
-.mobile-menu a:hover {
+.offcanvas-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.offcanvas-logo {
+    height: 50px;
+    width: auto;
+}
+
+.menu-close {
+    background: none;
+    border: none;
+    font-size: 32px;
+    color: var(--clr-primary);
+    cursor: pointer;
+}
+
+.offcanvas-links {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.offcanvas-links a {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--clr-primary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.offcanvas-links a:hover {
     color: var(--clr-accent);
+}
+
+.offcanvas-footer {
+    margin-top: auto;
+    padding-top: 30px;
+    border-top: 1px solid var(--clr-border);
+}
+
+.offcanvas-contact {
+    margin-top: 20px;
+    font-size: 14px;
+    color: var(--clr-text-light);
+}
+
+.offcanvas-contact p {
+    margin: 5px 0;
+}
+
+@media (max-width: 1023px) {
+    .mobile-menu {
+        display: none !important;
+    }
 }
 
 /* ============================================
@@ -750,7 +883,14 @@ button {
 
 @media (max-width: 768px) {
     .steps-bg-image {
-        display: none;
+        display: block;
+        width: 320px;
+        top: auto;
+        bottom: -30px;
+        right: -40px;
+        transform: none;
+        opacity: 1;
+        filter: none;
     }
 }
 
@@ -1759,9 +1899,9 @@ button {
 }
 
 .footer-social svg {
-    width: 18px;
-    height: 18px;
-    fill: #fff;
+    width: 20px;
+    height: 20px;
+    fill: #ffffff !important;
 }
 
 .footer-col h4 {
@@ -1813,7 +1953,7 @@ button {
     height: 18px;
     flex-shrink: 0;
     margin-top: 2px;
-    fill: var(--clr-accent);
+    fill: #ffffff;
 }
 
 .footer-bottom {

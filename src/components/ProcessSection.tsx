@@ -88,20 +88,20 @@ export default function ProcessSection() {
                 overflow: 'hidden',
                 perspective: effectiveIsMobile ? 'none' : '2000px',
                 background: 'var(--clr-offwhite)',
-                padding: (hasMounted && !effectiveIsMobile) ? '0' : '80px 0'
+                padding: effectiveIsMobile ? '80px 0 200px 0' : '0'
             }}>
-                {/* Desktop Background Image (Only after mount and non-mobile) */}
-                {hasMounted && !effectiveIsMobile && (
+                {/* Background Image (Desktop has parallax, mobile has CSS positioning) */}
+                {hasMounted && (
                     <motion.img
                         src="/images/bmw_gutachten.png"
                         alt=""
                         className="steps-bg-image"
                         aria-hidden="true"
-                        style={{
+                        style={!effectiveIsMobile ? {
                             scale: bgScale,
                             opacity: 0.15,
                             filter: 'grayscale(30%)'
-                        }}
+                        } : {}}
                     />
                 )}
 
