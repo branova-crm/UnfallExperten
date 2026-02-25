@@ -78,27 +78,26 @@ export default function Konfigurator() {
         if (emailSent) return;
         setEmailSent(true);
 
-        const payload = new URLSearchParams();
-        payload.append("action", "unfall_send_lead");
-        payload.append("nonce", "");
-        payload.append("website", formData.website);
-        payload.append("privacy", formData.privacy ? "1" : "0");
-        payload.append("name", formData.name);
-        payload.append("kennzeichen", formData.kennzeichen);
-        payload.append("email", formData.email);
-        payload.append("phone", formData.phone);
-        payload.append("interests", selectedInterests.join(", "));
-        payload.append("message", formData.message);
-        payload.append("source", "UnfallExperten WhatsApp Konfigurator");
+        const payload = {
+            website: formData.website,
+            privacy: formData.privacy ? "1" : "0",
+            name: formData.name,
+            kennzeichen: formData.kennzeichen,
+            email: formData.email,
+            phone: formData.phone,
+            interests: selectedInterests.join(", "),
+            message: formData.message,
+            source: "UnfallExperten Konfigurator"
+        };
 
         try {
-            const res = await fetch("http://localhost:3000/send-lead", {
+            const res = await fetch("/api/send-lead", {
                 method: "POST",
-                headers: { "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8" },
-                body: payload.toString()
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(payload)
             });
             const data = await res.json().catch(() => null);
-            if (data && data.success === false) setEmailSent(false);
+            if (!res.ok || (data && data.success === false)) setEmailSent(false);
         } catch (e) {
             setEmailSent(false);
         }
