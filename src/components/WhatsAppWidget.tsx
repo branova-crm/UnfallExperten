@@ -24,22 +24,30 @@ export default function WhatsAppWidget() {
         // Set actual time on client to prevent hydration errors
         setMessages(prev => [{ ...prev[0], time: new Date() }, ...prev.slice(1)]);
 
-        // Auto-open logic after 4 seconds
-        const timer1 = setTimeout(() => {
-            if (!autoOpened && !isOpen) {
-                setShowBadge(true);
-                const timer2 = setTimeout(() => {
-                    if (!autoOpened && !isOpen) {
-                        setIsOpen(true);
-                        setShowBadge(false);
-                        setAutoOpened(true);
-                    }
-                }, 800);
-                return () => clearTimeout(timer2);
-            }
-        }, 4000);
+        // Intersection Observer to trigger auto-open when reaching #region
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !autoOpened && !isOpen) {
+                    setShowBadge(true);
+                    setTimeout(() => {
+                        if (!autoOpened && !isOpen) {
+                            setIsOpen(true);
+                            setShowBadge(false);
+                            setAutoOpened(true);
+                        }
+                    }, 800);
+                    // Stop observing once triggered
+                    observer.disconnect();
+                }
+            });
+        }, { threshold: 0.1 });
 
-        return () => clearTimeout(timer1);
+        const target = document.getElementById('region');
+        if (target) {
+            observer.observe(target);
+        }
+
+        return () => observer.disconnect();
     }, [autoOpened, isOpen]);
 
     useEffect(() => {

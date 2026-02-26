@@ -1662,14 +1662,14 @@ button {
 .service-link {
     font-size: var(--fs-sm);
     font-weight: 700;
-    color: var(--clr-accent);
+    color: var(--clr-primary);
     display: inline-flex;
     align-items: center;
     gap: 4px;
 }
 
 .service-link:hover {
-    color: var(--clr-accent-hover);
+    color: var(--clr-primary-light);
 }
 
 /* ============================================

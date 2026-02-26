@@ -267,7 +267,7 @@ export default function Home() {
       <section className="services-section" id="services">
         <div className="container">
           <div className="text-center">
-            <span className="section-label">Unser Angebot</span>
+            <span className="section-label" style={{ color: 'var(--clr-primary)' }}>Unser Angebot</span>
             <h2 className="section-title">Unsere Leistungen</h2>
             <p className="section-subtitle mx-auto">Von der Schadensdokumentation bis zur Wertermittlung – wir bieten Ihnen das volle Spektrum an Kfz-Sachverständigenleistungen.</p>
           </div>
@@ -348,7 +348,7 @@ export default function Home() {
       <section className="vehicles-section">
         <div className="container">
           <div className="text-center">
-            <span className="section-label">Fahrzeugtypen</span>
+            <span className="section-label" style={{ color: 'var(--clr-primary)' }}>Fahrzeugtypen</span>
             <h2 className="section-title">Unsere Expertise – Umfassende Fahrzeugtypen</h2>
             <p className="section-subtitle mx-auto">Egal welches Fahrzeug – unsere Sachverständigen sind für alle Typen qualifiziert.</p>
           </div>
@@ -395,8 +395,8 @@ export default function Home() {
         <div className="container">
           <div className="contact-grid">
             <div className="contact-info">
-              <span className="section-label">Kontakt</span>
-              <h2>Wir rufen Sie gerne zurück!</h2>
+              <span className="section-label" style={{ color: 'var(--clr-primary)' }}>Kontakt</span>
+              <h2 style={{ color: 'var(--clr-text)' }}>Wir rufen Sie gerne zurück!</h2>
               <p>Schnelle Hilfe nach dem Unfall ist entscheidend. Hinterlassen Sie Ihre Nummer und wir melden uns innerhalb von 15 Minuten – kostenlos und unverbindlich.</p>
               <div className="contact-direct">
                 <a href="tel:+4902111234567">
