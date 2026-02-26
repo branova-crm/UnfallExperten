@@ -1951,6 +1951,34 @@ button {
 }
 
 /* ============================================
+   13.5) GOOGLE MAPS
+   ============================================ */
+.maps-section {
+    width: 100%;
+    background: var(--clr-white);
+    line-height: 0;
+    /* Verhindert kleine Lücken unten */
+}
+
+.maps-container {
+    width: 100%;
+    height: 450px;
+    filter: grayscale(0.2) contrast(1.1);
+    /* Passt farblich leicht an die Seite an */
+    transition: filter var(--trans-base);
+}
+
+.maps-container:hover {
+    filter: grayscale(0);
+}
+
+.maps-container iframe {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* ============================================
    14) FOOTER
    ============================================ */
 .site-footer {

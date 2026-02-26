@@ -7,6 +7,7 @@ import FaqSection from '@/components/FaqSection';
 import BarChartSection from '@/components/BarChartSection';
 import TrustindexWidget from '@/components/TrustindexWidget';
 import ProcessSection from '@/components/ProcessSection';
+import GoogleMapsEmbed from '@/components/GoogleMapsEmbed';
 
 export default function Home() {
   return (
@@ -423,6 +424,7 @@ export default function Home() {
         </div>
       </section>
 
+      <GoogleMapsEmbed />
     </div>
   );
 }
