@@ -18,6 +18,10 @@ export default function KontaktPage() {
                         <p className="breadcrumb" style={{ color: 'rgba(255,255,255,0.7)', marginBottom: '15px' }}><Link href="/">Startseite</Link> / Kontakt</p>
                         <h1 style={{ color: 'var(--clr-white)', marginBottom: '20px' }}>Kontakt</h1>
                         <p className="hero-subheadline mx-auto" style={{ fontSize: 'var(--fs-lg)' }}>Schnell erreichbar in ganz NRW – wir helfen sofort nach Ihrem Unfall. Kostenlos und unverbindlich.</p>
+                        <div className="hero-ctas" style={{ justifyContent: 'center', marginBottom: '30px' }}>
+                            <a href="tel:+4902111234567" className="btn btn-outline">📞 Jetzt anrufen</a>
+                            <a href="https://wa.me/4902111234567" className="btn btn-whatsapp" target="_blank">💬 WhatsApp schreiben</a>
+                        </div>
                     </div>
                 </div>
             </section>

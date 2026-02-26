@@ -12,8 +12,8 @@
     --clr-primary: #1641A6;
     --clr-primary-light: #1a4fbd;
     --clr-primary-dark: #0f2f7a;
-    --clr-accent: #F5A623;
-    --clr-accent-hover: #e6951a;
+    --clr-accent: #FFB84D;
+    --clr-accent-hover: #ffaa33;
     --clr-cta-green: #25D366;
     --clr-cta-green-hover: #1fb855;
     --clr-white: #FFFFFF;
@@ -226,14 +226,17 @@ button {
 }
 
 .btn-outline {
-    background: transparent;
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     color: var(--clr-white);
-    border: 2px solid var(--clr-white);
+    border: 1.5px solid rgba(255, 255, 255, 0.35);
 }
 
 .btn-outline:hover {
-    background: var(--clr-white);
-    color: var(--clr-primary);
+    background: rgba(255, 255, 255, 0.25);
+    color: var(--clr-white);
+    border-color: rgba(255, 255, 255, 0.6);
 }
 
 .btn svg,
@@ -660,7 +663,6 @@ button {
     display: flex;
     align-items: center;
     background: var(--clr-primary);
-    overflow: hidden;
     padding: calc(var(--sp-3xl) + var(--header-height)) 0 var(--sp-3xl) 0;
 }
 
@@ -668,9 +670,11 @@ button {
     position: absolute;
     inset: 0;
     z-index: 0;
+    overflow: hidden;
 }
 
-.hero-bg img {
+.hero-bg img,
+.hero-bg video {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -680,13 +684,57 @@ button {
 .hero-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, rgba(22, 65, 166, 0.92) 0%, rgba(22, 65, 166, 0.7) 60%, rgba(22, 65, 166, 0.5) 100%);
+    /* Angepasster Blauton nach Anforderung: rgba(22, 65, 166, 0.9) */
+    background: linear-gradient(135deg, rgba(22, 65, 166, 0.9) 0%, rgba(22, 65, 166, 0.8) 60%, rgba(22, 65, 166, 0.7) 100%);
     z-index: 1;
+}
+
+.hero-car-wrapper {
+    position: absolute;
+    bottom: -210px;
+    right: -60px;
+    width: 55%;
+    max-width: 900px;
+    z-index: 4;
+    /* Über der Info-Card und dem Container */
+    animation: fadeInSlideIn 0.6s ease-out forwards;
+    pointer-events: none;
+}
+
+.hero-car-wrapper img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0px 25px 30px rgba(0, 0, 0, 0.4));
+}
+
+@keyframes fadeInSlideIn {
+    0% {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@media (max-width: 1024px) {
+    .hero-car-wrapper {
+        width: 60%;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-car-wrapper {
+        display: none;
+    }
 }
 
 .hero .container {
     position: relative;
-    z-index: 2;
+    z-index: 3;
     display: grid;
     grid-template-columns: 1fr;
     gap: var(--sp-2xl);
@@ -700,7 +748,7 @@ button {
 }
 
 .hero-content h1 {
-    font-size: var(--fs-2xl);
+    font-size: 1.625rem;
     font-weight: 900;
     color: var(--clr-white);
     line-height: 1.15;
@@ -709,13 +757,13 @@ button {
 
 @media (min-width: 768px) {
     .hero-content h1 {
-        font-size: var(--fs-4xl);
+        font-size: var(--fs-3xl);
     }
 }
 
 @media (min-width: 1024px) {
     .hero-content h1 {
-        font-size: var(--fs-5xl);
+        font-size: var(--fs-4xl);
     }
 }
 
@@ -733,9 +781,24 @@ button {
 
 .hero-ctas {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     gap: var(--sp-md);
     margin-bottom: var(--sp-md);
+}
+
+.hero-ctas .btn {
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .hero-ctas {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .hero-ctas .btn {
+        width: auto;
+    }
 }
 
 .hero-rating {
@@ -754,12 +817,18 @@ button {
 
 /* Trust Box */
 .hero-trust {
-    background: rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(16px);
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(16px);
     border: 1px solid rgba(255, 255, 255, 0.15);
-    border-radius: var(--radius-lg);
-    padding: var(--sp-xl);
+    border-radius: 20px;
+    padding: 15px 30px;
+    width: 100%;
+    max-width: 480px;
+    min-height: 320px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .trust-badge {
@@ -821,7 +890,7 @@ button {
 .trust-list {
     display: flex;
     flex-direction: column;
-    gap: var(--sp-md);
+    gap: 10px;
 }
 
 .trust-list li {
@@ -829,8 +898,8 @@ button {
     align-items: flex-start;
     gap: var(--sp-sm);
     color: var(--clr-white);
-    font-size: var(--fs-sm);
-    line-height: 1.5;
+    font-size: 14px;
+    line-height: 1.4;
 }
 
 .trust-list li .check {
@@ -846,43 +915,18 @@ button {
 .process-parallax-container {
     position: relative;
     width: 100%;
-    /* Desktop default */
-    height: 300vh;
-}
-
-@media (max-width: 767px) {
-    .process-parallax-container {
-        height: auto !important;
-    }
+    height: auto;
 }
 
 .steps-section {
     padding: var(--sp-4xl) 0;
     background: var(--clr-offwhite);
     position: relative;
-    overflow: clip;
-    /* Desktop sticky behavior */
+    overflow: hidden;
     display: flex;
     align-items: center;
 }
 
-@media (min-width: 768px) {
-    .steps-section {
-        position: sticky;
-        top: 0;
-        height: 100vh;
-        perspective: 2000px;
-        padding: 0;
-    }
-}
-
-@media (max-width: 767px) {
-    .steps-section {
-        position: relative;
-        height: auto;
-        padding: 80px 0 200px 0;
-    }
-}
 
 .steps-section::before {
     content: '';
@@ -931,7 +975,7 @@ button {
 .steps-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: var(--sp-xl);
+    gap: var(--sp-lg);
 }
 
 @media (min-width: 768px) {
@@ -1036,7 +1080,7 @@ button {
 .expertise-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: var(--sp-2xl);
+    gap: var(--sp-lg);
     align-items: center;
 }
 
@@ -1063,8 +1107,8 @@ button {
     position: absolute;
     top: 20px;
     left: -8px;
-    background: var(--clr-accent);
-    color: var(--clr-primary-dark);
+    background: var(--clr-primary);
+    color: var(--clr-white);
     font-size: var(--fs-sm);
     font-weight: 800;
     padding: 8px 24px 8px 16px;
@@ -1153,7 +1197,7 @@ button {
 .regional-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: var(--sp-2xl);
+    gap: var(--sp-lg);
     align-items: center;
 }
 
@@ -1315,7 +1359,7 @@ button {
 .appraisal-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: var(--sp-2xl);
+    gap: var(--sp-lg);
     align-items: center;
 }
 
@@ -1409,14 +1453,36 @@ button {
 
 .appraisal-portrait {
     text-align: center;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+}
+
+@media (min-width: 768px) {
+    .appraisal-portrait {
+        height: 100%;
+        min-height: 400px;
+    }
 }
 
 .appraisal-portrait img {
     width: 100%;
-    max-width: 350px;
+    height: 100%;
+    object-fit: cover;
     border-radius: var(--radius-lg);
-    margin: 0 auto;
-    box-shadow: var(--shadow-lg);
+    display: block;
+}
+
+@media (min-width: 768px) {
+    .appraisal-portrait img {
+        position: absolute;
+        inset: 0;
+        border-radius: var(--radius-lg);
+    }
+
+    .appraisal-portrait {
+        position: relative;
+    }
 }
 
 .appraisal-caption {
@@ -1618,7 +1684,7 @@ button {
 .vehicles-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: var(--sp-xl);
+    gap: var(--sp-lg);
 }
 
 @media (min-width: 768px) {
@@ -1630,7 +1696,7 @@ button {
 .vehicle-card {
     background: var(--clr-white);
     border-radius: var(--radius);
-    padding: var(--sp-xl);
+    padding: var(--sp-lg);
     text-align: center;
     box-shadow: var(--shadow-sm);
     transition: all var(--trans-base);
@@ -1758,7 +1824,7 @@ button {
 .contact-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: var(--sp-2xl);
+    gap: var(--sp-lg);
     align-items: start;
 }
 
@@ -1883,7 +1949,7 @@ button {
 .footer-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: var(--sp-2xl);
+    gap: var(--sp-lg);
     margin-bottom: var(--sp-2xl);
 }
 
@@ -2267,7 +2333,7 @@ section[id] {
 .locations-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: var(--sp-xl);
+    gap: var(--sp-lg);
 }
 
 @media (min-width: 600px) {

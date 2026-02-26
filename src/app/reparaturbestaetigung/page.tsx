@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { Metadata } from 'next';
+import Konfigurator from '@/components/Konfigurator';
 
 export const metadata: Metadata = {
     title: 'Reparaturbestätigung – Nachweis für Ihre Reparatur | UnfallExperten NRW',
@@ -70,7 +71,7 @@ export default function ReparaturbestaetigungPage() {
                     <h2 className="section-title">Kostenlose Reparaturbestätigung für unsere Kunden</h2>
                     <p className="section-subtitle mx-auto">Wenn Sie bei uns ein Unfallgutachten beauftragen, erhalten Sie die Reparaturbestätigung nach erfolgter Reparatur inklusive – ohne zusätzliche Kosten. So stellen wir sicher, dass Ihre Reparatur ordnungsgemäß dokumentiert wird.</p>
                     <div style={{ marginTop: '2rem', display: 'flex', flexWrap: 'wrap', gap: '1rem', justifyContent: 'center' }}>
-                        <a href="tel:+4902111234567" className="btn btn-primary">📞 Jetzt kostenlos anfragen</a>
+                        <a href="tel:+4902111234567" className="btn btn-outline">📞 Jetzt kostenlos anfragen</a>
                         <a href="https://wa.me/4902111234567" className="btn btn-whatsapp" target="_blank">💬 WhatsApp – Schnelle Rückmeldung!</a>
                     </div>
                 </div>
@@ -97,13 +98,7 @@ export default function ReparaturbestaetigungPage() {
                                 </a>
                             </div>
                         </div>
-                        <form className="contact-form callback-form" noValidate>
-                            <div className="form-group"><label htmlFor="name">Ihr Name *</label><input type="text" id="name" name="name" placeholder="Max Mustermann" required /></div>
-                            <div className="form-group"><label htmlFor="phone">Telefonnummer *</label><input type="tel" id="phone" name="phone" placeholder="0211 123 456 7" required /></div>
-                            <div className="form-group"><label htmlFor="message">Nachricht</label><textarea id="message" name="message" placeholder="Ich benötige eine Reparaturbestätigung für..." rows={4}></textarea></div>
-                            <button type="submit" className="btn btn-primary form-submit">Rückruf anfordern – kostenlos &amp; unverbindlich</button>
-                            <p className="form-dsgvo">Mit dem Absenden stimmen Sie unserer <a href="#" style={{ color: 'var(--clr-accent)', textDecoration: 'underline' }}>Datenschutzerklärung</a> zu.</p>
-                        </form>
+                        <Konfigurator />
                     </div>
                 </div>
             </section>

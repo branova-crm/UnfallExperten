@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { Metadata } from 'next';
+import Konfigurator from '@/components/Konfigurator';
 
 export const metadata: Metadata = {
     title: 'Kostenlose Dienstleistung – Unfallhilfe ohne Kosten | UnfallExperten NRW',
@@ -90,7 +91,7 @@ export default function KostenloseDienstleistungPage() {
                     <h2>Kostenlos &amp; stressfrei zum Recht</h2>
                     <p>Wir übernehmen alles – Sie lehnen sich zurück. Jetzt unverbindlich anfragen.</p>
                     <div className="cta-banner-buttons">
-                        <a href="tel:+4902111234567" className="btn btn-accent">📞 Jetzt anrufen</a>
+                        <a href="tel:+4902111234567" className="btn btn-outline">📞 Jetzt anrufen</a>
                         <a href="https://wa.me/4902111234567" className="btn btn-whatsapp" target="_blank">💬 WhatsApp</a>
                     </div>
                 </div>
@@ -111,13 +112,7 @@ export default function KostenloseDienstleistungPage() {
                                 </a>
                             </div>
                         </div>
-                        <form className="contact-form callback-form" noValidate>
-                            <div className="form-group"><label htmlFor="name">Ihr Name *</label><input type="text" id="name" name="name" placeholder="Max Mustermann" required /></div>
-                            <div className="form-group"><label htmlFor="phone">Telefonnummer *</label><input type="tel" id="phone" name="phone" placeholder="0211 123 456 7" required /></div>
-                            <div className="form-group"><label htmlFor="message">Nachricht</label><textarea id="message" name="message" placeholder="Wann können wir Sie am besten erreichen?" rows={4}></textarea></div>
-                            <button type="submit" className="btn btn-primary form-submit">Rückruf anfordern – kostenlos &amp; unverbindlich</button>
-                            <p className="form-dsgvo">Mit dem Absenden stimmen Sie unserer <a href="#" style={{ color: 'var(--clr-accent)', textDecoration: 'underline' }}>Datenschutzerklärung</a> zu.</p>
-                        </form>
+                        <Konfigurator />
                     </div>
                 </div>
             </section>

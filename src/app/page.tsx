@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Script from 'next/script';
+import Image from 'next/image';
 import MapPins from '@/components/MapPins';
 import Konfigurator from '@/components/Konfigurator';
 import FaqSection from '@/components/FaqSection';
@@ -13,7 +14,15 @@ export default function Home() {
       {/* 2) HERO */}
       <section className="hero" id="about">
         <div className="hero-bg">
-          <img src="/images/hero-bg.png" alt="Kfz-Gutachter bei der Arbeit in NRW" loading="eager" />
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            poster="/images/hero-bg.png"
+          >
+            <source src="/images/herovideo.mp4" type="video/mp4" />
+          </video>
         </div>
         <div className="hero-overlay"></div>
         <div className="container">
@@ -38,21 +47,32 @@ export default function Home() {
               </a>
             </div>
           </div>
-          <div className="hero-trust animate-on-scroll" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
-            <div className="online-status" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'rgba(0,0,0,0.3)', padding: '8px 16px', borderRadius: '30px', marginBottom: '20px', color: 'white', fontWeight: '600', fontSize: '14px', border: '1px solid rgba(255,255,255,0.1)' }}>
+          <div className="hero-trust animate-on-scroll" style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', textAlign: 'left', zIndex: 2 }}>
+            <div className="online-status" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'rgba(0,0,0,0.3)', padding: '4px 12px', borderRadius: '30px', marginBottom: '12px', marginTop: '-15px', color: 'white', fontWeight: '600', fontSize: '13px', border: '1px solid rgba(255,255,255,0.1)' }}>
               <span className="online-dot"></span> 24/7 Notfall-Service
             </div>
-            <ul className="trust-list" style={{ alignItems: 'center', textAlign: 'center' }}>
+
+            <div style={{ marginBottom: '16px', width: '100%', display: 'flex', justifyContent: 'center' }}>
+              <TrustindexWidget scriptUrl='https://cdn.trustindex.io/loader.js?f651024657fa459a88668d3e542' />
+            </div>
+
+            <ul className="trust-list" style={{ alignItems: 'flex-start', textAlign: 'left' }}>
               <li><span className="check">✓</span> Keine Kosten für Geschädigte</li>
               <li><span className="check">✓</span> Einsatz in ganz NRW – sofort verfügbar</li>
               <li><span className="check">✓</span> Gutachten in 24 Stunden</li>
-              <li><span className="check">✓</span> Hilfe direkt an der Unfallstelle</li>
-              <li><span className="check">✓</span> Komplett-Service inkl. Anwalt & Mietwagen</li>
             </ul>
-            <div style={{ marginTop: '20px', display: 'flex', justifyContent: 'center', width: '100%' }}>
-              <TrustindexWidget scriptUrl='https://cdn.trustindex.io/loader.js?f651024657fa459a88668d3e542' />
-            </div>
           </div>
+        </div>
+
+        {/* Hero Car */}
+        <div className="hero-car-wrapper">
+          <Image
+            src="/images/bmw_unfall.png"
+            alt="Unfallfahrzeug - UnfallExperten NRW"
+            width={800}
+            height={500}
+            priority
+          />
         </div>
       </section>
 
