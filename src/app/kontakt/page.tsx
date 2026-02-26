@@ -31,8 +31,8 @@ export default function KontaktPage() {
                 <div className="container">
                     <div className="contact-grid">
                         <div className="contact-info">
-                            <span className="section-label">Jetzt Kontakt aufnehmen</span>
-                            <h2>Wir rufen Sie innerhalb von 15 Minuten zurück!</h2>
+                            <span className="section-label" style={{ color: 'var(--clr-primary)' }}>Jetzt Kontakt aufnehmen</span>
+                            <h2 style={{ color: 'var(--clr-text)' }}>Wir rufen Sie innerhalb von 15 Minuten zurück!</h2>
                             <p>Egal ob Anruf, WhatsApp oder Rückruf-Formular – wählen Sie den Weg, der Ihnen am besten passt. Wir sind rund um die Uhr für Sie da.</p>
                             <div className="contact-direct">
                                 <a href="tel:+4902111234567">

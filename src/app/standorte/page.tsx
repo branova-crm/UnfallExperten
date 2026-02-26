@@ -25,7 +25,7 @@ export default function StandortePage() {
             <section className="content-section">
                 <div className="container">
                     <div className="text-center">
-                        <span className="section-label">NRW-weit</span>
+                        <span className="section-label" style={{ color: 'var(--clr-primary)' }}>NRW-weit</span>
                         <h2 className="section-title">Finden Sie Ihren Gutachter vor Ort</h2>
                         <p className="section-subtitle mx-auto">Wählen Sie Ihre Stadt für den schnellsten lokalen Service.</p>
                     </div>

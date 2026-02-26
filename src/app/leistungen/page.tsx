@@ -34,8 +34,8 @@ export default function LeistungenPage() {
             <section className="content-section" id="ersteinschaetzung" style={{ background: 'var(--clr-offwhite)' }}>
                 <div className="container">
                     <div className="text-center" style={{ marginBottom: 'var(--sp-2xl)' }}>
-                        <span className="section-label">100 % unverbindlich</span>
-                        <h2 className="section-title">Kostenlose Ersteinschätzung</h2>
+                        <span className="section-label" style={{ color: 'var(--clr-primary)' }}>100 % unverbindlich</span>
+                        <h2 className="section-title" style={{ color: 'var(--clr-text)' }}>Kostenlose Ersteinschätzung</h2>
                         <p className="section-subtitle mx-auto">Senden Sie uns einfach Fotos Ihres Schadens sowie eine kurze Schilderung. Unsere Experten für Kfz-Schäden bewerten die Situation umgehend und geben Ihnen eine erste, völlig kostenfreie Einschätzung der Lage – ohne versteckte Kosten.</p>
                         <a href="https://wa.me/4902111234567?text=Hallo%2C%20ich%20brauche%20eine%20kostenlose%20Ersteinschaetzung." className="btn btn-whatsapp" target="_blank" style={{ marginTop: 'var(--sp-md)' }}>
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
@@ -90,8 +90,8 @@ export default function LeistungenPage() {
             <section className="services-section" id="alle-leistungen">
                 <div className="container">
                     <div className="text-center">
-                        <span className="section-label">Übersicht</span>
-                        <h2 className="section-title">Unsere Leistungen als Kfz‑Gutachter in NRW</h2>
+                        <span className="section-label" style={{ color: 'var(--clr-primary)' }}>Übersicht</span>
+                        <h2 className="section-title" style={{ color: 'var(--clr-text)' }}>Unsere Leistungen als Kfz‑Gutachter in NRW</h2>
                         <p className="section-subtitle mx-auto">Von der Schadensdokumentation bis zur Wertermittlung – wir bieten Ihnen das volle Spektrum an Kfz-Sachverständigenleistungen aus einer Hand.</p>
                     </div>
 
@@ -163,8 +163,8 @@ export default function LeistungenPage() {
                 <div className="container">
                     <div className="contact-grid">
                         <div className="contact-info">
-                            <span className="section-label">Kontakt</span>
-                            <h2>Wir rufen Sie gerne zurück!</h2>
+                            <span className="section-label" style={{ color: 'var(--clr-primary)' }}>Kontakt</span>
+                            <h2 style={{ color: 'var(--clr-text)' }}>Wir rufen Sie gerne zurück!</h2>
                             <p>Schnelle Hilfe nach dem Unfall ist entscheidend. Hinterlassen Sie Ihre Nummer und wir melden uns innerhalb von 15 Minuten – kostenlos und unverbindlich.</p>
                             <div className="contact-direct">
                                 <a href="tel:+4902111234567">

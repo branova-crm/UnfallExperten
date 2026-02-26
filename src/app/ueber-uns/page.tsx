@@ -27,8 +27,8 @@ export default function UeberUnsPage() {
                     <div className="two-col">
                         <div className="content-image animate-on-scroll"><img src="/images/hero-bg.png" alt="UnfallExperten NRW Team" loading="lazy" /></div>
                         <div className="content-text">
-                            <span className="section-label">Wer wir sind</span>
-                            <h2>Ihre Experten nach einem Verkehrsunfall</h2>
+                            <span className="section-label" style={{ color: 'var(--clr-primary)' }}>Wer wir sind</span>
+                            <h2 style={{ color: 'var(--clr-text)' }}>Ihre Experten nach einem Verkehrsunfall</h2>
                             <p>UnfallExperten NRW ist Ihr unabhängiger Partner für Kfz-Gutachten nach einem Unfall. Unser Team besteht aus Experten für Kfz-Schäden und zertifizierten Sachverständigen mit jahrelanger Erfahrung in der Kfz-Schadensbewertung.</p>
                             <p>Wir arbeiten ausschließlich im Interesse unserer Kunden – neutral, unabhängig und transparent. Unser Ziel: Sie erhalten die maximale Entschädigung, die Ihnen zusteht.</p>
                             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', marginTop: 'var(--sp-lg)' }}>
@@ -44,38 +44,38 @@ export default function UeberUnsPage() {
             <section className="vehicles-section">
                 <div className="container">
                     <div className="text-center">
-                        <span className="section-label">Fahrzeugtypen</span>
-                        <h2 className="section-title">Unsere Expertise – Umfassende Fahrzeugtypen</h2>
+                        <span className="section-label" style={{ color: 'var(--clr-primary)' }}>Fahrzeugtypen</span>
+                        <h2 className="section-title" style={{ color: 'var(--clr-text)' }}>Unsere Expertise – Umfassende Fahrzeugtypen</h2>
                         <p className="section-subtitle mx-auto">Egal welches Fahrzeug – unsere Sachverständigen sind für alle Typen qualifiziert.</p>
                     </div>
                     <div className="vehicles-grid">
                         <div className="vehicle-card animate-on-scroll">
-                            <div className="vehicle-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><rect x="1" y="3" width="15" height="13" /><polygon points="16 8 20 8 23 11 23 16 16 16 16 8" /><circle cx="5.5" cy="18.5" r="2.5" /><circle cx="18.5" cy="18.5" r="2.5" /></svg></div>
+                            <div className="vehicle-icon"><img src="/images/auto.svg" alt="PKW Icon" /></div>
                             <h3>PKW</h3>
                             <p>Alle Marken und Modelle</p>
                         </div>
                         <div className="vehicle-card animate-on-scroll">
-                            <div className="vehicle-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" /></svg></div>
+                            <div className="vehicle-icon"><img src="/images/eauto.svg" alt="E-Auto Icon" /></div>
                             <h3>E‑Auto</h3>
                             <p>Inkl. Batteriecheck</p>
                         </div>
                         <div className="vehicle-card animate-on-scroll">
-                            <div className="vehicle-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><rect x="1" y="3" width="15" height="13" /><polygon points="16 8 20 8 23 11 23 16 16 16 16 8" /><circle cx="5.5" cy="18.5" r="2.5" /><circle cx="18.5" cy="18.5" r="2.5" /><line x1="1" y1="9" x2="16" y2="9" /></svg></div>
+                            <div className="vehicle-icon"><img src="/images/lkw.svg" alt="LKW Icon" /></div>
                             <h3>LKW</h3>
                             <p>Alle Gewichtsklassen</p>
                         </div>
                         <div className="vehicle-card animate-on-scroll">
-                            <div className="vehicle-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><rect x="2" y="6" width="20" height="12" rx="2" /><circle cx="7" cy="18" r="2" /><circle cx="17" cy="18" r="2" /><path d="M2 12h20" /></svg></div>
+                            <div className="vehicle-icon"><img src="/images/caravan.svg" alt="Caravan Icon" /></div>
                             <h3>Caravan</h3>
                             <p>Inkl. Aufbau &amp; Innenraum</p>
                         </div>
                         <div className="vehicle-card animate-on-scroll">
-                            <div className="vehicle-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><rect x="6" y="4" width="12" height="14" rx="2" /><circle cx="8" cy="20" r="2" /><circle cx="16" cy="20" r="2" /><line x1="6" y1="10" x2="18" y2="10" /></svg></div>
+                            <div className="vehicle-icon"><img src="/images/anhänger.svg" alt="Anhänger Icon" /></div>
                             <h3>Anhänger</h3>
                             <p>Alle Typen</p>
                         </div>
                         <div className="vehicle-card animate-on-scroll">
-                            <div className="vehicle-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><circle cx="12" cy="18" r="3" /><path d="M5 18h4" /><path d="M15 18h4" /><path d="M12 15V5" /><path d="M8 8l4-3 4 3" /></svg></div>
+                            <div className="vehicle-icon"><img src="/images/motorrad.svg" alt="Motorrad Icon" /></div>
                             <h3>Motorrad</h3>
                             <p>Alle Hersteller</p>
                         </div>
@@ -87,8 +87,8 @@ export default function UeberUnsPage() {
             <section className="content-section">
                 <div className="container">
                     <div className="text-center">
-                        <span className="section-label">Eindrücke</span>
-                        <h2 className="section-title">Einblick in unsere Arbeit</h2>
+                        <span className="section-label" style={{ color: 'var(--clr-primary)' }}>Eindrücke</span>
+                        <h2 className="section-title" style={{ color: 'var(--clr-text)' }}>Einblick in unsere Arbeit</h2>
                         <p className="section-subtitle mx-auto">Impressionen aus unserem Arbeitsalltag – von der Begutachtung bis zum fertigen Gutachten.</p>
                     </div>
                     <div className="gallery-grid">
@@ -110,8 +110,8 @@ export default function UeberUnsPage() {
                     <div className="two-col reverse">
                         <div className="content-image animate-on-scroll"><img src="/images/hero-bg.png" alt="Professionelle Abwicklung" loading="lazy" /></div>
                         <div className="content-text">
-                            <span className="section-label">Arbeitsweise</span>
-                            <h2>Fachgerechte Abwicklung – von Anfang bis Ende</h2>
+                            <span className="section-label" style={{ color: 'var(--clr-primary)' }}>Arbeitsweise</span>
+                            <h2 style={{ color: 'var(--clr-text)' }}>Fachgerechte Abwicklung – von Anfang bis Ende</h2>
                             <p>Wir begleiten Sie durch den gesamten Prozess der Schadensregulierung. Von der ersten Kontaktaufnahme über die detaillierte Begutachtung vor Ort bis hin zur vollständigen Abwicklung mit der Versicherung – alles aus einer Hand.</p>
                             <ul className="check-list">
                                 <li>Schnelle Terminvergabe – meist noch am selben Tag</li>
@@ -130,8 +130,8 @@ export default function UeberUnsPage() {
                     <div className="two-col">
                         <div className="content-image animate-on-scroll"><img src="/images/hero-bg.png" alt="Unser Anspruch" loading="lazy" /></div>
                         <div className="content-text">
-                            <span className="section-label">Qualität</span>
-                            <h2>Unser Anspruch – Höchste Qualitätsstandards</h2>
+                            <span className="section-label" style={{ color: 'var(--clr-primary)' }}>Qualität</span>
+                            <h2 style={{ color: 'var(--clr-text)' }}>Unser Anspruch – Höchste Qualitätsstandards</h2>
                             <p>Wir stehen für Qualität, Zuverlässigkeit und Kundenzufriedenheit. Unser erfahrenes Team, modernste Technik und ein starkes Partnernetzwerk aus Anwälten, Werkstätten und Mietwagenanbietern ermöglichen es uns, Ihnen den bestmöglichen Service zu bieten.</p>
                             <ul className="check-list">
                                 <li>Experten für Kfz-Schäden und zertifizierte Sachverständige</li>
@@ -162,8 +162,8 @@ export default function UeberUnsPage() {
                 <div className="container">
                     <div className="contact-grid">
                         <div className="contact-info">
-                            <span className="section-label">Kontakt</span>
-                            <h2>Wir freuen uns auf Sie!</h2>
+                            <span className="section-label" style={{ color: 'var(--clr-primary)' }}>Kontakt</span>
+                            <h2 style={{ color: 'var(--clr-text)' }}>Wir freuen uns auf Sie!</h2>
                             <p>Haben Sie Fragen oder möchten einen Termin vereinbaren? Hinterlassen Sie Ihre Nummer.</p>
                             <div className="contact-direct">
                                 <a href="tel:+4902111234567">

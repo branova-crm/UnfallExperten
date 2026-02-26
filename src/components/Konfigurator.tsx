@@ -127,7 +127,6 @@ export default function Konfigurator() {
         <div className="unfall-wa">
             <div className="unfall-wa-card">
                 <div className="unfall-wa-header">
-                    <h2 className="unfall-wa-title">Wir rufen Sie gerne zurück!</h2>
                     <p className="unfall-wa-subtitle">In nur 3 Schritten zu Ihrer kostenlosen Beratung.</p>
                 </div>
 
