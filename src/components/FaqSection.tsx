@@ -50,9 +50,10 @@ export default function FaqSection() {
 
     return (
         <section className="faq-section" id="faq">
-            <div className="container">
+            <div className="cta-banner-bg"></div>
+            <div className="container" style={{ position: 'relative', zIndex: 3 }}>
                 <div className="text-center">
-                    <span className="section-label" style={{ color: 'var(--clr-accent)' }}>Häufige Fragen</span>
+                    <span className="section-label" style={{ color: 'var(--clr-white)' }}>Häufige Fragen</span>
                     <h2 className="section-title text-white">Ihre Fragen – unsere Antworten</h2>
                     <p className="section-subtitle mx-auto">Hier finden Sie Antworten auf die häufigsten Fragen rund um Kfz-Gutachten und Unfallabwicklung in NRW.</p>
                 </div>

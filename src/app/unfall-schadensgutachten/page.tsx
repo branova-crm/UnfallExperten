@@ -71,7 +71,7 @@ export default function UnfallSchadensgutachtenPage() {
                     <div className="two-col">
                         <div className="content-image animate-on-scroll"><img src="/images/hero-bg.png" alt="Gutachten vs Kostenvoranschlag" loading="lazy" /></div>
                         <div className="content-text">
-                            <span className="section-label">Gut zu wissen</span>
+                            <span className="section-label" style={{ color: 'var(--clr-primary)' }}>Gut zu wissen</span>
                             <h2>Warum ist ein Unfallgutachten wichtig?</h2>
                             <p>Viele Geschädigte verlassen sich auf den Kostenvoranschlag der Werkstatt und verschenken dabei bares Geld. Ein unabhängiges Gutachten erfasst zusätzlich:</p>
                             <ul className="check-list">

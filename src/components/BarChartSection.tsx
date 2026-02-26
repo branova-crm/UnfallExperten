@@ -31,7 +31,7 @@ export default function BarChartSection() {
             <div className="container">
                 <div className="appraisal-grid">
                     <div>
-                        <span className="section-label">Gut zu wissen</span>
+                        <span className="section-label" style={{ color: 'var(--clr-primary)' }}>Gut zu wissen</span>
                         <h2 className="section-title">Gutachten vermeiden ungerechte Schadenszahlungen</h2>
                         <p className="section-subtitle">Viele Geschädigte verlieren bares Geld, weil sie sich auf den Kostenvoranschlag der gegnerischen Versicherung verlassen. Ein unabhängiges Gutachten sichert Ihre Ansprüche – und bringt im Schnitt 30–40 % mehr Auszahlung.</p>
                         <div className="bar-chart" ref={chartRef}>

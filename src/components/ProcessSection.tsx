@@ -33,7 +33,7 @@ export default function ProcessSection() {
 
                 <div className="container" style={{ position: 'relative', zIndex: 2, width: '100%' }}>
                     <div style={{ marginBottom: isMobile ? '2.5rem' : '4rem', textAlign: 'center' }}>
-                        <span className="section-label">So einfach geht's</span>
+                        <span className="section-label" style={{ color: 'var(--clr-primary)' }}>So einfach geht's</span>
                         <h2 className="section-title">In 3 Schritten zu Ihrem Gutachten</h2>
                         <p className="section-subtitle mx-auto">Unkompliziert, schnell und transparent – wir begleiten Sie vom ersten Anruf bis zur Auszahlung.</p>
                     </div>

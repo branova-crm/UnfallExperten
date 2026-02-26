@@ -67,7 +67,7 @@ export default function ReparaturbestaetigungPage() {
 
             <section className="content-section">
                 <div className="container text-center">
-                    <span className="section-label">Gut zu wissen</span>
+                    <span className="section-label" style={{ color: 'var(--clr-primary)' }}>Gut zu wissen</span>
                     <h2 className="section-title">Kostenlose Reparaturbestätigung für unsere Kunden</h2>
                     <p className="section-subtitle mx-auto">Wenn Sie bei uns ein Unfallgutachten beauftragen, erhalten Sie die Reparaturbestätigung nach erfolgter Reparatur inklusive – ohne zusätzliche Kosten. So stellen wir sicher, dass Ihre Reparatur ordnungsgemäß dokumentiert wird.</p>
                     <div style={{ marginTop: '2rem', display: 'flex', flexWrap: 'wrap', gap: '1rem', justifyContent: 'center' }}>

@@ -32,7 +32,10 @@ export default function Home() {
                 <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
               </svg> Zertifizierter Sachverständiger
             </div>
-            <h1>Unfall in NRW? Wir regeln <span className="highlight">alles</span> – schnell & stressfrei.</h1>
+            <h1>
+              Unfall in NRW?<br />
+              Wir regeln alles schnell & stressfrei.
+            </h1>
             <p className="hero-subheadline">Für Geschädigte kostenlos – die gegnerische Versicherung übernimmt in der Regel sämtliche Kosten. Kein Risiko, kein Stress.</p>
             <div className="hero-ctas">
               <Link href="https://wa.me/4902111234567?text=Hallo%2C%20ich%20brauche%20Hilfe%20nach%20einem%20Unfall." className="btn btn-whatsapp" target="_blank">
@@ -88,7 +91,7 @@ export default function Home() {
               <div className="expertise-ribbon">⚙ Experten für Kfz-Schäden</div>
             </div>
             <div>
-              <span className="section-label">Unsere Expertise</span>
+              <span className="section-label" style={{ color: 'var(--clr-primary)' }}>Unsere Expertise</span>
               <h2 className="section-title">Ihre Vorteile im Überblick</h2>
               <div className="benefit-list">
                 <div className="benefit-item animate-on-scroll">
@@ -151,7 +154,7 @@ export default function Home() {
         <div className="container">
           <div className="regional-grid">
             <div>
-              <span className="section-label" style={{ color: 'var(--clr-accent)' }}>Immer in Ihrer Nähe</span>
+              <span className="section-label" style={{ color: 'var(--clr-white)' }}>Immer in Ihrer Nähe</span>
               <h2 className="section-title text-white">NRW-weit für Sie da</h2>
               <p style={{ color: 'rgba(255,255,255,0.8)', lineHeight: '1.7', marginBottom: 'var(--sp-lg)' }}>Egal ob Großstadt oder ländlicher Raum – unsere Sachverständigen sind überall in Nordrhein-Westfalen schnell vor Ort. Meist innerhalb weniger Stunden nach Ihrem Anruf.</p>
               <div className="regional-cities">
@@ -185,7 +188,7 @@ export default function Home() {
       <section className="timeline-section">
         <div className="container">
           <div className="text-center" style={{ marginBottom: 'var(--sp-2xl)' }}>
-            <span className="section-label">Schritt für Schritt</span>
+            <span className="section-label" style={{ color: 'var(--clr-primary)' }}>Schritt für Schritt</span>
             <h2 className="section-title">Unverschuldet verunfallt? So funktioniert es</h2>
             <p className="section-subtitle mx-auto">Von der ersten Kontaktaufnahme bis zur Auszahlung – wir begleiten Sie durch den gesamten Prozess.</p>
           </div>
@@ -226,7 +229,7 @@ export default function Home() {
       <section className="reviews-section" id="reviews">
         <div className="container">
           <div className="text-center">
-            <span className="section-label">Kundenstimmen</span>
+            <span className="section-label" style={{ color: 'var(--clr-primary)' }}>Kundenstimmen</span>
             <h2 className="section-title">Was unsere Kunden sagen</h2>
             <p className="section-subtitle mx-auto">Zufriedene Kunden vertrauen auf UnfallExperten NRW. Lesen Sie echte Erfahrungsberichte.</p>
           </div>
