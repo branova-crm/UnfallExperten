@@ -43,7 +43,7 @@
                 <li><span className="check">✓</span> Komplett-Service inkl. Anwalt & Mietwagen</li>
             </ul>
             <div style={{ marginTop: '20px', display: 'flex', justifyContent: 'center', }}>
-                <script defer async src='https://cdn.trustindex.io/loader.js?f651024657fa459a88668d3e542'></script>
+                <script defer async src='https://cdn.trustindex.io/loader.js?75b45fe667240424a596f77aa7c'></script>
             </div>
         </div>
     </div>
