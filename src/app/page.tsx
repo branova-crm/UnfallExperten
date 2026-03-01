@@ -57,7 +57,7 @@ export default function Home() {
             </div>
 
             <div style={{ marginBottom: '16px', width: '100%', display: 'flex', justifyContent: 'center' }}>
-              <TrustindexWidget scriptUrl='https://cdn.trustindex.io/loader.js?f651024657fa459a88668d3e542' />
+              <TrustindexWidget scriptUrl='https://cdn.trustindex.io/loader.js?75b45fe667240424a596f77aa7c' />
             </div>
 
             <ul className="trust-list" style={{ alignItems: 'flex-start', textAlign: 'left' }}>
@@ -235,7 +235,7 @@ export default function Home() {
             <p className="section-subtitle mx-auto">Zufriedene Kunden vertrauen auf UnfallExperten NRW. Lesen Sie echte Erfahrungsberichte.</p>
           </div>
           <div style={{ marginTop: '40px', width: '100%' }}>
-            <TrustindexWidget scriptUrl='https://cdn.trustindex.io/loader.js?927af9365ad3459d2a365f859b6' />
+            <TrustindexWidget scriptUrl='https://cdn.trustindex.io/loader.js?cc279bf662d10427c426993e1fa' />
           </div>
         </div>
       </section>
