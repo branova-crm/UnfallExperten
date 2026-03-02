@@ -262,14 +262,14 @@
 
                                     {/*  ========== 7) REVIEWS ==========  */}
                                     <section className="reviews-section" id="reviews">
-                                        <div className="container">
+                                        <div className="container" style={{ maxWidth: '1200px' }}>
                                             <div className="text-center">
                                                 <span className="section-label">Kundenstimmen</span>
                                                 <h2 className="section-title">Was unsere Kunden sagen</h2>
                                                 <p className="section-subtitle mx-auto">Zufriedene Kunden vertrauen auf UnfallExperten NRW. Lesen
                                                     Sie echte Erfahrungsberichte.</p>
                                             </div>
-                                            <div style={{ marginTop: '40px', }}>
+                                            <div style={{ marginTop: '40px' }}>
                                                 <script defer async src='https://cdn.trustindex.io/loader.js?cc279bf662d10427c426993e1fa'></script>
                                             </div>
                                         </div>
