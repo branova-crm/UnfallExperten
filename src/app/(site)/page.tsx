@@ -5,7 +5,7 @@ import MapPins from '@/components/MapPins';
 import Konfigurator from '@/components/Konfigurator';
 import FaqSection from '@/components/FaqSection';
 import BarChartSection from '@/components/BarChartSection';
-import TrustindexWidget from '@/components/TrustindexWidget';
+import GoogleReviewsWidget from '@/components/GoogleReviewsWidget';
 import ProcessSection from '@/components/ProcessSection';
 import GoogleMapsEmbed from '@/components/GoogleMapsEmbed';
 
@@ -56,8 +56,32 @@ export default function Home() {
               <span className="online-dot"></span> 24/7 Notfall-Service
             </div>
 
-            <div style={{ marginBottom: '16px', width: '100%', display: 'flex', justifyContent: 'center' }}>
-              <TrustindexWidget scriptUrl='https://cdn.trustindex.io/loader.js?13fb551660ac127efe0642d43c8' />
+            <div style={{ marginBottom: '16px', width: '100%', display: 'flex', justifyContent: 'flex-start' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                {/* Overlapping avatar circles */}
+                <div style={{ display: 'flex', marginRight: '-4px' }}>
+                  {[
+                    { init: 'H', bg: '#0097a7' },
+                    { init: 'S', bg: '#5c6bc0' },
+                    { init: 'A', bg: '#7b1fa2' },
+                    { init: 'K', bg: '#ec407a' },
+                    { init: 'N', bg: '#689f38' },
+                  ].map((a, i) => (
+                    <span key={i} style={{
+                      width: '36px', height: '36px', borderRadius: '50%', background: a.bg,
+                      display: 'flex', alignItems: 'center', justifyContent: 'center',
+                      color: '#fff', fontWeight: 700, fontSize: '0.85rem',
+                      border: '2px solid #fff',
+                      marginLeft: i === 0 ? '0' : '-10px', position: 'relative', zIndex: 5 - i
+                    }}>{a.init}</span>
+                  ))}
+                </div>
+                {/* Rating text */}
+                <span style={{ color: '#fff', fontWeight: 700, fontSize: '0.95rem', display: 'flex', alignItems: 'center', gap: '6px' }}>
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="#FBBC05"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" /></svg>
+                  5.0 Google | 8 Bewertungen
+                </span>
+              </div>
             </div>
 
             <ul className="trust-list" style={{ alignItems: 'flex-start', textAlign: 'left' }}>
@@ -235,7 +259,7 @@ export default function Home() {
             <p className="section-subtitle mx-auto">Zufriedene Kunden vertrauen auf UnfallExperten NRW. Lesen Sie echte Erfahrungsberichte.</p>
           </div>
           <div style={{ marginTop: '40px', width: '100%' }}>
-            <TrustindexWidget scriptUrl='https://cdn.trustindex.io/loader.js?d3dceb7669ec126d668656ba8c4' />
+            <GoogleReviewsWidget />
           </div>
         </div>
       </section>

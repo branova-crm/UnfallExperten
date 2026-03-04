@@ -7,7 +7,7 @@ import FaqSection from '@/components/FaqSection';
 import BarChartSection from '@/components/BarChartSection';
 import GoogleMapsEmbed from '@/components/GoogleMapsEmbed';
 import Konfigurator from '@/components/Konfigurator';
-import TrustindexWidget from '@/components/TrustindexWidget';
+import GoogleReviewsWidget from '@/components/GoogleReviewsWidget';
 
 export function renderSections(sections: CmsSection[]): React.ReactNode {
     return sections.map(sec => <SectionWrapper key={sec.id} section={sec}>{renderSectionContent(sec)}</SectionWrapper>);
