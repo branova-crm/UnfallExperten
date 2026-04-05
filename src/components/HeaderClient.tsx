@@ -135,29 +135,16 @@ export default function HeaderClient({ navItems, cta, contact, social }: HeaderC
                         justifyContent: 'space-between',
                         position: 'relative',
                         overflow: 'hidden',
-                        background: 'rgba(15, 47, 122, 0.75)',
-                        backdropFilter: 'blur(28px) saturate(180%)',
-                        WebkitBackdropFilter: 'blur(28px) saturate(180%)',
-                        border: '1px solid rgba(255, 255, 255, 0.18)',
+                        background: 'rgba(17, 52, 133, 0.85)',
+                        backdropFilter: 'blur(16px)',
+                        WebkitBackdropFilter: 'blur(16px)',
+                        border: '1px solid rgba(255, 255, 255, 0.08)',
                         borderRadius: '16px',
-                        boxShadow: '0 8px 32px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.15)',
+                        boxShadow: '0 8px 32px rgba(0,0,0,0.25)',
                         transform: 'translateZ(0)',
                         pointerEvents: isScrolled ? 'auto' : 'none',
                     }}
                 >
-                    {/* Milky Glass Overlay layer (::before equivalent) */}
-                    <div
-                        style={{
-                            position: 'absolute',
-                            inset: 0,
-                            background: 'rgba(255, 255, 255, 0.12)',
-                            backdropFilter: 'blur(20px)',
-                            WebkitBackdropFilter: 'blur(20px)',
-                            pointerEvents: 'none',
-                            zIndex: 1,
-                        }}
-                    />
-
                     {/* Left: Logo */}
                     <Link href="/" className="logo" onClick={closeMenu} style={{ position: 'relative', zIndex: 2 }}>
                         {/* Weitere 10px größer (75px statt 65px), margin-Ausgleich zentriert es weiterhin ohne Container-Vergrößerung */}

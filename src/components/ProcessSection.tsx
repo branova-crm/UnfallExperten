@@ -85,7 +85,7 @@ export default function ProcessSection() {
                                     {step === 1 ? "Termin vereinbaren" : 
                                      step === 2 ? "Begutachtung vor Ort" : 
                                      step === 3 ? "Gutachten erhalten" : 
-                                     "Abwicklung mit der Versicherung"}
+                                     "Versicherungsabwicklung"}
                                 </h3>
                                 <p style={{ fontSize: '0.9rem' }}>
                                     {step === 1 ? "Einfach per Telefon oder WhatsApp einen Termin sichern. Wir kommen schnell zu Ihnen." : 

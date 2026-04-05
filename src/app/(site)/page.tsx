@@ -141,7 +141,7 @@ export default function Home() {
 
       {/* 7) REVIEWS */}
       <section className="reviews-section" id="reviews">
-        <div className="container">
+        <div className="container" style={{ position: 'relative', zIndex: 5 }}>
           <div className="text-center">
             <span className="section-label" style={{ color: 'var(--clr-white)' }}>Kundenstimmen</span>
             <h2 className="section-title" style={{ color: 'var(--clr-white)' }}>Was unsere Kunden sagen</h2>

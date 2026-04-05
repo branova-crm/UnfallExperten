@@ -9,7 +9,7 @@ const caseStudies = [
   {
     id: 1,
     category: 'REPARATURSCHADEN',
-    categoryColor: '#0f2f7a',
+    categoryColor: 'rgba(17, 52, 133, 0.65)',
     image: '/images/1.jpg',
     vehicleInfo: 'BMW X7 xDRIVE40d · MJ 2024',
     title: 'Parkplatz-Kollision: Streifschaden an der Fahrerseite professionell bewertet',
@@ -24,7 +24,7 @@ const caseStudies = [
   {
     id: 2,
     category: 'REPARATURSCHADEN',
-    categoryColor: '#0f2f7a',
+    categoryColor: 'rgba(17, 52, 133, 0.65)',
     image: '/images/3.jpg',
     vehicleInfo: 'MERCEDES-BENZ E 300 e 4MATIC · BJ 2021',
     title: 'Vorfahrt missachtet: Komplexer Flankenschaden im Stadtverkehr',
@@ -39,7 +39,7 @@ const caseStudies = [
   {
     id: 3,
     category: 'TOTALSCHADEN',
-    categoryColor: '#dc2626',
+    categoryColor: 'rgba(220, 38, 38, 0.65)',
     image: '/images/2.jpg',
     vehicleInfo: 'PORSCHE MACAN GTS · EZ 2023',
     title: 'Autobahn-Auffahrunfall: Feststellung eines wirtschaftlichen Totalschadens',
@@ -54,7 +54,7 @@ const caseStudies = [
   {
     id: 4,
     category: 'HAFTPFLICHTSCHADEN',
-    categoryColor: '#0f2f7a',
+    categoryColor: 'rgba(17, 52, 133, 0.65)',
     image: '/images/4.jpg',
     vehicleInfo: 'AUDI RS6 AVANT · MJ 2022',
     title: 'Auffahrunfall an der Ampel: Heckschaden und Wertminderung',
@@ -69,7 +69,7 @@ const caseStudies = [
   {
     id: 5,
     category: 'TOTALSCHADEN',
-    categoryColor: '#dc2626',
+    categoryColor: 'rgba(220, 38, 38, 0.65)',
     image: '/images/5.jpg',
     vehicleInfo: 'TESLA MODEL Y · EZ 2024',
     title: 'Wildschaden: Massive Frontschäden nach Kollision',
@@ -116,7 +116,7 @@ export default function CaseStudiesSection() {
 
   return (
     <section style={{
-      padding: '96px 0',
+      padding: '24px 0 96px 0',
       background: '#ffffff',
       overflow: 'hidden'
     }}>
@@ -208,6 +208,8 @@ export default function CaseStudiesSection() {
                   top: '20px',
                   left: '20px',
                   background: study.categoryColor,
+                  backdropFilter: 'blur(8px)',
+                  WebkitBackdropFilter: 'blur(8px)',
                   padding: '6px 14px',
                   borderRadius: '10px',
                   fontSize: '0.7rem',
@@ -292,7 +294,7 @@ export default function CaseStudiesSection() {
                     alignItems: 'center',
                     justifyContent: 'center',
                     gap: '10px',
-                    background: 'var(--clr-primary)',
+                    background: '#113485',
                     color: '#ffffff',
                     fontWeight: 700,
                     fontSize: '0.9rem',
@@ -319,7 +321,7 @@ export default function CaseStudiesSection() {
                     if (arrow) (arrow as HTMLElement).style.transform = 'translateX(0)';
                   }}
                 >
-                  <span style={{ position: 'relative', zIndex: 2 }}>Mehr dazu lesen</span>
+                  <span style={{ position: 'relative', zIndex: 2 }}>Mehr dazu</span>
                   <span className="arrow" style={{ transition: 'transform 0.3s ease', display: 'flex', alignItems: 'center', position: 'relative', zIndex: 2 }}>
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                       <path d="M5 12h14m-7-7 7 7-7 7"/>

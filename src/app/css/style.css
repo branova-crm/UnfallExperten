@@ -195,10 +195,12 @@ button {
 .btn-primary {
     background: var(--clr-primary);
     color: var(--clr-white);
+    border: 1px solid transparent;
 }
 
 .btn-primary:hover {
-    background: var(--clr-primary-light);
+    background: #0f2f7a;
+    border-color: rgba(255, 255, 255, 0.3);
     transform: translateY(-2px);
     box-shadow: var(--shadow-lg);
 }
@@ -217,11 +219,13 @@ button {
 .btn-white {
     background: var(--clr-white);
     color: var(--clr-primary-dark);
+    border: 1px solid transparent;
 }
 
 .btn-white:hover {
     background: #0f2f7a;
     color: var(--clr-white);
+    border-color: rgba(255, 255, 255, 0.3);
     transform: translateY(-2px);
     box-shadow: var(--shadow-lg);
 }
@@ -229,11 +233,13 @@ button {
 .btn-whatsapp {
     background: var(--clr-cta-green);
     color: var(--clr-white);
+    border: 1px solid transparent;
 }
 
 .btn-whatsapp:hover {
     background: #0f2f7a; /* Dunkleres Blau wie Prozess-Schritte */
     color: var(--clr-white);
+    border-color: rgba(255, 255, 255, 0.3);
     transform: translateY(-3px);
     box-shadow: var(--shadow-lg);
 }
@@ -254,7 +260,7 @@ button {
 .btn-outline:hover {
     background: #0f2f7a;
     color: var(--clr-white);
-    border-color: #0f2f7a;
+    border-color: rgba(255, 255, 255, 0.3);
     transform: translateY(-3px);
     box-shadow: var(--shadow-lg);
 }
@@ -284,6 +290,7 @@ button {
 .glass-button:hover {
     background: #0f2f7a;
     color: var(--clr-white) !important;
+    border-color: rgba(255, 255, 255, 0.3);
     transform: translateY(-3px) translateZ(0);
     box-shadow: var(--shadow-lg);
 }
@@ -386,6 +393,26 @@ button {
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     border: none;
     box-shadow: none;
+}
+
+/* Premium Elementor-style Milk Glass Sticky Header */
+.site-header.scrolled {
+    position: fixed;
+    top: 0;
+    background: #113485; /* Solid Color */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08); /* Feiner Lichtkanten-Effekt */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* Tiefe */
+    animation: smoothReveal 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    transform: translateY(-100%);
+}
+
+@keyframes smoothReveal {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
 }
 
 .site-header .container {
@@ -712,8 +739,24 @@ button {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: var(--clr-primary);
+    background-color: var(--clr-primary);
     padding: 180px 0 180px 0;
+    overflow: hidden;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+    background-position: center center;
+    mask-image: radial-gradient(circle at center, black 10%, transparent 80%);
+    -webkit-mask-image: radial-gradient(circle at center, black 10%, transparent 80%);
+    pointer-events: none;
+    z-index: 2; /* Between overlay and content */
 }
 
 .hero .container {
@@ -741,10 +784,10 @@ button {
     position: absolute;
     inset: 0;
     pointer-events: none;
-    background: linear-gradient(
-        135deg,
-        rgba(12, 28, 68, 0.75),
-        rgba(18, 42, 98, 0.65)
+    background: radial-gradient(
+        circle at 50% 40%, 
+        rgba(26, 79, 189, 0.5) 0%, 
+        rgba(15, 47, 122, 0.8) 85%
     );
     z-index: 1;
 }
@@ -1193,7 +1236,7 @@ button {
     overflow: hidden;
     /* Basis-Hintergrund im Marken-Blau mit Spotlight */
     background-color: var(--clr-primary);
-    background-image: radial-gradient(circle at center, rgba(56, 189, 248, 0.25) 0%, transparent 80%);
+    background-image: radial-gradient(circle at center, rgba(26, 79, 189, 0.4) 0%, transparent 80%);
 }
 
 /* Fading Grid - Nur in der Mitte sichtbar */
@@ -1429,7 +1472,7 @@ button {
     position: relative;
     /* Moderner Grid-Hintergrund (Match mit Regional-Section, FAQ & Footer) */
     background-color: var(--clr-primary);
-    background-image: radial-gradient(circle at center, rgba(56, 189, 248, 0.2) 0%, transparent 85%);
+    background-image: radial-gradient(circle at center, rgba(26, 79, 189, 0.4) 0%, transparent 85%);
 }
 
 .reviews-section::after {
@@ -1904,7 +1947,7 @@ button {
     color: var(--clr-white);
     /* Moderner Grid-Hintergrund (Match mit Regional-Section & Footer) */
     background-color: var(--clr-primary);
-    background-image: radial-gradient(circle at center, rgba(56, 189, 248, 0.2) 0%, transparent 85%);
+    background-image: radial-gradient(circle at center, rgba(26, 79, 189, 0.4) 0%, transparent 85%);
 }
 
 .faq-section::after {
@@ -1969,7 +2012,7 @@ button {
 }
 
 .faq-item.active .faq-toggle {
-    background: var(--clr-accent);
+    background: #ffffff;
     transform: rotate(180deg);
 }
 
@@ -1979,6 +2022,10 @@ button {
     stroke: var(--clr-white);
     fill: none;
     stroke-width: 2;
+}
+
+.faq-item.active .faq-toggle svg {
+    stroke: #113485;
 }
 
 .faq-answer {
@@ -2159,7 +2206,7 @@ button {
     color: var(--clr-white);
     /* Moderner Grid-Hintergrund (Match mit Regional-Section) */
     background-color: var(--clr-primary);
-    background-image: radial-gradient(circle at center, rgba(56, 189, 248, 0.2) 0%, transparent 85%);
+    background-image: radial-gradient(circle at center, rgba(26, 79, 189, 0.4) 0%, transparent 85%);
 }
 
 .site-footer::after {
@@ -3003,7 +3050,7 @@ section[id] {
 }
 
 .steps-section .step-number {
-    background: #0f2f7a !important; 
+    background: #113485 !important; 
     color: #ffffff !important;
     width: 44px;
     height: 44px;
@@ -3019,7 +3066,7 @@ section[id] {
     margin-bottom: 1.5rem;
     width: 45px !important; /* Kleinere Icons wie gewünscht */
     height: 45px !important;
-    color: #0f2f7a; 
+    color: #113485; 
     display: flex;
     align-items: center;
     justify-content: center;
