@@ -4,7 +4,7 @@ import Konfigurator from '@/components/Konfigurator';
 
 export const metadata: Metadata = {
     title: 'Reparaturbestätigung – Nachweis für Ihre Reparatur | UnfallExperten NRW',
-    description: 'Professionelle Reparaturbestätigung vom Kfz-Sachverständigen in NRW. Nachweis für erfolgreiche Reparaturen – kostenlos bei Gutachtenauftrag. Jetzt anfragen!',
+    description: 'Professionelle Reparaturbestätigung vom KFZ-Sachverständigen in NRW. Nachweis für erfolgreiche Reparaturen – kostenlos bei Gutachtenauftrag. Jetzt anfragen!',
 };
 
 export default function ReparaturbestaetigungPage() {
@@ -29,7 +29,7 @@ export default function ReparaturbestaetigungPage() {
             <section className="content-section">
                 <div className="container">
                     <div className="two-col">
-                        <div className="content-image animate-on-scroll"><img src="/images/hero-bg.png" alt="Reparaturbestätigung durch Kfz-Sachverständigen" loading="lazy" /></div>
+                        <div className="content-image animate-on-scroll"><img src="/images/hero-bg.png" alt="Reparaturbestätigung durch KFZ-Sachverständigen" loading="lazy" /></div>
                         <div className="content-text">
                             <span className="section-label">Warum wichtig?</span>
                             <h2>Ihr Nachweis für erfolgreiche Reparaturen</h2>

@@ -2,8 +2,8 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-    title: 'Über uns – Erfahrene Kfz-Sachverständige in NRW | UnfallExperten',
-    description: 'Lernen Sie UnfallExperten NRW kennen – erfahrene Kfz-Sachverständige und Experten für Kfz-Schäden. Unabhängig, zertifiziert, NRW-weit. Unsere Philosophie und unser Team.',
+    title: 'Über uns – Erfahrene KFZ-Sachverständige in NRW | UnfallExperten',
+    description: 'Lernen Sie UnfallExperten NRW kennen – unabhängige KFZ-Sachverständige und Experten für KFZ-Schäden. Unabhängig, regional, NRW-weit. Unsere Philosophie und unser Team.',
 };
 
 export default function UeberUnsPage() {
@@ -16,7 +16,7 @@ export default function UeberUnsPage() {
                     <div className="hero-content" style={{ maxWidth: '800px', textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                         <p className="breadcrumb" style={{ color: 'rgba(255,255,255,0.7)', marginBottom: '15px' }}><Link href="/">Startseite</Link> / Über uns</p>
                         <h1 style={{ color: 'var(--clr-white)', marginBottom: '20px' }}>Über uns</h1>
-                        <p className="hero-subheadline mx-auto" style={{ fontSize: 'var(--fs-lg)' }}>Unabhängige Kfz-Sachverständige und Experten für Kfz-Schäden – Ihr Partner nach dem Unfall in ganz NRW.</p>
+                        <p className="hero-subheadline mx-auto" style={{ fontSize: 'var(--fs-lg)' }}>Unabhängige KFZ-Sachverständige und Experten für KFZ-Schäden – Ihr Partner nach dem Unfall in ganz NRW.</p>
                     </div>
                 </div>
             </section>
@@ -29,7 +29,7 @@ export default function UeberUnsPage() {
                         <div className="content-text">
                             <span className="section-label" style={{ color: 'var(--clr-primary)' }}>Wer wir sind</span>
                             <h2 style={{ color: 'var(--clr-text)' }}>Ihre Experten nach einem Verkehrsunfall</h2>
-                            <p>UnfallExperten NRW ist Ihr unabhängiger Partner für Kfz-Gutachten nach einem Unfall. Unser Team besteht aus Experten für Kfz-Schäden und zertifizierten Sachverständigen mit jahrelanger Erfahrung in der Kfz-Schadensbewertung.</p>
+                            <p>UnfallExperten NRW ist Ihr unabhängiger Partner für KFZ-Gutachten nach einem Unfall. Unser Team besteht aus Experten für KFZ-Schäden und unabhängigen KFZ-Sachverständigen mit jahrelanger Erfahrung in der KFZ-Schadensbewertung.</p>
                             <p>Wir arbeiten ausschließlich im Interesse unserer Kunden – neutral, unabhängig und transparent. Unser Ziel: Sie erhalten die maximale Entschädigung, die Ihnen zusteht.</p>
                             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', marginTop: 'var(--sp-lg)' }}>
                                 <a href="tel:+4902111234567" className="btn btn-primary">📞 Jetzt anrufen</a>
@@ -134,7 +134,7 @@ export default function UeberUnsPage() {
                             <h2 style={{ color: 'var(--clr-text)' }}>Unser Anspruch – Höchste Qualitätsstandards</h2>
                             <p>Wir stehen für Qualität, Zuverlässigkeit und Kundenzufriedenheit. Unser erfahrenes Team, modernste Technik und ein starkes Partnernetzwerk aus Anwälten, Werkstätten und Mietwagenanbietern ermöglichen es uns, Ihnen den bestmöglichen Service zu bieten.</p>
                             <ul className="check-list">
-                                <li>Experten für Kfz-Schäden und zertifizierte Sachverständige</li>
+                                <li>Experten für KFZ-Schäden und unabhängige KFZ-Sachverständige</li>
                                 <li>Modernste Dokumentations- und Kalkulationssoftware</li>
                                 <li>Starkes Partnernetzwerk in ganz NRW</li>
                                 <li>Regelmäßige Fortbildungen und Qualitätskontrollen</li>

@@ -4,7 +4,7 @@ import Konfigurator from '@/components/Konfigurator';
 
 export const metadata: Metadata = {
     title: 'Wertgutachten – Fahrzeugbewertung vom Experten | UnfallExperten NRW',
-    description: 'Professionelles Wertgutachten für Kfz in NRW. Exakte Fahrzeugbewertung für Kauf, Verkauf, Leasing und Versicherung. Zertifizierte Sachverständige. Jetzt anfragen!',
+    description: 'Professionelles Wertgutachten für KFZ in NRW. Exakte Fahrzeugbewertung für Kauf, Verkauf, Leasing und Versicherung. Unabhängige Sachverständige. Jetzt anfragen!',
 };
 
 export default function WertgutachtenPage() {

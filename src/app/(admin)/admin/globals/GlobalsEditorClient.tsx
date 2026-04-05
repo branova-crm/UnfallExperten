@@ -21,7 +21,7 @@ export default function GlobalsEditorClient({ globalsData }: { globalsData: Glob
     });
 
     const [footer, setFooter] = useState(globalsData.footer || {
-        description: 'Ihr unabhängiger Kfz-Sachverständiger in Nordrhein-Westfalen. Kostenlose Unfallgutachten für Geschädigte – schnell, professionell und NRW-weit.',
+        description: 'Ihr unabhängiger KFZ-Sachverständiger in Nordrhein-Westfalen. Kostenlose Unfallgutachten für Geschädigte – schnell, professionell und NRW-weit.',
         copyright: 'UnfallExperten NRW – Alle Rechte vorbehalten.',
         socialFacebook: 'https://www.facebook.com/',
         socialInstagram: 'https://www.instagram.com/',
@@ -30,7 +30,7 @@ export default function GlobalsEditorClient({ globalsData }: { globalsData: Glob
     const [branding, setBranding] = useState(globalsData.branding || {
         companyName: 'UnfallExperten NRW',
         logoUrl: '/images/logo.png',
-        primaryColor: '#1641A6',
+        primaryColor: '#0f2f7a',
     });
 
     const [message, setMessage] = useState('');

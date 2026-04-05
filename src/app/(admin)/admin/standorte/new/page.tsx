@@ -14,7 +14,7 @@ export default function AdminNewStandort() {
                     <div className="admin-form-row">
                         <div className="admin-form-group">
                             <label htmlFor="title">Titel</label>
-                            <input id="title" name="title" type="text" required placeholder="z.B. Kfz-Gutachter Köln Mitte" />
+                            <input id="title" name="title" type="text" required placeholder="z.B. KFZ-Gutachter Köln Mitte" />
                         </div>
                         <div className="admin-form-group">
                             <label htmlFor="slug">Slug</label>

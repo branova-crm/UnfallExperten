@@ -2,8 +2,8 @@ import Link from 'next/link';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-    title: 'Unsere Standorte – Kfz-Gutachter NRW-weit | UnfallExperten',
-    description: 'Finden Sie Ihren Kfz-Gutachter vor Ort in NRW. UnfallExperten NRW ist in Köln, Düsseldorf, Dortmund, Essen und im ganzen Ruhrgebiet für Sie im Einsatz.',
+    title: 'Unsere Standorte – KFZ-Gutachter NRW-weit | UnfallExperten',
+    description: 'Finden Sie Ihren KFZ-Gutachter vor Ort in NRW. UnfallExperten NRW ist in Köln, Düsseldorf, Dortmund, Essen und im ganzen Ruhrgebiet für Sie im Einsatz.',
 };
 
 export default function StandortePage() {
@@ -33,37 +33,37 @@ export default function StandortePage() {
                     <div className="locations-grid">
                         <div className="location-card animate-on-scroll">
                             <div className="pin">📍</div>
-                            <h3>Kfz-Gutachter Köln Ehrenfeld</h3>
+                            <h3>KFZ-Gutachter Köln Ehrenfeld</h3>
                             <p>Schnelle Schadensbegutachtung in Köln und Umgebung. 24/7-Service vor Ort.</p>
                             <Link href="/standorte/koeln-ehrenfeld" className="service-link">Zum Standort →</Link>
                         </div>
                         <div className="location-card animate-on-scroll">
                             <div className="pin">📍</div>
-                            <h3>Kfz-Gutachter Köln Porz</h3>
+                            <h3>KFZ-Gutachter Köln Porz</h3>
                             <p>Ihr Sachverständiger für den Kölner Süden und rechtsrheinische Gebiete.</p>
                             <a href="#" className="service-link">Zum Standort →</a>
                         </div>
                         <div className="location-card animate-on-scroll">
                             <div className="pin">📍</div>
-                            <h3>Kfz-Gutachter Düsseldorf Innenstadt</h3>
+                            <h3>KFZ-Gutachter Düsseldorf Innenstadt</h3>
                             <p>Zentrale Unfallhilfe in der Landeshauptstadt – wir sind schnell zur Stelle.</p>
                             <a href="#" className="service-link">Zum Standort →</a>
                         </div>
                         <div className="location-card animate-on-scroll">
                             <div className="pin">📍</div>
-                            <h3>Kfz-Gutachter Dortmund</h3>
+                            <h3>KFZ-Gutachter Dortmund</h3>
                             <p>Kompetente Gutachten im Ruhrgebiet. Kostenlos für Unfallgeschädigte.</p>
                             <a href="#" className="service-link">Zum Standort →</a>
                         </div>
                         <div className="location-card animate-on-scroll">
                             <div className="pin">📍</div>
-                            <h3>Kfz-Gutachter Essen</h3>
+                            <h3>KFZ-Gutachter Essen</h3>
                             <p>Zuverlässige Begutachtung und Schadenskalkulation im Zentrum des Ruhrgebiets.</p>
                             <a href="#" className="service-link">Zum Standort →</a>
                         </div>
                         <div className="location-card animate-on-scroll">
                             <div className="pin">📍</div>
-                            <h3>Kfz-Gutachter Wuppertal</h3>
+                            <h3>KFZ-Gutachter Wuppertal</h3>
                             <p>Bergisches Land abgedeckt – wir kommen auch zu Ihnen nach Hause.</p>
                             <a href="#" className="service-link">Zum Standort →</a>
                         </div>

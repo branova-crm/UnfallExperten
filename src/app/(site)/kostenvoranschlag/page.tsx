@@ -3,15 +3,15 @@ import { Metadata } from 'next';
 import Konfigurator from '@/components/Konfigurator';
 
 export const metadata: Metadata = {
-    title: 'Kostenvoranschlag Kfz – Bagatellschäden bewerten | UnfallExperten NRW',
-    description: 'Kfz-Kostenvoranschlag in NRW – ideal for Bagatellschäden. Versteckte Schäden aufdecken, faire Schadensregulierung sichern. Jetzt kostenlos anfragen!',
+    title: 'Kostenvoranschlag KFZ – Bagatellschäden bewerten | UnfallExperten NRW',
+    description: 'KFZ-Kostenvoranschlag in NRW – ideal for Bagatellschäden. Versteckte Schäden aufdecken, faire Schadensregulierung sichern. Jetzt kostenlos anfragen!',
 };
 
 export default function KostenvoranschlagPage() {
     return (
         <>
             <section className="hero" style={{ minHeight: '60vh', padding: '120px 0 80px 0' }}>
-                <div className="hero-bg"><img src="/images/hero-bg.png" alt="Kostenvoranschlag Kfz NRW" loading="eager" /></div>
+                <div className="hero-bg"><img src="/images/hero-bg.png" alt="Kostenvoranschlag KFZ NRW" loading="eager" /></div>
                 <div className="hero-overlay"></div>
                 <div className="container" style={{ display: 'flex', justifyContent: 'center' }}>
                     <div className="hero-content" style={{ maxWidth: '800px', textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
@@ -29,7 +29,7 @@ export default function KostenvoranschlagPage() {
             <section className="content-section">
                 <div className="container">
                     <div className="two-col">
-                        <div className="content-image animate-on-scroll"><img src="/images/hero-bg.png" alt="Kostenvoranschlag Kfz" loading="lazy" /></div>
+                        <div className="content-image animate-on-scroll"><img src="/images/hero-bg.png" alt="Kostenvoranschlag KFZ" loading="lazy" /></div>
                         <div className="content-text">
                             <span className="section-label">Für kleinere Schäden</span>
                             <h2>Effiziente Lösungen für Bagatellschäden</h2>

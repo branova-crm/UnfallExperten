@@ -54,7 +54,7 @@ export default function KostenloseDienstleistungPage() {
                             <h2>Begleitung von A bis Z</h2>
                             <p>Wir kümmern uns um den gesamten Prozess nach Ihrem Unfall – damit Sie sich auf das Wesentliche konzentrieren können:</p>
                             <ul className="check-list">
-                                <li>Professionelles Unfallgutachten durch Experten für Kfz-Schäden</li>
+                                <li>Professionelles Unfallgutachten durch Experten für KFZ-Schäden</li>
                                 <li>Vermittlung eines spezialisierten Rechtsanwalts</li>
                                 <li>Organisation von Mietwagen und Reparaturwerkstatt</li>
                                 <li>Kommunikation mit der gegnerischen Versicherung</li>
@@ -73,7 +73,7 @@ export default function KostenloseDienstleistungPage() {
                         <div className="content-text">
                             <span className="section-label">Vertrauen &amp; Erfahrung</span>
                             <h2>Ihr vertrauensvoller Partner nach dem Unfall</h2>
-                            <p>Wir arbeiten transparent und in Ihrem Interesse. Unsere zertifizierten Sachverständigen haben jahrelange Erfahrung in der Unfallabwicklung und kennen alle Tricks der Versicherungen.</p>
+                            <p>Wir arbeiten transparent und in Ihrem Interesse. Unsere unabhängigen Sachverständigen haben jahrelange Erfahrung in der Unfallabwicklung und kennen alle Tricks der Versicherungen.</p>
                             <ul className="check-list">
                                 <li>Vollständige Transparenz bei jedem Schritt</li>
                                 <li>Erfahrung aus über 1.000 abgewickelten Fällen</li>

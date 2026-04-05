@@ -15,6 +15,8 @@ const mapAreas = [
     { id: "Neu 2", coords: [260, 535, 8], shape: "circle", title: "Standort Neu 2" },
 ];
 
+const HAUPTSTANDORT = { id: "Hauptstandort", coords: [214, 492], title: "Unser Standort – Düsseldorf" };
+
 export default function MapPins() {
     const containerRef = useRef<HTMLDivElement>(null);
     const [scale, setScale] = useState({ x: 1, y: 1 });
@@ -64,13 +66,14 @@ export default function MapPins() {
     return (
         <div className="einsatzgebiet-map-container" id="map-container">
             <div className="map-wrap" ref={containerRef}>
-                <img
+                <Image
                     src="/images/de-map.png"
                     alt="Deutschlandkarte Einsatzgebiet"
                     id="de-map"
-                    width="500"
-                    height="500"
+                    width={500}
+                    height={500}
                     onLoad={updateScale}
+                    priority
                     style={{ width: '100%', height: 'auto', display: 'block' }}
                 />
                 <div id="pins-layer">
@@ -81,8 +84,6 @@ export default function MapPins() {
                         const finalX = cx * scale.x;
                         const finalY = cy * scale.y;
 
-                        // Deterministic pseudo-randomness for animation delay based on index
-                        // to prevent React Hydration mismatch between server and client
                         const randomPhase1 = -((i * 1.3) % 4);
                         const randomPhase2 = randomPhase1 - 2;
 
@@ -104,7 +105,40 @@ export default function MapPins() {
                             </div>
                         );
                     })}
+
+                    {/* Hauptstandort – hervorgehobener eigener Pin */}
+                    <div
+                        className="map-pin map-pin-hauptstandort"
+                        style={{
+                            left: `${HAUPTSTANDORT.coords[0] * scale.x}px`,
+                            top: `${HAUPTSTANDORT.coords[1] * scale.y}px`,
+                        }}
+                        onMouseEnter={() => handleMouseEnter(HAUPTSTANDORT.id)}
+                        onMouseLeave={handleMouseLeave}
+                        onClick={() => handleClick(HAUPTSTANDORT.id)}
+                    >
+                        <div className="map-pin-dot map-pin-dot-main"></div>
+                        <div className={`map-pin-tooltip ${visibleTooltip === HAUPTSTANDORT.id ? 'visible' : ''}`}>
+                            {HAUPTSTANDORT.title}
+                        </div>
+                    </div>
                 </div>
+            </div>
+
+            {/* Standort-Texte */}
+            <div style={{
+                marginTop: '1rem',
+                textAlign: 'center',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '4px'
+            }}>
+                <p style={{ fontWeight: 700, color: 'var(--clr-white)', fontSize: '1rem' }}>
+                    Wir sind nur 20 Minuten entfernt
+                </p>
+                <p style={{ color: 'rgba(255,255,255,0.75)', fontSize: '0.875rem' }}>
+                    Oder kommen Sie direkt vorbei
+                </p>
             </div>
         </div>
     );

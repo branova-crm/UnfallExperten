@@ -22,8 +22,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const city = formatCityName(resolvedParams.slug);
 
     return {
-        title: `Kfz-Gutachter ${city} – Kostenlos & Schnell | UnfallExperten`,
-        description: `Unfall in ${city}? Ihr Kfz-Gutachter vor Ort. Kostenloses Unfallgutachten für Geschädigte, schnelle Abwicklung, 24/7 erreichbar. Jetzt anrufen!`,
+        title: `KFZ-Gutachter ${city} – Kostenlos & Schnell | UnfallExperten`,
+        description: `Unfall in ${city}? Ihr KFZ-Gutachter vor Ort. Kostenloses Unfallgutachten für Geschädigte, schnelle Abwicklung, 24/7 erreichbar. Jetzt anrufen!`,
     };
 }
 
@@ -35,14 +35,14 @@ export default async function StandortDetail({ params }: Props) {
         <div className="standort-detail-page">
             {/* LOCAL HERO */}
             <section className="hero" style={{ minHeight: '60vh', padding: '120px 0 80px 0' }}>
-                <div className="hero-bg"><img src="/images/hero-bg.png" alt={`Kfz-Gutachter ${city}`} loading="eager" /></div>
+                <div className="hero-bg"><img src="/images/hero-bg.png" alt={`KFZ-Gutachter ${city}`} loading="eager" /></div>
                 <div className="hero-overlay"></div>
                 <div className="container" style={{ display: 'flex', justifyContent: 'center' }}>
                     <div className="hero-content" style={{ maxWidth: '800px', textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                         <p className="breadcrumb" style={{ color: 'rgba(255,255,255,0.7)', marginBottom: '15px' }}>
                             <Link href="/">Startseite</Link> / <Link href="/standorte">Standorte</Link> / {city}
                         </p>
-                        <h1 style={{ color: 'var(--clr-white)', marginBottom: '20px' }}>Kfz-Gutachter {city}</h1>
+                        <h1 style={{ color: 'var(--clr-white)', marginBottom: '20px' }}>KFZ-Gutachter {city}</h1>
                         <p className="hero-subheadline mx-auto" style={{ fontSize: 'var(--fs-lg)' }}>Schnelle Schadensbegutachtung direkt bei Ihnen vor Ort in {city} – kostenlos für Unfallgeschädigte.</p>
                         <div className="hero-ctas" style={{ justifyContent: 'center', marginBottom: '30px' }}>
                             <a href="tel:+4902111234567" className="btn btn-outline">📞 Jetzt anrufen</a>
@@ -115,7 +115,7 @@ export default async function StandortDetail({ params }: Props) {
                             <p>Verlassen Sie sich auf unser lokales Team für eine schnelle und rechtssichere Schadensregulierung.</p>
                             <ul className="check-list animate-on-scroll">
                                 <li><strong>24/7-Service</strong> – Kurzfristige Termine auch am Wochenende</li>
-                                <li><strong>Zertifizierte Sachverständige</strong> & Experten für Kfz-Schäden</li>
+                                <li><strong>Erfahrene Sachverständige</strong> & Experten für KFZ-Schäden</li>
                                 <li><strong>Absolut kostenlos</strong> für Sie bei unverschuldeten Unfällen</li>
                                 <li><strong>Komplett-Service</strong> inkl. Anwalt- und Werkstattvermittlung</li>
                                 <li><strong>Lokale Marktkenntnis</strong> für präzise Wiederbeschaffungswerte in {city}</li>
@@ -188,7 +188,7 @@ export default async function StandortDetail({ params }: Props) {
                 <div className="cta-banner-bg"></div>
                 <div className="container">
                     <h2>Stressfreie Regulierung – Wir kümmern uns um alles</h2>
-                    <p>Lehnen Sie sich zurück. Ihr Kfz-Gutachter für {city} erledigt die Arbeit.</p>
+                    <p>Lehnen Sie sich zurück. Ihr KFZ-Gutachter für {city} erledigt die Arbeit.</p>
                     <div className="cta-banner-buttons">
                         <a href="tel:+4902111234567" className="btn btn-accent">📞 Jetzt kostenlos anrufen</a>
                     </div>

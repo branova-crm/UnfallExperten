@@ -33,7 +33,7 @@ export default function UnfallSchadensgutachtenPage() {
                         <div className="content-text">
                             <span className="section-label">Ihr Recht</span>
                             <h2>Fachgerechte Dokumentation – Basis für Ihre Ansprüche</h2>
-                            <p>Ein unabhängiges Unfallgutachten ist Ihr stärkstes Beweismittel bei der Schadensregulierung. Unsere Experten für Kfz-Schäden erfassen jeden Schaden präzise und dokumentieren alle relevanten Werte:</p>
+                            <p>Ein unabhängiges Unfallgutachten ist Ihr stärkstes Beweismittel bei der Schadensregulierung. Unsere Experten für KFZ-Schäden erfassen jeden Schaden präzise und dokumentieren alle relevanten Werte:</p>
                             <ul className="check-list">
                                 <li>Detaillierte Schadenshöhe mit Reparaturkalkulation</li>
                                 <li>Merkantile Wertminderung Ihres Fahrzeugs</li>

@@ -1,6 +1,6 @@
 
 <section className="hero" id="about">
-    <div className="hero-bg"><img src="images/hero-bg.png" alt="Kfz-Gutachter bei der Arbeit in NRW" loading="eager" />
+    <div className="hero-bg"><img src="images/hero-bg.png" alt="KFZ-Gutachter bei der Arbeit in NRW" loading="eager" />
     </div>
     <div className="hero-overlay"></div>
     <div className="container">
@@ -101,8 +101,8 @@
     <div className="container">
         <div className="expertise-grid">
             <div className="expertise-image animate-on-scroll">
-                <img src="images/hero-bg.png" alt="Kfz-Sachverständiger bei der Begutachtung" loading="lazy" />
-                <div className="expertise-ribbon">⚙ Experten für Kfz-Schäden</div>
+                <img src="images/hero-bg.png" alt="KFZ-Sachverständiger bei der Begutachtung" loading="lazy" />
+                <div className="expertise-ribbon">⚙ Experten für KFZ-Schäden</div>
             </div>
             <div>
                 <span className="section-label">Unsere Expertise</span>
@@ -126,7 +126,7 @@
                             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
                             <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
-                        </svg></div><span>Gutachten von Experten für Kfz-Schäden</span>
+                        </svg></div><span>Gutachten von Experten für KFZ-Schäden</span>
                     </div>
                     <div className="benefit-item animate-on-scroll">
                         <div className="benefit-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
@@ -315,7 +315,7 @@
                                                 </div>
                                                 <div className="appraisal-portrait animate-on-scroll">
                                                     <img src="images/hero-bg.png" alt="UnfallExperten NRW Team" loading="lazy" />
-                                                    <p className="appraisal-caption">Unser erfahrenes Team von Kfz-Sachverständigen</p>
+                                                    <p className="appraisal-caption">Unser erfahrenes Team von KFZ-Sachverständigen</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -353,7 +353,7 @@
                                                 <span className="section-label">Unser Angebot</span>
                                                 <h2 className="section-title">Unsere Leistungen</h2>
                                                 <p className="section-subtitle mx-auto">Von der Schadensdokumentation bis zur Wertermittlung – wir bieten
-                                                    Ihnen das volle Spektrum an Kfz-Sachverständigenleistungen.</p>
+                                                    Ihnen das volle Spektrum an KFZ-Sachverständigenleistungen.</p>
                                             </div>
                                             <div className="services-grid">
                                                 <div className="service-card animate-on-scroll">
@@ -479,16 +479,16 @@
                                                 <span className="section-label" style={{ color: 'var(--clr-accent)', }}>Häufige Fragen</span>
                                                 <h2 className="section-title text-white">Ihre Fragen – unsere Antworten</h2>
                                                 <p className="section-subtitle mx-auto">Hier finden Sie Antworten auf die häufigsten Fragen rund um
-                                                    Kfz-Gutachten und Unfallabwicklung in NRW.</p>
+                                                    KFZ-Gutachten und Unfallabwicklung in NRW.</p>
                                             </div>
                                             <div className="faq-list">
                                                 <div className="faq-item">
-                                                    <button className="faq-question">Was macht ein Kfz-Gutachter in NRW?<span className="faq-toggle"><svg
+                                                    <button className="faq-question">Was macht ein KFZ-Gutachter in NRW?<span className="faq-toggle"><svg
                                                         viewBox="0 0 24 24">
                                                         <polyline points="6 9 12 15 18 9" />
                                                     </svg></span></button>
                                                     <div className="faq-answer">
-                                                        <div className="faq-answer-inner">Ein Kfz-Gutachter (Sachverständiger) dokumentiert und bewertet
+                                                        <div className="faq-answer-inner">Ein KFZ-Gutachter (Sachverständiger) dokumentiert und bewertet
                                                             Fahrzeugschäden nach einem Unfall. Er erstellt ein unabhängiges Gutachten, das alle Schäden,
                                                             die Reparaturkosten, eine mögliche Wertminderung und den Wiederbeschaffungswert Ihres
                                                             Fahrzeugs erfasst. Dieses Gutachten dient als Grundlage für die Schadensregulierung mit der

@@ -3,13 +3,31 @@
 import { useState } from 'react';
 
 const INTERESTS = [
-    { id: "Unfallgutachten", icon: "🚗", label: "Unfallgutachten" },
-    { id: "Kaskoschaden", icon: "🛡️", label: "Kaskoschaden" },
-    { id: "Wertgutachten", icon: "💶", label: "Wertgutachten" },
-    { id: "Reparaturbestätigung", icon: "✅", label: "Reparaturbestätigung" },
-    { id: "Kostenvoranschlag", icon: "📝", label: "Kostenvoranschlag" },
-    { id: "Sonstiges", icon: "➕", label: "Sonstiges" }
+    { id: "Unfallgutachten", label: "Unfallgutachten" },
+    { id: "Kaskoschaden", label: "Kaskoschaden" },
+    { id: "Wertgutachten", label: "Wertgutachten" },
+    { id: "Reparaturbestätigung", label: "Reparaturbestätigung" },
+    { id: "Kostenvoranschlag", label: "Kostenvoranschlag" },
+    { id: "Sonstiges", label: "Sonstiges" }
 ];
+
+function InterestIcon({ id }: { id: string }) {
+    const s = { width: 28, height: 28, strokeWidth: 1.8, stroke: 'currentColor', fill: 'none' as const };
+    switch (id) {
+        case 'Unfallgutachten':
+            return <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" {...s}><path d="M1 3h15l2 3h3a2 2 0 0 1 2 2v4h-3" /><circle cx="6" cy="17" r="2.5" /><circle cx="16" cy="17" r="2.5" /><path d="M9.5 17H13.5M3.5 17H1V9" /></svg>;
+        case 'Kaskoschaden':
+            return <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" {...s}><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /><polyline points="9 12 11 14 15 10" /></svg>;
+        case 'Wertgutachten':
+            return <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" {...s}><line x1="12" y1="1" x2="12" y2="23" /><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" /></svg>;
+        case 'Reparaturbestätigung':
+            return <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" {...s}><circle cx="12" cy="12" r="10" /><polyline points="9 12 11 14 15 10" /></svg>;
+        case 'Kostenvoranschlag':
+            return <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" {...s}><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" /><polyline points="14 2 14 8 20 8" /><line x1="16" y1="13" x2="8" y2="13" /><line x1="16" y1="17" x2="8" y2="17" /></svg>;
+        default:
+            return <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" {...s}><line x1="12" y1="5" x2="12" y2="19" /><line x1="5" y1="12" x2="19" y2="12" /></svg>;
+    }
+}
 
 export default function Konfigurator() {
     const WHATSAPP_NUMBER = "4902111234567";
@@ -172,7 +190,7 @@ export default function Konfigurator() {
                                         onClick={() => toggleInterest(item.id)}
                                         suppressHydrationWarning
                                     >
-                                        <span className="unfall-wa-ico">{item.icon}</span>
+                                        <span className="unfall-wa-ico"><InterestIcon id={item.id} /></span>
                                         <span className="unfall-wa-label">{item.label}</span>
                                     </button>
                                 )

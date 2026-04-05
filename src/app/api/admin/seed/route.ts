@@ -28,14 +28,14 @@ export async function POST() {
         // ── 1. Pages ──
         const pages = [
             { slug: '', title: 'Startseite', status: 'published', template: 'homepage', is_system: true, seo: { title: 'Ihre Gutachter-Experten | Unabhängige Sachverständige', description: 'Unabhängige Gutachter-Experten für Unfall- und Schadensgutachten.' } },
-            { slug: 'leistungen', title: 'Leistungen', status: 'published', template: 'leistungen', is_system: true, seo: { title: 'Unsere Leistungen – Kfz-Gutachter NRW | UnfallExperten', description: 'Unfall- und Schadensgutachten, Kostenvoranschläge, Wertgutachten – alle Leistungen auf einen Blick.' } },
+            { slug: 'leistungen', title: 'Leistungen', status: 'published', template: 'leistungen', is_system: true, seo: { title: 'Unsere Leistungen – KFZ-Gutachter NRW | UnfallExperten', description: 'Unfall- und Schadensgutachten, Kostenvoranschläge, Wertgutachten – alle Leistungen auf einen Blick.' } },
             { slug: 'kontakt', title: 'Kontakt', status: 'published', template: 'kontakt', is_system: true, seo: { title: 'Kontakt – UnfallExperten NRW', description: 'Kontaktieren Sie uns für ein kostenloses Unfallgutachten.' } },
-            { slug: 'standorte', title: 'Standorte', status: 'published', template: 'standorte', is_system: true, seo: { title: 'Unsere Standorte – Kfz-Gutachter NRW-weit | UnfallExperten', description: 'Finden Sie Ihren Kfz-Gutachter vor Ort in NRW.' } },
+            { slug: 'standorte', title: 'Standorte', status: 'published', template: 'standorte', is_system: true, seo: { title: 'Unsere Standorte – KFZ-Gutachter NRW-weit | UnfallExperten', description: 'Finden Sie Ihren KFZ-Gutachter vor Ort in NRW.' } },
             { slug: 'ueber-uns', title: 'Über uns', status: 'published', template: 'ueber-uns', is_system: true, seo: { title: 'Über uns – UnfallExperten NRW', description: 'Erfahren Sie mehr über unser Team und unsere Mission.' } },
             { slug: 'kaskoschaden', title: 'Kaskoschäden', status: 'published', template: 'leistung-detail', is_system: true, seo: { title: 'Kaskoschaden – Gutachten & Hilfe | UnfallExperten', description: 'Professionelle Hilfe bei Kaskoschäden.' } },
             { slug: 'kostenlose-dienstleistung', title: 'Kostenlose Dienstleistung', status: 'published', template: 'leistung-detail', is_system: true, seo: { title: 'Kostenlose Dienstleistung – UnfallExperten NRW', description: 'Alle Leistungen kostenlos für Unfallgeschädigte.' } },
             { slug: 'unfall-schadensgutachten', title: 'Unfall- & Schadensgutachten', status: 'published', template: 'leistung-detail', is_system: true, seo: { title: 'Unfall- & Schadensgutachten | UnfallExperten NRW', description: 'Professionelle Unfall- und Schadensgutachten.' } },
-            { slug: 'kostenvoranschlag', title: 'Kostenvoranschlag', status: 'published', template: 'leistung-detail', is_system: true, seo: { title: 'Kostenvoranschlag – UnfallExperten NRW', description: 'Schneller Kostenvoranschlag für Kfz-Schäden.' } },
+            { slug: 'kostenvoranschlag', title: 'Kostenvoranschlag', status: 'published', template: 'leistung-detail', is_system: true, seo: { title: 'Kostenvoranschlag – UnfallExperten NRW', description: 'Schneller Kostenvoranschlag für KFZ-Schäden.' } },
             { slug: 'reparaturbestaetigung', title: 'Reparaturbestätigung', status: 'published', template: 'leistung-detail', is_system: true, seo: { title: 'Reparaturbestätigung – UnfallExperten NRW', description: 'Dokumentation und Bestätigung Ihrer Reparatur.' } },
             { slug: 'wertgutachten', title: 'Wertgutachten', status: 'published', template: 'leistung-detail', is_system: true, seo: { title: 'Wertgutachten – UnfallExperten NRW', description: 'Professionelle Fahrzeugbewertung.' } },
         ];
@@ -112,8 +112,8 @@ export async function POST() {
         // ── 4. Globals ──
         const globals = [
             { key: 'contact', data: { phone: '0211 – 123 456 7', phoneLink: '+4902111234567', email: 'info@unfallexperten-nrw.de', address: 'Musterstraße 1, 40210 Düsseldorf', openingHours: 'Jederzeit erreichbar', whatsapp: '4902111234567', whatsappText: 'Hallo, ich brauche Hilfe nach einem Unfall.' } },
-            { key: 'footer', data: { description: 'Ihr unabhängiger Kfz-Sachverständiger in Nordrhein-Westfalen. Kostenlose Unfallgutachten für Geschädigte – schnell, professionell und NRW-weit.', copyright: 'UnfallExperten NRW – Alle Rechte vorbehalten.', socialFacebook: 'https://www.facebook.com/', socialInstagram: 'https://www.instagram.com/' } },
-            { key: 'branding', data: { companyName: 'UnfallExperten NRW', logoUrl: '/images/logo.png', primaryColor: '#1641A6' } },
+            { key: 'footer', data: { description: 'Ihr unabhängiger KFZ-Sachverständiger in Nordrhein-Westfalen. Kostenlose Unfallgutachten für Geschädigte – schnell, professionell und NRW-weit.', copyright: 'UnfallExperten NRW – Alle Rechte vorbehalten.', socialFacebook: 'https://www.facebook.com/', socialInstagram: 'https://www.instagram.com/' } },
+            { key: 'branding', data: { companyName: 'UnfallExperten NRW', logoUrl: '/images/logo.png', primaryColor: '#0f2f7a' } },
         ];
 
         for (const g of globals) {
@@ -128,15 +128,15 @@ export async function POST() {
 
         // ── 5. Locations (Standorte) ──
         const locations = [
-            { slug: 'koeln-ehrenfeld', title: 'Kfz-Gutachter Köln Ehrenfeld', description: 'Schnelle Schadensbegutachtung in Köln und Umgebung. 24/7-Service vor Ort.', status: 'published' },
-            { slug: 'koeln-porz', title: 'Kfz-Gutachter Köln Porz', description: 'Ihr Sachverständiger für den Kölner Süden und rechtsrheinische Gebiete.', status: 'published' },
-            { slug: 'duesseldorf-innenstadt', title: 'Kfz-Gutachter Düsseldorf Innenstadt', description: 'Zentrale Unfallhilfe in der Landeshauptstadt – wir sind schnell zur Stelle.', status: 'published' },
-            { slug: 'dortmund', title: 'Kfz-Gutachter Dortmund', description: 'Kompetente Gutachten im Ruhrgebiet. Kostenlos für Unfallgeschädigte.', status: 'published' },
-            { slug: 'essen', title: 'Kfz-Gutachter Essen', description: 'Zuverlässige Begutachtung und Schadenskalkulation im Zentrum des Ruhrgebiets.', status: 'published' },
-            { slug: 'wuppertal', title: 'Kfz-Gutachter Wuppertal', description: 'Bergisches Land abgedeckt – wir kommen auch zu Ihnen nach Hause.', status: 'published' },
-            { slug: 'koeln-nippes', title: 'Kfz-Gutachter Köln Nippes', description: 'Sachverständiger im Kölner Norden.', status: 'published' },
-            { slug: 'koeln-lindenthal', title: 'Kfz-Gutachter Köln Lindenthal', description: 'Gutachter im Kölner Westen.', status: 'published' },
-            { slug: 'koeln-chorweiler', title: 'Kfz-Gutachter Köln Chorweiler', description: 'Kfz-Sachverständiger im Kölner Norden.', status: 'published' },
+            { slug: 'koeln-ehrenfeld', title: 'KFZ-Gutachter Köln Ehrenfeld', description: 'Schnelle Schadensbegutachtung in Köln und Umgebung. 24/7-Service vor Ort.', status: 'published' },
+            { slug: 'koeln-porz', title: 'KFZ-Gutachter Köln Porz', description: 'Ihr Sachverständiger für den Kölner Süden und rechtsrheinische Gebiete.', status: 'published' },
+            { slug: 'duesseldorf-innenstadt', title: 'KFZ-Gutachter Düsseldorf Innenstadt', description: 'Zentrale Unfallhilfe in der Landeshauptstadt – wir sind schnell zur Stelle.', status: 'published' },
+            { slug: 'dortmund', title: 'KFZ-Gutachter Dortmund', description: 'Kompetente Gutachten im Ruhrgebiet. Kostenlos für Unfallgeschädigte.', status: 'published' },
+            { slug: 'essen', title: 'KFZ-Gutachter Essen', description: 'Zuverlässige Begutachtung und Schadenskalkulation im Zentrum des Ruhrgebiets.', status: 'published' },
+            { slug: 'wuppertal', title: 'KFZ-Gutachter Wuppertal', description: 'Bergisches Land abgedeckt – wir kommen auch zu Ihnen nach Hause.', status: 'published' },
+            { slug: 'koeln-nippes', title: 'KFZ-Gutachter Köln Nippes', description: 'Sachverständiger im Kölner Norden.', status: 'published' },
+            { slug: 'koeln-lindenthal', title: 'KFZ-Gutachter Köln Lindenthal', description: 'Gutachter im Kölner Westen.', status: 'published' },
+            { slug: 'koeln-chorweiler', title: 'KFZ-Gutachter Köln Chorweiler', description: 'KFZ-Sachverständiger im Kölner Norden.', status: 'published' },
         ];
 
         const { data: insertedLocations, error: locError } = await admin

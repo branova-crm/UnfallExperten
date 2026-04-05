@@ -29,37 +29,47 @@ export default function BarChartSection() {
     return (
         <section className="appraisal-section">
             <div className="container">
-                <div className="appraisal-grid">
-                    <div>
-                        <span className="section-label" style={{ color: 'var(--clr-primary)' }}>Gut zu wissen</span>
-                        <h2 className="section-title">Gutachten vermeiden ungerechte Schadenszahlungen</h2>
-                        <p className="section-subtitle">Viele Geschädigte verlieren bares Geld, weil sie sich auf den Kostenvoranschlag der gegnerischen Versicherung verlassen. Ein unabhängiges Gutachten sichert Ihre Ansprüche – und bringt im Schnitt 30–40 % mehr Auszahlung.</p>
+                <div className="appraisal-grid" style={{ gridTemplateColumns: '1fr', maxWidth: '760px', margin: '0 auto' }}>
+                    <div style={{ textAlign: 'center' }}>
+                        <span className="section-label" style={{ color: 'var(--clr-primary)', textTransform: 'uppercase', letterSpacing: '1px' }}>Gutachten vermeiden ungerechte Schadenszahlungen</span>
+                        <h2 className="section-title" style={{ marginBottom: '2.5rem', color: 'var(--clr-text)' }}>Bei uns gibt es keine Schätzung, sondern Ergebnisse.</h2>
                         <div className="bar-chart" ref={chartRef}>
+                            {/* Low Bar */}
                             <div className="bar-item">
-                                <div className="bar-label">Gegnerische Versicherung</div>
+                                <div className="bar-title-mobile">Gegnerische Versicherung</div>
                                 <div className="bar-track">
-                                    <div className={`bar-fill low ${isVisible ? 'animated' : ''}`} style={{ width: isVisible ? '35%' : '0%' }}>2.100 €</div>
-                                </div>
-                            </div>
-                            <div className="bar-item">
-                                <div className="bar-label">Kostenvoranschlag Werkstatt</div>
-                                <div className="bar-track">
-                                    <div className={`bar-fill mid ${isVisible ? 'animated' : ''}`} style={{ width: isVisible ? '60%' : '0%' }}>3.600 €</div>
-                                </div>
-                            </div>
-                            <div className="bar-item">
-                                <div className="bar-label">UnfallExperten NRW Gutachten</div>
-                                <div className="bar-track">
-                                    <div className={`bar-fill high ${isVisible ? 'animated' : ''} shine-bar`} style={{ width: isVisible ? '95%' : '0%', position: 'relative', overflow: 'hidden' }}>
-                                        5.700 €
+                                    <div className={`bar-fill low ${isVisible ? 'animated' : ''}`} style={{ width: isVisible ? '42%' : '10%' }}>
+                                        <span className="label-desktop">Gegnerische Versicherung</span>
+                                        <span className="price-mobile">2.100 €</span>
                                     </div>
+                                    <span className="bar-price-desktop">2.100 €</span>
+                                </div>
+                            </div>
+                            
+                            {/* Mid Bar */}
+                            <div className="bar-item">
+                                <div className="bar-title-mobile">Kostenvoranschlag Werkstatt</div>
+                                <div className="bar-track">
+                                    <div className={`bar-fill mid ${isVisible ? 'animated' : ''}`} style={{ width: isVisible ? '62%' : '10%' }}>
+                                        <span className="label-desktop">Kostenvoranschlag Werkstatt</span>
+                                        <span className="price-mobile">3.600 €</span>
+                                    </div>
+                                    <span className="bar-price-desktop">3.600 €</span>
+                                </div>
+                            </div>
+
+                            {/* High Bar */}
+                            <div className="bar-item">
+                                <div className="bar-title-mobile">UnfallExperten NRW Gutachten</div>
+                                <div className="bar-track">
+                                    <div className={`bar-fill high ${isVisible ? 'animated' : ''} shine-bar`} style={{ width: isVisible ? '92%' : '10%', position: 'relative', overflow: 'hidden' }}>
+                                        <span className="label-desktop">UnfallExperten NRW Gutachten</span>
+                                        <span className="price-mobile">5.700 €</span>
+                                    </div>
+                                    <span className="bar-price-desktop">5.700 €</span>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div className="appraisal-portrait animate-on-scroll visible">
-                        <img src="/images/hero-bg.png" alt="UnfallExperten NRW Team" loading="lazy" />
-                        <p className="appraisal-caption">Unser erfahrenes Team von Kfz-Sachverständigen</p>
                     </div>
                 </div>
             </div>

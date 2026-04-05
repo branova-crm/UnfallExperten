@@ -11,7 +11,7 @@ const DEFAULT_NAV_ITEMS = [
     { label: 'Kontakt', href: '/kontakt', order: 5, is_enabled: true },
 ];
 
-const DEFAULT_CTA = { label: 'Rückruf anfordern', href: '/kontakt' };
+const DEFAULT_CTA = { label: 'Gutachten anfordern', href: '/kontakt' };
 
 const DEFAULT_CONTACT = {
     phone: '0211 – 123 456 7',
@@ -38,6 +38,8 @@ export default async function HeaderWrapper() {
         if (nav?.cta?.label) {
             cta = nav.cta;
         }
+        // Force Gutachten anfordern for both static and sticky header
+        cta.label = 'Gutachten anfordern';
     } catch { }
 
     try {

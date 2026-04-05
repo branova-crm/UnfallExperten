@@ -4,8 +4,8 @@ import { useState } from "react";
 
 const FAQ_DATA = [
     {
-        q: "Was macht ein Kfz-Gutachter in NRW?",
-        a: "Ein Kfz-Gutachter (Sachverständiger) dokumentiert und bewertet Fahrzeugschäden nach einem Unfall. Er erstellt ein unabhängiges Gutachten, das alle Schäden, die Reparaturkosten, eine mögliche Wertminderung und den Wiederbeschaffungswert Ihres Fahrzeugs erfasst. Dieses Gutachten dient als Grundlage für die Schadensregulierung mit der Versicherung."
+        q: "Was macht ein KFZ-Gutachter in NRW?",
+        a: "Ein KFZ-Gutachter (Sachverständiger) dokumentiert und bewertet Fahrzeugschäden nach einem Unfall. Er erstellt ein unabhängiges Gutachten, das alle Schäden, die Reparaturkosten, eine mögliche Wertminderung und den Wiederbeschaffungswert Ihres Fahrzeugs erfasst. Dieses Gutachten dient als Grundlage für die Schadensregulierung mit der Versicherung."
     },
     {
         q: "Wer zahlt den Gutachter nach einem Unfall?",
@@ -50,12 +50,11 @@ export default function FaqSection() {
 
     return (
         <section className="faq-section" id="faq">
-            <div className="cta-banner-bg"></div>
-            <div className="container" style={{ position: 'relative', zIndex: 3 }}>
+            <div className="container">
                 <div className="text-center">
                     <span className="section-label" style={{ color: 'var(--clr-white)' }}>Häufige Fragen</span>
                     <h2 className="section-title text-white">Ihre Fragen – unsere Antworten</h2>
-                    <p className="section-subtitle mx-auto">Hier finden Sie Antworten auf die häufigsten Fragen rund um Kfz-Gutachten und Unfallabwicklung in NRW.</p>
+                    <p className="section-subtitle mx-auto">Hier finden Sie Antworten auf die häufigsten Fragen rund um KFZ-Gutachten und Unfallabwicklung in NRW.</p>
                 </div>
                 <div className="faq-list">
                     {FAQ_DATA.map((faq, index) => (

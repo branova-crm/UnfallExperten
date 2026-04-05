@@ -23,7 +23,8 @@ export default function HeaderClient({ navItems, cta, contact, social }: HeaderC
 
     useEffect(() => {
         const handleScroll = () => {
-            setIsScrolled(window.scrollY > 50);
+            // Appear shortly after the original header is gone (approx 300px)
+            setIsScrolled(window.scrollY > 300);
         };
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
@@ -45,7 +46,8 @@ export default function HeaderClient({ navItems, cta, contact, social }: HeaderC
 
     return (
         <>
-            <div className={`topbar ${isScrolled ? 'topbar-hidden' : ''}`}>
+            {/* 1. STATIC HEADER (Default Top) */}
+            <div className="topbar">
                 <div className="container">
                     <div className="topbar-left">
                         <a href={`tel:${contact.phoneLink}`}>
@@ -79,9 +81,9 @@ export default function HeaderClient({ navItems, cta, contact, social }: HeaderC
                 </div>
             </div>
 
-            <header className={`site-header ${isScrolled ? 'scrolled' : ''}`} id="top">
+            <header className="site-header" id="top">
                 <div className="container">
-                    <Link href="/" className="logo" onClick={closeMenu}>
+                    <Link href="/" className="logo">
                         <img src="/images/logo.png" alt="Ihre Gutachter-Experten Logo" />
                     </Link>
                     <nav className="nav-links">
@@ -91,17 +93,12 @@ export default function HeaderClient({ navItems, cta, contact, social }: HeaderC
                     </nav>
                     <div className="header-actions">
                         <Link href={cta.href} className="btn btn-primary header-cta">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                                <line x1="12" y1="5" x2="12" y2="19" />
-                                <line x1="5" y1="12" x2="19" y2="12" />
-                            </svg>
                             <span className="hide-mobile-cta">{cta.label}</span>
                         </Link>
                         <button
                             className={`hamburger ${isMenuOpen ? 'active' : ''}`}
                             onClick={toggleMenu}
                             aria-label="Menü"
-                            suppressHydrationWarning
                         >
                             <span></span><span></span><span></span>
                         </button>
@@ -109,7 +106,90 @@ export default function HeaderClient({ navItems, cta, contact, social }: HeaderC
                 </div>
             </header>
 
-            {/* Modern Off-Canvas Menu */}
+            {/* 2. REBUILT STICKY GLASS HEADER (Inline for 100% isolation) */}
+            <div
+                style={{
+                    position: 'fixed',
+                    top: '10px',
+                    left: 0,
+                    right: 0,
+                    zIndex: 9999,
+                    padding: '0 16px',
+                    pointerEvents: 'none',
+                    // Safari/Chrome Blur-Delay-Bug Fix:
+                    // Opacity darf nicht animiert werden, da der Browser sonst den Blur verzögert.
+                    // Wir schieben den Header stattdessen per transform komplett aus dem Bild (-150%).
+                    opacity: 1,
+                    transform: isScrolled ? 'translateY(0)' : 'translateY(-150%)',
+                    transition: 'transform 2.2s cubic-bezier(0.1, 0.9, 0.2, 1)',
+                    willChange: 'transform',
+                }}
+            >
+                <div
+                    style={{
+                        margin: '0 auto',
+                        maxWidth: '1135px',
+                        padding: '0.6rem 0.8rem 0.6rem 1.2rem',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'space-between',
+                        position: 'relative',
+                        overflow: 'hidden',
+                        background: 'rgba(15, 47, 122, 0.75)',
+                        backdropFilter: 'blur(28px) saturate(180%)',
+                        WebkitBackdropFilter: 'blur(28px) saturate(180%)',
+                        border: '1px solid rgba(255, 255, 255, 0.18)',
+                        borderRadius: '16px',
+                        boxShadow: '0 8px 32px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.15)',
+                        transform: 'translateZ(0)',
+                        pointerEvents: isScrolled ? 'auto' : 'none',
+                    }}
+                >
+                    {/* Milky Glass Overlay layer (::before equivalent) */}
+                    <div
+                        style={{
+                            position: 'absolute',
+                            inset: 0,
+                            background: 'rgba(255, 255, 255, 0.12)',
+                            backdropFilter: 'blur(20px)',
+                            WebkitBackdropFilter: 'blur(20px)',
+                            pointerEvents: 'none',
+                            zIndex: 1,
+                        }}
+                    />
+
+                    {/* Left: Logo */}
+                    <Link href="/" className="logo" onClick={closeMenu} style={{ position: 'relative', zIndex: 2 }}>
+                        {/* Weitere 10px größer (75px statt 65px), margin-Ausgleich zentriert es weiterhin ohne Container-Vergrößerung */}
+                        <img src="/images/logo.png" alt="Logo" style={{ height: '75px', margin: '-12.5px 0', filter: 'brightness(0) invert(1)' }} />
+                    </Link>
+
+                    {/* Center: Nav Links */}
+                    <div className="nav-links" style={{ position: 'relative', zIndex: 2 }}>
+                        {navItems.map((item) => (
+                            <Link key={item.href} href={item.href} onClick={closeMenu} style={{ color: '#fff', fontWeight: 600, fontSize: '0.875rem' }}>
+                                {item.label}
+                            </Link>
+                        ))}
+                    </div>
+
+                    {/* Right: Actions */}
+                    <div className="header-actions" style={{ position: 'relative', zIndex: 2 }}>
+                        <Link href={cta.href} className="btn btn-white btn-sm hide-mobile" style={{ padding: '8px 18px' }}>
+                            {cta.label}
+                        </Link>
+                        <button
+                            className={`hamburger ${isMenuOpen ? 'active' : ''}`}
+                            onClick={toggleMenu}
+                            style={{ position: 'relative', zIndex: 2 }}
+                        >
+                            <span></span><span></span><span></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            {/* 3. OFF-CANVAS MENU */}
             <div className={`menu-overlay ${isMenuOpen ? 'visible' : ''}`} onClick={closeMenu}></div>
             <div className={`offcanvas-menu ${isMenuOpen ? 'open' : ''}`}>
                 <div className="offcanvas-header">
@@ -124,7 +204,7 @@ export default function HeaderClient({ navItems, cta, contact, social }: HeaderC
                 </nav>
                 <div className="offcanvas-footer">
                     <Link href={cta.href} className="btn btn-primary" onClick={closeMenu}>
-                        Jetzt Termin vereinbaren
+                        {cta.label}
                     </Link>
                     <div className="offcanvas-contact">
                         <p>{contact.phone}</p>

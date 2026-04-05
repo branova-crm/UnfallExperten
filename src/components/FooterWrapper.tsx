@@ -10,7 +10,7 @@ const DEFAULT_CONTACT = {
 };
 
 const DEFAULT_FOOTER = {
-    description: 'Ihr unabhängiger Kfz-Sachverständiger in Nordrhein-Westfalen. Kostenlose Unfallgutachten für Geschädigte – schnell, professionell und NRW-weit.',
+    description: 'Ihr unabhängiger KFZ-Sachverständiger in Nordrhein-Westfalen. Kostenlose Unfallgutachten für Geschädigte – schnell, professionell und NRW-weit.',
     copyright: 'UnfallExperten NRW – Alle Rechte vorbehalten.',
     socialFacebook: 'https://www.facebook.com/',
     socialInstagram: 'https://www.instagram.com/',

@@ -1,6 +1,6 @@
 /* ============================
    UNFALLEXPERTEN WhatsApp Form UI
-   Primary: var(--clr-primary) -> #1641A6
+   Primary: var(--clr-primary) -> #0f2f7a
    ============================ */
 
 .unfall-wa {
@@ -141,7 +141,7 @@
 
 @media(max-width:420px) {
     .unfall-wa-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
@@ -180,6 +180,12 @@
     font-weight: 600;
     font-size: .88rem;
     line-height: 1.15;
+}
+
+@media(max-width: 420px) {
+    .unfall-wa-label {
+        font-size: .75rem;
+    }
 }
 
 .unfall-wa-option.is-selected {

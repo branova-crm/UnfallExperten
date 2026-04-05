@@ -3,8 +3,8 @@ import { Metadata } from 'next';
 import Konfigurator from '@/components/Konfigurator';
 
 export const metadata: Metadata = {
-    title: 'Leistungen – Kfz-Gutachter NRW | UnfallExperten',
-    description: 'Unsere Leistungen als Kfz-Gutachter in NRW: Unfall- & Schadensgutachten, Wertgutachten, Kaskoschäden und reparierte Schäden. Kostenlose Ersteinschätzung!',
+    title: 'Leistungen – KFZ-Gutachter NRW | UnfallExperten',
+    description: 'Unsere Leistungen als KFZ-Gutachter in NRW: Unfall- & Schadensgutachten, Wertgutachten, Kaskoschäden und reparierte Schäden. Kostenlose Ersteinschätzung!',
 };
 
 export default function LeistungenPage() {
@@ -12,13 +12,13 @@ export default function LeistungenPage() {
         <>
             {/* HERO */}
             <section className="hero" style={{ minHeight: '60vh', padding: '120px 0 80px 0' }}>
-                <div className="hero-bg"><img src="/images/hero-bg.png" alt="Kfz-Gutachter bei der Begutachtung eines Fahrzeugs" loading="eager" /></div>
+                <div className="hero-bg"><img src="/images/hero-bg.png" alt="KFZ-Gutachter bei der Begutachtung eines Fahrzeugs" loading="eager" /></div>
                 <div className="hero-overlay"></div>
                 <div className="container" style={{ display: 'flex', justifyContent: 'center' }}>
                     <div className="hero-content" style={{ maxWidth: '800px', textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                         <p className="breadcrumb" style={{ color: 'rgba(255,255,255,0.7)', marginBottom: '15px' }}><Link href="/">Startseite</Link> / Leistungen</p>
                         <h1 style={{ color: 'var(--clr-white)', marginBottom: '20px' }}>Unsere Leistungen</h1>
-                        <p className="hero-subheadline mx-auto" style={{ fontSize: 'var(--fs-lg)' }}>Ihr unabhängiger Kfz‑Gutachter in NRW – umfassender Service, rund um die Uhr für Sie da.</p>
+                        <p className="hero-subheadline mx-auto" style={{ fontSize: 'var(--fs-lg)' }}>Ihr unabhängiger KFZ‑Gutachter in NRW – umfassender Service, rund um die Uhr für Sie da.</p>
                         <div className="hero-ctas" style={{ justifyContent: 'center', marginBottom: '30px' }}>
                             <a href="#ersteinschaetzung" className="btn btn-outline">Jetzt Kontakt aufnehmen</a>
                         </div>
@@ -36,7 +36,7 @@ export default function LeistungenPage() {
                     <div className="text-center" style={{ marginBottom: 'var(--sp-2xl)' }}>
                         <span className="section-label" style={{ color: 'var(--clr-primary)' }}>100 % unverbindlich</span>
                         <h2 className="section-title" style={{ color: 'var(--clr-text)' }}>Kostenlose Ersteinschätzung</h2>
-                        <p className="section-subtitle mx-auto">Senden Sie uns einfach Fotos Ihres Schadens sowie eine kurze Schilderung. Unsere Experten für Kfz-Schäden bewerten die Situation umgehend und geben Ihnen eine erste, völlig kostenfreie Einschätzung der Lage – ohne versteckte Kosten.</p>
+                        <p className="section-subtitle mx-auto">Senden Sie uns einfach Fotos Ihres Schadens sowie eine kurze Schilderung. Unsere Experten für KFZ-Schäden bewerten die Situation umgehend und geben Ihnen eine erste, völlig kostenfreie Einschätzung der Lage – ohne versteckte Kosten.</p>
                         <a href="https://wa.me/4902111234567?text=Hallo%2C%20ich%20brauche%20eine%20kostenlose%20Ersteinschaetzung." className="btn btn-whatsapp" target="_blank" style={{ marginTop: 'var(--sp-md)' }}>
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12.05 21.785h-.005a9.868 9.868 0 0 1-5.031-1.378l-.361-.214-3.741.982.999-3.648-.235-.374A9.86 9.86 0 0 1 2.17 12.06c0-5.456 4.436-9.893 9.9-9.893a9.827 9.827 0 0 1 7.001 2.902 9.828 9.828 0 0 1 2.893 7.003c-.004 5.456-4.44 9.893-9.913 9.893zM20.52 3.449C18.24 1.245 15.24 0 12.05 0 5.463 0 .104 5.334.101 11.893a11.793 11.793 0 0 0 1.587 5.946L0 24l6.335-1.652A11.882 11.882 0 0 0 12.05 24c6.584 0 11.94-5.335 11.943-11.893a11.808 11.808 0 0 0-3.473-8.658z" />
@@ -91,8 +91,8 @@ export default function LeistungenPage() {
                 <div className="container">
                     <div className="text-center">
                         <span className="section-label" style={{ color: 'var(--clr-primary)' }}>Übersicht</span>
-                        <h2 className="section-title" style={{ color: 'var(--clr-text)' }}>Unsere Leistungen als Kfz‑Gutachter in NRW</h2>
-                        <p className="section-subtitle mx-auto">Von der Schadensdokumentation bis zur Wertermittlung – wir bieten Ihnen das volle Spektrum an Kfz-Sachverständigenleistungen aus einer Hand.</p>
+                        <h2 className="section-title" style={{ color: 'var(--clr-text)' }}>Unsere Leistungen als KFZ‑Gutachter in NRW</h2>
+                        <p className="section-subtitle mx-auto">Von der Schadensdokumentation bis zur Wertermittlung – wir bieten Ihnen das volle Spektrum an KFZ-Sachverständigenleistungen aus einer Hand.</p>
                     </div>
 
                     <div className="services-grid">
