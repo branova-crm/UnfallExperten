@@ -50,7 +50,7 @@ export default function FaqSection() {
 
     return (
         <section className="faq-section" id="faq">
-            <div className="container">
+            <div className="container" style={{ position: 'relative', zIndex: 5 }}>
                 <div className="text-center">
                     <span className="section-label" style={{ color: 'var(--clr-white)' }}>Häufige Fragen</span>
                     <h2 className="section-title text-white">Ihre Fragen – unsere Antworten</h2>
