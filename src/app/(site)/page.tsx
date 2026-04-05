@@ -146,7 +146,7 @@ export default function Home() {
             <span className="section-label" style={{ color: 'var(--clr-white)' }}>Kundenstimmen</span>
             <h2 className="section-title" style={{ color: 'var(--clr-white)' }}>Was unsere Kunden sagen</h2>
           </div>
-          <div style={{ marginTop: '40px', width: '100%' }}>
+          <div style={{ marginTop: '24px', width: '100%' }}>
             <GoogleReviewsWidget />
           </div>
         </div>
@@ -193,25 +193,33 @@ export default function Home() {
               <span className="section-label" style={{ color: 'var(--clr-white)' }}>Immer in Ihrer Nähe</span>
               <h2 className="section-title text-white">NRW-weit für Sie da</h2>
               <p style={{ color: 'rgba(255,255,255,0.8)', lineHeight: '1.7', marginBottom: 'var(--sp-lg)' }}>Egal ob Großstadt or ländlicher Raum – unsere Sachverständigen sind überall in Nordrhein-Westfalen schnell vor Ort. Meist innerhalb weniger Stunden nach Ihrem Anruf.</p>
-              <div className="regional-cities">
-                <span className="city-tag">📍 Köln</span>
-                <span className="city-tag">📍 Düsseldorf</span>
-                <span className="city-tag">📍 Dortmund</span>
-                <span className="city-tag">📍 Essen</span>
-                <span className="city-tag">📍 Bonn</span>
-                <span className="city-tag">📍 Münster</span>
-                <span className="city-tag">📍 Wuppertal</span>
-                <span className="city-tag">📍 Bielefeld</span>
-                <span className="city-tag">📍 Aachen</span>
-                <span className="city-tag">📍 Euskirchen</span>
-                <span className="city-tag">📍 Hagen</span>
-                <span className="city-tag">📍 Duisburg</span>
-                <span className="city-tag">📍 Bochum</span>
-                <span className="city-tag">📍 Gelsenkirchen</span>
-                <span className="city-tag">📍 Mönchengladbach</span>
-                <span className="city-tag">📍 Krefeld</span>
-                <span className="city-tag">📍 Oberhausen</span>
-                <span className="city-tag">📍 uvm.</span>
+              <div className="location-badge-grid">
+                {[
+                  { city: "Bonn", time: "ca. 20 Min vor Ort" },
+                  { city: "Köln", time: "ca. 35 Min vor Ort" },
+                  { city: "Leverkusen", time: "ca. 40 Min vor Ort" },
+                  { city: "Sankt Augustin", time: "ca. 15 Min vor Ort" },
+                  { city: "Troisdorf", time: "ca. 20 Min vor Ort" },
+                  { city: "Siegburg", time: "ca. 15 Min vor Ort" },
+                  { city: "Alfter", time: "ca. 10 Min vor Ort" },
+                  { city: "Bornheim", time: "ca. 15 Min vor Ort" },
+                  { city: "Rheinbach", time: "ca. 25 Min vor Ort" },
+                  { city: "Meckenheim", time: "ca. 20 Min vor Ort" },
+                  { city: "Königswinter", time: "ca. 30 Min vor Ort" }
+                ].map((loc, i) => (
+                  <div key={i} className="location-pill">
+                    <div className="pill-icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                        <circle cx="12" cy="10" r="3"></circle>
+                      </svg>
+                    </div>
+                    <div className="pill-content">
+                      <span className="pill-city">{loc.city}</span>
+                      <span className="pill-time">{loc.time}</span>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
             {/* Custom Interactive Map Component */}

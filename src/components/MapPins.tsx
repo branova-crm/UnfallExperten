@@ -15,7 +15,7 @@ const mapAreas = [
     { id: "Neu 2", coords: [260, 535, 8], shape: "circle", title: "Standort Neu 2" },
 ];
 
-const HAUPTSTANDORT = { id: "Hauptstandort", coords: [214, 492], title: "Unser Standort – Düsseldorf" };
+const HAUPTSTANDORT = { id: "Hauptstandort", coords: [214, 492], title: "Unser Standort: Euskirchen" };
 
 export default function MapPins() {
     const containerRef = useRef<HTMLDivElement>(null);
@@ -65,7 +65,7 @@ export default function MapPins() {
 
     return (
         <div className="einsatzgebiet-map-container" id="map-container">
-            <div className="map-wrap" ref={containerRef}>
+            <div className="map-wrap" ref={containerRef} style={{ overflow: 'visible' }}>
                 <Image
                     src="/images/de-map.png"
                     alt="Deutschlandkarte Einsatzgebiet"
@@ -98,7 +98,9 @@ export default function MapPins() {
                             >
                                 <div className="map-pin-pulse pulse-1" style={{ animationDelay: `${randomPhase1}s` }}></div>
                                 <div className="map-pin-pulse pulse-2" style={{ animationDelay: `${randomPhase2}s` }}></div>
-                                <div className="map-pin-dot"></div>
+                                <svg className="map-pin-icon" viewBox="0 0 24 24" fill="var(--clr-primary)">
+                                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                                </svg>
                                 <div className={`map-pin-tooltip ${visibleTooltip === area.id ? 'visible' : ''}`}>
                                     Hier sind wir tätig
                                 </div>
@@ -112,12 +114,16 @@ export default function MapPins() {
                         style={{
                             left: `${HAUPTSTANDORT.coords[0] * scale.x}px`,
                             top: `${HAUPTSTANDORT.coords[1] * scale.y}px`,
+                            width: '32px',
+                            height: '32px'
                         }}
                         onMouseEnter={() => handleMouseEnter(HAUPTSTANDORT.id)}
                         onMouseLeave={handleMouseLeave}
                         onClick={() => handleClick(HAUPTSTANDORT.id)}
                     >
-                        <div className="map-pin-dot map-pin-dot-main"></div>
+                        <svg className="map-pin-icon" viewBox="0 0 24 24" fill="var(--clr-accent)">
+                            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                        </svg>
                         <div className={`map-pin-tooltip ${visibleTooltip === HAUPTSTANDORT.id ? 'visible' : ''}`}>
                             {HAUPTSTANDORT.title}
                         </div>
@@ -134,7 +140,7 @@ export default function MapPins() {
                 gap: '4px'
             }}>
                 <p style={{ fontWeight: 700, color: 'var(--clr-white)', fontSize: '1rem' }}>
-                    Wir sind nur 20 Minuten entfernt
+                    Wir sind nur ø 20 Minuten entfernt.
                 </p>
                 <p style={{ color: 'rgba(255,255,255,0.75)', fontSize: '0.875rem' }}>
                     Oder kommen Sie direkt vorbei
