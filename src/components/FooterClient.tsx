@@ -19,7 +19,6 @@ type FooterClientProps = {
 export default function FooterClient({ contact, footer }: FooterClientProps) {
     return (
         <footer className="site-footer">
-            <div className="cta-banner-bg"></div>
             <div className="container" style={{ position: 'relative', zIndex: 3 }}>
                 <div className="footer-grid">
                     <div className="footer-brand">

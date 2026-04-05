@@ -187,7 +187,7 @@ export default function Home() {
 
       {/* 5) REGIONAL PRESENCE */}
       <section className="regional-section" id="region">
-        <div className="container">
+        <div className="container" style={{ position: 'relative', zIndex: 5 }}>
           <div className="regional-grid">
             <div>
               <span className="section-label" style={{ color: 'var(--clr-white)' }}>Immer in Ihrer Nähe</span>
