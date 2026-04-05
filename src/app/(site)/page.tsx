@@ -7,6 +7,7 @@ import GoogleReviewsWidget from '@/components/GoogleReviewsWidget';
 import ProcessSection from '@/components/ProcessSection';
 import GoogleMapsEmbed from '@/components/GoogleMapsEmbed';
 import CaseStudiesSection from '@/components/CaseStudiesSection';
+import TrustStatsSection from '@/components/TrustStatsSection';
 
 export default function Home() {
   return (
@@ -222,6 +223,9 @@ export default function Home() {
 
       {/* 8) WHY APPRAISAL */}
       <BarChartSection />
+
+      {/* 9) TRUST STATS */}
+      <TrustStatsSection />
 
 
 

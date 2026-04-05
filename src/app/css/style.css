@@ -2941,3 +2941,75 @@ section[id] {
     font-size: 0.92rem;
 }
 
+/* ---------- Trust Stats Section ---------- */
+.trust-stats-section {
+    background: #ffffff;
+    padding: var(--sp-4xl) 0;
+}
+
+.stats-header {
+    margin-bottom: 3.5rem;
+}
+
+.stats-header .section-label {
+    color: var(--clr-primary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.stats-header .section-title {
+    color: #0c1c44;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+    justify-content: center;
+}
+
+@media (min-width: 576px) {
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 992px) {
+    .stats-grid {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+.stat-card {
+    background: #f8fafc;
+    padding: 35px 20px;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    border-color: var(--clr-primary-light);
+}
+
+.stat-number {
+    font-size: 2.25rem;
+    font-weight: 800;
+    color: var(--clr-primary);
+    line-height: 1;
+}
+
+.stat-text {
+    font-size: 0.95rem;
+    color: #475569;
+    line-height: 1.6;
+    margin: 0;
+}
+

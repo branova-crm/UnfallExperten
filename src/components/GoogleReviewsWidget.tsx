@@ -120,7 +120,7 @@ export default function GoogleReviewsWidget() {
                     <p className="grw-label">AUSGEZEICHNET</p>
                     <Stars />
                     <p className="grw-count">
-                        Basierend auf <a href="https://share.google/gMPigx0Pjic4gxBA8" target="_blank" rel="noopener noreferrer"><b>+8 Bewertungen</b></a>
+                        Basierend auf <a href="https://share.google/gMPigx0Pjic4gxBA8" target="_blank" rel="noopener noreferrer"><b>+18 Bewertungen</b></a>
                     </p>
                     <div className="grw-brand">
                         <svg viewBox="0 0 24 24" width="24" height="24">
