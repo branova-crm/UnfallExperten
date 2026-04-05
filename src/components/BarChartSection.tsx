@@ -29,7 +29,7 @@ export default function BarChartSection() {
     return (
         <section className="appraisal-section">
             <div className="container">
-                <div className="appraisal-grid" style={{ gridTemplateColumns: '1fr', maxWidth: '760px', margin: '0 auto' }}>
+                <div className="appraisal-grid" style={{ gridTemplateColumns: '1fr', maxWidth: '1200px', margin: '0 auto' }}>
                     <div style={{ textAlign: 'center' }}>
                         <span className="section-label" style={{ color: 'var(--clr-primary)', textTransform: 'uppercase', letterSpacing: '1px' }}>Gutachten vermeiden ungerechte Schadenszahlungen</span>
                         <h2 className="section-title" style={{ marginBottom: '2.5rem', color: 'var(--clr-text)' }}>Bei uns gibt es keine Schätzung, sondern Ergebnisse.</h2>
@@ -38,7 +38,7 @@ export default function BarChartSection() {
                             <div className="bar-item">
                                 <div className="bar-title-mobile">Gegnerische Versicherung</div>
                                 <div className="bar-track">
-                                    <div className={`bar-fill low ${isVisible ? 'animated' : ''}`} style={{ width: isVisible ? '42%' : '10%' }}>
+                                    <div className={`bar-fill low ${isVisible ? 'animated' : ''}`} style={{ width: isVisible ? '30%' : '10%' }}>
                                         <span className="label-desktop">Gegnerische Versicherung</span>
                                         <span className="price-mobile">2.100 €</span>
                                     </div>
@@ -50,7 +50,7 @@ export default function BarChartSection() {
                             <div className="bar-item">
                                 <div className="bar-title-mobile">Kostenvoranschlag Werkstatt</div>
                                 <div className="bar-track">
-                                    <div className={`bar-fill mid ${isVisible ? 'animated' : ''}`} style={{ width: isVisible ? '62%' : '10%' }}>
+                                    <div className={`bar-fill mid ${isVisible ? 'animated' : ''}`} style={{ width: isVisible ? '55%' : '10%' }}>
                                         <span className="label-desktop">Kostenvoranschlag Werkstatt</span>
                                         <span className="price-mobile">3.600 €</span>
                                     </div>
@@ -62,7 +62,7 @@ export default function BarChartSection() {
                             <div className="bar-item">
                                 <div className="bar-title-mobile">UnfallExperten NRW Gutachten</div>
                                 <div className="bar-track">
-                                    <div className={`bar-fill high ${isVisible ? 'animated' : ''} shine-bar`} style={{ width: isVisible ? '92%' : '10%', position: 'relative', overflow: 'hidden' }}>
+                                    <div className={`bar-fill high ${isVisible ? 'animated' : ''} shine-bar`} style={{ width: isVisible ? '82%' : '10%', position: 'relative', overflow: 'hidden' }}>
                                         <span className="label-desktop">UnfallExperten NRW Gutachten</span>
                                         <span className="price-mobile">5.700 €</span>
                                     </div>
