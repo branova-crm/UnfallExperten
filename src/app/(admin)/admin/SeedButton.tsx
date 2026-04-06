@@ -34,7 +34,7 @@ export default function SeedButton() {
     return (
         <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
             {result && (
-                <span style={{ fontSize: '12px', color: result.startsWith('<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4ade80" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginRight: '8px' }}><polyline points="20 6 9 17 4 12"></polyline></svg>') ? 'var(--admin-success)' : 'var(--admin-danger)', maxWidth: '400px', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                <span style={{ fontSize: '12px', color: result.startsWith(`<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4ade80" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginRight: '8px' }}><polyline points="20 6 9 17 4 12"></polyline></svg>`) ? 'var(--admin-success)' : 'var(--admin-danger)', maxWidth: '400px', overflow: 'hidden', textOverflow: 'ellipsis' }}>
                     {result}
                 </span>
             )}
