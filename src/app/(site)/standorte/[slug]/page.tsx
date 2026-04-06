@@ -56,7 +56,7 @@ export default async function StandortDetail({ params }: Props) {
             <section className="process-section" style={{ padding: 'var(--sp-4xl) 0' }}>
                 <div className="container text-center">
                     <span className="section-label">Ablauf</span>
-                    <h2 className="section-title">In 3 Schritten zu Ihrem Recht</h2>
+                    <h2 className="section-title">In 3 Schritten zu Ihrem Gutachten</h2>
                     <div className="three-col" style={{ marginTop: 'var(--sp-2xl)' }}>
                         <div className="timeline-card animate-on-scroll">
                             <h3>1. Termin vereinbaren</h3>

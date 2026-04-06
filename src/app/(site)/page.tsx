@@ -193,7 +193,7 @@ export default function Home() {
               <span className="section-label" style={{ color: 'var(--clr-white)' }}>Immer in Ihrer Nähe</span>
               <h2 className="section-title text-white">NRW-weit für Sie da</h2>
               <p style={{ color: 'rgba(255,255,255,0.8)', lineHeight: '1.7', marginBottom: 'var(--sp-lg)' }}>Egal ob Großstadt or ländlicher Raum – unsere Sachverständigen sind überall in Nordrhein-Westfalen schnell vor Ort. Meist innerhalb weniger Stunden nach Ihrem Anruf.</p>
-              <div className="location-badge-grid">
+              <div className="location-badge-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr' }}>
                 {[
                   { city: "Bonn", time: "ca. 20 Min vor Ort" },
                   { city: "Köln", time: "ca. 35 Min vor Ort" },

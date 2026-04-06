@@ -16,18 +16,16 @@ export default function StandortDetail() {
     trustText: "Für Geschädigte kostenlos – die gegnerische Versicherung übernimmt in der Regel sämtliche Kosten. Kein Risiko, kein Stress.",
     introParagraph: "Sie hatten einen unverschuldeten Autounfall in Bonn? Unsere unabhängigen Gutachter-Experten sind schnell bei Ihnen vor Ort, um den Schaden professionell aufzunehmen. Mit unserer vollumfänglichen Begutachtung sichern Sie sich alle Ansprüche gegenüber der gegnerischen Versicherung – absolut stressfrei und zuverlässig.",
     areas: [
-      { city: "Bonn", time: "ca. 20 Min vor Ort" },
-      { city: "Erftstadt", time: "ca. 26 Min vor Ort" },
-      { city: "Troisdorf", time: "ca. 16 Min vor Ort" },
-      { city: "Euskirchen", time: "ca. 10 Min vor Ort" },
-      { city: "Meckenheim", time: "ca. 28 Min vor Ort" },
-      { city: "Bornheim", time: "ca. 14 Min vor Ort" },
-      { city: "Siegburg", time: "ca. 18 Min vor Ort" },
-      { city: "Königswinter", time: "ca. 34 Min vor Ort" },
-      { city: "Alfter", time: "ca. 13 Min vor Ort" },
-      { city: "Sankt Augustin", time: "ca. 12 Min vor Ort" },
-      { city: "Leverkusen", time: "ca. 46 Min vor Ort" }
-    ],
+
+      { city: 'Bad Godesberg', time: 'ca. 35 Min vor Ort' },
+      { city: 'Beuel', time: 'ca. 40 Min vor Ort' },
+      { city: 'Duisdorf', time: 'ca. 30 Min vor Ort' },
+      { city: 'Endenich', time: 'ca. 35 Min vor Ort' },
+      { city: 'Poppelsdorf', time: 'ca. 35 Min vor Ort' },
+      { city: 'Kessenich', time: 'ca. 35 Min vor Ort' },
+      { city: 'Tannenbusch', time: 'ca. 35 Min vor Ort' },
+      { city: 'Hardtberg', time: 'ca. 30 Min vor Ort' },
+        ],
     otherCities: [
       { name: "Meckenheim", slug: "meckenheim" },
       { name: "Siegburg", slug: "siegburg" },
@@ -55,7 +53,14 @@ export default function StandortDetail() {
       {
         q: "Wie läuft ein Gutachten ab?",
         a: "Nach Ihrer Kontaktaufnahme besichtigen wir Ihr Fahrzeug vor Ort in Bonn. Wir dokumentieren alle Schäden detailliert, kalkulieren Reparaturkosten und Wertminderung und übermitteln das fertige Gutachten direkt an die Versicherung."
-      }
+      },
+      { q: 'Sind Sie in allen Stadtteilen von Bonn und Umgebung mobil im Einsatz?', a: 'Selbstverständlich. Wir begutachten Fahrzeuge im gesamten Stadtgebiet und näheren Umkreis ohne zusätzliche Anfahrtskosten.' },
+      { q: 'Muss ich den Gutachter der gegnerischen Versicherung akzeptieren?', a: 'Auf keinen Fall. Laut § 249 BGB haben Sie als Unfallopfer das Recht auf freie Gutachterwahl. Gutachter der Gegenpartei vertreten oftmals deren Interessen. Wir als UnfallExperten arbeiten dagegen zu 100 % unabhängig und ausschließlich in Ihrem Sinne.' },
+      { q: 'Reicht nach einem Unfall nicht auch ein einfacher Kostenvoranschlag?', a: 'Ein Kostenvoranschlag einer Werkstatt erfasst nur die reinen Reparaturkosten. Für eine umfassende rechtliche Absicherung, die auch Wertminderung und Nutzungsausfall berücksichtigt, ist ab einer Schadenshöhe von ca. 750 Euro ein detailliertes Unfallgutachten dringend zu empfehlen.' },
+      { q: 'Führen Sie Begutachtungen in Bonn auch am Wochenende durch?', a: 'Da ein Autounfall keine Bürozeiten kennt, bieten wir Ihnen einen durchgehenden 24/7-Notfallservice. Dadurch stellen wir sicher, dass Sie auch an Wochenenden oder Feiertagen schnelle fachmännische Hilfe erhalten.' },
+      { q: 'Was kann ich tun, wenn die Versicherung Rechnungskürzungen vornimmt?', a: 'Pauschal vorgenommene Kürzungen seitens der Versicherung kommen regelmäßig vor. Mit dem detaillierten und rechtssicheren Schadengutachten der UnfallExperten haben Sie jedoch die perfekte Beweisgrundlage, um Ihre legitimen Forderungen notfalls mithilfe eines Verkehrsanwalts in voller Höhe durchzusetzen.' },
+      { q: 'Ab welcher Schadenssumme sollte ich Ihren Gutachterservice rufen?', a: 'Sobald ein Schaden die sogenannte Bagatellgrenze von etwa 750 Euro überschreitet, lohnt sich in jedem Fall ein unabhängiges Gutachten. Sollten Sie sich unsicher sein, rufen Sie uns einfach an – wir beraten Sie völlig unverbindlich, was für Ihren Fall sinnvoll ist.' }
+    
     ]
   };
 

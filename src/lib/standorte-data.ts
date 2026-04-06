@@ -64,11 +64,16 @@ export const STANDORTE: StandortData[] = [
       { city: 'Rheinbach', time: 'ca. 25 Min' },
     ],
     faqs: [
-      { q: 'Was kostet ein KFZ-Gutachten in Bonn?', a: 'Für Geschädigte bei einem unverschuldeten Unfall ist das Gutachten komplett kostenlos. Die gegnerische Versicherung übernimmt alle Kosten.' },
-      { q: 'Wie schnell kommen Sie nach Bonn?', a: 'Wir sind in der Regel innerhalb von 20 Minuten in Bonn vor Ort. In vielen Fällen können wir noch am selben Tag einen Termin vereinbaren.' },
-      { q: 'Wer bezahlt den Gutachter nach einem Unfall?', a: 'Die Haftpflichtversicherung des Unfallverursachers trägt die Gutachterkosten. Für Sie als Geschädigten fallen keine Kosten an.' },
-      { q: 'Muss ich zum Gutachter fahren?', a: 'Nein, wir kommen zu Ihnen – zum Unfallort, nach Hause oder zur Arbeit. Überall in Bonn und Umgebung.' },
-      { q: 'Wie läuft die Begutachtung ab?', a: 'Nach Ihrem Anruf vereinbaren wir einen schnellen Termin. Wir dokumentieren den Schaden vor Ort und erstellen das Gutachten innerhalb von 24–72 Stunden.' },
+      { q: 'Was kostet ein KFZ-Gutachten in Bonn?', a: 'Für Geschädigte bei einem unverschuldeten Unfall ist das Gutachten komplett kostenlos. Die gegnerische Versicherung übernimmt alle Kosten. Bei Kaskoschäden oder reinen Wertgutachten richten wir uns transparent nach der BVSK-Honorartabelle.' },
+      { q: 'Wie schnell kommen Sie nach Bonn?', a: 'Wir sind im Großraum Bonn und Umgebung täglich im Einsatz und oft innerhalb von 30 Minuten an Ihrem Fahrzeug. Auch in eiligen Fällen können wir sehr kurzfristig reagieren.' },
+      { q: 'Wer bezahlt den Gutachter nach einem Unfall?', a: 'Die Haftpflichtversicherung des Unfallverursachers trägt die Gutachterkosten. Für Sie als Geschädigten fallen keine Kosten an, Sie müssen auch nichts vorstrecken.' },
+      { q: 'Sind Sie in allen Bonner Stadtteilen mobil im Einsatz?', a: 'Selbstverständlich. Wir begutachten Fahrzeuge im gesamten Stadtgebiet ohne zusätzliche Anfahrtskosten – egal ob in Bad Godesberg, Beuel, Duisdorf, Endenich, Poppelsdorf, Kessenich oder Tannenbusch.' },
+      { q: 'Wie läuft die Begutachtung ab?', a: 'Nach Ihrem Anruf vereinbaren wir einen schnellen Termin. Wir dokumentieren den Schaden direkt vor Ort in Bonn und erstellen das Gutachten innerhalb von 24–72 Stunden.' },
+      { q: 'Muss ich den Gutachter der gegnerischen Versicherung akzeptieren?', a: 'Auf keinen Fall. Laut § 249 BGB haben Sie als Unfallopfer das Recht auf freie Gutachterwahl. Gutachter der Gegenpartei vertreten oftmals deren Interessen. Wir als UnfallExperten arbeiten dagegen zu 100 % unabhängig und ausschließlich in Ihrem Sinne.' },
+      { q: 'Reicht nach einem Unfall nicht auch ein einfacher Kostenvoranschlag?', a: 'Ein Kostenvoranschlag einer Werkstatt erfasst nur die reinen Reparaturkosten. Für eine umfassende rechtliche Absicherung, die auch Wertminderung und Nutzungsausfall berücksichtigt, ist ab einer Schadenshöhe von ca. 750 Euro ein detailliertes Unfallgutachten dringend zu empfehlen.' },
+      { q: 'Führen Sie Begutachtungen in Bonn auch am Wochenende durch?', a: 'Da ein Autounfall keine Bürozeiten kennt, bieten wir Ihnen einen durchgehenden 24/7-Notfallservice. Dadurch stellen wir sicher, dass Sie auch an Wochenenden oder Feiertagen schnelle fachmännische Hilfe erhalten.' },
+      { q: 'Was kann ich tun, wenn die Versicherung Rechnungskürzungen vornimmt?', a: 'Pauschal vorgenommene Kürzungen seitens der Versicherung kommen regelmäßig vor. Mit dem detaillierten und rechtssicheren Schadengutachten der UnfallExperten haben Sie jedoch die perfekte Beweisgrundlage, um Ihre legitimen Forderungen notfalls mithilfe eines Verkehrsanwalts in voller Höhe durchzusetzen.' },
+      { q: 'Ab welcher Schadenssumme sollte ich Ihren Gutachterservice rufen?', a: 'Sobald ein Schaden die sogenannte Bagatellgrenze von etwa 750 Euro überschreitet, lohnt sich in jedem Fall ein unabhängiges Gutachten. Sollten Sie sich unsicher sein, rufen Sie uns einfach an – wir beraten Sie völlig unverbindlich, was für Ihren Fall sinnvoll ist.' }
     ],
   },
   {

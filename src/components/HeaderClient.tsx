@@ -92,7 +92,7 @@ export default function HeaderClient({ navItems, cta, contact, social }: HeaderC
                         ))}
                     </nav>
                     <div className="header-actions">
-                        <Link href={cta.href} className="btn btn-primary header-cta">
+                        <Link href={cta.href} className="btn btn-primary header-cta hide-mobile">
                             <span className="hide-mobile-cta">{cta.label}</span>
                         </Link>
                         <button
