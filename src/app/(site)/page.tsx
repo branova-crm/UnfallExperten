@@ -29,7 +29,7 @@ export default function Home() {
         <div className="container">
           <div className="hero-content">
             <h1>
-              <span className="hero-title-main">KFZ-Gutachter Euskirchen</span><br />
+              <span className="hero-title-main">KFZ-Gutachter in deiner Nähe</span><br />
               <span className="hero-title-sub">Wir kümmern uns schnell und stressfrei um Ihr Unfallgutachten.</span>
             </h1>
             <p className="hero-subheadline">NRW-weit für Sie im Einsatz: Wir sind kurzfristig vor Ort, erstellen Ihr Gutachten zuverlässig und begleiten Sie durch den gesamten Schadenprozess. Für Geschädigte kostenlos – die gegnerische Versicherung übernimmt in der Regel sämtliche Kosten. Kein Risiko, kein Stress.</p>
