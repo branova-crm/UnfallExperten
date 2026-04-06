@@ -9,9 +9,9 @@
 /* ---------- Design Tokens ---------- */
 :root {
     /* Colors */
-    --clr-primary: #0f2f7a;
+    --clr-primary: #0d2868;
     --clr-primary-light: #1a4fbd;
-    --clr-primary-dark: #0f2f7a;
+    --clr-primary-dark: #0d2868;
     --clr-accent: #FFB84D;
     --clr-accent-hover: #ffaa33;
     --clr-cta-green: #25D366;
@@ -199,7 +199,7 @@ button {
 }
 
 .btn-primary:hover {
-    background: #0f2f7a;
+    background: #0d2868;
     border-color: rgba(255, 255, 255, 0.3);
     transform: translateY(-2px);
     box-shadow: var(--shadow-lg);
@@ -223,7 +223,7 @@ button {
 }
 
 .btn-white:hover {
-    background: #0f2f7a;
+    background: #0d2868;
     color: var(--clr-white);
     border-color: rgba(255, 255, 255, 0.3);
     transform: translateY(-2px);
@@ -237,7 +237,7 @@ button {
 }
 
 .btn-whatsapp:hover {
-    background: #0f2f7a; /* Dunkleres Blau wie Prozess-Schritte */
+    background: #0d2868; /* Dunkleres Blau wie Prozess-Schritte */
     color: var(--clr-white);
     border-color: rgba(255, 255, 255, 0.3);
     transform: translateY(-3px);
@@ -258,7 +258,7 @@ button {
 }
 
 .btn-outline:hover {
-    background: #0f2f7a;
+    background: #0d2868;
     color: var(--clr-white);
     border-color: rgba(255, 255, 255, 0.3);
     transform: translateY(-3px);
@@ -288,7 +288,7 @@ button {
 }
 
 .glass-button:hover {
-    background: #0f2f7a;
+    background: #0d2868;
     color: var(--clr-white) !important;
     border-color: rgba(255, 255, 255, 0.3);
     transform: translateY(-3px) translateZ(0);
@@ -399,7 +399,7 @@ button {
 .site-header.scrolled {
     position: fixed;
     top: 0;
-    background: #113485; /* Solid Color */
+    background: #0d2868; /* Solid Color */
     border-bottom: 1px solid rgba(255, 255, 255, 0.08); /* Feiner Lichtkanten-Effekt */
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* Tiefe */
     animation: smoothReveal 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
@@ -554,7 +554,7 @@ button {
 }
 
 .header-cta:hover {
-    background: #0f2f7a;
+    background: #0d2868;
     color: var(--clr-white);
     transform: translateY(-3px);
     box-shadow: var(--shadow-lg);
@@ -739,7 +739,7 @@ button {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--clr-primary);
+    background-color: #0d2868;
     padding: 180px 0 180px 0;
     overflow: hidden;
 }
@@ -786,8 +786,8 @@ button {
     pointer-events: none;
     background: radial-gradient(
         circle at 50% 40%, 
-        rgba(26, 79, 189, 0.5) 0%, 
-        rgba(15, 47, 122, 0.8) 85%
+        rgba(22, 57, 150, 0.5) 0%, 
+        rgba(13, 40, 104, 0.8) 85%
     );
     z-index: 1;
 }
@@ -1692,7 +1692,7 @@ button {
 .cta-banner {
     position: relative;
     padding: var(--sp-4xl) 0;
-    background: linear-gradient(135deg, rgba(12, 28, 68, 1) 0%, rgba(18, 42, 98, 1) 60%, rgba(25, 50, 115, 1) 100%);
+    background: linear-gradient(135deg, rgba(13, 40, 104, 1) 0%, rgba(13, 40, 104, 1) 60%, rgba(20, 50, 115, 1) 100%);
     color: var(--clr-white);
     text-align: center;
     overflow: hidden;
@@ -2025,7 +2025,7 @@ button {
 }
 
 .faq-item.active .faq-toggle svg {
-    stroke: #113485;
+    stroke: #0d2868;
 }
 
 .faq-answer {
@@ -3040,7 +3040,7 @@ section[id] {
 .steps-container {
     background: #ffffff !important;
     border-radius: 20px !important;
-    box-shadow: 0 10px 40px rgba(12, 28, 68, 0.08) !important;
+    box-shadow: 0 10px 40px rgba(13, 40, 104, 0.08) !important;
     overflow: hidden;
 }
 
@@ -3050,7 +3050,7 @@ section[id] {
 }
 
 .steps-section .step-number {
-    background: #113485 !important; 
+    background: #0d2868 !important; 
     color: #ffffff !important;
     width: 44px;
     height: 44px;
@@ -3066,7 +3066,7 @@ section[id] {
     margin-bottom: 1.5rem;
     width: 45px !important; /* Kleinere Icons wie gewünscht */
     height: 45px !important;
-    color: #113485; 
+    color: #0d2868; 
     display: flex;
     align-items: center;
     justify-content: center;
@@ -3077,7 +3077,7 @@ section[id] {
     /* Kompakter */
     font-weight: 700 !important;
     margin-bottom: 0.75rem;
-    color: #0c1c44;
+    color: #0d2868;
 }
 
 .steps-section .step-card p {
@@ -3104,7 +3104,7 @@ section[id] {
 }
 
 .stats-header .section-title {
-    color: #0c1c44;
+    color: #0d2868;
 }
 
 .stats-grid {

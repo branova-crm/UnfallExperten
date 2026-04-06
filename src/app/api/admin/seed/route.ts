@@ -113,7 +113,7 @@ export async function POST() {
         const globals = [
             { key: 'contact', data: { phone: '0211 – 123 456 7', phoneLink: '+4902111234567', email: 'info@unfallexperten-nrw.de', address: 'Musterstraße 1, 40210 Düsseldorf', openingHours: 'Jederzeit erreichbar', whatsapp: '4902111234567', whatsappText: 'Hallo, ich brauche Hilfe nach einem Unfall.' } },
             { key: 'footer', data: { description: 'Ihr unabhängiger KFZ-Sachverständiger in Nordrhein-Westfalen. Kostenlose Unfallgutachten für Geschädigte – schnell, professionell und NRW-weit.', copyright: 'UnfallExperten NRW – Alle Rechte vorbehalten.', socialFacebook: 'https://www.facebook.com/', socialInstagram: 'https://www.instagram.com/' } },
-            { key: 'branding', data: { companyName: 'UnfallExperten NRW', logoUrl: '/images/logo.png', primaryColor: '#0f2f7a' } },
+            { key: 'branding', data: { companyName: 'UnfallExperten NRW', logoUrl: '/images/logo.png', primaryColor: '#0d2868' } },
         ];
 
         for (const g of globals) {

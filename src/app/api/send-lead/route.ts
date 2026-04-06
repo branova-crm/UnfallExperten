@@ -68,7 +68,7 @@ export async function POST(req: Request) {
         const year = now.getFullYear();
 
         // Colors matching Corporate Identity
-        const primary = '#0f2f7a';
+        const primary = '#0d2868';
         const primary2 = '#1a4fbd';
         const bg = '#0f172a';
         const card = '#1f2937';

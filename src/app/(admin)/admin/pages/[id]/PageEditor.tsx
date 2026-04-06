@@ -107,7 +107,7 @@ export default function PageEditor({ page }: Props) {
         try {
             const result = await saveSections(page.id, sections);
             if (result.success) {
-                flash('✅ Entwurf gespeichert!');
+                flash('<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4ade80" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginRight: '8px' }}><polyline points="20 6 9 17 4 12"></polyline></svg> Entwurf gespeichert!');
             } else {
                 flash('❌ Fehler beim Speichern: ' + (result.error || 'Unbekannt'), 'error');
             }
@@ -129,7 +129,7 @@ export default function PageEditor({ page }: Props) {
             }
             const pubResult = await publishPage(page.id);
             if (pubResult.success) {
-                flash('✅ Veröffentlicht!');
+                flash('<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4ade80" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginRight: '8px' }}><polyline points="20 6 9 17 4 12"></polyline></svg> Veröffentlicht!');
             } else {
                 flash('❌ Veröffentlichen fehlgeschlagen: ' + (pubResult.error || ''), 'error');
             }
@@ -168,7 +168,7 @@ export default function PageEditor({ page }: Props) {
                         return (
                             <div key={sec.id} className={`section-item ${selIdx === idx ? 'selected' : ''}`} onClick={() => { setSelIdx(idx); setInspTab('content'); }}>
                                 <div className="section-item-left">
-                                    <span className="section-item-icon">{def?.icon || '📄'}</span>
+                                    <span className="section-item-icon">{def?.icon || '<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ margin: '0 auto 1rem auto' }}><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>'}</span>
                                     <div>
                                         <div className="section-item-label">{sec.label}</div>
                                         <div className="section-item-type">{def?.label || sec.type}</div>
@@ -255,7 +255,7 @@ export default function PageEditor({ page }: Props) {
                                     <FG label="CSS Klasse"><input type="text" value={sel.advanced?.customClass || ''} onChange={e => updateSectionAdvanced('customClass', e.target.value)} /></FG>
                                     <h4 className="insp-heading">Sichtbarkeit</h4>
                                     <label className="toggle-label"><input type="checkbox" checked={sel.advanced?.visibility?.desktop !== false} onChange={e => updateSectionAdvanced('visibility', { ...(sel.advanced?.visibility || {}), desktop: e.target.checked })} /> 🖥️ Desktop</label>
-                                    <label className="toggle-label"><input type="checkbox" checked={sel.advanced?.visibility?.tablet !== false} onChange={e => updateSectionAdvanced('visibility', { ...(sel.advanced?.visibility || {}), tablet: e.target.checked })} /> 📱 Tablet</label>
+                                    <label className="toggle-label"><input type="checkbox" checked={sel.advanced?.visibility?.tablet !== false} onChange={e => updateSectionAdvanced('visibility', { ...(sel.advanced?.visibility || {}), tablet: e.target.checked })} /> <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ margin: '0 auto 1rem auto' }}><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg> Tablet</label>
                                     <label className="toggle-label"><input type="checkbox" checked={sel.advanced?.visibility?.mobile !== false} onChange={e => updateSectionAdvanced('visibility', { ...(sel.advanced?.visibility || {}), mobile: e.target.checked })} /> 📲 Mobile</label>
                                 </>
                             )}

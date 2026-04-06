@@ -30,7 +30,7 @@ export default function GlobalsEditorClient({ globalsData }: { globalsData: Glob
     const [branding, setBranding] = useState(globalsData.branding || {
         companyName: 'UnfallExperten NRW',
         logoUrl: '/images/logo.png',
-        primaryColor: '#0f2f7a',
+        primaryColor: '#0d2868',
     });
 
     const [message, setMessage] = useState('');

@@ -11,7 +11,7 @@ export default function LeistungenPage() {
     return (
         <>
             {/* HERO */}
-            <section className="hero" style={{ minHeight: '60vh', padding: '120px 0 80px 0' }}>
+            <section className="hero" style={{ minHeight: '80vh', padding: '120px 0 80px 0' }}>
                 <div className="hero-bg"><img src="/images/hero-bg.png" alt="KFZ-Gutachter bei der Begutachtung eines Fahrzeugs" loading="eager" /></div>
                 <div className="hero-overlay"></div>
                 <div className="container" style={{ display: 'flex', justifyContent: 'center' }}>

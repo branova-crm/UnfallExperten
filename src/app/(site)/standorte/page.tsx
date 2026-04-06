@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 export default function StandortePage() {
     return (
         <>
-            <section className="hero" style={{ minHeight: '60vh', padding: '120px 0 80px 0' }}>
+            <section className="hero" style={{ minHeight: '80vh', padding: '120px 0 80px 0' }}>
                 <div className="hero-bg"><img src="/images/hero-bg.png" alt="Standorte NRW - UnfallExperten" loading="eager" /></div>
                 <div className="hero-overlay"></div>
                 <div className="container" style={{ display: 'flex', justifyContent: 'center' }}>
@@ -31,42 +31,68 @@ export default function StandortePage() {
                     </div>
 
                     <div className="locations-grid">
+                        {/* 10 Hauptstandorte */}
                         <div className="location-card animate-on-scroll">
-                            <div className="pin">📍</div>
-                            <h3>KFZ-Gutachter Köln Ehrenfeld</h3>
-                            <p>Schnelle Schadensbegutachtung in Köln und Umgebung. 24/7-Service vor Ort.</p>
-                            <Link href="/standorte/koeln-ehrenfeld" className="service-link">Zum Standort →</Link>
+                            <div className="pin"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginRight: '6px' }}><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg></div>
+                            <h3>KFZ-Gutachter Bonn</h3>
+                            <p>Schnelle Schadensbegutachtung in Bonn und Umgebung. 24/7-Service vor Ort.</p>
+                            <Link href="/standorte/bonn" className="service-link">Zum Standort →</Link>
                         </div>
                         <div className="location-card animate-on-scroll">
-                            <div className="pin">📍</div>
-                            <h3>KFZ-Gutachter Köln Porz</h3>
-                            <p>Ihr Sachverständiger für den Kölner Süden und rechtsrheinische Gebiete.</p>
-                            <a href="#" className="service-link">Zum Standort →</a>
+                            <div className="pin"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginRight: '6px' }}><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg></div>
+                            <h3>KFZ-Gutachter Köln</h3>
+                            <p>Ihr Sachverständiger für Köln und rechtsrheinische Gebiete.</p>
+                            <Link href="/standorte/koeln" className="service-link">Zum Standort →</Link>
                         </div>
                         <div className="location-card animate-on-scroll">
-                            <div className="pin">📍</div>
-                            <h3>KFZ-Gutachter Düsseldorf Innenstadt</h3>
+                            <div className="pin"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginRight: '6px' }}><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg></div>
+                            <h3>KFZ-Gutachter Düsseldorf</h3>
                             <p>Zentrale Unfallhilfe in der Landeshauptstadt – wir sind schnell zur Stelle.</p>
-                            <a href="#" className="service-link">Zum Standort →</a>
+                            <Link href="/standorte/duesseldorf" className="service-link">Zum Standort →</Link>
                         </div>
                         <div className="location-card animate-on-scroll">
-                            <div className="pin">📍</div>
-                            <h3>KFZ-Gutachter Dortmund</h3>
-                            <p>Kompetente Gutachten im Ruhrgebiet. Kostenlos für Unfallgeschädigte.</p>
-                            <a href="#" className="service-link">Zum Standort →</a>
+                            <div className="pin"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginRight: '6px' }}><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg></div>
+                            <h3>KFZ-Gutachter Leverkusen</h3>
+                            <p>Kompetente Gutachten in Leverkusen. Kostenlos für Unfallgeschädigte.</p>
+                            <Link href="/standorte/leverkusen" className="service-link">Zum Standort →</Link>
                         </div>
                         <div className="location-card animate-on-scroll">
-                            <div className="pin">📍</div>
-                            <h3>KFZ-Gutachter Essen</h3>
-                            <p>Zuverlässige Begutachtung und Schadenskalkulation im Zentrum des Ruhrgebiets.</p>
-                            <a href="#" className="service-link">Zum Standort →</a>
+                            <div className="pin"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginRight: '6px' }}><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg></div>
+                            <h3>KFZ-Gutachter Sankt Augustin</h3>
+                            <p>Zuverlässige Begutachtung und Schadenskalkulation in Sankt Augustin.</p>
+                            <Link href="/standorte/sankt-augustin" className="service-link">Zum Standort →</Link>
                         </div>
                         <div className="location-card animate-on-scroll">
-                            <div className="pin">📍</div>
-                            <h3>KFZ-Gutachter Wuppertal</h3>
-                            <p>Bergisches Land abgedeckt – wir kommen auch zu Ihnen nach Hause.</p>
-                            <a href="#" className="service-link">Zum Standort →</a>
+                            <div className="pin"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginRight: '6px' }}><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg></div>
+                            <h3>KFZ-Gutachter Troisdorf</h3>
+                            <p>Ihr mobiler Gutachter in Troisdorf – wir kommen zu Ihnen nach Hause.</p>
+                            <Link href="/standorte/troisdorf" className="service-link">Zum Standort →</Link>
                         </div>
+                        <div className="location-card animate-on-scroll">
+                            <div className="pin"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginRight: '6px' }}><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg></div>
+                            <h3>KFZ-Gutachter Siegburg</h3>
+                            <p>Schnelle Hilfe am Vorfallort in Siegburg. Neutral & ungebunden.</p>
+                            <Link href="/standorte/siegburg" className="service-link">Zum Standort →</Link>
+                        </div>
+                        <div className="location-card animate-on-scroll">
+                            <div className="pin"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginRight: '6px' }}><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg></div>
+                            <h3>KFZ-Gutachter Alfter</h3>
+                            <p>Im Vorgebirge und Alfter für Sie im Einsatz. Rechtssichere Gutachten.</p>
+                            <Link href="/standorte/alfter" className="service-link">Zum Standort →</Link>
+                        </div>
+                        <div className="location-card animate-on-scroll">
+                            <div className="pin"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginRight: '6px' }}><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg></div>
+                            <h3>KFZ-Gutachter Bornheim</h3>
+                            <p>Bornheim und Umland – direkter Kontakt, zügige Abwicklung ohne Stress.</p>
+                            <Link href="/standorte/bornheim" className="service-link">Zum Standort →</Link>
+                        </div>
+                        <div className="location-card animate-on-scroll">
+                            <div className="pin"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginRight: '6px' }}><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg></div>
+                            <h3>KFZ-Gutachter Rheinbach</h3>
+                            <p>Transparente Schadensbewertung direkt in Rheinbach. Schnell vor Ort.</p>
+                            <Link href="/standorte/rheinbach" className="service-link">Zum Standort →</Link>
+                        </div>
+                        {/* Weitere Standorte können hier flexibel hinzugefügt werden */}
                     </div>
                 </div>
             </section>
@@ -81,9 +107,9 @@ export default function StandortePage() {
                                 <span className="google-stars">★★★★★</span>
                             </a>
                         </div>
-                        <div className="trust-strip-item"><span className="icon">🕐</span> 24/7 Service vor Ort</div>
-                        <div className="trust-strip-item"><span className="icon">💰</span> Kostenlos für Geschädigte</div>
-                        <div className="trust-strip-item"><span className="icon">📍</span> NRW-weit im Einsatz</div>
+                        <div className="trust-strip-item"><span className="icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ marginRight: '6px' }}><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></span> 24/7 Service vor Ort</div>
+                        <div className="trust-strip-item"><span className="icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ marginRight: '6px' }}><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg></span> Kostenlos für Geschädigte</div>
+                        <div className="trust-strip-item"><span className="icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginRight: '6px' }}><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg></span> NRW-weit im Einsatz</div>
                     </div>
                 </div>
             </div>

@@ -143,7 +143,7 @@ export default function CaseStudiesSection() {
             }}>
               Fallbeispiele
             </span>
-            <h2 className="section-title" style={{ color: '#0c1c44', marginBottom: '16px' }}>
+            <h2 className="section-title" style={{ color: '#0d2868', marginBottom: '16px' }}>
               KFZ-Gutachten & Schadensbewertungen aus der Praxis
             </h2>
             <p style={{
@@ -201,7 +201,7 @@ export default function CaseStudiesSection() {
                 />
                 <div style={{
                   position: 'absolute', inset: 0,
-                  background: 'linear-gradient(to top, rgba(12,28,68,0.6) 0%, transparent 60%)'
+                  background: 'linear-gradient(to top, rgba(13,40,104,0.6) 0%, transparent 60%)'
                 }} />
                 <div style={{
                   position: 'absolute',
@@ -242,7 +242,7 @@ export default function CaseStudiesSection() {
                   <h3 style={{
                     fontSize: '0.9rem',
                     fontWeight: 700,
-                    color: '#0c1c44',
+                    color: '#0d2868',
                     lineHeight: '1.4',
                     margin: 0
                   }}>
@@ -259,14 +259,14 @@ export default function CaseStudiesSection() {
                 }}>
                   {study.stats.map((stat, i) => (
                     <div key={i} style={{
-                      background: stat.highlight ? 'rgba(15,47,122,0.04)' : '#f8fafc',
+                      background: stat.highlight ? 'rgba(13,40,104,0.04)' : '#f8fafc',
                       border: '1px solid rgba(15, 47, 122, 0.06)',
                       borderRadius: '12px',
                       padding: '10px 8px',
                       textAlign: 'center'
                     }}>
                       <div style={{
-                        color: stat.highlight ? 'var(--clr-primary)' : '#0c1c44',
+                        color: stat.highlight ? 'var(--clr-primary)' : '#0d2868',
                         fontSize: '1rem',
                         fontWeight: 800,
                         marginBottom: '2px'
@@ -294,7 +294,7 @@ export default function CaseStudiesSection() {
                     alignItems: 'center',
                     justifyContent: 'center',
                     gap: '10px',
-                    background: '#113485',
+                    background: '#0d2868',
                     color: '#ffffff',
                     fontWeight: 700,
                     fontSize: '0.9rem',
