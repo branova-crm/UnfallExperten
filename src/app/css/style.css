@@ -1124,10 +1124,7 @@ button {
     overflow: hidden;
 }
 
-.step-card:hover {
-    transform: translateY(-6px);
-    box-shadow: var(--shadow-lg);
-}
+/* Hover: siehe Premium Card Hover (Ende style.css) */
 
 
 
@@ -1143,6 +1140,8 @@ button {
     align-items: center;
     justify-content: center;
     margin: 0 auto var(--sp-lg);
+    transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+    transform-origin: center;
 }
 
 .step-icon {
@@ -1150,6 +1149,8 @@ button {
     height: 48px;
     margin: 0 auto var(--sp-md);
     color: var(--clr-primary);
+    transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+    transform-origin: center;
 }
 
 .step-icon svg {
@@ -1484,10 +1485,7 @@ a.location-pill--link .pill-time {
     transition: all var(--trans-base);
 }
 
-.timeline-card:hover {
-    box-shadow: var(--shadow-md);
-    transform: translateX(4px);
-}
+/* Hover: siehe Premium Card Hover (Ende style.css) */
 
 .timeline-card h3 {
     font-size: var(--fs-lg);
@@ -1832,12 +1830,6 @@ a.location-pill--link .pill-time {
     overflow: hidden;
 }
 
-.service-card:hover {
-    border-color: var(--clr-primary);
-    box-shadow: var(--shadow-lg);
-    transform: translateY(-4px);
-}
-
 .service-card::before {
     content: '';
     position: absolute;
@@ -1845,14 +1837,15 @@ a.location-pill--link .pill-time {
     left: 0;
     right: 0;
     height: 3px;
-    background: linear-gradient(90deg, var(--clr-primary), var(--clr-accent));
+    background: #1641A6;
     transform: scaleX(0);
-    transition: transform var(--trans-base);
+    transform-origin: left;
+    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    pointer-events: none;
+    z-index: 2;
 }
 
-.service-card:hover::before {
-    transform: scaleX(1);
-}
+/* Hover: siehe Premium Card Hover (Ende style.css) */
 
 .service-icon {
     width: 56px;
@@ -1864,13 +1857,14 @@ a.location-pill--link .pill-time {
     justify-content: center;
     margin-bottom: var(--sp-lg);
     color: var(--clr-primary);
-    transition: all var(--trans-base);
+    transition:
+        transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+        background 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+        color 0.35s ease;
+    transform-origin: center;
 }
 
-.service-card:hover .service-icon {
-    background: var(--clr-primary);
-    color: var(--clr-white);
-}
+/* service-icon Hover: siehe Premium Card Hover (Ende style.css) */
 
 .service-icon svg {
     width: 28px;
@@ -1933,16 +1927,15 @@ a.location-pill--link .pill-time {
     transition: all var(--trans-base);
 }
 
-.vehicle-card:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-lg);
-}
+/* Hover: siehe Premium Card Hover (Ende style.css) */
 
 .vehicle-icon {
     width: 64px;
     height: 64px;
     margin: 0 auto var(--sp-md);
     color: var(--clr-primary);
+    transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+    transform-origin: center;
 }
 
 .vehicle-icon svg {
@@ -2643,14 +2636,14 @@ section[id] {
     gap: var(--sp-sm);
 }
 
-.location-card:hover {
-    border-color: var(--clr-primary);
-    box-shadow: var(--shadow-lg);
-    transform: translateY(-4px);
-}
+/* Hover: siehe Premium Card Hover (Ende style.css) */
 
 .location-card .pin {
     font-size: var(--fs-2xl);
+    color: #1641A6;
+    transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+    transform-origin: center;
+    display: inline-flex;
 }
 
 .location-card h3 {
@@ -3075,11 +3068,103 @@ section[id] {
     color: #0d2868;
 }
 
-.steps-section .step-card p {
-    color: #64748b; 
+.steps-section .step-item p,
+.page-home .steps-section .home-process-card__text {
+    color: #64748b;
     line-height: 1.5;
     margin-bottom: 0;
     font-size: 0.92rem;
+}
+
+/* Startseite – 4-Schritte Hover (nur Maus/Desktop) */
+.page-home .steps-section .home-process-card {
+    border-radius: 16px;
+    transition:
+        transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+        background 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+        box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.page-home .steps-section .home-process-card__icon {
+    transition:
+        transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+        color 0.35s ease;
+    transform-origin: center;
+}
+
+.page-home .steps-section .home-process-card__icon-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    transition: filter 0.35s ease;
+}
+
+.page-home .steps-section .home-process-card__number {
+    transition:
+        background 0.35s ease,
+        color 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+.page-home .steps-section .home-process-card__title,
+.page-home .steps-section .home-process-card__text {
+    transition: color 0.35s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .page-home .steps-section .home-process-card {
+        cursor: pointer;
+    }
+
+    .page-home .steps-section .home-process-card:hover {
+        background: linear-gradient(135deg, #1641A6 0%, #0d2868 100%);
+        transform: translateY(-6px) scale(1.02);
+        box-shadow: 0 22px 48px rgba(22, 65, 166, 0.22);
+        z-index: 2;
+    }
+
+    .page-home .steps-section .home-process-card:hover .home-process-card__title {
+        color: #ffffff !important;
+    }
+
+    .page-home .steps-section .home-process-card:hover .home-process-card__text {
+        color: rgba(255, 255, 255, 0.88) !important;
+    }
+
+    .page-home .steps-section .home-process-card:hover .home-process-card__icon {
+        color: #ffffff !important;
+        transform: rotate(-15deg) scale(1.04);
+    }
+
+    .page-home .steps-section .home-process-card:hover .home-process-card__icon-img {
+        filter: brightness(0) invert(1);
+    }
+
+    .page-home .steps-section .home-process-card:hover .home-process-card__number {
+        background: rgba(255, 255, 255, 0.18) !important;
+        color: #ffffff !important;
+        box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.22);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .page-home .steps-section .home-process-card,
+    .page-home .steps-section .home-process-card__icon,
+    .page-home .steps-section .home-process-card__number,
+    .page-home .steps-section .home-process-card__title,
+    .page-home .steps-section .home-process-card__text {
+        transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease !important;
+    }
+
+    .page-home .steps-section .home-process-card:hover {
+        transform: none !important;
+        box-shadow: none !important;
+    }
+
+    .page-home .steps-section .home-process-card:hover .home-process-card__icon {
+        transform: none !important;
+    }
 }
 
 /* ---------- Trust Stats Section ---------- */
@@ -3134,11 +3219,7 @@ section[id] {
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
 }
 
-.stat-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-    border-color: var(--clr-primary-light);
-}
+/* Hover: siehe Premium Card Hover (Ende style.css) */
 
 .stat-number {
     font-size: 1.75rem;
@@ -3930,13 +4011,7 @@ section[id] {
         border-color 0.45s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.about-process-card:hover {
-    transform: translateY(-3px);
-    border-color: rgba(22, 65, 166, 0.18);
-    box-shadow:
-        0 16px 36px rgba(15, 23, 42, 0.08),
-        0 6px 18px rgba(22, 65, 166, 0.07);
-}
+/* Hover: siehe Premium Card Hover (Ende style.css) */
 
 .about-process-card--alt {
     background: linear-gradient(145deg, var(--clr-white) 0%, var(--about-primary-06) 100%);
@@ -4095,11 +4170,6 @@ section[id] {
         box-shadow 0.4s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.about-vehicle-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 14px 32px rgba(15, 23, 42, 0.08);
-}
-
 .about-vehicle-icon {
     display: flex;
     align-items: center;
@@ -4108,17 +4178,14 @@ section[id] {
     height: 44px;
     margin-bottom: var(--sp-md);
     color: var(--clr-primary);
-    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+    transform-origin: center;
 }
 
 .about-vehicle-icon img {
     width: 48px;
     height: 48px;
     object-fit: contain;
-}
-
-.about-vehicle-card:hover .about-vehicle-icon {
-    transform: translateY(-2px) scale(1.04);
 }
 
 .about-vehicle-title {
@@ -4551,73 +4618,105 @@ section[id] {
 
 /* Werte Premium */
 .about-values-premium {
-    padding: var(--sp-4xl) 0;
+    padding: var(--sp-3xl) 0;
     background: linear-gradient(180deg, var(--clr-offwhite) 0%, var(--clr-white) 100%);
+}
+
+.about-values-premium .about-section-head {
+    margin-bottom: var(--sp-xl);
 }
 
 .about-values-premium-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: var(--sp-lg);
+    gap: 16px;
+    align-items: stretch;
 }
 
 @media (min-width: 640px) {
     .about-values-premium-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
     }
 }
 
 @media (min-width: 1100px) {
     .about-values-premium-grid {
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 20px;
     }
 }
 
 .about-values-premium-card {
     background: var(--clr-white);
     border-radius: var(--radius-lg);
-    padding: var(--sp-2xl) var(--sp-xl);
+    padding: 1.4rem 1.25rem 1.35rem;
     border: 1px solid rgba(226, 232, 240, 0.9);
     box-shadow:
-        0 16px 44px rgba(15, 23, 42, 0.06),
-        0 5px 14px rgba(22, 65, 166, 0.05);
-    height: 100%;
+        0 12px 32px rgba(15, 23, 42, 0.05),
+        0 4px 12px rgba(22, 65, 166, 0.04);
     display: flex;
     flex-direction: column;
+    height: 100%;
+    min-height: 100%;
     transition: box-shadow var(--trans-base), transform var(--trans-base), border-color var(--trans-base);
 }
 
-.about-values-premium-card:hover {
-    box-shadow:
-        0 22px 52px rgba(15, 23, 42, 0.08),
-        0 8px 20px rgba(22, 65, 166, 0.07);
-    transform: translateY(-4px);
-    border-color: rgba(22, 65, 166, 0.2);
-}
+/* Hover: siehe Premium Card Hover (Ende style.css) */
 
 .about-values-premium-icon {
-    width: 64px;
-    height: 64px;
+    width: 52px;
+    height: 52px;
     border-radius: var(--radius);
     background: var(--about-primary-08);
     color: var(--clr-primary);
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: var(--sp-lg);
+    margin-bottom: 0.85rem;
+    flex-shrink: 0;
+    transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+    transform-origin: center;
+}
+
+.about-values-premium-icon svg {
+    width: 24px;
+    height: 24px;
 }
 
 .about-values-premium-card h3 {
-    font-size: var(--fs-lg);
+    font-size: 1.05rem;
     font-weight: 800;
     color: var(--clr-primary);
-    margin-bottom: var(--sp-sm);
+    margin-bottom: 0.45rem;
+    line-height: 1.25;
 }
 
 .about-values-premium-card p {
-    font-size: var(--fs-sm);
+    font-size: 0.9rem;
     color: var(--clr-text-muted);
-    line-height: 1.75;
+    line-height: 1.6;
+    margin: 0;
+}
+
+@media (max-width: 640px) {
+    .about-values-premium {
+        padding: var(--sp-2xl) 0 var(--sp-3xl);
+    }
+
+    .about-values-premium .about-section-head {
+        margin-bottom: var(--sp-lg);
+    }
+
+    .about-values-premium-card {
+        padding: 1.2rem 1.1rem 1.15rem;
+    }
+
+    .about-values-premium-icon {
+        width: 48px;
+        height: 48px;
+        margin-bottom: 0.75rem;
+    }
 }
 
 /* Persönlicher Abschnitt */
@@ -5166,18 +5265,451 @@ section[id] {
         transform: none !important;
     }
 
-    .about-page .about-vehicle-card:hover,
-    .about-page .about-process-card:hover {
-        transform: none !important;
-    }
-
-    .about-page .about-vehicle-card:hover .about-vehicle-icon {
-        transform: none !important;
-    }
-
     /* Nur eine sichtbare Pill-Runde bei reduzierter Bewegung */
     .about-page .about-marquee-track .about-hero-pill:nth-child(n + 4) {
         display: none;
+    }
+}
+
+/* ============================================
+   Premium Card Hover (einheitlich, Maus/Desktop)
+   ============================================ */
+@media (hover: hover) and (pointer: fine) {
+    .service-card,
+    .step-card,
+    .timeline-card,
+    .vehicle-card,
+    .location-card,
+    .stat-card,
+    .about-values-premium-card,
+    .about-process-card,
+    .about-vehicle-card {
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+        transition:
+            transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+            box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+            border-color 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .step-card::after,
+    .timeline-card::after,
+    .vehicle-card::after,
+    .location-card::after,
+    .stat-card::after,
+    .about-values-premium-card::after,
+    .about-process-card::after,
+    .about-vehicle-card::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background: #1641A6;
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+        pointer-events: none;
+        z-index: 2;
+    }
+
+    .service-card:hover,
+    .step-card:hover,
+    .timeline-card:hover,
+    .vehicle-card:hover,
+    .location-card:hover,
+    .stat-card:hover,
+    .about-values-premium-card:hover,
+    .about-process-card:hover,
+    .about-vehicle-card:hover {
+        transform: translateY(-6px) scale(1.025);
+        box-shadow: 0 22px 55px rgba(22, 65, 166, 0.16);
+        border-color: rgba(22, 65, 166, 0.22);
+    }
+
+    .service-card:hover::before,
+    .step-card:hover::after,
+    .timeline-card:hover::after,
+    .vehicle-card:hover::after,
+    .location-card:hover::after,
+    .stat-card:hover::after,
+    .about-values-premium-card:hover::after,
+    .about-process-card:hover::after,
+    .about-vehicle-card:hover::after {
+        transform: scaleX(1);
+    }
+
+    .service-card:hover {
+        border-color: #1641A6;
+    }
+
+    .service-card:hover .service-icon {
+        background: #1641A6;
+        color: var(--clr-white);
+        transform: rotate(-15deg) scale(1.06);
+    }
+
+    .step-card:hover .step-icon,
+    .step-card:hover .step-number,
+    .vehicle-card:hover .vehicle-icon,
+    .about-values-premium-card:hover .about-values-premium-icon,
+    .about-vehicle-card:hover .about-vehicle-icon,
+    .location-card:hover .pin {
+        transform: rotate(-15deg) scale(1.06);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .service-card,
+    .step-card,
+    .timeline-card,
+    .vehicle-card,
+    .location-card,
+    .stat-card,
+    .about-values-premium-card,
+    .about-process-card,
+    .about-vehicle-card,
+    .service-card::before,
+    .step-card::after,
+    .timeline-card::after,
+    .vehicle-card::after,
+    .location-card::after,
+    .stat-card::after,
+    .about-values-premium-card::after,
+    .about-process-card::after,
+    .about-vehicle-card::after,
+    .service-icon,
+    .step-icon,
+    .step-number,
+    .vehicle-icon,
+    .about-values-premium-icon,
+    .about-vehicle-icon,
+    .location-card .pin {
+        transition: none !important;
+        animation: none !important;
+        transform: none !important;
+    }
+
+    .service-card:hover,
+    .step-card:hover,
+    .timeline-card:hover,
+    .vehicle-card:hover,
+    .location-card:hover,
+    .stat-card:hover,
+    .about-values-premium-card:hover,
+    .about-process-card:hover,
+    .about-vehicle-card:hover {
+        transform: none !important;
+        box-shadow: inherit;
+    }
+
+    .service-card:hover::before,
+    .step-card:hover::after,
+    .timeline-card:hover::after,
+    .vehicle-card:hover::after,
+    .location-card:hover::after,
+    .stat-card:hover::after,
+    .about-values-premium-card:hover::after,
+    .about-process-card:hover::after,
+    .about-vehicle-card:hover::after {
+        transform: none !important;
+    }
+}
+
+/* ============================================
+   Sticky CTA Bar (Mobile, Tablet, Desktop)
+   ============================================ */
+main {
+    padding-bottom: calc(92px + env(safe-area-inset-bottom, 0px));
+}
+
+.site-footer {
+    padding-bottom: calc(92px + env(safe-area-inset-bottom, 0px));
+}
+
+.sticky-cta-bar {
+    position: fixed;
+    left: 50%;
+    bottom: calc(12px + env(safe-area-inset-bottom, 0px));
+    transform: translateX(-50%);
+    z-index: 9998;
+    width: calc(100% - 24px);
+    max-width: 680px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px;
+    background: rgba(255, 255, 255, 0.96);
+    border: 1px solid rgba(22, 65, 166, 0.14);
+    border-radius: 32px;
+    box-shadow: 0 18px 45px rgba(15, 23, 42, 0.18);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+}
+
+.sticky-cta-btn,
+.sticky-cta-whatsapp {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    min-height: 52px;
+    border-radius: 22px;
+    font-size: 0.8125rem;
+    font-weight: 700;
+    line-height: 1.2;
+    text-decoration: none;
+    transition:
+        transform 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+        box-shadow 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+        background 0.25s ease,
+        border-color 0.25s ease;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.sticky-cta-call {
+    flex: 1.05;
+    padding: 0 12px;
+    background: #1641A6;
+    color: #ffffff;
+}
+
+.sticky-cta-call:active {
+    background: #133991;
+}
+
+.sticky-cta-report {
+    flex: 1.15;
+    padding: 0 10px;
+    background: #f8fafc;
+    color: #1a1a1a;
+    border: 1px solid rgba(226, 232, 240, 0.95);
+}
+
+.sticky-cta-report:active {
+    background: #f1f5f9;
+    border-color: rgba(22, 65, 166, 0.2);
+}
+
+.sticky-cta-whatsapp {
+    flex: 0 0 58px;
+    width: 58px;
+    min-width: 58px;
+    padding: 0;
+    background: #e8f8ef;
+    color: #25d366;
+    border: 1px solid rgba(37, 211, 102, 0.22);
+}
+
+.sticky-cta-whatsapp:active {
+    background: #dcf5e7;
+}
+
+.sticky-cta-call span,
+.sticky-cta-report span {
+    white-space: nowrap;
+}
+
+.sticky-cta-call svg,
+.sticky-cta-report svg {
+    flex-shrink: 0;
+}
+
+@media (min-width: 1025px) {
+    main {
+        padding-bottom: calc(72px + env(safe-area-inset-bottom, 0px));
+    }
+
+    .site-footer {
+        padding-bottom: calc(72px + env(safe-area-inset-bottom, 0px));
+    }
+
+    .sticky-cta-bar {
+        max-width: 480px;
+        padding: 6px;
+        gap: 5px;
+        border-radius: 28px;
+        bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+        box-shadow: 0 14px 36px rgba(15, 23, 42, 0.14);
+    }
+
+    .sticky-cta-btn,
+    .sticky-cta-whatsapp {
+        min-height: 44px;
+        border-radius: 18px;
+        font-size: 0.8125rem;
+        gap: 5px;
+    }
+
+    .sticky-cta-call {
+        padding: 0 10px;
+    }
+
+    .sticky-cta-report {
+        padding: 0 8px;
+    }
+
+    .sticky-cta-call svg,
+    .sticky-cta-report svg {
+        width: 16px;
+        height: 16px;
+    }
+
+    .sticky-cta-whatsapp {
+        flex: 0 0 46px;
+        width: 46px;
+        min-width: 46px;
+    }
+
+    .sticky-cta-whatsapp svg {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .sticky-cta-call:hover {
+        background: #133991;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(22, 65, 166, 0.28);
+    }
+
+    .sticky-cta-report:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 18px rgba(15, 23, 42, 0.08);
+        border-color: rgba(22, 65, 166, 0.22);
+    }
+
+    .sticky-cta-whatsapp:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 18px rgba(37, 211, 102, 0.2);
+    }
+}
+
+/* ============================================
+   Startseite – Brand Statement (Vollbreite)
+   ============================================ */
+.page-home .home-brand-statement {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding: clamp(4.5rem, 12vw, 8rem) clamp(1.25rem, 4vw, 2rem);
+    background:
+        radial-gradient(circle at 50% 42%, rgba(22, 65, 166, 0.18) 0%, rgba(22, 65, 166, 0.05) 28%, rgba(5, 18, 48, 0) 55%),
+        linear-gradient(180deg, #06142f 0%, #081a3e 100%);
+    color: #ffffff;
+}
+
+.page-home .home-brand-statement__inner {
+    position: relative;
+    z-index: 1;
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.page-home .home-brand-statement__eyebrow {
+    margin: 0 0 clamp(1.25rem, 3vw, 2rem);
+    font-size: clamp(1.05rem, 2.4vw, 1.65rem);
+    font-weight: 700;
+    line-height: 1.35;
+    letter-spacing: -0.01em;
+}
+
+.page-home .home-brand-statement__eyebrow-muted {
+    color: rgba(255, 255, 255, 0.72);
+}
+
+.page-home .home-brand-statement__eyebrow-accent {
+    color: #1641A6;
+}
+
+.page-home .home-brand-statement__title {
+    margin: 0;
+    font-size: clamp(3.25rem, 14vw, 8.5rem);
+    font-weight: 900;
+    line-height: 0.92;
+    letter-spacing: -0.04em;
+    text-transform: none;
+}
+
+.page-home .home-brand-statement__title-main {
+    color: rgba(255, 255, 255, 0.96);
+}
+
+.page-home .home-brand-statement__title-accent {
+    color: #1641A6;
+}
+
+.page-home .home-brand-statement__divider {
+    width: 56px;
+    height: 3px;
+    margin: clamp(1.25rem, 3vw, 2rem) auto;
+    border-radius: 3px;
+    background: #1641A6;
+}
+
+.page-home .home-brand-statement__subline {
+    margin: 0;
+    font-size: clamp(0.65rem, 1.4vw, 0.8rem);
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.55);
+}
+
+@media (max-width: 640px) {
+    .page-home .home-brand-statement {
+        padding: clamp(3.5rem, 14vw, 5rem) 1rem;
+    }
+
+    .page-home .home-brand-statement__title {
+        font-size: clamp(2.75rem, 16vw, 4.5rem);
+    }
+
+    .page-home .home-brand-statement__eyebrow {
+        font-size: clamp(0.95rem, 4.2vw, 1.2rem);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .page-home .home-brand-statement__inner.animate-on-scroll {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+    }
+}
+
+@media (max-width: 380px) {
+    .sticky-cta-bar {
+        width: calc(100% - 16px);
+        gap: 5px;
+        padding: 7px;
+    }
+
+    .sticky-cta-btn {
+        font-size: 0.72rem;
+        gap: 4px;
+        padding: 0 8px;
+        min-height: 48px;
+        border-radius: 20px;
+    }
+
+    .sticky-cta-whatsapp {
+        flex: 0 0 52px;
+        width: 52px;
+        min-width: 52px;
+        min-height: 48px;
+        border-radius: 20px;
+        padding: 0;
+    }
+
+    .sticky-cta-call svg,
+    .sticky-cta-report svg {
+        width: 16px;
+        height: 16px;
     }
 }
 

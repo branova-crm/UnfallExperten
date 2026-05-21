@@ -138,6 +138,22 @@ export default function Home() {
       {/* 4) FALLBEISPIELE */}
       <CaseStudiesSection />
 
+      {/* Brand Statement – Vollbreite */}
+      <section className="home-brand-statement" aria-labelledby="home-brand-statement-title">
+        <div className="home-brand-statement__inner animate-on-scroll">
+          <p className="home-brand-statement__eyebrow">
+            <span className="home-brand-statement__eyebrow-muted">Wenn es kracht,</span>{' '}
+            <span className="home-brand-statement__eyebrow-accent">sind wir für Sie da</span>
+          </p>
+          <h2 id="home-brand-statement-title" className="home-brand-statement__title">
+            <span className="home-brand-statement__title-main">Unfall</span>
+            <span className="home-brand-statement__title-accent">Experten</span>
+          </h2>
+          <div className="home-brand-statement__divider" aria-hidden="true" />
+          <p className="home-brand-statement__subline">Ihre Gutachter-Experten in Bonn &amp; Umgebung</p>
+        </div>
+      </section>
+
       {/* 7) REVIEWS */}
       <section className="reviews-section" id="reviews">
         <div className="container" style={{ position: 'relative', zIndex: 5 }}>

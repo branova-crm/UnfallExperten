@@ -1,6 +1,7 @@
 import HeaderWrapper from '@/components/HeaderWrapper';
 import FooterWrapper from '@/components/FooterWrapper';
 import GlobalAnimations from '@/components/GlobalAnimations';
+import StickyCtaBar from '@/components/StickyCtaBar';
 
 export default function SiteLayout({
     children,
@@ -12,9 +13,7 @@ export default function SiteLayout({
             <HeaderWrapper />
             <main>{children}</main>
             <FooterWrapper />
-
-
-
+            <StickyCtaBar />
             <GlobalAnimations />
         </>
     );

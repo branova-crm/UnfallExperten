@@ -47,7 +47,7 @@ export default function ProcessSection() {
                                 }
                             `}</style>
                             {[1, 2, 3, 4].map((step) => (
-                                <div key={step} className="step-item" style={{
+                                <div key={step} className="step-item home-process-card" style={{
                                     display: 'flex',
                                     flexDirection: 'column',
                                     alignItems: 'center',
@@ -55,8 +55,8 @@ export default function ProcessSection() {
                                     padding: '0 1.5rem',
                                     position: 'relative'
                                 }}>
-                                <div className="step-number">{step === 1 ? '01' : step === 2 ? '02' : step === 3 ? '03' : '04'}</div>
-                                <div className="step-icon">
+                                <div className="step-number home-process-card__number">{step === 1 ? '01' : step === 2 ? '02' : step === 3 ? '03' : '04'}</div>
+                                <div className="step-icon home-process-card__icon">
                                     {step === 1 && (
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                                             <rect x="3" y="4" width="18" height="18" rx="2" />
@@ -74,20 +74,23 @@ export default function ProcessSection() {
                                         </svg>
                                     )}
                                     {step === 4 && (
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                                            <rect x="2" y="6" width="20" height="12" rx="2" />
-                                            <circle cx="12" cy="12" r="2" />
-                                            <path d="M6 12h.01M18 12h.01" />
-                                        </svg>
+                                        <img
+                                            src="/schild.svg"
+                                            alt=""
+                                            width={45}
+                                            height={45}
+                                            aria-hidden="true"
+                                            className="home-process-card__icon-img"
+                                        />
                                     )}
                                 </div>
-                                <h3 style={{ textTransform: 'none' }}>
+                                <h3 className="home-process-card__title" style={{ textTransform: 'none' }}>
                                     {step === 1 ? "Termin vereinbaren" : 
                                      step === 2 ? "Begutachtung vor Ort" : 
                                      step === 3 ? "Gutachten erhalten" : 
                                      "Versicherungsabwicklung"}
                                 </h3>
-                                <p style={{ fontSize: '0.9rem' }}>
+                                <p className="home-process-card__text" style={{ fontSize: '0.9rem' }}>
                                     {step === 1 ? "Einfach per Telefon oder WhatsApp einen Termin sichern. Wir kommen schnell zu Ihnen." : 
                                      step === 2 ? "Unser KFZ Gutachter prüft Ihr Fahrzeug direkt vor Ort. Alle Schäden werden sorgfältig dokumentiert." : 
                                      step === 3 ? "Sie erhalten Ihr Unfallgutachten innerhalb von 24–72 Stunden. Damit sind Sie bestens vorbereitet." : 
