@@ -77,6 +77,15 @@ const VALUES = [
     },
 ];
 
+const VEHICLE_TYPES = [
+    { title: 'PKW', text: 'Alle Marken und Modelle', iconSrc: '/images/auto.svg' },
+    { title: 'E-Auto', text: 'Inkl. Batteriecheck', iconSrc: '/images/eauto.svg' },
+    { title: 'LKW', text: 'Alle Gewichtsklassen', iconSrc: '/images/lkw.svg' },
+    { title: 'Caravan', text: 'Inkl. Aufbau & Innenraum', iconSrc: '/images/caravan.svg' },
+    { title: 'Anhänger', text: 'Alle Typen', iconSrc: '/images/anhänger.svg' },
+    { title: 'Motorrad', text: 'Alle Hersteller', iconSrc: '/images/motorrad.svg' },
+];
+
 const PERSONAL_POINTS = [
     'Direkter Ansprechpartner',
     'Klare Kommunikation',
@@ -189,7 +198,6 @@ export default function UeberUnsPage() {
                                 key={step.title}
                                 className={`about-process-card${index % 2 === 1 ? ' about-process-card--alt' : ''}`}
                             >
-                                <span className="about-process-ring-loop" aria-hidden="true" />
                                 <span className="about-process-number">{String(index + 1).padStart(2, '0')}</span>
                                 <div className="about-process-content">
                                     <h3>{step.title}</h3>
@@ -260,6 +268,37 @@ export default function UeberUnsPage() {
                                 ))}
                             </ul>
                         </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Fahrzeugtypen */}
+            <section className="about-vehicle-types">
+                <div className="container">
+                    <div className="about-vehicle-header about-reveal">
+                        <span className="about-vehicle-kicker">FAHRZEUGTYPEN</span>
+                        <h2 className="about-vehicle-headline">Unsere Expertise – Umfassende Fahrzeugtypen</h2>
+                        <p className="about-vehicle-intro">
+                            Egal welches Fahrzeug – unsere Gutachter-Experten sind für alle Typen qualifiziert.
+                        </p>
+                    </div>
+                    <div className="about-vehicle-grid about-stagger about-reveal">
+                        {VEHICLE_TYPES.map((vehicle) => (
+                            <article key={vehicle.title} className="about-vehicle-card">
+                                <div className="about-vehicle-icon">
+                                    <Image
+                                        src={vehicle.iconSrc}
+                                        alt=""
+                                        width={48}
+                                        height={48}
+                                        loading="lazy"
+                                        aria-hidden="true"
+                                    />
+                                </div>
+                                <h3 className="about-vehicle-title">{vehicle.title}</h3>
+                                <p className="about-vehicle-text">{vehicle.text}</p>
+                            </article>
+                        ))}
                     </div>
                 </div>
             </section>

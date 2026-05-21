@@ -3914,12 +3914,9 @@ section[id] {
 }
 
 .about-process-card {
-    position: relative;
     display: flex;
     gap: var(--sp-md);
     align-items: flex-start;
-    overflow: hidden;
-    isolation: isolate;
     background: var(--clr-white);
     border-radius: 18px;
     padding: 1.75rem 2rem;
@@ -3928,65 +3925,17 @@ section[id] {
         0 12px 32px rgba(15, 23, 42, 0.06),
         0 4px 12px rgba(22, 65, 166, 0.04);
     transition:
-        transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
-        box-shadow 0.4s cubic-bezier(0.22, 1, 0.36, 1),
-        border-color 0.4s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.about-process-card::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: inherit;
-    background: linear-gradient(
-        105deg,
-        rgba(255, 255, 255, 0) 0%,
-        rgba(255, 255, 255, 0.92) 38%,
-        rgba(22, 65, 166, 0.14) 50%,
-        rgba(255, 255, 255, 0) 62%
-    );
-    transform: translateX(-130%);
-    animation: aboutProcessLineLoop 5.5s ease-in-out infinite;
-    pointer-events: none;
-    z-index: 0;
-    opacity: 0;
-}
-
-.about-process-card::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: inherit;
-    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.35);
-    pointer-events: none;
-    z-index: 0;
-}
-
-.about-process-ring-loop {
-    position: absolute;
-    inset: 2px;
-    border-radius: 16px;
-    border: 1px solid transparent;
-    border-top-color: rgba(255, 255, 255, 0.8);
-    border-right-color: rgba(255, 255, 255, 0.22);
-    pointer-events: none;
-    z-index: 2;
-    opacity: 0.55;
-    animation: aboutProcessRingSpin 4.8s linear infinite;
-}
-
-.about-process-number,
-.about-process-content {
-    position: relative;
-    z-index: 1;
+        transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+        box-shadow 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+        border-color 0.45s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .about-process-card:hover {
-    transform: translateY(-4px);
-    border-color: rgba(22, 65, 166, 0.22);
+    transform: translateY(-3px);
+    border-color: rgba(22, 65, 166, 0.18);
     box-shadow:
-        0 18px 40px rgba(15, 23, 42, 0.08),
-        0 8px 20px rgba(22, 65, 166, 0.08);
+        0 16px 36px rgba(15, 23, 42, 0.08),
+        0 6px 18px rgba(22, 65, 166, 0.07);
 }
 
 .about-process-card--alt {
@@ -4018,50 +3967,22 @@ section[id] {
     margin: 0;
 }
 
-@keyframes aboutProcessLineLoop {
-    0% {
-        transform: translateX(-130%);
-        opacity: 0;
-    }
-
-    18% {
-        opacity: 0.85;
-    }
-
-    48% {
-        transform: translateX(130%);
-        opacity: 0.85;
-    }
-
-    68%,
-    100% {
-        transform: translateX(130%);
-        opacity: 0;
-    }
-}
-
-@keyframes aboutProcessRingSpin {
-    to {
-        transform: rotate(360deg);
-    }
-}
-
 .about-page .about-process-grid.about-stagger.about-reveal:not(.visible) > .about-process-card {
     opacity: 0;
-    transform: translateY(18px) scale(0.985);
+    transform: translateY(14px);
 }
 
 .about-page .about-process-grid.about-stagger.about-reveal.visible > .about-process-card {
     opacity: 1;
-    transform: translateY(0) scale(1);
+    transform: translateY(0);
 }
 
 .about-page .about-process-grid.about-stagger.about-reveal > .about-process-card {
     transition:
-        opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
-        transform 0.8s cubic-bezier(0.22, 1, 0.36, 1),
-        box-shadow 0.4s cubic-bezier(0.22, 1, 0.36, 1),
-        border-color 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+        opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 0.75s cubic-bezier(0.22, 1, 0.36, 1),
+        box-shadow 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+        border-color 0.45s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .about-page .about-process-grid.about-stagger.about-reveal > .about-process-card:nth-child(1) {
@@ -4101,6 +4022,205 @@ section[id] {
 
     .about-process-content p {
         font-size: 0.9rem;
+    }
+}
+
+/* Fahrzeugtypen */
+.about-vehicle-types {
+    padding: var(--sp-3xl) 0 var(--sp-4xl);
+    background: #f8fafc;
+}
+
+.about-vehicle-header {
+    text-align: center;
+    max-width: 40rem;
+    margin: 0 auto var(--sp-2xl);
+}
+
+.about-vehicle-kicker {
+    display: inline-block;
+    font-size: var(--fs-xs);
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--clr-primary);
+    margin-bottom: var(--sp-md);
+}
+
+.about-vehicle-headline {
+    font-size: clamp(1.65rem, 5.5vw, 2.5rem);
+    font-weight: 900;
+    color: var(--clr-text);
+    line-height: 1.12;
+    letter-spacing: -0.03em;
+    margin-bottom: var(--sp-md);
+}
+
+.about-vehicle-intro {
+    font-size: var(--fs-md);
+    color: var(--clr-text-muted);
+    line-height: 1.65;
+    margin: 0;
+}
+
+.about-vehicle-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+    max-width: 1040px;
+    margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+    .about-vehicle-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 20px;
+    }
+}
+
+.about-vehicle-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+    min-height: 168px;
+    padding: 1.5rem 1rem 1.35rem;
+    background: var(--clr-white);
+    border: 1px solid rgba(226, 232, 240, 0.95);
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.05);
+    transition:
+        transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+        box-shadow 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.about-vehicle-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 32px rgba(15, 23, 42, 0.08);
+}
+
+.about-vehicle-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    margin-bottom: var(--sp-md);
+    color: var(--clr-primary);
+    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.about-vehicle-icon img {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+}
+
+.about-vehicle-card:hover .about-vehicle-icon {
+    transform: translateY(-2px) scale(1.04);
+}
+
+.about-vehicle-title {
+    font-size: 1rem;
+    font-weight: 800;
+    color: var(--clr-primary);
+    margin-bottom: 0.35rem;
+    line-height: 1.25;
+}
+
+.about-vehicle-text {
+    font-size: 0.8125rem;
+    color: var(--clr-text-muted);
+    line-height: 1.45;
+    margin: 0;
+    max-width: 12rem;
+}
+
+.about-page .about-vehicle-grid.about-stagger.about-reveal:not(.visible) > .about-vehicle-card {
+    opacity: 0;
+    transform: translateY(18px);
+}
+
+.about-page .about-vehicle-grid.about-stagger.about-reveal.visible > .about-vehicle-card {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.about-page .about-vehicle-grid.about-stagger.about-reveal > .about-vehicle-card {
+    transition:
+        opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+        box-shadow 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.about-page .about-vehicle-grid.about-stagger.about-reveal > .about-vehicle-card:nth-child(1) {
+    transition-delay: 0.05s;
+}
+
+.about-page .about-vehicle-grid.about-stagger.about-reveal > .about-vehicle-card:nth-child(2) {
+    transition-delay: 0.1s;
+}
+
+.about-page .about-vehicle-grid.about-stagger.about-reveal > .about-vehicle-card:nth-child(3) {
+    transition-delay: 0.15s;
+}
+
+.about-page .about-vehicle-grid.about-stagger.about-reveal > .about-vehicle-card:nth-child(4) {
+    transition-delay: 0.2s;
+}
+
+.about-page .about-vehicle-grid.about-stagger.about-reveal > .about-vehicle-card:nth-child(5) {
+    transition-delay: 0.25s;
+}
+
+.about-page .about-vehicle-grid.about-stagger.about-reveal > .about-vehicle-card:nth-child(6) {
+    transition-delay: 0.3s;
+}
+
+@media (min-width: 768px) {
+    .about-vehicle-card {
+        min-height: 180px;
+        padding: 1.65rem 1.25rem 1.5rem;
+    }
+
+    .about-vehicle-headline {
+        font-size: clamp(2rem, 3.5vw, 2.75rem);
+    }
+
+    .about-vehicle-text {
+        font-size: 0.875rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .about-vehicle-types {
+        padding: var(--sp-2xl) 0 var(--sp-3xl);
+    }
+
+    .about-vehicle-header {
+        text-align: left;
+        margin-bottom: var(--sp-xl);
+    }
+
+    .about-vehicle-grid {
+        gap: 12px;
+    }
+
+    .about-vehicle-card {
+        min-height: 156px;
+        padding: 1.25rem 0.75rem 1.15rem;
+    }
+
+    .about-vehicle-icon {
+        width: 40px;
+        height: 40px;
+        margin-bottom: var(--sp-sm);
+    }
+
+    .about-vehicle-icon img {
+        width: 40px;
+        height: 40px;
     }
 }
 
@@ -5038,15 +5158,20 @@ section[id] {
         display: none;
     }
 
-    .about-page .about-process-card::before,
-    .about-page .about-process-ring-loop {
-        animation: none !important;
-        opacity: 0 !important;
+    .about-page .about-process-grid.about-stagger.about-reveal:not(.visible) > .about-process-card,
+    .about-page .about-process-grid.about-stagger.about-reveal.visible > .about-process-card,
+    .about-page .about-vehicle-grid.about-stagger.about-reveal:not(.visible) > .about-vehicle-card,
+    .about-page .about-vehicle-grid.about-stagger.about-reveal.visible > .about-vehicle-card {
+        opacity: 1 !important;
+        transform: none !important;
     }
 
-    .about-page .about-process-grid.about-stagger.about-reveal:not(.visible) > .about-process-card,
-    .about-page .about-process-grid.about-stagger.about-reveal.visible > .about-process-card {
-        opacity: 1 !important;
+    .about-page .about-vehicle-card:hover,
+    .about-page .about-process-card:hover {
+        transform: none !important;
+    }
+
+    .about-page .about-vehicle-card:hover .about-vehicle-icon {
         transform: none !important;
     }
 
