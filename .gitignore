@@ -40,5 +40,12 @@ prisma/*.db-journal
 # IDE
 .idea/
 .vscode/
+
+# Python (ui-ux-pro-max skill)
+__pycache__/
+*.py[cod]
+
+# Agent-generated design systems (optional persist)
+design-system/
 *.swp
 *.swo

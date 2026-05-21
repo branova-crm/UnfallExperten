@@ -1,196 +1,297 @@
 import { Metadata } from 'next';
-import Link from 'next/link';
+import Image from 'next/image';
+import AboutFaq from '@/components/AboutFaq';
+import AboutJourneyTimeline from '@/components/AboutJourneyTimeline';
+import AboutTrustStrip from '@/components/AboutTrustStrip';
 
 export const metadata: Metadata = {
-    title: 'Über uns – Erfahrene KFZ-Sachverständige in NRW | UnfallExperten',
-    description: 'Lernen Sie UnfallExperten NRW kennen – unabhängige KFZ-Sachverständige und Experten für KFZ-Schäden. Unabhängig, regional, NRW-weit. Unsere Philosophie und unser Team.',
+    title: 'Über uns – UnfallExperten NRW | Ihre Gutachter-Experten',
+    description:
+        'Lernen Sie UnfallExperten NRW und Berkay Okur kennen. Unabhängige Unterstützung nach einem Unfall, schnelle Schadenaufnahme und persönliche Begleitung in NRW.',
 };
+
+const TEL = 'tel:+4902111234567';
+const WHATSAPP = 'https://wa.me/4902111234567?text=Hallo%2C%20ich%20habe%20eine%20Frage%20zu%20UnfallExperten.';
+
+const TIMELINE = [
+    {
+        title: 'Unfall aufnehmen',
+        text: 'Wir hören zu, klären die Situation und erfassen alle wichtigen Informationen zu Ihrem Schadenfall.',
+    },
+    {
+        title: 'Schaden dokumentieren',
+        text: 'Der Fahrzeugschaden wird sorgfältig aufgenommen, damit keine relevanten Positionen übersehen werden.',
+    },
+    {
+        title: 'Gutachten erstellen',
+        text: 'Sie erhalten eine nachvollziehbare Grundlage für die weitere Schadenregulierung.',
+    },
+    {
+        title: 'Regulierung begleiten',
+        text: 'Wir unterstützen Sie dabei, den weiteren Ablauf verständlich und stressfrei zu gestalten.',
+    },
+];
+
+const VALUES = [
+    {
+        title: 'Unabhängigkeit',
+        text: 'Wir arbeiten nicht im Interesse einer Versicherung, sondern unterstützen Sie als Geschädigten mit einer neutralen und nachvollziehbaren Schadenaufnahme.',
+        icon: (
+            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+            </svg>
+        ),
+    },
+    {
+        title: 'Ehrlichkeit',
+        text: 'Wir erklären offen, welcher Schritt sinnvoll ist und ob ein Gutachten, ein Kostenvoranschlag oder eine andere Lösung passend ist.',
+        icon: (
+            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                <polyline points="14 2 14 8 20 8" />
+                <line x1="16" y1="13" x2="8" y2="13" />
+                <line x1="16" y1="17" x2="8" y2="17" />
+            </svg>
+        ),
+    },
+    {
+        title: 'Schnelligkeit',
+        text: 'Nach einem Unfall zählt Zeit. Deshalb sind wir kurzfristig erreichbar und kommen bei Bedarf direkt zu Ihnen.',
+        icon: (
+            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+                <circle cx="12" cy="12" r="10" />
+                <polyline points="12 6 12 12 16 14" />
+            </svg>
+        ),
+    },
+    {
+        title: 'Verständlichkeit',
+        text: 'Wir erklären den Ablauf so, dass Sie wissen, was passiert und welche nächsten Schritte wichtig sind.',
+        icon: (
+            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+                <circle cx="12" cy="12" r="10" />
+                <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+                <line x1="12" y1="17" x2="12.01" y2="17" />
+            </svg>
+        ),
+    },
+];
+
+const PERSONAL_POINTS = [
+    'Direkter Ansprechpartner',
+    'Klare Kommunikation',
+    'Schnelle Rückmeldung',
+    'Unterstützung vor Ort',
+];
+
+const HERO_PILLS = [
+    'Unabhängige Gutachter-Experten',
+    'Mobil in ganz NRW',
+    'Kostenlose Ersteinschätzung',
+];
+
+/** Dreifach + verdoppelt für nahtlosen Marquee-Loop ohne sichtbare Lücke */
+const HERO_MARQUEE_TRACK = [...HERO_PILLS, ...HERO_PILLS, ...HERO_PILLS, ...HERO_PILLS, ...HERO_PILLS, ...HERO_PILLS];
+
+function PhoneIcon() {
+    return (
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{ marginRight: '6px' }} aria-hidden="true">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+        </svg>
+    );
+}
+
+function WhatsAppIcon() {
+    return (
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style={{ marginRight: '6px' }} aria-hidden="true">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12.05 21.785h-.005a9.868 9.868 0 0 1-5.031-1.378l-.361-.214-3.741.982.999-3.648-.235-.374A9.86 9.86 0 0 1 2.17 12.06c0-5.456 4.436-9.893 9.9-9.893a9.827 9.827 0 0 1 7.001 2.902 9.828 9.828 0 0 1 2.893 7.003c-.004 5.456-4.44 9.893-9.913 9.893zM20.52 3.449C18.24 1.245 15.24 0 12.05 0 5.463 0 .104 5.334.101 11.893a11.793 11.793 0 0 0 1.587 5.946L0 24l6.335-1.652A11.882 11.882 0 0 0 12.05 24c6.584 0 11.94-5.335 11.943-11.893a11.808 11.808 0 0 0-3.473-8.658z" />
+        </svg>
+    );
+}
 
 export default function UeberUnsPage() {
     return (
-        <>
-            <section className="hero" style={{ minHeight: '85vh' }}>
-                <div className="hero-bg">
-                    <video
-                        autoPlay
-                        muted
-                        loop
-                        playsInline
-                    >
-                        <source src="/images/herovideo2.mp4" type="video/mp4" />
-                    </video>
-                </div>
-                <div className="hero-overlay"></div>
-                <div className="container" style={{ display: 'flex', justifyContent: 'center' }}>
-                    <div className="hero-content" style={{ maxWidth: '800px', textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                        <h1 style={{ color: 'var(--clr-white)', marginBottom: '20px' }}>Über uns</h1>
-                        <p className="hero-subheadline mx-auto" style={{ fontSize: 'var(--fs-lg)' }}>Unabhängige KFZ-Sachverständige und Experten für KFZ-Schäden – Ihr Partner nach dem Unfall in ganz NRW.</p>
-                    </div>
-                </div>
-            </section>
-
-            {/* EXPERTEN INTRO */}
-            <section className="content-section">
-                <div className="container">
-                    <div className="two-col">
-                        <div className="content-image animate-on-scroll"><img src="/images/hero-bg.png" alt="UnfallExperten NRW Team" loading="lazy" /></div>
-                        <div className="content-text">
-                            <span className="section-label" style={{ color: 'var(--clr-primary)' }}>Wer wir sind</span>
-                            <h2 style={{ color: 'var(--clr-text)' }}>Ihre Experten nach einem Verkehrsunfall</h2>
-                            <p>UnfallExperten NRW ist Ihr unabhängiger Partner für KFZ-Gutachten nach einem Unfall. Unser Team besteht aus Experten für KFZ-Schäden und unabhängigen KFZ-Sachverständigen mit jahrelanger Erfahrung in der KFZ-Schadensbewertung.</p>
-                            <p>Wir arbeiten ausschließlich im Interesse unserer Kunden – neutral, unabhängig und transparent. Unser Ziel: Sie erhalten die maximale Entschädigung, die Ihnen zusteht.</p>
-                            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', marginTop: 'var(--sp-lg)' }}>
-                                <a href="tel:+4902111234567" className="btn btn-primary"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{ marginRight: '6px' }}><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" /></svg> Jetzt anrufen</a>
-                                <a href="https://wa.me/4902111234567" className="btn btn-whatsapp" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style={{ marginRight: '6px' }}><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12.05 21.785h-.005a9.868 9.868 0 0 1-5.031-1.378l-.361-.214-3.741.982.999-3.648-.235-.374A9.86 9.86 0 0 1 2.17 12.06c0-5.456 4.436-9.893 9.9-9.893a9.827 9.827 0 0 1 7.001 2.902 9.828 9.828 0 0 1 2.893 7.003c-.004 5.456-4.44 9.893-9.913 9.893zM20.52 3.449C18.24 1.245 15.24 0 12.05 0 5.463 0 .104 5.334.101 11.893a11.793 11.793 0 0 0 1.587 5.946L0 24l6.335-1.652A11.882 11.882 0 0 0 12.05 24c6.584 0 11.94-5.335 11.943-11.893a11.808 11.808 0 0 0-3.473-8.658z" /></svg> WhatsApp</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* VEHICLE TYPES */}
-            <section className="vehicles-section">
-                <div className="container">
-                    <div className="text-center">
-                        <span className="section-label" style={{ color: 'var(--clr-primary)' }}>Fahrzeugtypen</span>
-                        <h2 className="section-title" style={{ color: 'var(--clr-text)' }}>Unsere Expertise – Umfassende Fahrzeugtypen</h2>
-                        <p className="section-subtitle mx-auto">Egal welches Fahrzeug – unsere Sachverständigen sind für alle Typen qualifiziert.</p>
-                    </div>
-                    <div className="vehicles-grid">
-                        <div className="vehicle-card animate-on-scroll">
-                            <div className="vehicle-icon"><img src="/images/auto.svg" alt="PKW Icon" /></div>
-                            <h3>PKW</h3>
-                            <p>Alle Marken und Modelle</p>
-                        </div>
-                        <div className="vehicle-card animate-on-scroll">
-                            <div className="vehicle-icon"><img src="/images/eauto.svg" alt="E-Auto Icon" /></div>
-                            <h3>E‑Auto</h3>
-                            <p>Inkl. Batteriecheck</p>
-                        </div>
-                        <div className="vehicle-card animate-on-scroll">
-                            <div className="vehicle-icon"><img src="/images/lkw.svg" alt="LKW Icon" /></div>
-                            <h3>LKW</h3>
-                            <p>Alle Gewichtsklassen</p>
-                        </div>
-                        <div className="vehicle-card animate-on-scroll">
-                            <div className="vehicle-icon"><img src="/images/caravan.svg" alt="Caravan Icon" /></div>
-                            <h3>Caravan</h3>
-                            <p>Inkl. Aufbau &amp; Innenraum</p>
-                        </div>
-                        <div className="vehicle-card animate-on-scroll">
-                            <div className="vehicle-icon"><img src="/images/anhänger.svg" alt="Anhänger Icon" /></div>
-                            <h3>Anhänger</h3>
-                            <p>Alle Typen</p>
-                        </div>
-                        <div className="vehicle-card animate-on-scroll">
-                            <div className="vehicle-icon"><img src="/images/motorrad.svg" alt="Motorrad Icon" /></div>
-                            <h3>Motorrad</h3>
-                            <p>Alle Hersteller</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* GALLERY */}
-            <section className="content-section">
-                <div className="container">
-                    <div className="text-center">
-                        <span className="section-label" style={{ color: 'var(--clr-primary)' }}>Eindrücke</span>
-                        <h2 className="section-title" style={{ color: 'var(--clr-text)' }}>Einblick in unsere Arbeit</h2>
-                        <p className="section-subtitle mx-auto">Impressionen aus unserem Arbeitsalltag – von der Begutachtung bis zum fertigen Gutachten.</p>
-                    </div>
-                    <div className="gallery-grid">
-                        <div className="gallery-placeholder">📷 Bild 1</div>
-                        <div className="gallery-placeholder">📷 Bild 2</div>
-                        <div className="gallery-placeholder">📷 Bild 3</div>
-                        <div className="gallery-placeholder">📷 Bild 4</div>
-                        <div className="gallery-placeholder">📷 Bild 5</div>
-                        <div className="gallery-placeholder">📷 Bild 6</div>
-                        <div className="gallery-placeholder">📷 Bild 7</div>
-                        <div className="gallery-placeholder">📷 Bild 8</div>
-                    </div>
-                </div>
-            </section>
-
-            {/* FACHGERECHTE ABWICKLUNG */}
-            <section className="content-section alt">
-                <div className="container">
-                    <div className="two-col reverse">
-                        <div className="content-image animate-on-scroll"><img src="/images/hero-bg.png" alt="Professionelle Abwicklung" loading="lazy" /></div>
-                        <div className="content-text">
-                            <span className="section-label" style={{ color: 'var(--clr-primary)' }}>Arbeitsweise</span>
-                            <h2 style={{ color: 'var(--clr-text)' }}>Fachgerechte Abwicklung – von Anfang bis Ende</h2>
-                            <p>Wir begleiten Sie durch den gesamten Prozess der Schadensregulierung. Von der ersten Kontaktaufnahme über die detaillierte Begutachtung vor Ort bis hin zur vollständigen Abwicklung mit der Versicherung – alles aus einer Hand.</p>
-                            <ul className="check-list">
-                                <li>Schnelle Terminvergabe – meist noch am selben Tag</li>
-                                <li>Begutachtung direkt am Unfallort oder bei Ihnen zu Hause</li>
-                                <li>Gutachten in 24–72 Stunden fertiggestellt</li>
-                                <li>Begleitung bis zur vollständigen Auszahlung</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* ANSPRUCH */}
-            <section className="content-section">
-                <div className="container">
-                    <div className="two-col">
-                        <div className="content-image animate-on-scroll"><img src="/images/hero-bg.png" alt="Unser Anspruch" loading="lazy" /></div>
-                        <div className="content-text">
-                            <span className="section-label" style={{ color: 'var(--clr-primary)' }}>Qualität</span>
-                            <h2 style={{ color: 'var(--clr-text)' }}>Unser Anspruch – Höchste Qualitätsstandards</h2>
-                            <p>Wir stehen für Qualität, Zuverlässigkeit und Kundenzufriedenheit. Unser erfahrenes Team, modernste Technik und ein starkes Partnernetzwerk aus Anwälten, Werkstätten und Mietwagenanbietern ermöglichen es uns, Ihnen den bestmöglichen Service zu bieten.</p>
-                            <ul className="check-list">
-                                <li>Experten für KFZ-Schäden und unabhängige KFZ-Sachverständige</li>
-                                <li>Modernste Dokumentations- und Kalkulationssoftware</li>
-                                <li>Starkes Partnernetzwerk in ganz NRW</li>
-                                <li>Regelmäßige Fortbildungen und Qualitätskontrollen</li>
-                                <li>Über 1.000 zufriedene Kunden</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* CTA + FORM */}
-            <section className="cta-banner">
-                <div className="cta-banner-bg"></div>
-                <div className="container">
-                    <h2>Lernen Sie uns kennen</h2>
-                    <p>Überzeugen Sie sich selbst – rufen Sie uns an oder schreiben Sie per WhatsApp!</p>
-                    <div className="cta-banner-buttons">
-                        <a href="tel:+4902111234567" className="btn btn-accent"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{ marginRight: '6px' }}><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" /></svg> Jetzt anrufen</a>
-                        <a href="https://wa.me/4902111234567" className="btn btn-whatsapp" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style={{ marginRight: '6px' }}><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12.05 21.785h-.005a9.868 9.868 0 0 1-5.031-1.378l-.361-.214-3.741.982.999-3.648-.235-.374A9.86 9.86 0 0 1 2.17 12.06c0-5.456 4.436-9.893 9.9-9.893a9.827 9.827 0 0 1 7.001 2.902 9.828 9.828 0 0 1 2.893 7.003c-.004 5.456-4.44 9.893-9.913 9.893zM20.52 3.449C18.24 1.245 15.24 0 12.05 0 5.463 0 .104 5.334.101 11.893a11.793 11.793 0 0 0 1.587 5.946L0 24l6.335-1.652A11.882 11.882 0 0 0 12.05 24c6.584 0 11.94-5.335 11.943-11.893a11.808 11.808 0 0 0-3.473-8.658z" /></svg> WhatsApp</a>
-                    </div>
-                </div>
-            </section>
-
-            <section className="contact-section" id="contact">
-                <div className="container">
-                    <div className="contact-grid">
-                        <div className="contact-info">
-                            <span className="section-label" style={{ color: 'var(--clr-primary)' }}>Kontakt</span>
-                            <h2 style={{ color: 'var(--clr-text)' }}>Wir freuen uns auf Sie!</h2>
-                            <p>Haben Sie Fragen oder möchten einen Termin vereinbaren? Hinterlassen Sie Ihre Nummer.</p>
-                            <div className="contact-direct">
-                                <a href="tel:+4902111234567">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="24" height="24">
-                                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
-                                    </svg> 0211 – 123 456 7
+        <div className="about-page">
+            <div className="about-hero-zone">
+            {/* Premium Hero */}
+            <section className="about-hero-premium about-hero">
+                <div className="about-hero-premium-bg" aria-hidden="true" />
+                <div className="container about-hero-premium-inner">
+                    <div className="about-hero-premium-grid about-hero-grid">
+                        <div className="about-hero-premium-content about-hero-content">
+                            <span className="about-hero-kicker">Über UnfallExperten</span>
+                            <h1>Berkay Okur, Ihr KFZ-Gutachter für NRW</h1>
+                            <p className="about-hero-premium-lead">
+                                Persönliche Unterstützung nach einem Unfall – unabhängig, schnell und verständlich.
+                            </p>
+                            <p className="about-hero-premium-text">
+                                Nach einem Unfall zählt nicht nur ein schnelles Gutachten, sondern auch ein Ansprechpartner,
+                                der den gesamten Ablauf verständlich begleitet. UnfallExperten steht für unabhängige
+                                Unterstützung, klare Kommunikation und eine schnelle Schadenaufnahme direkt vor Ort.
+                            </p>
+                            <div className="about-hero-premium-ctas about-hero-actions">
+                                <a href={TEL} className="btn btn-primary">
+                                    <PhoneIcon />
+                                    Jetzt anrufen
+                                </a>
+                                <a href={WHATSAPP} className="btn btn-whatsapp" target="_blank" rel="noopener noreferrer">
+                                    <WhatsAppIcon />
+                                    WhatsApp schreiben
                                 </a>
                             </div>
                         </div>
-                        <form className="contact-form callback-form" noValidate>
-                            <div className="form-group"><label htmlFor="name">Ihr Name *</label><input type="text" id="name" name="name" placeholder="Max Mustermann" required /></div>
-                            <div className="form-group"><label htmlFor="phone">Telefonnummer *</label><input type="tel" id="phone" name="phone" placeholder="0211 123 456 7" required /></div>
-                            <div className="form-group"><label htmlFor="message">Nachricht</label><textarea id="message" name="message" rows={4} placeholder="Ihre Frage oder Anliegen..."></textarea></div>
-                            <button type="submit" className="btn btn-primary form-submit">Rückruf anfordern – kostenlos &amp; unverbindlich</button>
-                            <p className="form-dsgvo">Mit dem Absenden stimmen Sie unserer <a href="#" style={{ color: 'var(--clr-accent)', textDecoration: 'underline' }}>Datenschutzerklärung</a> zu.</p>
-                        </form>
+
+                        <div className="about-hero-media">
+                            <div className="about-profile-card">
+                                <div className="about-profile-frame">
+                                    <Image
+                                        src="/images/chatberkay.png"
+                                        alt="Berkay Okur – KFZ-Gutachter bei UnfallExperten NRW"
+                                        width={420}
+                                        height={520}
+                                        priority
+                                        className="about-profile-img"
+                                    />
+                                    <span className="about-profile-badge">Ihr Ansprechpartner</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="about-marquee" aria-label="Kernvorteile">
+                        <div className="about-marquee-track">
+                            {HERO_MARQUEE_TRACK.map((item, index) => (
+                                <span key={`${item}-${index}`} className="about-hero-pill">
+                                    {item}
+                                </span>
+                            ))}
+                        </div>
                     </div>
                 </div>
             </section>
-        </>
+
+            <AboutTrustStrip />
+            </div>
+
+            {/* Begleitung / Prozess */}
+            <section className="about-process-section">
+                <div className="container">
+                    <div className="about-section-head about-reveal">
+                        <span className="section-label">Ihre Begleitung</span>
+                        <h2 className="section-title">So begleiten wir Sie nach dem Unfall</h2>
+                        <p className="section-subtitle">
+                            Vom ersten Kontakt bis zur fertigen Schadenaufnahme – klar, schnell und ohne unnötigen Stress.
+                        </p>
+                    </div>
+                    <div className="about-process-grid about-stagger about-reveal">
+                        {TIMELINE.map((step, index) => (
+                            <article
+                                key={step.title}
+                                className={`about-process-card${index % 2 === 1 ? ' about-process-card--alt' : ''}`}
+                            >
+                                <span className="about-process-ring-loop" aria-hidden="true" />
+                                <span className="about-process-number">{String(index + 1).padStart(2, '0')}</span>
+                                <div className="about-process-content">
+                                    <h3>{step.title}</h3>
+                                    <p>{step.text}</p>
+                                </div>
+                            </article>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* Werte */}
+            <section className="about-values-premium">
+                <div className="container">
+                    <div className="about-section-head about-reveal">
+                        <span className="section-label">Unsere Philosophie</span>
+                        <h2 className="section-title">Wofür UnfallExperten steht</h2>
+                        <p className="section-subtitle">
+                            Im Schadenfall brauchen Sie Klarheit, Verlässlichkeit und jemanden, der Ihre Situation ernst nimmt.
+                        </p>
+                    </div>
+                    <div className="about-values-premium-grid about-stagger about-reveal">
+                        {VALUES.map((value) => (
+                            <article key={value.title} className="about-values-premium-card">
+                                <div className="about-values-premium-icon">{value.icon}</div>
+                                <h3>{value.title}</h3>
+                                <p>{value.text}</p>
+                            </article>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            <AboutJourneyTimeline />
+
+            {/* Persönlicher Abschnitt */}
+            <section className="about-personal-section">
+                <div className="container">
+                    <div className="about-personal-grid">
+                        <div className="about-personal-visual about-reveal-soft">
+                            <div className="about-personal-portrait">
+                                <Image
+                                    src="/images/chatberkay.png"
+                                    alt=""
+                                    width={280}
+                                    height={350}
+                                    loading="lazy"
+                                    aria-hidden="true"
+                                />
+                            </div>
+                        </div>
+                        <div className="about-personal-content about-reveal about-delay-1">
+                            <span className="section-label">Persönlich vor Ort</span>
+                            <h2 className="section-title">Persönlich erreichbar statt anonymer Abwicklung</h2>
+                            <p>
+                                Berkay Okur steht für eine direkte und verständliche Begleitung nach dem Unfall. Statt
+                                unklarer Abläufe und langer Wartezeiten erhalten Sie eine schnelle Einschätzung, klare
+                                nächsten Schritte und eine nachvollziehbare Dokumentation Ihres Fahrzeugschadens.
+                            </p>
+                            <ul className="about-personal-checklist about-stagger about-reveal about-delay-2">
+                                {PERSONAL_POINTS.map((point) => (
+                                    <li key={point}>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden="true">
+                                            <polyline points="20 6 9 17 4 12" />
+                                        </svg>
+                                        {point}
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* CTA */}
+            <section className="about-cta">
+                <div className="about-cta-bg" aria-hidden="true" />
+                <div className="container">
+                    <div className="about-cta-box about-reveal">
+                        <h2>Unfall gehabt? Wir helfen sofort.</h2>
+                        <p>
+                            Rufen Sie uns an oder schreiben Sie per WhatsApp. Die Ersteinschätzung ist kostenlos und
+                            unverbindlich.
+                        </p>
+                        <div className="about-cta-buttons">
+                            <a href={TEL} className="btn btn-accent">
+                                <PhoneIcon />
+                                Jetzt anrufen
+                            </a>
+                            <a href={WHATSAPP} className="btn btn-whatsapp" target="_blank" rel="noopener noreferrer">
+                                <WhatsAppIcon />
+                                WhatsApp schreiben
+                            </a>
+                        </div>
+                        <p className="about-cta-trust">
+                            Kostenlose Ersteinschätzung · 24/7 erreichbar · NRW-weit im Einsatz
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <AboutFaq />
+        </div>
     );
 }

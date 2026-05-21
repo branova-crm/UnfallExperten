@@ -9,7 +9,9 @@ export default function GlobalAnimations() {
     useEffect(() => {
         // Small delay to ensure DOM is ready after client navigation
         const timer = setTimeout(() => {
-            const animateElements = document.querySelectorAll('.animate-on-scroll');
+            const animateElements = document.querySelectorAll(
+                '.animate-on-scroll, .about-reveal, .about-reveal-soft, .about-stagger.about-reveal'
+            );
             if (animateElements.length > 0) {
                 const showObserver = new IntersectionObserver((entries) => {
                     entries.forEach(entry => {
