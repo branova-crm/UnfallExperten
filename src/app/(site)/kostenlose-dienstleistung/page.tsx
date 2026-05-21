@@ -15,7 +15,6 @@ export default function KostenloseDienstleistungPage() {
                 <div className="hero-overlay"></div>
                 <div className="container" style={{ display: 'flex', justifyContent: 'center' }}>
                     <div className="hero-content" style={{ maxWidth: '800px', textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                        <p className="breadcrumb" style={{ color: 'rgba(255,255,255,0.7)', marginBottom: '15px' }}><Link href="/">Startseite</Link> / <Link href="/leistungen">Leistungen</Link> / Kostenlose Dienstleistung</p>
                         <h1 style={{ color: 'var(--clr-white)', marginBottom: '20px' }}>Kostenlose Dienstleistung</h1>
                         <p className="hero-subheadline mx-auto" style={{ fontSize: 'var(--fs-lg)' }}>Kompletter Unfallservice für Geschädigte – von der Begutachtung bis zur Auszahlung. Für Sie komplett kostenlos.</p>
                         <div className="hero-ctas" style={{ justifyContent: 'center', marginBottom: '30px' }}>

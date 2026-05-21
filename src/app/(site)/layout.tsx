@@ -1,6 +1,5 @@
 import HeaderWrapper from '@/components/HeaderWrapper';
 import FooterWrapper from '@/components/FooterWrapper';
-import WhatsAppWidget from '@/components/WhatsAppWidget';
 import GlobalAnimations from '@/components/GlobalAnimations';
 
 export default function SiteLayout({
@@ -16,7 +15,6 @@ export default function SiteLayout({
 
 
 
-            <WhatsAppWidget />
             <GlobalAnimations />
         </>
     );

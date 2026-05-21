@@ -1,5 +1,4 @@
-import { getPublishedPage, getDraftPage } from '@/lib/queries';
-import { draftMode } from 'next/headers';
+import { getPublishedPage } from '@/lib/queries';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import Konfigurator from '@/components/Konfigurator';
@@ -18,6 +17,8 @@ const SYSTEM_ROUTES = [
     'reparaturbestaetigung',
     'unfall-schadensgutachten',
     'wertgutachten',
+    'referenzen',
+    'ratgeber',
     'p', // reserved
     'preview',
 ];
@@ -34,10 +35,7 @@ export default async function CmsPage({ params }: Props) {
         notFound();
     }
 
-    const draft = await draftMode();
-    const page = draft.isEnabled
-        ? await getDraftPage(slug)
-        : await getPublishedPage(slug);
+    const page = await getPublishedPage(slug);
 
     if (!page) notFound();
 
@@ -45,20 +43,6 @@ export default async function CmsPage({ params }: Props) {
 
     return (
         <>
-            {/* Preview Banner */}
-            {draft.isEnabled && (
-                <div style={{
-                    position: 'fixed', top: 0, left: 0, right: 0, zIndex: 9999,
-                    background: '#f59e0b', color: '#000', textAlign: 'center',
-                    padding: '8px', fontSize: '13px', fontWeight: 600,
-                }}>
-                    📝 Vorschau-Modus aktiv –{' '}
-                    <a href="/api/exit-preview" style={{ color: '#000', textDecoration: 'underline' }}>
-                        Vorschau beenden
-                    </a>
-                </div>
-            )}
-
             {sections.map((section: any) => {
                 if (!section.is_enabled) return null;
                 const data = section.data || {};
@@ -73,11 +57,6 @@ export default async function CmsPage({ params }: Props) {
                                 <div className="hero-overlay"></div>
                                 <div className="container" style={{ display: 'flex', justifyContent: 'center' }}>
                                     <div className="hero-content" style={{ maxWidth: '800px', textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                                        {data.breadcrumb && (
-                                            <p className="breadcrumb" style={{ color: 'rgba(255,255,255,0.7)', marginBottom: '15px' }}>
-                                                <Link href="/">Startseite</Link> / {data.breadcrumb}
-                                            </p>
-                                        )}
                                         <h1 style={{ color: 'var(--clr-white)', marginBottom: '20px' }}>
                                             {data.headline || page.title}
                                         </h1>

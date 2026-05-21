@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import { Metadata } from 'next';
 import Konfigurator from '@/components/Konfigurator';
 
@@ -15,7 +14,6 @@ export default function KaskoPage() {
                 <div className="hero-overlay"></div>
                 <div className="container" style={{ display: 'flex', justifyContent: 'center' }}>
                     <div className="hero-content" style={{ maxWidth: '800px', textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                        <p className="breadcrumb" style={{ color: 'rgba(255,255,255,0.7)', marginBottom: '15px' }}><Link href="/">Startseite</Link> / <Link href="/leistungen">Leistungen</Link> / Kaskoschäden</p>
                         <h1 style={{ color: 'var(--clr-white)', marginBottom: '20px' }}>Kaskoschäden</h1>
                         <p className="hero-subheadline mx-auto" style={{ fontSize: 'var(--fs-lg)' }}>Unabhängige Gutachten für Teil- und Vollkaskoschäden – damit Sie die faire Entschädigung erhalten, die Ihnen zusteht.</p>
                         <div className="hero-ctas" style={{ justifyContent: 'center', marginBottom: '30px' }}>

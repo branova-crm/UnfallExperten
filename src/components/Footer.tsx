@@ -1,6 +1,15 @@
+"use client";
+
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 
 export default function Footer() {
+    const [year, setYear] = useState<number | string>("");
+
+    useEffect(() => {
+        setYear(new Date().getFullYear());
+    }, []);
+
     return (
         <footer className="site-footer">
             <div className="container" style={{ position: 'relative', zIndex: 3 }}>
@@ -39,10 +48,12 @@ export default function Footer() {
                     <div className="footer-col">
                         <h4>Unternehmen</h4>
                         <ul>
-                            <li><Link href="/ueber-uns">Über uns</Link></li>
                             <li><Link href="/leistungen">Leistungen</Link></li>
-                            <li><Link href="/kontakt">Kontakt</Link></li>
                             <li><Link href="/standorte">Standorte</Link></li>
+                            <li><Link href="/referenzen">Referenzen</Link></li>
+                            <li><Link href="/ueber-uns">Über uns</Link></li>
+                            <li><Link href="/kontakt">Kontakt</Link></li>
+                            <li><Link href="/ratgeber">Ratgeber</Link></li>
                             <li><Link href="/kontakt">Termin vereinbaren</Link></li>
                             <li><a href="#">Impressum</a></li>
                             <li><a href="#">Datenschutz</a></li>
@@ -50,8 +61,8 @@ export default function Footer() {
                     </div>
                 </div>
                 <div className="footer-bottom">
-                    <span>© <span className="current-year">{new Date().getFullYear()}</span> UnfallExperten NRW – Alle Rechte vorbehalten.</span>
-                    <span>Webdesign mit ❤️</span>
+                    <span>© <span className="current-year">{year}</span> UnfallExperten NRW – Alle Rechte vorbehalten.</span>
+                    <span>Webdesign by <a href="https://branova.de" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'underline' }}>Branova.de</a></span>
                 </div>
             </div>
         </footer>

@@ -31,7 +31,6 @@ function getFiles(dir, filesList = []) {
 const targetDirs = [
   path.join(__dirname, 'src', 'app', '(site)'),
   path.join(__dirname, 'src', 'components'),
-  path.join(__dirname, 'src', 'app', '(admin)')
 ];
 
 let files = [];

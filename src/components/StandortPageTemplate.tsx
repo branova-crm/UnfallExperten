@@ -49,7 +49,6 @@ export default function StandortPageTemplate({ data }: { data: StandortData }) {
                         muted
                         loop
                         playsInline
-                        poster="/images/hero-bg.png"
                     >
                         <source src="/images/herovideo2.mp4" type="video/mp4" />
                     </video>
@@ -57,9 +56,6 @@ export default function StandortPageTemplate({ data }: { data: StandortData }) {
                 <div className="hero-overlay"></div>
                 <div className="container" style={{ display: 'flex', justifyContent: 'center' }}>
                     <div className="hero-content" style={{ maxWidth: '800px', textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                        <p className="breadcrumb" style={{ color: 'rgba(255,255,255,0.7)', marginBottom: '15px' }}>
-                            <Link href="/">Startseite</Link> / <Link href="/standorte">Standorte</Link> / {city}
-                        </p>
                         <h1 style={{ color: 'var(--clr-white)', marginBottom: '20px' }}>KFZ-Gutachter {city}</h1>
                         <p className="hero-subheadline mx-auto" style={{ fontSize: 'var(--fs-lg)' }}>
                             {heroSubline || `Schnelle Schadensbegutachtung direkt bei Ihnen vor Ort in ${city} – kostenlos für Unfallgeschädigte.`}
