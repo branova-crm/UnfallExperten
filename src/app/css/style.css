@@ -915,53 +915,36 @@ button {
     line-height: 0;
     background: #0d2868;
     overflow: visible;
-    height: 56px;
 }
 
-.hero-wave-fill-layer {
-    position: absolute;
-    inset: 0;
+.hero-wave-marquee-svg {
     display: block;
     width: 100%;
-    height: 100%;
-}
-
-.hero-wave-marquee-text-layer {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    pointer-events: none;
-}
-
-.hero-wave-marquee-text-layer svg {
-    display: block;
-    width: 100%;
-    max-width: 1440px;
-    height: 100%;
+    height: 58px;
     overflow: visible;
 }
 
 @media (min-width: 768px) {
-    .hero-wave-marquee {
-        height: 68px;
+    .hero-wave-marquee-svg {
+        height: 70px;
     }
 }
 
 .hero-wave-marquee-text {
     font-family: var(--ff-base);
-    font-size: 11px;
     font-weight: 500;
-    letter-spacing: 0.14em;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
     -webkit-font-smoothing: antialiased;
 }
 
 @media (max-width: 768px) {
     .hero-wave-marquee-text {
-        font-size: 9.5px;
-        letter-spacing: 0.12em;
+        letter-spacing: 0.09em;
+    }
+
+    .hero-wave-marquee-svg {
+        height: 52px;
     }
 }
 
@@ -987,8 +970,8 @@ button {
         display: block;
     }
 
-    .hero-wave-marquee {
-        height: 40px;
+    .hero-wave-marquee-svg {
+        height: 44px;
     }
 }
 

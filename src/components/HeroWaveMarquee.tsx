@@ -25,45 +25,36 @@ export default function HeroWaveMarquee({
     return (
         <div className="hero-wave-marquee" aria-label={ariaLabel}>
             <svg
-                className="hero-wave-fill-layer"
+                className="hero-wave-marquee-svg"
                 viewBox="0 0 1440 72"
                 preserveAspectRatio="none"
                 xmlns="http://www.w3.org/2000/svg"
                 role="presentation"
-                aria-hidden="true"
             >
-                <path d={WAVE_FILL_PATH} fill="#ffffff" />
-            </svg>
+                <defs>
+                    <path id="hero-wave-text-path" d={WAVE_TEXT_PATH} fill="none" />
+                </defs>
 
-            <div className="hero-wave-marquee-text-layer">
-                <svg
-                    viewBox="0 0 1440 72"
-                    preserveAspectRatio="xMidYMid meet"
-                    xmlns="http://www.w3.org/2000/svg"
-                    role="presentation"
+                <path className="hero-wave-fill" d={WAVE_FILL_PATH} fill="#ffffff" />
+
+                <text
+                    className="hero-wave-marquee-text hero-wave-marquee-text--animated"
+                    fill="rgba(255, 255, 255, 0.92)"
+                    fontSize="13"
+                    dy="-6"
                 >
-                    <defs>
-                        <path id="hero-wave-text-path" d={WAVE_TEXT_PATH} fill="none" />
-                    </defs>
-
-                    <text
-                        className="hero-wave-marquee-text hero-wave-marquee-text--animated"
-                        fill="rgba(255, 255, 255, 0.92)"
-                        dy="-5"
-                    >
-                        <textPath href="#hero-wave-text-path" startOffset="0%">
-                            {marqueeText}
-                            <animate
-                                attributeName="startOffset"
-                                from="0%"
-                                to="-50%"
-                                dur="48s"
-                                repeatCount="indefinite"
-                            />
-                        </textPath>
-                    </text>
-                </svg>
-            </div>
+                    <textPath href="#hero-wave-text-path" startOffset="0%">
+                        {marqueeText}
+                        <animate
+                            attributeName="startOffset"
+                            from="0%"
+                            to="-50%"
+                            dur="48s"
+                            repeatCount="indefinite"
+                        />
+                    </textPath>
+                </text>
+            </svg>
 
             <p className="hero-wave-marquee-static">{items.join(' · ')}</p>
         </div>
