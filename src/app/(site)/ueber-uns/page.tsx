@@ -124,6 +124,12 @@ export default function UeberUnsPage() {
             <div className="about-hero-zone">
             {/* Premium Hero */}
             <section className="about-hero-premium about-hero">
+                <div className="hero-bg">
+                    <video autoPlay muted loop playsInline>
+                        <source src="/images/herovideo2.mp4" type="video/mp4" />
+                    </video>
+                </div>
+                <div className="hero-overlay" aria-hidden="true" />
                 <div className="about-hero-premium-bg" aria-hidden="true" />
                 <div className="container about-hero-premium-inner">
                     <div className="about-hero-premium-grid about-hero-grid">

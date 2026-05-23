@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
 
 type NavItem = {
     label: string;
@@ -19,8 +18,6 @@ type HeaderClientProps = {
 };
 
 export default function HeaderClient({ navItems, cta, contact, social }: HeaderClientProps) {
-    const pathname = usePathname();
-    const isLightHeaderPage = pathname === '/ueber-uns';
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
 
@@ -50,7 +47,7 @@ export default function HeaderClient({ navItems, cta, contact, social }: HeaderC
     return (
         <>
             {/* 1. STATIC HEADER (Default Top) */}
-            <div className={`topbar${isLightHeaderPage ? ' topbar--light-bg' : ''}`}>
+            <div className="topbar">
                 <div className="container">
                     <div className="topbar-left">
                         <a href={`tel:${contact.phoneLink}`}>
@@ -84,7 +81,7 @@ export default function HeaderClient({ navItems, cta, contact, social }: HeaderC
                 </div>
             </div>
 
-            <header className={`site-header${isLightHeaderPage ? ' site-header--light-bg' : ''}`} id="top">
+            <header className="site-header" id="top">
                 <div className="container">
                     <Link href="/" className="logo">
                         <img src="/images/logo.png" alt="Ihre Gutachter-Experten Logo" />

@@ -1,60 +1,12 @@
-"use client";
-
-import { useRef, useEffect, useState } from "react";
-
 export default function ProcessSection() {
-    const [isMobile, setIsMobile] = useState(false);
-    const [hasMounted, setHasMounted] = useState(false);
-
-    useEffect(() => {
-        setHasMounted(true);
-        const checkMobile = () => setIsMobile(window.innerWidth < 768);
-        checkMobile();
-        window.addEventListener('resize', checkMobile);
-        return () => window.removeEventListener('resize', checkMobile);
-    }, []);
-
-    if (!hasMounted) return null;
-
     return (
         <div className="process-parallax-container">
             <section className="steps-section">
-                <div className="container" style={{ position: 'relative', zIndex: 2, width: '100%' }}>
-
-                    <div className="steps-container glass-panel" style={{
-                        padding: '1.5rem 1.5rem 1.25rem 1.5rem',
-                        marginTop: isMobile ? '-20px' : '-40px',
-                        background: '#ffffff',
-                        border: '1px solid rgba(15, 47, 122, 0.1)',
-                        boxShadow: '0 20px 40px rgba(12, 28, 68, 0.1)',
-                        position: 'relative',
-                        zIndex: 20,
-                        borderRadius: '20px',
-                    }}>
-                        <div className="steps-grid" style={{
-                            display: 'grid',
-                            gridTemplateColumns: isMobile ? '1fr' : 'repeat(2, 1fr)',
-                            gap: isMobile ? '2.5rem' : '2.5rem',
-                        }}>
-                            <style jsx>{`
-                                @media (min-width: 1024px) {
-                                    .steps-grid {
-                                        grid-template-columns: repeat(4, 1fr) !important;
-                                    }
-                                    .step-item:not(:last-child) {
-                                        border-right: 1px solid rgba(15, 47, 122, 0.08);
-                                    }
-                                }
-                            `}</style>
+                <div className="container steps-section__container">
+                    <div className="steps-container glass-panel home-steps-panel">
+                        <div className="steps-grid home-steps-grid">
                             {[1, 2, 3, 4].map((step) => (
-                                <div key={step} className="step-item home-process-card" style={{
-                                    display: 'flex',
-                                    flexDirection: 'column',
-                                    alignItems: 'center',
-                                    textAlign: 'center',
-                                    padding: '0 1.5rem',
-                                    position: 'relative'
-                                }}>
+                                <div key={step} className="step-item home-process-card">
                                 <div className="step-number home-process-card__number">{step === 1 ? '01' : step === 2 ? '02' : step === 3 ? '03' : '04'}</div>
                                 <div className="step-icon home-process-card__icon">
                                     {step === 1 && (
@@ -74,23 +26,19 @@ export default function ProcessSection() {
                                         </svg>
                                     )}
                                     {step === 4 && (
-                                        <img
-                                            src="/schild.svg"
-                                            alt=""
-                                            width={45}
-                                            height={45}
+                                        <span
+                                            className="home-process-card__icon-img home-process-card__icon-shield"
                                             aria-hidden="true"
-                                            className="home-process-card__icon-img"
                                         />
                                     )}
                                 </div>
-                                <h3 className="home-process-card__title" style={{ textTransform: 'none' }}>
+                                <h3 className="home-process-card__title">
                                     {step === 1 ? "Termin vereinbaren" : 
                                      step === 2 ? "Begutachtung vor Ort" : 
                                      step === 3 ? "Gutachten erhalten" : 
                                      "Versicherungsabwicklung"}
                                 </h3>
-                                <p className="home-process-card__text" style={{ fontSize: '0.9rem' }}>
+                                <p className="home-process-card__text">
                                     {step === 1 ? "Einfach per Telefon oder WhatsApp einen Termin sichern. Wir kommen schnell zu Ihnen." : 
                                      step === 2 ? "Unser KFZ Gutachter prüft Ihr Fahrzeug direkt vor Ort. Alle Schäden werden sorgfältig dokumentiert." : 
                                      step === 3 ? "Sie erhalten Ihr Unfallgutachten innerhalb von 24–72 Stunden. Damit sind Sie bestens vorbereitet." : 

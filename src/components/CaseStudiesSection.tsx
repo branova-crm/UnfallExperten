@@ -115,11 +115,7 @@ export default function CaseStudiesSection() {
   };
 
   return (
-    <section style={{
-      padding: '24px 0 96px 0',
-      background: '#ffffff',
-      overflow: 'hidden'
-    }}>
+    <section className="home-case-studies">
       <div className="container">
 
         {/* Section Header - Centered */}
@@ -162,6 +158,7 @@ export default function CaseStudiesSection() {
         <div 
           ref={scrollRef}
           onScroll={checkScroll}
+          className="home-case-studies-carousel"
           style={{
             display: 'flex',
             gap: '24px',
@@ -170,7 +167,7 @@ export default function CaseStudiesSection() {
             scrollbarWidth: 'none',
             msOverflowStyle: 'none',
             WebkitOverflowScrolling: 'touch',
-            alignItems: 'stretch' // Sorgt für gleiche Höhe der Items
+            alignItems: 'stretch'
           }}
         >
           {caseStudies.map((study) => (
@@ -350,10 +347,19 @@ export default function CaseStudiesSection() {
           }
 
           @media (max-width: 640px) {
-            /* Mobile (1 Card) */
+            /* Mobile – eine Karte, volle sichtbare Breite */
             .case-study-card {
-              min-width: 100%;
-              width: 100%;
+              min-width: min(100%, calc(100vw - 2.5rem));
+              width: min(100%, calc(100vw - 2.5rem));
+            }
+
+            .home-case-studies-carousel {
+              scroll-snap-type: x mandatory;
+              padding-inline: 2px;
+            }
+
+            .case-study-card {
+              scroll-snap-align: start;
             }
           }
 
