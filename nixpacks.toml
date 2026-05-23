@@ -1,0 +1,12 @@
+# Dokploy / Nixpacks – Next.js 16 benötigt Node >= 20.9.0
+[variables]
+NIXPACKS_NODE_VERSION = "22"
+
+[phases.setup]
+nixPkgs = ["nodejs_22", "npm-10_x"]
+
+[phases.build]
+cmds = ["npm run build"]
+
+[start]
+cmd = "npm run start"

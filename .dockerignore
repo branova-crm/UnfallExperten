@@ -1,0 +1,14 @@
+node_modules
+.next
+out
+.git
+.env
+.env.*
+.cursor
+.agent
+design-system
+*.tsbuildinfo
+npm-debug.log*
+.DS_Store
+.idea
+.vscode
