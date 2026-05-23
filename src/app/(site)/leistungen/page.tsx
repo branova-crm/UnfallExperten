@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { Metadata } from 'next';
 import Konfigurator from '@/components/Konfigurator';
+import HeroWaveZone from '@/components/HeroWaveZone';
 
 export const metadata: Metadata = {
     title: 'Leistungen – KFZ-Gutachter NRW | UnfallExperten',
@@ -10,6 +11,7 @@ export const metadata: Metadata = {
 export default function LeistungenPage() {
     return (
         <>
+            <HeroWaveZone>
             {/* HERO */}
             <section className="hero" style={{ minHeight: '85vh' }}>
                 <div className="hero-bg">
@@ -37,6 +39,7 @@ export default function LeistungenPage() {
                     </div>
                 </div>
             </section>
+            </HeroWaveZone>
 
             {/* KOSTENLOSE ERSTEINSCHÄTZUNG */}
             <section className="content-section" id="ersteinschaetzung" style={{ background: 'var(--clr-offwhite)' }}>

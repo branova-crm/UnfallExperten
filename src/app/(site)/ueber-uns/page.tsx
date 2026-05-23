@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import Image from 'next/image';
 import AboutFaq from '@/components/AboutFaq';
 import AboutJourneyTimeline from '@/components/AboutJourneyTimeline';
-import AboutTrustStrip from '@/components/AboutTrustStrip';
+import HeroWaveZone from '@/components/HeroWaveZone';
 
 export const metadata: Metadata = {
     title: 'Über uns – UnfallExperten NRW | Ihre Gutachter-Experten',
@@ -99,9 +99,6 @@ const HERO_PILLS = [
     'Kostenlose Ersteinschätzung',
 ];
 
-/** Dreifach + verdoppelt für nahtlosen Marquee-Loop ohne sichtbare Lücke */
-const HERO_MARQUEE_TRACK = [...HERO_PILLS, ...HERO_PILLS, ...HERO_PILLS, ...HERO_PILLS, ...HERO_PILLS, ...HERO_PILLS];
-
 function PhoneIcon() {
     return (
         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{ marginRight: '6px' }} aria-hidden="true">
@@ -121,7 +118,7 @@ function WhatsAppIcon() {
 export default function UeberUnsPage() {
     return (
         <div className="about-page">
-            <div className="about-hero-zone">
+            <HeroWaveZone marqueeItems={HERO_PILLS}>
             {/* Premium Hero */}
             <section className="about-hero-premium about-hero">
                 <div className="hero-bg">
@@ -172,24 +169,13 @@ export default function UeberUnsPage() {
                             </div>
                         </div>
                     </div>
-
-                    <div className="about-marquee" aria-label="Kernvorteile">
-                        <div className="about-marquee-track">
-                            {HERO_MARQUEE_TRACK.map((item, index) => (
-                                <span key={`${item}-${index}`} className="about-hero-pill">
-                                    {item}
-                                </span>
-                            ))}
-                        </div>
-                    </div>
                 </div>
             </section>
-
-            <AboutTrustStrip />
-            </div>
+            </HeroWaveZone>
 
             {/* Begleitung / Prozess */}
-            <section className="about-process-section">
+            <section className="about-process-section about-chapter about-chapter--process">
+                <div className="about-chapter-bg" aria-hidden="true" />
                 <div className="container">
                     <div className="about-section-head about-reveal">
                         <span className="section-label">Ihre Begleitung</span>
@@ -202,7 +188,7 @@ export default function UeberUnsPage() {
                         {TIMELINE.map((step, index) => (
                             <article
                                 key={step.title}
-                                className={`about-process-card${index % 2 === 1 ? ' about-process-card--alt' : ''}`}
+                                className="about-process-card"
                             >
                                 <span className="about-process-number">{String(index + 1).padStart(2, '0')}</span>
                                 <div className="about-process-content">
@@ -216,7 +202,8 @@ export default function UeberUnsPage() {
             </section>
 
             {/* Werte */}
-            <section className="about-values-premium">
+            <section className="about-values-premium about-chapter about-chapter--values">
+                <div className="about-chapter-bg" aria-hidden="true" />
                 <div className="container">
                     <div className="about-section-head about-reveal">
                         <span className="section-label">Unsere Philosophie</span>
@@ -243,27 +230,15 @@ export default function UeberUnsPage() {
             <section className="about-personal-section">
                 <div className="container">
                     <div className="about-personal-grid">
-                        <div className="about-personal-visual about-reveal-soft">
-                            <div className="about-personal-portrait">
-                                <Image
-                                    src="/images/chatberkay.png"
-                                    alt=""
-                                    width={280}
-                                    height={350}
-                                    loading="lazy"
-                                    aria-hidden="true"
-                                />
-                            </div>
-                        </div>
-                        <div className="about-personal-content about-reveal about-delay-1">
+                        <div className="about-personal-content about-reveal">
                             <span className="section-label">Persönlich vor Ort</span>
-                            <h2 className="section-title">Persönlich erreichbar statt anonymer Abwicklung</h2>
+                            <h2 className="section-title">Persönliche Hilfe nach dem Unfall</h2>
                             <p>
-                                Berkay Okur steht für eine direkte und verständliche Begleitung nach dem Unfall. Statt
-                                unklarer Abläufe und langer Wartezeiten erhalten Sie eine schnelle Einschätzung, klare
-                                nächsten Schritte und eine nachvollziehbare Dokumentation Ihres Fahrzeugschadens.
+                                Berkay Okur begleitet Sie nach einem Unfall direkt und verständlich. Sie erhalten eine
+                                schnelle Einschätzung, klare Informationen zum weiteren Ablauf und eine nachvollziehbare
+                                Dokumentation Ihres Fahrzeugschadens. So wissen Sie von Anfang an, welche Schritte wichtig sind.
                             </p>
-                            <ul className="about-personal-checklist about-stagger about-reveal about-delay-2">
+                            <ul className="about-personal-checklist about-stagger about-reveal">
                                 {PERSONAL_POINTS.map((point) => (
                                     <li key={point}>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden="true">
@@ -279,7 +254,8 @@ export default function UeberUnsPage() {
             </section>
 
             {/* Fahrzeugtypen */}
-            <section className="about-vehicle-types">
+            <section className="about-vehicle-types about-chapter about-chapter--vehicles">
+                <div className="about-chapter-bg" aria-hidden="true" />
                 <div className="container">
                     <div className="about-vehicle-header about-reveal">
                         <span className="about-vehicle-kicker">FAHRZEUGTYPEN</span>
@@ -305,33 +281,6 @@ export default function UeberUnsPage() {
                                 <p className="about-vehicle-text">{vehicle.text}</p>
                             </article>
                         ))}
-                    </div>
-                </div>
-            </section>
-
-            {/* CTA */}
-            <section className="about-cta">
-                <div className="about-cta-bg" aria-hidden="true" />
-                <div className="container">
-                    <div className="about-cta-box about-reveal">
-                        <h2>Unfall gehabt? Wir helfen sofort.</h2>
-                        <p>
-                            Rufen Sie uns an oder schreiben Sie per WhatsApp. Die Ersteinschätzung ist kostenlos und
-                            unverbindlich.
-                        </p>
-                        <div className="about-cta-buttons">
-                            <a href={TEL} className="btn btn-accent">
-                                <PhoneIcon />
-                                Jetzt anrufen
-                            </a>
-                            <a href={WHATSAPP} className="btn btn-whatsapp" target="_blank" rel="noopener noreferrer">
-                                <WhatsAppIcon />
-                                WhatsApp schreiben
-                            </a>
-                        </div>
-                        <p className="about-cta-trust">
-                            Kostenlose Ersteinschätzung · 24/7 erreichbar · NRW-weit im Einsatz
-                        </p>
                     </div>
                 </div>
             </section>

@@ -33,14 +33,15 @@ export default function AboutFaq() {
     };
 
     return (
-        <section className="about-faq-section about-faq" id="faq">
+        <section className="about-faq-section about-faq about-chapter about-chapter--faq" id="faq">
+            <div className="about-chapter-bg" aria-hidden="true" />
             <div className="container">
-                <div className="text-center about-reveal">
+                <div className="about-section-head about-reveal">
                     <span className="section-label">FAQ</span>
                     <h2 className="section-title">Häufige Fragen</h2>
-                    <p className="section-subtitle mx-auto">Antworten zu Gutachten, Erreichbarkeit und Ablauf – kurz und verständlich.</p>
+                    <p className="section-subtitle">Antworten zu Gutachten, Erreichbarkeit und Ablauf – kurz und verständlich.</p>
                 </div>
-                <div className="faq-list about-faq-list about-stagger about-reveal about-delay-1">
+                <div className="faq-list about-faq-list about-stagger about-reveal">
                     {ABOUT_FAQ.map((faq, index) => (
                         <div key={index} className={`faq-item ${activeIndex === index ? 'active' : ''}`}>
                             <button type="button" className="faq-question about-faq-question" onClick={() => toggle(index)}>

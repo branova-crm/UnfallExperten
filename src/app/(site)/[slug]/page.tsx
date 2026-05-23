@@ -2,6 +2,7 @@ import { getPublishedPage } from '@/lib/queries';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import Konfigurator from '@/components/Konfigurator';
+import HeroWaveZone from '@/components/HeroWaveZone';
 
 // Blacklist: existing routes that should NOT be handled by this catch-all
 const SYSTEM_ROUTES = [
@@ -50,7 +51,8 @@ export default async function CmsPage({ params }: Props) {
                 switch (section.type) {
                     case 'hero':
                         return (
-                            <section key={section.id} className="hero" style={{ minHeight: '80vh', padding: '120px 0 80px 0' }}>
+                            <HeroWaveZone key={section.id}>
+                            <section className="hero" style={{ minHeight: '80vh', padding: '120px 0 80px 0' }}>
                                 <div className="hero-bg">
                                     <img src={data.backgroundImage || '/images/hero-bg.png'} alt={data.title || page.title} loading="eager" />
                                 </div>
@@ -74,6 +76,7 @@ export default async function CmsPage({ params }: Props) {
                                     </div>
                                 </div>
                             </section>
+                            </HeroWaveZone>
                         );
 
                     case 'content':

@@ -152,7 +152,8 @@ export default function AboutJourneyTimeline() {
     }, [reduceMotion]);
 
     return (
-        <section className="about-journey">
+        <section className="about-journey about-chapter about-chapter--journey">
+            <div className="about-chapter-bg" aria-hidden="true" />
             <div className="container">
                 <div className="about-journey-header about-reveal">
                     <span className="about-journey-kicker">MEIN WEG</span>
