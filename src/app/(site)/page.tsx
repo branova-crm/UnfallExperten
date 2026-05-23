@@ -142,8 +142,8 @@ export default function Home() {
       <section className="home-brand-statement" aria-labelledby="home-brand-statement-title">
         <div className="home-brand-statement__inner animate-on-scroll">
           <p className="home-brand-statement__eyebrow">
-            <span className="home-brand-statement__eyebrow-muted">Wenn es kracht,</span>{' '}
-            <span className="home-brand-statement__eyebrow-accent">sind wir für Sie da</span>
+            <span className="home-brand-statement__eyebrow-muted">Ihr Schadenfall.</span>{' '}
+            <span className="home-brand-statement__eyebrow-accent">Unsere Expertise.</span>
           </p>
           <h2 id="home-brand-statement-title" className="home-brand-statement__title">
             <span className="home-brand-statement__title-main">Unfall</span>
