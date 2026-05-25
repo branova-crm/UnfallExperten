@@ -10,6 +10,15 @@ import CaseStudiesSection from "@/components/CaseStudiesSection";
 import TrustStatsSection from "@/components/TrustStatsSection";
 import HeroWaveZone from "@/components/HeroWaveZone";
 
+const HERO_TITLE_WORDS = ["KFZ-Gutachter", "in", "deiner", "Nähe"] as const;
+
+const HERO_CERT_BENEFITS = [
+  "Keine Kosten für Unfallgeschädigte",
+  "In ganz NRW im Einsatz",
+  "Gutachten schon in 24h",
+  "Hilfe direkt an der Unfallstelle",
+] as const;
+
 export default function Home() {
   return (
     <div className="page-home">
@@ -23,17 +32,25 @@ export default function Home() {
           </div>
           <div className="hero-overlay"></div>
           <div className="container">
-            <div className="hero-content">
+            <div className="hero-content hero-content--intro">
               <h1>
-                <span className="hero-title-main">
-                  KFZ-Gutachter in deiner Nähe
+                <span className="hero-title-main hero-title-words">
+                  {HERO_TITLE_WORDS.map((word, index) => (
+                    <span
+                      key={word}
+                      className="hero-word"
+                      style={{ "--hero-word-i": index } as React.CSSProperties}
+                    >
+                      {word}
+                    </span>
+                  ))}
                 </span>
                 <br />
-                <span className="hero-title-sub">
+                <span className="hero-title-sub hero-intro-fade hero-intro-fade--phase-2">
                   Wir kümmern uns schnell und stressfrei um Ihr Unfallgutachten.
                 </span>
               </h1>
-              <p className="hero-subheadline">
+              <p className="hero-subheadline hero-intro-fade hero-intro-fade--phase-3">
                 NRW-weit für Sie im Einsatz: Wir sind kurzfristig vor Ort,
                 erstellen Ihr Gutachten zuverlässig und begleiten Sie durch den
                 gesamten Schadenprozess. Für Geschädigte kostenlos – die
@@ -43,7 +60,7 @@ export default function Home() {
               <div className="hero-ctas">
                 <a
                   href="tel:+4902111234567"
-                  className="btn btn-outline glass-button hero-cta-btn"
+                  className="btn btn-outline glass-button hero-cta-btn hero-cta-btn--call hero-intro-fade hero-intro-fade--phase-4"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -61,7 +78,7 @@ export default function Home() {
                 </a>
                 <Link
                   href="https://wa.me/4902111234567?text=Hallo%2C%20ich%20brauche%20Hilfe%20nach%20einem%20Unfall."
-                  className="btn btn-whatsapp hero-cta-btn"
+                  className="btn btn-whatsapp hero-cta-btn hero-intro-fade hero-intro-fade--phase-5"
                   target="_blank"
                 >
                   <svg
@@ -78,80 +95,95 @@ export default function Home() {
                 </Link>
               </div>
             </div>
-            <div className="hero-trust glass-panel">
-              <div className="hero-trust-badges">
-                <div className="trust-badge hero-trust-badge">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="18"
-                    height="18"
-                    viewBox="0 0 24 24"
-                    fill="white"
-                    aria-hidden="true"
+            <aside
+              className="hero-cert-panel hero-cert-panel--intro"
+              aria-label="Zertifizierung und Kundenbewertung"
+            >
+              <div className="hero-cert-panel__body">
+                <div
+                  className="hero-cert-panel__seal hero-card-item"
+                  style={{ "--card-item-i": 0 } as React.CSSProperties}
+                >
+                  <img
+                    src="/dgusv.png"
+                    alt="DGuSV – Verifizierter Sachverständiger Gutachter"
+                    className="hero-cert-panel__seal-img"
+                    width={140}
+                    height={280}
+                    loading="eager"
+                    decoding="async"
+                  />
+                </div>
+                <div className="hero-cert-panel__content">
+                  <ul className="hero-cert-panel__list">
+                    {HERO_CERT_BENEFITS.map((text, index) => (
+                      <li
+                        key={text}
+                        className="hero-card-item"
+                        style={
+                          { "--card-item-i": index + 1 } as React.CSSProperties
+                        }
+                      >
+                        <svg
+                          className="hero-cert-panel__check"
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="20"
+                          height="20"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          aria-hidden="true"
+                        >
+                          <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                          <polyline points="22 4 12 14.01 9 11.01" />
+                        </svg>
+                        <span>{text}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <div
+                    className="hero-cert-panel__rating hero-card-item"
+                    style={{ "--card-item-i": 5 } as React.CSSProperties}
                   >
-                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                  </svg>
-                  Unabhängiger KFZ-Sachverständiger
-                </div>
-                <div className="online-status hero-trust-badge">
-                  <span className="online-dot" aria-hidden="true"></span>
-                  24/7 Notfall-Service
-                </div>
-              </div>
-
-              <div className="hero-trust-rating">
-                <div className="hero-trust-avatars">
-                  {[
-                    { init: "H", bg: "#0097a7" },
-                    { init: "S", bg: "#5c6bc0" },
-                    { init: "A", bg: "#7b1fa2" },
-                    { init: "K", bg: "#ec407a" },
-                    { init: "N", bg: "#689f38" },
-                  ].map((a, i) => (
-                    <span
-                      key={i}
-                      className="hero-trust-avatar"
-                      style={{ background: a.bg, zIndex: 5 - i }}
-                    >
-                      {a.init}
+                    <img
+                      src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png"
+                      alt="Google"
+                      className="hero-cert-panel__google-logo"
+                      width={92}
+                      height={30}
+                      loading="lazy"
+                      decoding="async"
+                    />
+                    <div className="hero-cert-panel__rating-main">
+                      <span className="hero-cert-panel__score">5.0</span>
+                      <div
+                        className="hero-cert-panel__stars"
+                        aria-label="5 von 5 Sternen"
+                      >
+                        {Array.from({ length: 5 }).map((_, index) => (
+                          <svg
+                            key={index}
+                            viewBox="0 0 24 24"
+                            width="18"
+                            height="18"
+                            fill="#FBBC05"
+                            aria-hidden="true"
+                          >
+                            <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                          </svg>
+                        ))}
+                      </div>
+                    </div>
+                    <span className="hero-cert-panel__reviews">
+                      14 Bewertungen
                     </span>
-                  ))}
+                  </div>
                 </div>
-                <span className="hero-trust-rating-text">
-                  <svg
-                    viewBox="0 0 24 24"
-                    width="22"
-                    height="22"
-                    fill="#FBBC05"
-                    aria-hidden="true"
-                  >
-                    <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                  </svg>
-                  5.0 Google · 8 Bewertungen
-                </span>
               </div>
-
-              <ul className="trust-list hero-trust-list">
-                <li>
-                  <span className="check" aria-hidden="true">
-                    ✓
-                  </span>{" "}
-                  Keine Kosten für Geschädigte
-                </li>
-                <li>
-                  <span className="check" aria-hidden="true">
-                    ✓
-                  </span>{" "}
-                  Einsatz in ganz NRW – sofort verfügbar
-                </li>
-                <li>
-                  <span className="check" aria-hidden="true">
-                    ✓
-                  </span>{" "}
-                  Gutachten in 24 Stunden
-                </li>
-              </ul>
-            </div>
+            </aside>
           </div>
         </section>
       </HeroWaveZone>

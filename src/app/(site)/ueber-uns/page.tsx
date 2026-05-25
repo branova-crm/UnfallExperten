@@ -189,6 +189,7 @@ export default function UeberUnsPage() {
                             <article
                                 key={step.title}
                                 className="about-process-card"
+                                tabIndex={0}
                             >
                                 <span className="about-process-number">{String(index + 1).padStart(2, '0')}</span>
                                 <div className="about-process-content">

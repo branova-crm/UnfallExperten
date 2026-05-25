@@ -1031,6 +1031,231 @@ button {
     line-height: 1.7;
 }
 
+/* Startseite – Hero-Eingangsanimationen */
+.page-home .hero .container {
+    --hero-intro-word-count: 4;
+    --hero-intro-word-stagger: 0.13s;
+    --hero-intro-word-start: 0.08s;
+    --hero-intro-word-duration: 0.72s;
+    --hero-intro-phase-2: calc(
+        var(--hero-intro-word-start) +
+        (var(--hero-intro-word-count) - 1) * var(--hero-intro-word-stagger) +
+        var(--hero-intro-word-duration)
+    );
+    --hero-intro-phase-3: calc(var(--hero-intro-phase-2) + 0.22s);
+    --hero-intro-phase-4: calc(var(--hero-intro-phase-2) + 0.38s);
+    --hero-intro-phase-5: calc(var(--hero-intro-phase-2) + 0.52s);
+    --hero-intro-shine-start: calc(var(--hero-intro-phase-4) + 0.45s);
+    --hero-card-start: 0.1s;
+    --hero-card-item-start: 0.28s;
+    --hero-card-item-stagger: 0.11s;
+}
+
+@keyframes heroWordReveal {
+    from {
+        opacity: 0;
+        transform: translateY(0.55em);
+        clip-path: inset(100% 0 0 0);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        clip-path: inset(0 0 0 0);
+    }
+}
+
+@keyframes heroIntroFadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(14px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes heroIntroCardIn {
+    from {
+        opacity: 0;
+        transform: translateX(20px) scale(0.985);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+    }
+}
+
+@keyframes heroIntroCardInMobile {
+    from {
+        opacity: 0;
+        transform: translateY(16px) scale(0.985);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes heroCardItemFadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes heroCallBtnShine {
+    from {
+        transform: translateX(-140%) skewX(-18deg);
+    }
+
+    to {
+        transform: translateX(240%) skewX(-18deg);
+    }
+}
+
+@keyframes heroCallBtnShineLoop {
+    0%, 68% {
+        transform: translateX(-140%) skewX(-18deg);
+    }
+
+    100% {
+        transform: translateX(240%) skewX(-18deg);
+    }
+}
+
+.page-home .hero-content--intro .hero-title-words {
+    display: block;
+}
+
+.page-home .hero-content--intro .hero-word {
+    display: inline-block;
+    opacity: 0;
+    will-change: opacity, transform;
+    animation: heroWordReveal var(--hero-intro-word-duration) cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    animation-delay: calc(var(--hero-intro-word-start) + var(--hero-word-i, 0) * var(--hero-intro-word-stagger));
+}
+
+.page-home .hero-content--intro .hero-word:not(:last-child)::after {
+    content: '\00a0';
+}
+
+.page-home .hero-content--intro .hero-intro-fade {
+    opacity: 0;
+    will-change: opacity, transform;
+    animation: heroIntroFadeUp 0.78s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.page-home .hero-content--intro .hero-intro-fade--phase-2 {
+    animation-delay: var(--hero-intro-phase-2);
+}
+
+.page-home .hero-content--intro .hero-intro-fade--phase-3 {
+    animation-delay: var(--hero-intro-phase-3);
+}
+
+.page-home .hero-content--intro .hero-intro-fade--phase-4 {
+    animation-delay: var(--hero-intro-phase-4);
+}
+
+.page-home .hero-content--intro .hero-intro-fade--phase-5 {
+    animation-delay: var(--hero-intro-phase-5);
+}
+
+.page-home .hero-cert-panel--intro {
+    opacity: 0;
+    will-change: opacity, transform;
+    animation: heroIntroCardIn 0.72s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    animation-delay: var(--hero-card-start);
+}
+
+.page-home .hero-cert-panel--intro .hero-card-item {
+    opacity: 0;
+    will-change: opacity, transform;
+    animation: heroCardItemFadeUp 0.68s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    animation-delay: calc(var(--hero-card-item-start) + var(--card-item-i, 0) * var(--hero-card-item-stagger));
+}
+
+.page-home .hero-content--intro .hero-cta-btn--call {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+.page-home .hero-content--intro .hero-cta-btn--call::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 45%;
+    height: 100%;
+    background: linear-gradient(
+        105deg,
+        transparent 0%,
+        rgba(255, 255, 255, 0.08) 20%,
+        rgba(255, 255, 255, 0.42) 50%,
+        rgba(255, 255, 255, 0.08) 80%,
+        transparent 100%
+    );
+    transform: translateX(-140%) skewX(-18deg);
+    pointer-events: none;
+    z-index: 1;
+    animation: heroCallBtnShineLoop 3s cubic-bezier(0.22, 1, 0.36, 1) var(--hero-intro-shine-start) infinite;
+}
+
+.page-home .hero-content--intro .hero-cta-btn--call:hover::before {
+    animation: heroCallBtnShine 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.page-home .hero-content--intro .hero-cta-btn--call svg,
+.page-home .hero-content--intro .hero-cta-btn--call span {
+    position: relative;
+    z-index: 2;
+}
+
+@media (max-width: 768px) {
+    .page-home .hero .container {
+        --hero-intro-word-stagger: 0.11s;
+        --hero-intro-word-start: 0.06s;
+        --hero-intro-word-duration: 0.65s;
+        --hero-intro-phase-3: calc(var(--hero-intro-phase-2) + 0.18s);
+        --hero-intro-phase-4: calc(var(--hero-intro-phase-2) + 0.32s);
+        --hero-intro-phase-5: calc(var(--hero-intro-phase-2) + 0.44s);
+        --hero-card-start: 0.08s;
+        --hero-card-item-start: 0.22s;
+        --hero-card-item-stagger: 0.09s;
+    }
+
+    .page-home .hero-cert-panel--intro {
+        animation-name: heroIntroCardInMobile;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .page-home .hero-content--intro .hero-word,
+    .page-home .hero-content--intro .hero-intro-fade,
+    .page-home .hero-cert-panel--intro,
+    .page-home .hero-cert-panel--intro .hero-card-item {
+        opacity: 1 !important;
+        transform: none !important;
+        clip-path: none !important;
+        animation: none !important;
+    }
+
+    .page-home .hero-content--intro .hero-cta-btn--call::before {
+        display: none;
+    }
+}
+
 .hero-ctas {
     display: flex;
     flex-direction: column;
@@ -4329,6 +4554,125 @@ section[id] {
     }
 }
 
+/* Begleitung – vollflächige Füllung von links nach rechts */
+.about-process-section .about-process-card {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    --process-accent: var(--clr-primary);
+    isolation: isolate;
+}
+
+.about-process-section .about-process-grid .about-process-card:nth-child(1) {
+    --process-accent: var(--clr-primary);
+}
+
+.about-process-section .about-process-grid .about-process-card:nth-child(2) {
+    --process-accent: #2563eb;
+}
+
+.about-process-section .about-process-grid .about-process-card:nth-child(3) {
+    --process-accent: #3b82f6;
+}
+
+.about-process-section .about-process-grid .about-process-card:nth-child(4) {
+    --process-accent: #133991;
+}
+
+.about-process-section .about-process-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: var(--process-accent);
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.about-process-section .about-process-card:not(:hover):not(:active):not(:focus-visible)::before {
+    transition-duration: 0.65s;
+}
+
+.about-process-section .about-process-number,
+.about-process-section .about-process-content {
+    position: relative;
+    z-index: 1;
+}
+
+.about-process-section .about-process-number,
+.about-process-section .about-process-content h3,
+.about-process-section .about-process-content p {
+    transition: color 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.about-process-section .about-process-card:hover,
+.about-process-section .about-process-card:active,
+.about-process-section .about-process-card:focus-visible {
+    border-color: var(--process-accent);
+    box-shadow: 0 16px 40px rgba(22, 65, 166, 0.18);
+}
+
+.about-process-section .about-process-card:hover::before,
+.about-process-section .about-process-card:active::before,
+.about-process-section .about-process-card:focus-visible::before {
+    transform: scaleX(1);
+}
+
+.about-process-section .about-process-card:hover .about-process-number,
+.about-process-section .about-process-card:active .about-process-number,
+.about-process-section .about-process-card:focus-visible .about-process-number {
+    color: rgba(255, 255, 255, 0.95);
+    opacity: 1;
+}
+
+.about-process-section .about-process-card:hover .about-process-content h3,
+.about-process-section .about-process-card:active .about-process-content h3,
+.about-process-section .about-process-card:focus-visible .about-process-content h3 {
+    color: #ffffff;
+}
+
+.about-process-section .about-process-card:hover .about-process-content p,
+.about-process-section .about-process-card:active .about-process-content p,
+.about-process-section .about-process-card:focus-visible .about-process-content p {
+    color: rgba(255, 255, 255, 0.88);
+}
+
+.about-process-section .about-process-card:focus-visible {
+    outline: 2px solid var(--process-accent);
+    outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .about-process-section .about-process-card::before {
+        display: none;
+    }
+
+    .about-process-section .about-process-card:hover,
+    .about-process-section .about-process-card:active,
+    .about-process-section .about-process-card:focus-visible {
+        background: var(--process-accent);
+        border-color: var(--process-accent);
+    }
+
+    .about-process-section .about-process-card:hover .about-process-number,
+    .about-process-section .about-process-card:active .about-process-number,
+    .about-process-section .about-process-card:focus-visible .about-process-number,
+    .about-process-section .about-process-card:hover .about-process-content h3,
+    .about-process-section .about-process-card:active .about-process-content h3,
+    .about-process-section .about-process-card:focus-visible .about-process-content h3 {
+        color: #ffffff;
+    }
+
+    .about-process-section .about-process-card:hover .about-process-content p,
+    .about-process-section .about-process-card:active .about-process-content p,
+    .about-process-section .about-process-card:focus-visible .about-process-content p {
+        color: rgba(255, 255, 255, 0.88);
+    }
+}
+
 /* Fahrzeugtypen */
 .about-vehicle-types {
     padding: var(--sp-2xl) 0 var(--sp-3xl);
@@ -5537,7 +5881,6 @@ section[id] {
     .location-card,
     .stat-card,
     .about-values-premium-card,
-    .about-process-card,
     .about-vehicle-card {
         position: relative;
         overflow: hidden;
@@ -5554,7 +5897,6 @@ section[id] {
     .location-card::after,
     .stat-card::after,
     .about-values-premium-card::after,
-    .about-process-card::after,
     .about-vehicle-card::after {
         content: '';
         position: absolute;
@@ -5577,7 +5919,6 @@ section[id] {
     .location-card:hover,
     .stat-card:hover,
     .about-values-premium-card:hover,
-    .about-process-card:hover,
     .about-vehicle-card:hover {
         transform: translateY(-4px);
         box-shadow: 0 20px 48px rgba(22, 65, 166, 0.14);
@@ -5591,7 +5932,6 @@ section[id] {
     .location-card:hover::after,
     .stat-card:hover::after,
     .about-values-premium-card:hover::after,
-    .about-process-card:hover::after,
     .about-vehicle-card:hover::after {
         transform: scaleX(1);
     }
@@ -5628,7 +5968,6 @@ section[id] {
     .location-card,
     .stat-card,
     .about-values-premium-card,
-    .about-process-card,
     .about-vehicle-card,
     .service-card::before,
     .step-card::after,
@@ -5637,7 +5976,6 @@ section[id] {
     .location-card::after,
     .stat-card::after,
     .about-values-premium-card::after,
-    .about-process-card::after,
     .about-vehicle-card::after,
     .service-icon,
     .step-icon,
@@ -5658,7 +5996,6 @@ section[id] {
     .location-card:hover,
     .stat-card:hover,
     .about-values-premium-card:hover,
-    .about-process-card:hover,
     .about-vehicle-card:hover {
         transform: none !important;
         box-shadow: inherit;
@@ -5671,7 +6008,6 @@ section[id] {
     .location-card:hover::after,
     .stat-card:hover::after,
     .about-values-premium-card:hover::after,
-    .about-process-card:hover::after,
     .about-vehicle-card:hover::after {
         transform: none !important;
     }
@@ -6016,109 +6352,137 @@ main {
 }
 
 /* ============================================
-   Startseite – Hero Trust Panel
+   Startseite – Hero Zertifizierungs-Panel
    ============================================ */
-.page-home .hero-trust {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+.page-home .hero-cert-panel {
     width: 100%;
     max-width: 100%;
-    padding: 2.5rem 1.5rem;
-    gap: 1.5rem;
+    margin-left: auto;
+    padding: 1rem 1.75rem;
+    border-radius: 20px;
+    background: rgba(12, 32, 82, 0.52);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow:
+        0 24px 52px rgba(0, 0, 0, 0.28),
+        inset 0 1px 0 rgba(255, 255, 255, 0.14);
     position: relative;
     z-index: 2;
-    margin-left: auto;
-}
-
-.page-home .hero-trust-badges {
-    display: flex;
-    flex-direction: column;
-    gap: 0.35rem;
-    width: 100%;
-    align-items: center;
-}
-
-.page-home .hero-trust-badge {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 0.5rem;
+}
+
+.page-home .hero-cert-panel__body {
+    display: flex;
+    align-items: center;
+    gap: 1.15rem;
     width: 100%;
+}
+
+.page-home .hero-cert-panel__seal {
+    flex: 0 0 clamp(112px, 36%, 172px);
+    width: clamp(112px, 36%, 172px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.page-home .hero-cert-panel__seal-img {
+    width: 100%;
+    height: auto;
+    max-height: 280px;
+    object-fit: contain;
+    object-position: center center;
+    display: block;
+    filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.22));
+}
+
+.page-home .hero-cert-panel__content {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.page-home .hero-cert-panel__list {
+    list-style: none;
     margin: 0;
-    padding: 0.65rem 1rem;
-    border-radius: var(--radius);
-    background: rgba(255, 255, 255, 0.15);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    color: #ffffff;
-    font-weight: 600;
-    font-size: 0.95rem;
-}
-
-.page-home .hero-trust-badge .online-dot {
-    width: 8px;
-    height: 8px;
-    background: #4ade80;
-    box-shadow: 0 0 10px #4ade80;
-}
-
-.page-home .hero-trust-rating {
-    width: 100%;
+    padding: 0;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 0.75rem;
+    gap: 0.7rem;
 }
 
-.page-home .hero-trust-avatars {
+.page-home .hero-cert-panel__list li {
     display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.page-home .hero-trust-avatar {
-    width: 34px;
-    height: 34px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-start;
+    gap: 0.55rem;
     color: #ffffff;
-    font-weight: 700;
-    font-size: 0.85rem;
-    border: 2px solid #ffffff;
-    position: relative;
-    margin-left: -8px;
-}
-
-.page-home .hero-trust-avatar:first-child {
-    margin-left: 0;
-}
-
-.page-home .hero-trust-rating-text {
-    color: #ffffff;
-    font-weight: 800;
-    font-size: 0.95rem;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    flex-wrap: wrap;
+    font-size: 0.92rem;
+    font-weight: 600;
     line-height: 1.35;
+    text-align: left;
 }
 
-.page-home .hero-trust-list {
+.page-home .hero-cert-panel__check {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    color: #4ade80;
+    margin-top: 1px;
+}
+
+.page-home .hero-cert-panel__rating {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.35rem;
+    text-align: left;
+}
+
+.page-home .hero-cert-panel__google-logo {
+    height: 18px;
+    width: auto;
+    display: block;
+}
+
+.page-home .hero-cert-panel__rating-main {
+    display: flex;
     align-items: center;
-    text-align: center;
-    width: 100%;
-    gap: 0.5rem;
+    justify-content: flex-start;
+    gap: 0.65rem;
 }
 
-.page-home .hero-trust-list li {
-    justify-content: center;
+.page-home .hero-cert-panel__score {
+    font-size: 1.85rem;
+    font-weight: 900;
+    color: #ffffff;
+    line-height: 1;
+    letter-spacing: -0.02em;
+}
+
+.page-home .hero-cert-panel__stars {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+
+.page-home .hero-cert-panel__reviews {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.84);
+    line-height: 1.3;
+}
+
+@media (min-width: 768px) {
+    .page-home .hero-cert-panel {
+        align-self: stretch;
+        min-height: 100%;
+    }
 }
 
 .page-home .hero-cta-btn {
@@ -6215,14 +6579,50 @@ main {
         margin-bottom: 1.25rem;
     }
 
-    .page-home .hero-trust {
-        padding: 1.25rem 1rem;
+    .page-home .hero-cert-panel {
+        padding: 0.85rem 1rem;
         gap: 1rem;
     }
 
-    .page-home .hero-trust-badge {
+    .page-home .hero-cert-panel__body {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .page-home .hero-cert-panel__seal {
+        width: clamp(104px, 38vw, 140px);
+        flex-basis: clamp(104px, 38vw, 140px);
+        align-self: center;
+    }
+
+    .page-home .hero-cert-panel__seal-img {
+        width: 100%;
+        height: auto;
+        min-height: 0;
+        max-height: 210px;
+    }
+
+    .page-home .hero-cert-panel__content {
+        width: 100%;
+        max-width: 22rem;
+    }
+
+    .page-home .hero-cert-panel__list li {
         font-size: 0.875rem;
-        padding: 0.6rem 0.85rem;
+    }
+
+    .page-home .hero-cert-panel__rating {
+        align-items: center;
+        text-align: center;
+    }
+
+    .page-home .hero-cert-panel__rating-main {
+        justify-content: center;
+    }
+
+    .page-home .hero-cert-panel__score {
+        font-size: 1.65rem;
     }
 
     .page-home .steps-section .container,
@@ -6298,14 +6698,8 @@ main {
         font-size: clamp(1.65rem, 9vw, 2rem);
     }
 
-    .page-home .hero-trust-rating-text {
-        font-size: 0.85rem;
-    }
-
-    .page-home .hero-trust-avatar {
-        width: 30px;
-        height: 30px;
-        font-size: 0.75rem;
+    .page-home .hero-cert-panel__list li {
+        font-size: 0.82rem;
     }
 }
 
