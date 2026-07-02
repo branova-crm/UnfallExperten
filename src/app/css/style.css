@@ -4077,11 +4077,15 @@ section[id] {
 }
 
 .about-page .about-chapter--process {
-    background: linear-gradient(180deg, #ffffff 0%, #f4f7fd 100%);
+    background: #f4f7fd;
 }
 
 .about-page .hero-wave-zone::after {
     display: none;
+}
+
+.about-page .hero-wave-fill {
+    fill: #f4f7fd;
 }
 
 .about-page .about-chapter--process .about-chapter-bg {
@@ -4494,9 +4498,9 @@ section[id] {
 /* Begleitung / Prozess – kompakte Premium-Cards */
 .about-process-section {
     position: relative;
-    z-index: 1;
-    padding: var(--sp-xl) 0 var(--sp-3xl);
-    margin-top: 0;
+    z-index: 5;
+    padding: calc(var(--sp-xl) + 36px) 0 var(--sp-3xl);
+    margin-top: -36px;
 }
 
 .about-process-section .about-section-head {
@@ -4632,8 +4636,8 @@ section[id] {
     }
 
     .about-process-section {
-        margin-top: -24px;
-        padding: calc(var(--sp-2xl) + 24px) 0 var(--sp-3xl);
+        margin-top: -36px;
+        padding: calc(var(--sp-2xl) + 36px) 0 var(--sp-3xl);
     }
 
     .about-process-card {
