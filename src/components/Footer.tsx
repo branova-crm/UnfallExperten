@@ -38,7 +38,7 @@ export default function Footer() {
                         </div>
                         <div className="footer-contact-item">
                             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" /><circle cx="12" cy="9" r="2.5" /></svg> 
-                            Musterstraße 1, 40210 Düsseldorf
+                            Felix-Wankel-Straße 11, 53881 Euskirchen
                         </div>
                         <div className="footer-contact-item" style={{ marginTop: 'var(--sp-sm)', color: '#fff', fontWeight: 600 }}>
                             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginRight: '8px' }}><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 3" /></svg>
@@ -55,7 +55,7 @@ export default function Footer() {
                             <li><Link href="/kontakt">Kontakt</Link></li>
                             <li><Link href="/ratgeber">Ratgeber</Link></li>
                             <li><Link href="/kontakt">Termin vereinbaren</Link></li>
-                            <li><a href="#">Impressum</a></li>
+                            <li><Link href="/impressum">Impressum</Link></li>
                             <li><Link href="/datenschutz">Datenschutz</Link></li>
                         </ul>
                     </div>

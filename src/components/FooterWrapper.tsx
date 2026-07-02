@@ -4,7 +4,7 @@ const CONTACT = {
     phone: '0211 – 123 456 7',
     phoneLink: '+4902111234567',
     email: 'info@unfallexperten-nrw.de',
-    address: 'Musterstraße 1, 40210 Düsseldorf',
+    address: 'Felix-Wankel-Straße 11, 53881 Euskirchen',
     openingHours: 'Jederzeit erreichbar',
 };
 
