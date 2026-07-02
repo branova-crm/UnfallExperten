@@ -46,7 +46,7 @@ function InterestIcon({ id }: { id: string }) {
 }
 
 export default function Konfigurator() {
-    const WHATSAPP_NUMBER = "4902111234567";
+    const WHATSAPP_NUMBER = "4917684568618";
 
     const [step, setStep] = useState(1);
     const [selectedInterests, setSelectedInterests] = useState<string[]>([]);

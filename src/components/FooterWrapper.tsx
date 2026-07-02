@@ -1,8 +1,8 @@
 import FooterClient from './FooterClient';
 
 const CONTACT = {
-    phone: '0211 – 123 456 7',
-    phoneLink: '+4902111234567',
+    phone: '+49 176 84568618',
+    phoneLink: '+4917684568618',
     email: 'info@unfallexperten-nrw.de',
     address: 'Felix-Wankel-Straße 11, 53881 Euskirchen',
     openingHours: 'Jederzeit erreichbar',

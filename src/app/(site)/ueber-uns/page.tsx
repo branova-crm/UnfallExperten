@@ -10,8 +10,8 @@ export const metadata: Metadata = {
         'Lernen Sie UnfallExperten NRW und Berkay Okur kennen. Unabhängige Unterstützung nach einem Unfall, schnelle Schadenaufnahme und persönliche Begleitung in NRW.',
 };
 
-const TEL = 'tel:+4902111234567';
-const WHATSAPP = 'https://wa.me/4902111234567?text=Hallo%2C%20ich%20habe%20eine%20Frage%20zu%20UnfallExperten.';
+const TEL = 'tel:+4917684568618';
+const WHATSAPP = 'https://wa.me/4917684568618?text=Hallo%2C%20ich%20habe%20eine%20Frage%20zu%20UnfallExperten.';
 
 const TIMELINE = [
     {

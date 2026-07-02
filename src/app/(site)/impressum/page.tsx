@@ -47,7 +47,7 @@ export default function ImpressumPage() {
 
             <h2>Kontakt</h2>
             <p>
-              Telefon: <a href="tel:+4902111234567">0211 – 123 456 7</a>
+              Telefon: <a href="tel:+4917684568618">+49 176 84568618</a>
               <br />
               E-Mail:{" "}
               <a href="mailto:info@unfallexperten-nrw.de">

@@ -76,7 +76,7 @@ export default async function StandortDetail({ params }: Props) {
                 className="hero-ctas"
                 style={{ justifyContent: "center", marginBottom: "30px" }}
               >
-                <a href="tel:+4902111234567" className="btn btn-outline">
+                <a href="tel:+4917684568618" className="btn btn-outline">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="18"
@@ -92,7 +92,7 @@ export default async function StandortDetail({ params }: Props) {
                   Jetzt anrufen
                 </a>
                 <a
-                  href="https://wa.me/4902111234567"
+                  href="https://wa.me/4917684568618"
                   className="btn btn-whatsapp"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -362,7 +362,7 @@ export default async function StandortDetail({ params }: Props) {
             Arbeit.
           </p>
           <div className="cta-banner-buttons">
-            <a href="tel:+4902111234567" className="btn btn-accent">
+            <a href="tel:+4917684568618" className="btn btn-accent">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="18"
@@ -462,7 +462,7 @@ export default async function StandortDetail({ params }: Props) {
                 Minuten – kostenlos und unverbindlich.
               </p>
               <div className="contact-direct">
-                <a href="tel:+4902111234567">
+                <a href="tel:+4917684568618">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
@@ -474,7 +474,7 @@ export default async function StandortDetail({ params }: Props) {
                   >
                     <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
                   </svg>{" "}
-                  0211 – 123 456 7
+                  +49 176 84568618
                 </a>
               </div>
             </div>

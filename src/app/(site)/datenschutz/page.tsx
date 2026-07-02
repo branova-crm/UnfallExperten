@@ -54,7 +54,7 @@ export default function DatenschutzPage() {
               </a>
               <br />
               Telefon:{" "}
-              <a href="tel:+4902111234567">0211 – 123 456 7</a>
+              <a href="tel:+4917684568618">+49 176 84568618</a>
             </p>
             <p>
               Ein gesetzlich vorgeschriebener Datenschutzbeauftragter ist für unser

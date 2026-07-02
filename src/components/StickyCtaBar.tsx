@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
-const TEL = 'tel:+4902111234567';
-const WHATSAPP = 'https://wa.me/4902111234567?text=Hallo%2C%20ich%20habe%20einen%20Schaden%20zu%20melden.';
+const TEL = 'tel:+4917684568618';
+const WHATSAPP = 'https://wa.me/4917684568618?text=Hallo%2C%20ich%20habe%20einen%20Schaden%20zu%20melden.';
 
 function PhoneIcon() {
     return (

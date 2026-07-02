@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from 'react';
 
 export default function WhatsAppWidget() {
-    const WHATSAPP_NUMBER = "4902111234567";
+    const WHATSAPP_NUMBER = "4917684568618";
 
     const [isOpen, setIsOpen] = useState(false);
     const [showBadge, setShowBadge] = useState(false);
