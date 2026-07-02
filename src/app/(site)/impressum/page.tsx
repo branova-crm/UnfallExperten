@@ -55,31 +55,6 @@ export default function ImpressumPage() {
               </a>
             </p>
 
-            <h2>Registereintrag</h2>
-            <p>
-              Es liegen derzeit keine auf der Website veröffentlichten Angaben zu
-              einem Registereintrag vor.
-            </p>
-
-            <h2>Umsatzsteuer-ID</h2>
-            <p>
-              Es liegen derzeit keine auf der Website veröffentlichten Angaben zu
-              einer Umsatzsteuer-Identifikationsnummer gemäß § 27a
-              Umsatzsteuergesetz vor.
-            </p>
-
-            <h2>Aufsichtsbehörde</h2>
-            <p>
-              Es liegen derzeit keine auf der Website veröffentlichten Angaben zu
-              einer zuständigen Aufsichtsbehörde vor.
-            </p>
-
-            <h2>Berufshaftpflichtversicherung</h2>
-            <p>
-              Es liegen derzeit keine auf der Website veröffentlichten Angaben zu
-              einer Berufshaftpflichtversicherung vor.
-            </p>
-
             <h2>Verantwortlich für den Inhalt gemäß § 18 Abs. 2 MStV</h2>
             <address className="legal-address">
               Berkay Okur

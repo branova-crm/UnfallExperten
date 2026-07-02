@@ -33,17 +33,6 @@ export default function DatenschutzPage() {
               <strong>Stand:</strong> 21. Mai 2026
             </p>
 
-            <div className="legal-notice">
-              <p>
-                <strong>Wichtiger Hinweis:</strong> Dieser Text ist ein sorgfältig
-                erstellter Entwurf zur Einbindung in unsere Website. Er orientiert
-                sich an den Vorgaben der Datenschutz-Grundverordnung (DSGVO) und
-                des Bundesdatenschutzgesetzes (BDSG). Er ersetzt jedoch{" "}
-                <strong>keine individuelle juristische Prüfung</strong> durch eine
-                auf Datenschutzrecht spezialisierte Kanzlei oder Beratung.
-              </p>
-            </div>
-
             <h2>1. Verantwortlicher</h2>
             <p>
               Verantwortlicher im Sinne von Art. 4 Nr. 7 DSGVO und Ansprechpartner
@@ -439,15 +428,6 @@ export default function DatenschutzPage() {
               Wir behalten uns vor, diese Datenschutzerklärung anzupassen, wenn sich
               unsere Website, eingesetzte Dienste oder die Rechtslage ändern. Es
               gilt stets die auf dieser Seite veröffentlichte aktuelle Fassung.
-            </p>
-
-            <p className="legal-footer-note">
-              <em>
-                Hinweis: Dieser Entwurf ersetzt keine individuelle juristische
-                Prüfung. Bei rechtlichen Fragen oder Unternehmensbesonderheiten
-                empfehlen wir die Beratung durch einen Fachanwalt für
-                Datenschutzrecht.
-              </em>
             </p>
           </article>
         </div>
