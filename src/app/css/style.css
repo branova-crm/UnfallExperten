@@ -883,6 +883,7 @@ button {
 /* Hero-Welle + Marquee-Übergang (global, wie Über-uns) */
 .hero-wave-zone {
     position: relative;
+    z-index: 10;
     background-color: #0d2868;
     overflow: visible;
 }
@@ -4095,6 +4096,8 @@ section[id] {
         radial-gradient(rgba(22, 65, 166, 0.055) 1px, transparent 1px);
     background-size: auto, auto, 22px 22px;
     animation: aboutChapterDrift 18s ease-in-out infinite alternate;
+    mask-image: linear-gradient(to bottom, transparent 120px, black 220px);
+    -webkit-mask-image: linear-gradient(to bottom, transparent 120px, black 220px);
 }
 
 .about-page .about-chapter--values {
@@ -4499,8 +4502,8 @@ section[id] {
 .about-process-section {
     position: relative;
     z-index: 5;
-    padding: calc(var(--sp-xl) + 36px) 0 var(--sp-3xl);
-    margin-top: -36px;
+    padding: calc(var(--sp-xl) + 120px) 0 var(--sp-3xl);
+    margin-top: -120px;
 }
 
 .about-process-section .about-section-head {
@@ -4636,8 +4639,8 @@ section[id] {
     }
 
     .about-process-section {
-        margin-top: -36px;
-        padding: calc(var(--sp-2xl) + 36px) 0 var(--sp-3xl);
+        margin-top: -120px;
+        padding: calc(var(--sp-2xl) + 120px) 0 var(--sp-3xl);
     }
 
     .about-process-card {
