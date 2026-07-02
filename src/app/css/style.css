@@ -913,8 +913,8 @@ button {
     z-index: 4;
     width: 100%;
     line-height: 0;
-    background: linear-gradient(180deg, #0d2868 0%, #0d2868 50%, #ffffff 50%, #ffffff 100%);
-    overflow: hidden;
+    background: #0d2868;
+    overflow: visible;
 }
 
 .hero-wave-marquee-svg {
@@ -943,20 +943,12 @@ button {
         display: none;
     }
 
-    .hero-wave-zone .hero {
-        padding-bottom: 1.25rem;
-    }
-
-    .hero-wave-marquee {
-        background: linear-gradient(180deg, #0d2868 0%, #0d2868 42%, #ffffff 42%, #ffffff 100%);
-    }
-
     .hero-wave-marquee-text {
         letter-spacing: 0.09em;
     }
 
     .hero-wave-marquee-svg {
-        height: 36px;
+        height: 52px;
     }
 }
 
