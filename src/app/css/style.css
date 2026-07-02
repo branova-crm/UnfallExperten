@@ -4080,6 +4080,10 @@ section[id] {
     background: linear-gradient(180deg, #ffffff 0%, #f4f7fd 100%);
 }
 
+.about-page .hero-wave-zone::after {
+    display: none;
+}
+
 .about-page .about-chapter--process .about-chapter-bg {
     background:
         radial-gradient(circle at 88% 12%, rgba(22, 65, 166, 0.1) 0%, transparent 42%),
@@ -4623,6 +4627,10 @@ section[id] {
 }
 
 @media (max-width: 640px) {
+    .about-page .about-chapter--process {
+        background: #f4f7fd;
+    }
+
     .about-process-section {
         padding: var(--sp-2xl) 0 var(--sp-3xl);
     }
