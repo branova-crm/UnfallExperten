@@ -4632,7 +4632,8 @@ section[id] {
     }
 
     .about-process-section {
-        padding: var(--sp-2xl) 0 var(--sp-3xl);
+        margin-top: -24px;
+        padding: calc(var(--sp-2xl) + 24px) 0 var(--sp-3xl);
     }
 
     .about-process-card {
