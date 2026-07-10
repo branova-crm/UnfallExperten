@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from 'react';
+import { SITE_CONTACT } from '@/lib/site-contact';
 
 const INTERESTS = [
     { id: "Unfallgutachten", label: "Unfallgutachten" },
@@ -46,7 +47,7 @@ function InterestIcon({ id }: { id: string }) {
 }
 
 export default function Konfigurator() {
-    const WHATSAPP_NUMBER = "4917684568618";
+    const WHATSAPP_NUMBER = SITE_CONTACT.whatsappNumber;
 
     const [step, setStep] = useState(1);
     const [selectedInterests, setSelectedInterests] = useState<string[]>([]);

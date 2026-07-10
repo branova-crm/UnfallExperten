@@ -6,7 +6,7 @@ import BarChartSection from "@/components/BarChartSection";
 import GoogleReviewsWidget from "@/components/GoogleReviewsWidget";
 import ProcessSection from "@/components/ProcessSection";
 import GoogleMapsEmbed from "@/components/GoogleMapsEmbed";
-import CaseStudiesSection from "@/components/CaseStudiesSection";
+import HomeFallbeispieleSection from "@/components/HomeFallbeispieleSection";
 import TrustStatsSection from "@/components/TrustStatsSection";
 import HeroWaveZone from "@/components/HeroWaveZone";
 
@@ -59,7 +59,7 @@ export default function Home() {
               </p>
               <div className="hero-ctas">
                 <a
-                  href="tel:+4917684568618"
+                  href="tel:+491602929291"
                   className="btn btn-outline glass-button hero-cta-btn hero-cta-btn--call hero-intro-fade hero-intro-fade--phase-4"
                 >
                   <svg
@@ -77,7 +77,7 @@ export default function Home() {
                   <span>Jetzt anrufen</span>
                 </a>
                 <Link
-                  href="https://wa.me/4917684568618?text=Hallo%2C%20ich%20brauche%20Hilfe%20nach%20einem%20Unfall."
+                  href="https://wa.me/491602929291?text=Hallo%2C%20ich%20brauche%20Hilfe%20nach%20einem%20Unfall."
                   className="btn btn-whatsapp hero-cta-btn hero-intro-fade hero-intro-fade--phase-5"
                   target="_blank"
                 >
@@ -149,7 +149,7 @@ export default function Home() {
                     style={{ "--card-item-i": 5 } as React.CSSProperties}
                   >
                     <img
-                      src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png"
+                      src="/images/google-logo.png"
                       alt="Google"
                       className="hero-cert-panel__google-logo"
                       width={92}
@@ -178,7 +178,7 @@ export default function Home() {
                       </div>
                     </div>
                     <span className="hero-cert-panel__reviews">
-                      14 Bewertungen
+                      21 Bewertungen
                     </span>
                   </div>
                 </div>
@@ -192,7 +192,7 @@ export default function Home() {
       <ProcessSection />
 
       {/* 4) FALLBEISPIELE */}
-      <CaseStudiesSection />
+      <HomeFallbeispieleSection />
 
       {/* Brand Statement – Vollbreite */}
       <section
@@ -262,7 +262,7 @@ export default function Home() {
                 kostenlos und unverbindlich.
               </p>
               <div className="contact-direct">
-                <a href="tel:+4917684568618">
+                <a href="tel:+491602929291">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
@@ -272,9 +272,9 @@ export default function Home() {
                   >
                     <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
                   </svg>{" "}
-                  +49 176 84568618
+                  0160 29 29 29 1
                 </a>
-                <a href="https://wa.me/4917684568618" target="_blank">
+                <a href="https://wa.me/491602929291" target="_blank">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"

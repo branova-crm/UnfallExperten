@@ -3,6 +3,8 @@ import Image from 'next/image';
 import AboutFaq from '@/components/AboutFaq';
 import AboutJourneyTimeline from '@/components/AboutJourneyTimeline';
 import HeroWaveZone from '@/components/HeroWaveZone';
+import { SHOW_MEIN_WEG_SECTION } from '@/lib/content-flags';
+import { telHref, whatsappHref } from '@/lib/site-contact';
 
 export const metadata: Metadata = {
     title: 'Über uns – UnfallExperten NRW | Ihre Gutachter-Experten',
@@ -10,8 +12,8 @@ export const metadata: Metadata = {
         'Lernen Sie UnfallExperten NRW und Berkay Okur kennen. Unabhängige Unterstützung nach einem Unfall, schnelle Schadenaufnahme und persönliche Begleitung in NRW.',
 };
 
-const TEL = 'tel:+4917684568618';
-const WHATSAPP = 'https://wa.me/4917684568618?text=Hallo%2C%20ich%20habe%20eine%20Frage%20zu%20UnfallExperten.';
+const TEL = telHref();
+const WHATSAPP = whatsappHref('Hallo, ich habe eine Frage zu UnfallExperten.');
 
 const TIMELINE = [
     {
@@ -225,7 +227,7 @@ export default function UeberUnsPage() {
                 </div>
             </section>
 
-            <AboutJourneyTimeline />
+            {SHOW_MEIN_WEG_SECTION && <AboutJourneyTimeline />}
 
             {/* Persönlicher Abschnitt */}
             <section className="about-personal-section">

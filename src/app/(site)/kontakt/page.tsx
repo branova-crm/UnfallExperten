@@ -1,7 +1,7 @@
 import { Metadata } from "next";
-import Link from "next/link";
 import Konfigurator from "@/components/Konfigurator";
 import HeroWaveZone from "@/components/HeroWaveZone";
+import { SITE_CONTACT, telHref, whatsappHref } from "@/lib/site-contact";
 
 export const metadata: Metadata = {
   title: "Kontakt – Schnelle Hilfe nach dem Unfall | UnfallExperten NRW",
@@ -48,7 +48,7 @@ export default function KontaktPage() {
                 className="hero-ctas"
                 style={{ justifyContent: "center", marginBottom: "30px" }}
               >
-                <a href="tel:+4917684568618" className="btn btn-outline">
+                <a href={telHref()} className="btn btn-outline">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="18"
@@ -64,7 +64,7 @@ export default function KontaktPage() {
                   Jetzt anrufen
                 </a>
                 <a
-                  href="https://wa.me/4917684568618"
+                  href={whatsappHref("Hallo, ich habe eine Frage zu UnfallExperten.")}
                   className="btn btn-whatsapp"
                   target="_blank"
                 >
@@ -110,7 +110,7 @@ export default function KontaktPage() {
                 da.
               </p>
               <div className="contact-direct">
-                <a href="tel:+4917684568618">
+                <a href={telHref()}>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
@@ -122,9 +122,9 @@ export default function KontaktPage() {
                   >
                     <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
                   </svg>{" "}
-                  +49 176 84568618
+                  {SITE_CONTACT.phoneDisplay}
                 </a>
-                <a href="https://wa.me/4917684568618" target="_blank">
+                <a href={whatsappHref()} target="_blank">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
@@ -136,7 +136,7 @@ export default function KontaktPage() {
                   </svg>{" "}
                   WhatsApp schreiben
                 </a>
-                <a href="mailto:info@unfallexperten-nrw.de">
+                <a href={`mailto:${SITE_CONTACT.email}`}>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
@@ -149,7 +149,7 @@ export default function KontaktPage() {
                     <rect width="20" height="16" x="2" y="4" rx="2" />
                     <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
                   </svg>{" "}
-                  info@unfallexperten-nrw.de
+                  {SITE_CONTACT.email}
                 </a>
               </div>
               <div
@@ -187,7 +187,11 @@ export default function KontaktPage() {
                     NRW-weit im Einsatz
                   </strong>
                   <br />
-                  Musterstraße 1, 40210 Düsseldorf
+                  {SITE_CONTACT.companyName}
+                  <br />
+                  {SITE_CONTACT.street}, {SITE_CONTACT.zipCity}
+                  <br />
+                  {SITE_CONTACT.country}
                   <br />
                   Wir kommen zu Ihnen – überall in Nordrhein-Westfalen
                 </p>
@@ -211,7 +215,7 @@ export default function KontaktPage() {
                 style={{ color: "inherit" }}
               >
                 <img
-                  src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png"
+                  src="/images/google-logo.png"
                   alt="Google"
                   className="google-logo"
                 />

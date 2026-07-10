@@ -5,7 +5,7 @@ import React from 'react';
 const stats = [
     {
         number: "5,0 ⭐",
-        text: "Google Bewertung, über 140 Rezensionen von echten Kunden aus NRW und Umgebung"
+        text: "Google Bewertung, 21 Rezensionen von echten Kunden aus NRW und Umgebung"
     },
     {
         number: "0 €",

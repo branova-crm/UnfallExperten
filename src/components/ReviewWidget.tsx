@@ -19,7 +19,7 @@ export default function ReviewWidget() {
                     ))}
                 </div>
                 <h3 style={{ margin: '0 0 5px 0', fontSize: '18px' }}>Google Bewertungen</h3>
-                <p style={{ margin: '0 0 20px 0', color: '#666', fontSize: '14px' }}>5 Sterne (20)</p>
+                <p style={{ margin: '0 0 20px 0', color: '#666', fontSize: '14px' }}>5 Sterne (21)</p>
                 <a
                     href={GOOGLE_PLACE_SHARE_URL}
                     target="_blank"

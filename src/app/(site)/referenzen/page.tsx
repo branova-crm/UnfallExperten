@@ -89,7 +89,7 @@ export default function ReferenzenPage() {
             <Link href="/kontakt" className="btn btn-outline">
               Kontakt aufnehmen
             </Link>
-            <a href="tel:+4917684568618" className="btn btn-primary">
+            <a href="tel:+491602929291" className="btn btn-primary">
               Jetzt anrufen
             </a>
           </div>

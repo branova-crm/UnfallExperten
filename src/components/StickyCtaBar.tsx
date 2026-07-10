@@ -1,7 +1,11 @@
-import Link from 'next/link';
+'use client';
 
-const TEL = 'tel:+4917684568618';
-const WHATSAPP = 'https://wa.me/4917684568618?text=Hallo%2C%20ich%20habe%20einen%20Schaden%20zu%20melden.';
+import { useConsentOptional } from '@/components/consent/ConsentProvider';
+import { telHref, whatsappHref } from '@/lib/site-contact';
+
+const TEL = telHref();
+const WHATSAPP = whatsappHref('Hallo, ich habe einen Schaden zu melden.');
+const CONTACT_HREF = '/kontakt#contact';
 
 function PhoneIcon() {
     return (
@@ -31,16 +35,38 @@ function WhatsAppIcon() {
 }
 
 export default function StickyCtaBar() {
+    const consent = useConsentOptional();
+    const showStickyCta = consent?.showStickyCta ?? false;
+
+    const handleReportClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
+        const contactSection = document.getElementById('contact');
+
+        if (!contactSection) {
+            return;
+        }
+
+        event.preventDefault();
+        contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+        if (window.location.hash !== '#contact') {
+            window.history.pushState(null, '', '#contact');
+        }
+    };
+
+    if (!showStickyCta) {
+        return null;
+    }
+
     return (
         <nav className="sticky-cta-bar" aria-label="Schnellkontakt">
             <a href={TEL} className="sticky-cta-btn sticky-cta-call" aria-label="Jetzt anrufen">
                 <PhoneIcon />
                 <span>Jetzt anrufen</span>
             </a>
-            <Link href="/kontakt#contact" className="sticky-cta-btn sticky-cta-report" aria-label="Schaden melden">
+            <a href={CONTACT_HREF} className="sticky-cta-btn sticky-cta-report" aria-label="Schaden melden" onClick={handleReportClick}>
                 <ReportIcon />
                 <span>Schaden melden</span>
-            </Link>
+            </a>
             <a
                 href={WHATSAPP}
                 className="sticky-cta-whatsapp"

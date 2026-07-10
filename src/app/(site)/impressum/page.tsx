@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import { SITE_CONTACT, telHref } from "@/lib/site-contact";
 
 export const metadata: Metadata = {
   title: "Impressum | UnfallExperten NRW",
@@ -28,18 +29,18 @@ export default function ImpressumPage() {
         <div className="container">
           <article className="legal-content">
             <p className="legal-meta">
-              <strong>Stand:</strong> 02. Juli 2026
+              <strong>Stand:</strong> 10. Juli 2026
             </p>
 
             <h2>Angaben gemäß § 5 DDG</h2>
             <address className="legal-address">
-              <strong>KFZ Gutachter Euskirchen | UnfallExperten-NRW</strong>
+              <strong>{SITE_CONTACT.companyName}</strong>
               <br />
-              Felix-Wankel-Straße 11
+              {SITE_CONTACT.street}
               <br />
-              53881 Euskirchen
+              {SITE_CONTACT.zipCity}
               <br />
-              Deutschland
+              {SITE_CONTACT.country}
             </address>
 
             <h2>Vertreten durch</h2>
@@ -47,11 +48,11 @@ export default function ImpressumPage() {
 
             <h2>Kontakt</h2>
             <p>
-              Telefon: <a href="tel:+4917684568618">+49 176 84568618</a>
+              Telefon: <a href={telHref()}>{SITE_CONTACT.phoneDisplay}</a>
               <br />
               E-Mail:{" "}
-              <a href="mailto:info@unfallexperten-nrw.de">
-                info@unfallexperten-nrw.de
+              <a href={`mailto:${SITE_CONTACT.email}`}>
+                {SITE_CONTACT.email}
               </a>
             </p>
 
@@ -59,12 +60,19 @@ export default function ImpressumPage() {
             <address className="legal-address">
               Berkay Okur
               <br />
-              Felix-Wankel-Straße 11
+              {SITE_CONTACT.street}
               <br />
-              53881 Euskirchen
+              {SITE_CONTACT.zipCity}
               <br />
-              Deutschland
+              {SITE_CONTACT.country}
             </address>
+
+            <h2>Berufshaftpflichtversicherung</h2>
+            <p>
+              <strong>{SITE_CONTACT.professionalLiabilityInsurer}</strong>
+              <br />
+              Geltungsraum: {SITE_CONTACT.country}
+            </p>
 
             <h2>Verbraucherstreitbeilegung</h2>
             <p>

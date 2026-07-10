@@ -1,9 +1,10 @@
 "use client";
 
 import { useState, useEffect, useRef } from 'react';
+import { SITE_CONTACT } from '@/lib/site-contact';
 
 export default function WhatsAppWidget() {
-    const WHATSAPP_NUMBER = "4917684568618";
+    const WHATSAPP_NUMBER = SITE_CONTACT.whatsappNumber;
 
     const [isOpen, setIsOpen] = useState(false);
     const [showBadge, setShowBadge] = useState(false);

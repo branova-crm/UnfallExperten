@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import { SITE_ADDRESS_LINES, SITE_CONTACT, telHref } from "@/lib/site-contact";
 
 export const metadata: Metadata = {
   title: "Datenschutzerklärung | UnfallExperten NRW",
@@ -30,7 +31,7 @@ export default function DatenschutzPage() {
         <div className="container">
           <article className="legal-content">
             <p className="legal-meta">
-              <strong>Stand:</strong> 21. Mai 2026
+              <strong>Stand:</strong> 10. Juli 2026
             </p>
 
             <h2>1. Verantwortlicher</h2>
@@ -39,22 +40,21 @@ export default function DatenschutzPage() {
               für Fragen zum Datenschutz auf dieser Website ist:
             </p>
             <address className="legal-address">
-              KFZ Gutachter Euskirchen | UnfallExperten-NRW
-              <br />
-              Felix-Wankel-Straße 11
-              <br />
-              53881 Euskirchen
-              <br />
-              Deutschland
+              {SITE_ADDRESS_LINES.map((line) => (
+                <span key={line}>
+                  {line}
+                  <br />
+                </span>
+              ))}
             </address>
             <p>
               E-Mail:{" "}
-              <a href="mailto:info@unfallexperten-nrw.de">
-                info@unfallexperten-nrw.de
+              <a href={`mailto:${SITE_CONTACT.email}`}>
+                {SITE_CONTACT.email}
               </a>
               <br />
               Telefon:{" "}
-              <a href="tel:+4917684568618">+49 176 84568618</a>
+              <a href={telHref()}>{SITE_CONTACT.phoneDisplay}</a>
             </p>
             <p>
               Ein gesetzlich vorgeschriebener Datenschutzbeauftragter ist für unser
@@ -191,8 +191,62 @@ export default function DatenschutzPage() {
 
             <h2>6. Cookies und vergleichbare Technologien</h2>
             <p>
-              <strong>Analyse-Cookies:</strong> Wir setzen keine Tracking- oder
-              Marketing-Cookies ein.
+              Beim ersten Besuch erscheint ein <strong>Cookie-Banner</strong> (First-Party-
+              Einwilligungstool). Dort können Sie optionale Technologien – insbesondere
+              eingebettete Karten – ablehnen, einzeln auswählen oder alle akzeptieren.
+              Entsprechende Einstellungen finden Sie jederzeit unter „Cookie-Einstellungen“
+              in der Fußzeile.
+            </p>
+            <p>
+              <strong>Kategorien im Consent-Banner:</strong>
+            </p>
+            <ul>
+              <li>
+                <strong>Notwendig</strong> (immer aktiv): u. a. Speicherung Ihrer
+                Einwilligungsauswahl, lokal gehostete Schriftarten und technisch
+                erforderliche Website-Funktionen
+              </li>
+              <li>
+                <strong>Externe Medien</strong> (optional): z. B. Google Maps – wird erst
+                nach aktiver Einwilligung geladen
+              </li>
+              <li>
+                <strong>Statistik</strong> (optional, derzeit ohne aktive Dienste):
+                vorgesehen für künftig aktivierte Bewertungs-Widgets (z. B. Trustindex)
+              </li>
+              <li>
+                <strong>Präferenzen</strong> und <strong>Marketing</strong> (optional,
+                derzeit ohne aktive Dienste): für mögliche künftige Komfort- oder
+                Marketing-Funktionen reserviert
+              </li>
+            </ul>
+            <p>
+              <strong>Einwilligungs-Speicherung:</strong> Wir speichern Ihre Auswahl zu
+              optionalen Technologien im lokalen Speicher Ihres Browsers (
+              <code>ue_consent_v1</code>) – ohne personenbezogene User-ID. Dies ist
+              technisch erforderlich, um Ihre Entscheidung zu dokumentieren und
+              umzusetzen.
+              <br />
+              <strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. f DSGVO (berechtigtes
+              Interesse an nachweisbarer, nutzerfreundlicher Umsetzung Ihrer
+              Einwilligung) sowie § 25 Abs. 2 TDDDG (Speicherung der Einwilligung ohne
+              zusätzliche Einwilligung, soweit unbedingt erforderlich).
+            </p>
+            <p>
+              <strong>Analyse- und Marketing-Tracker:</strong> Derzeit sind auf dieser
+              Website keine aktiven Analyse- oder Marketing-Tracker (z. B. Google
+              Analytics, Matomo, Meta Pixel) eingebunden.
+            </p>
+            <p>
+              <strong>Consent-Management:</strong> Ihre Einwilligung ist{" "}
+              <strong>6 Monate (183 Tage)</strong> gültig und wird im Eintrag{" "}
+              <code>expiresAt</code> technisch gespeichert. Danach erscheint der
+              Banner erneut. Sie können Ihre Einwilligung jederzeit über „Cookie-
+              Einstellungen“ in der Fußzeile widerrufen oder anpassen. Beim Widerruf
+              optionaler Kategorien versuchen wir, zugehörige Drittanbieter-Cookies zu
+              löschen; weitere Ladevorgänge werden blockiert. Wenn Sie alle optionalen
+              Kategorien widerrufen, wird die Seite neu geladen, um bereits geladene
+              Inhalte zu entfernen.
             </p>
             <p>
               <strong>Technisch notwendige Verarbeitungen:</strong> Beim Betrieb der
@@ -204,65 +258,89 @@ export default function DatenschutzPage() {
               <strong>Drittanbieter-Inhalte:</strong> Beim Laden eingebetteter
               Dienste (siehe Abschnitt 7) können Drittanbieter eigene Cookies oder
               vergleichbare Technologien setzen. Darauf haben wir nur eingeschränkten
-              Einfluss. Bitte beachten Sie die Hinweise der jeweiligen Anbieter.
+              Einfluss. Cookies von Drittanbietern können technisch nicht immer
+              vollständig gelöscht werden; weitere Ladevorgänge werden nach Widerruf
+              jedoch blockiert. Bitte beachten Sie die Hinweise der jeweiligen Anbieter.
             </p>
 
             <h2>7. Externe Dienste, Schriftarten und eingebettete Inhalte</h2>
 
-            <h3>7.1 Google Fonts (extern eingebunden)</h3>
+            <h3>7.1 Schriftarten (lokal gehostet)</h3>
             <p>
-              Zur einheitlichen Darstellung der Schrift nutzen wir die Schriftart
-              „Inter“, die über Google Fonts von Servern der Google LLC (USA) bzw.
-              verbundener Unternehmen geladen wird. Dabei kann Ihre IP-Adresse an
-              Google übermittelt werden.
+              Zur einheitlichen Darstellung nutzen wir die Schriftart „Inter“,
+              die über Next.js lokal auf unserem Server bereitgestellt wird. Dabei
+              erfolgt kein Abruf von Google-Servern beim Seitenaufruf.
             </p>
             <p>
-              <strong>Anbieter:</strong> Google Ireland Limited, Gordon House, Barrow
-              Street, Dublin 4, Irland (Mutterunternehmen: Google LLC, USA).
+              <strong>Anbieter:</strong> First-Party-Hosting (Schrift lizenziert über
+              Google Fonts, Bereitstellung lokal).
               <br />
               <strong>Zweck:</strong> Einheitliches und ansprechendes Erscheinungsbild
               der Website.
               <br />
               <strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. f DSGVO
-              (berechtigtes Interesse an einer professionellen Darstellung), ggf.
-              ergänzend Art. 6 Abs. 1 lit. a DSGVO, sofern eine Einwilligung
-              eingeholt wird.
-              <br />
-              <strong>Drittlandübermittlung:</strong> Google kann Daten in die USA
-              übertragen. Google stützt sich hierfür u. a. auf Standardvertragsklauseln
-              der EU-Kommission.
+              (berechtigtes Interesse an einer professionellen Darstellung ohne
+              Datenübermittlung an Google beim Seitenaufruf).
             </p>
 
             <h3>7.2 Google Maps (Karten-Einbindung)</h3>
             <p>
-              Auf einzelnen Seiten binden wir eine interaktive Karte von Google Maps
-              ein. Beim Laden der Karte wird eine Verbindung zu Servern von Google
-              hergestellt; dabei können personenbezogene Daten (insbesondere Ihre
-              IP-Adresse) an Google übermittelt werden.
+              Auf der Startseite binden wir eine interaktive Karte von Google Maps
+              ein. Die Karte wird erst nach Ihrer aktiven Einwilligung zur
+              Kategorie „Externe Medien“ geladen (über den Cookie-Banner, die
+              Cookie-Einstellungen oder den Button „Karte laden und Einwilligung
+              erteilen“). Beim Laden der Karte wird eine Verbindung zu Servern von
+              Google hergestellt; dabei können Cookies oder vergleichbare Technologien
+              (z. B. <code>NID</code>, <code>1P_JAR</code>, <code>CONSENT</code>) gesetzt
+              werden und personenbezogene Daten (insbesondere Ihre IP-Adresse) an Google
+              übermittelt werden.
             </p>
             <p>
               <strong>Anbieter:</strong> Google Ireland Limited, Gordon House, Barrow
-              Street, Dublin 4, Irland.
+              Street, Dublin 4, Irland (Muttergesellschaft: Google LLC, USA).
               <br />
               <strong>Zweck:</strong> Anzeige unseres Standorts bzw. Orientierung
               für Besucher.
               <br />
-              <strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. f DSGVO
-              (berechtigtes Interesse an nutzerfreundlicher Standortinformation).
+              <strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. a DSGVO
+              (Einwilligung über unser Consent-Banner bzw. den Karten-Platzhalter).
+              <br />
+              <strong>Speicherdauer:</strong> Anbieterabhängig (siehe Google).
+              <br />
+              <strong>Widerruf:</strong> Jederzeit über „Cookie-Einstellungen“ in der
+              Fußzeile.
               <br />
               <strong>Drittlandübermittlung:</strong> möglich in die USA unter
               Einsatz geeigneter Garantien (Standardvertragsklauseln).
             </p>
 
-            <h3>7.3 Externe Bilder und Links</h3>
+            <h3>7.3 Externe Bilder, Links und ausgehende Verbindungen</h3>
             <p>
-              Einzelne grafische Elemente (z. B. Logos oder Bewertungsdarstellungen)
-              können von externen Servern geladen werden, sofern diese in der Website
-              eingebunden sind. Beim Aufruf solcher Inhalte kann Ihre IP-Adresse an
-              den jeweiligen Anbieter übermittelt werden. Externe Links (z. B. zu
-              WhatsApp oder Social-Media-Profilen) führen zu Angeboten Dritter; für
-              die dortige Datenverarbeitung sind allein die jeweiligen Anbieter
-              verantwortlich.
+              Grafische Elemente (z. B. Logos) werden, soweit möglich, lokal von
+              unserem Server bereitgestellt. Ausgehende Links zu WhatsApp,
+              Instagram, Facebook oder Google-Bewertungen führen zu Angeboten
+              Dritter. Diese Links setzen auf unserer Website keine Cookies und
+              lösen keine Verbindung zu Drittanbietern aus, bevor Sie den Link
+              aktiv anklicken. Für die dortige Datenverarbeitung sind allein die
+              jeweiligen Anbieter verantwortlich.
+            </p>
+
+            <h3>7.4 Trustindex (optional, derzeit nicht aktiv)</h3>
+            <p>
+              Falls künftig ein Bewertungs-Widget von Trustindex eingebunden wird,
+              wird dieses erst nach Einwilligung zur Kategorie „Statistik“ geladen.
+              Der Dienst ist im Cookie-Banner unter „Statistik“ ausgewiesen, ist aber
+              derzeit nicht aktiv.
+            </p>
+            <p>
+              <strong>Anbieter:</strong> Trustindex (konkrete Verantwortliche und
+              AV-Vertrag bei Aktivierung ergänzen).
+              <br />
+              <strong>Zweck:</strong> Anzeige externer Kundenbewertungen.
+              <br />
+              <strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. a DSGVO (Einwilligung).
+              <br />
+              <strong>Widerruf:</strong> Über „Cookie-Einstellungen“ in der Fußzeile.
             </p>
 
             <h2>8. Social Media – Instagram</h2>
@@ -299,7 +377,7 @@ export default function DatenschutzPage() {
             <ul>
               <li>Hosting-Dienstleister (Hetzner Online GmbH, Deutschland)</li>
               <li>E-Mail-/IT-Dienstleister im Rahmen der Formular- und Kommunikationsabwicklung</li>
-              <li>Google (Fonts, Maps) – siehe Abschnitt 7</li>
+              <li>Google (Maps bei Einwilligung) – siehe Abschnitt 7.2</li>
               <li>Meta (Instagram, WhatsApp) – bei aktiver Nutzung der verlinkten Dienste</li>
               <li>Steuerberater, Rechtsanwälte oder Behörden, soweit gesetzlich vorgeschrieben</li>
             </ul>
@@ -338,6 +416,10 @@ export default function DatenschutzPage() {
               <li>Bestehen eines Vertrags- oder Gutachterauftrags</li>
               <li>Handels-, steuer- und berufsrechtliche Aufbewahrungspflichten (regelmäßig 6 bis 10 Jahre)</li>
               <li>technische Logdaten gemäß Abschnitt 3</li>
+              <li>
+                Einwilligungsdaten im lokalen Speicher (<code>ue_consent_v1</code>):
+                6 Monate (183 Tage), danach erneute Abfrage
+              </li>
             </ul>
 
             <h2>12. Pflicht zur Bereitstellung von Daten</h2>

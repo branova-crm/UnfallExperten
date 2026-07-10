@@ -1,6 +1,7 @@
 @import './css/style.css';
 @import './css/konfigurator.css';
 @import './css/whatsapp.css';
+@import './css/consent.css';
 
 :root {
   /* Globale Next.js Migration Primärfarbe */

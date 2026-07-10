@@ -352,7 +352,7 @@ export default function StandortePage() {
                 style={{ color: "inherit" }}
               >
                 <img
-                  src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png"
+                  src="/images/google-logo.png"
                   alt="Google"
                   className="google-logo"
                 />

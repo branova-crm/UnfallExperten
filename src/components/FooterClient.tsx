@@ -1,4 +1,7 @@
+'use client';
+
 import Link from 'next/link';
+import { useConsentOptional } from '@/components/consent/ConsentProvider';
 
 type FooterClientProps = {
     contact: {
@@ -6,6 +9,7 @@ type FooterClientProps = {
         phoneLink: string;
         email: string;
         address: string;
+        addressLines?: string[];
         openingHours: string;
     };
     footer: {
@@ -17,6 +21,8 @@ type FooterClientProps = {
 };
 
 export default function FooterClient({ contact, footer }: FooterClientProps) {
+    const consent = useConsentOptional();
+
     return (
         <footer className="site-footer">
             <div className="container" style={{ position: 'relative', zIndex: 3 }}>
@@ -33,34 +39,58 @@ export default function FooterClient({ contact, footer }: FooterClientProps) {
                             </a>
                         </div>
                     </div>
-                    <div className="footer-col">
+                    <div className="footer-col footer-col--contact">
                         <h4>Kontakt</h4>
-                        <div className="footer-contact-item">
-                            <img src="/tel.svg" width="18" height="18" alt="Telefon" style={{ filter: 'brightness(0) invert(1)', flexShrink: 0 }} />
-                            {contact.phone}
+                        <div className="footer-contact-list">
+                            <div className="footer-contact-item">
+                                <img src="/tel.svg" width="18" height="18" alt="Telefon" style={{ filter: 'brightness(0) invert(1)', flexShrink: 0 }} />
+                                {contact.phone}
+                            </div>
+                            <div className="footer-contact-item">
+                                <img src="/email.svg" width="18" height="18" alt="E-Mail" style={{ filter: 'brightness(0) invert(1)', flexShrink: 0 }} />
+                                {contact.email}
+                            </div>
+                            <div className="footer-contact-item footer-contact-item--address">
+                                <img src="/standort.svg" width="18" height="18" alt="Standort" style={{ filter: 'brightness(0) invert(1)', flexShrink: 0 }} />
+                                {contact.addressLines && contact.addressLines.length > 0 ? (
+                                    <address className="footer-address">
+                                        {contact.addressLines.map((line) => (
+                                            <span key={line}>{line}</span>
+                                        ))}
+                                    </address>
+                                ) : (
+                                    contact.address
+                                )}
+                            </div>
+                            <Link href="/kontakt" className="footer-contact-cta">
+                                Termin vereinbaren →
+                            </Link>
                         </div>
-                        <div className="footer-contact-item">
-                            <img src="/email.svg" width="18" height="18" alt="E-Mail" style={{ filter: 'brightness(0) invert(1)', flexShrink: 0 }} />
-                            {contact.email}
-                        </div>
-                        <div className="footer-contact-item">
-                            <img src="/standort.svg" width="18" height="18" alt="Standort" style={{ filter: 'brightness(0) invert(1)', flexShrink: 0 }} />
-                            {contact.address}
-                        </div>
-
                     </div>
-                    <div className="footer-col">
+                    <div className="footer-col footer-col--links">
                         <h4>Unternehmen</h4>
                         <ul>
                             <li><Link href="/leistungen">Leistungen</Link></li>
                             <li><Link href="/standorte">Standorte</Link></li>
                             <li><Link href="/referenzen">Referenzen</Link></li>
                             <li><Link href="/ueber-uns">Über uns</Link></li>
-                            <li><Link href="/kontakt">Kontakt</Link></li>
                             <li><Link href="/ratgeber">Ratgeber</Link></li>
-                            <li><Link href="/kontakt">Termin vereinbaren</Link></li>
+                        </ul>
+                    </div>
+                    <div className="footer-col footer-col--links">
+                        <h4>Rechtliches</h4>
+                        <ul>
                             <li><Link href="/impressum">Impressum</Link></li>
                             <li><Link href="/datenschutz">Datenschutz</Link></li>
+                            <li>
+                                <button
+                                    type="button"
+                                    className="consent-footer-link"
+                                    onClick={() => consent?.openSettings()}
+                                >
+                                    Cookie-Einstellungen
+                                </button>
+                            </li>
                         </ul>
                     </div>
                 </div>

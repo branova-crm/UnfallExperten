@@ -1,29 +1,19 @@
 "use client";
 
-import { useEffect, useRef } from 'react';
+import ConsentGatedScript from '@/components/consent/ConsentGatedScript';
 
 export default function TrustindexWidget({ scriptUrl }: { scriptUrl: string }) {
-    const containerRef = useRef<HTMLDivElement>(null);
-
-    useEffect(() => {
-        if (!containerRef.current) return;
-
-        // Clear any prior injections to prevent duplicates on remount
-        containerRef.current.innerHTML = "";
-
-        const script = document.createElement("script");
-        script.src = scriptUrl;
-        script.async = true;
-        script.defer = true;
-
-        containerRef.current.appendChild(script);
-
-        return () => {
-            if (containerRef.current) {
-                containerRef.current.innerHTML = "";
+    return (
+        <ConsentGatedScript
+            src={scriptUrl}
+            category="statistics"
+            className="trustindex-container"
+            placeholder={
+                <p className="consent-script-placeholder">
+                    Bewertungen von Trustindex werden erst nach Ihrer Einwilligung zur
+                    Kategorie „Statistik“ geladen.
+                </p>
             }
-        };
-    }, [scriptUrl]);
-
-    return <div ref={containerRef} className="trustindex-container" style={{ width: '100%', minHeight: '60px' }}></div>;
+        />
+    );
 }

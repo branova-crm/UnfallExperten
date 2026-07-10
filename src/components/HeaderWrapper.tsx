@@ -1,4 +1,5 @@
 import HeaderClient from './HeaderClient';
+import { SITE_CONTACT } from '@/lib/site-contact';
 
 const NAV_ITEMS = [
     { label: 'Leistungen', href: '/leistungen', order: 0, is_enabled: true },
@@ -11,14 +12,14 @@ const NAV_ITEMS = [
 const CTA = { label: 'Gutachten anfordern', href: '/kontakt' };
 
 const CONTACT = {
-    phone: '+49 176 84568618',
-    phoneLink: '+4917684568618',
-    email: 'info@unfallexperten-nrw.de',
+    phone: SITE_CONTACT.phoneDisplay,
+    phoneLink: SITE_CONTACT.phoneE164,
+    email: SITE_CONTACT.email,
 };
 
 const SOCIAL = {
     socialFacebook: 'https://www.facebook.com/',
-    socialInstagram: 'https://www.instagram.com/',
+    socialInstagram: 'https://www.instagram.com/unfallexperten.nrw/',
 };
 
 export default function HeaderWrapper() {
