@@ -2,17 +2,42 @@ import Link from "next/link";
 import { Metadata } from "next";
 import Konfigurator from "@/components/Konfigurator";
 import HeroWaveZone from "@/components/HeroWaveZone";
+import JsonLd from "@/components/JsonLd";
+import { buildMetadata } from "@/lib/seo/metadata";
+import { graph, webPage, service, breadcrumb } from "@/lib/seo/jsonld";
 
-export const metadata: Metadata = {
-  title:
-    "Kostenlose Dienstleistung – Unfallhilfe ohne Kosten | UnfallExperten NRW",
+export const metadata: Metadata = buildMetadata({
+  title: "Kostenlose Unfallhilfe in NRW – ohne Kosten | UnfallExperten",
   description:
     "Kostenlose Unfallhilfe in NRW – Gutachten, Anwalt, Mietwagen und mehr. Die gegnerische Versicherung zahlt. 24/7 erreichbar. Jetzt anrufen!",
-};
+  path: "/kostenlose-dienstleistung",
+});
 
 export default function KostenloseDienstleistungPage() {
   return (
     <>
+      <JsonLd
+        data={graph([
+          webPage({
+            path: "/kostenlose-dienstleistung",
+            name: "Kostenlose Dienstleistung für Unfallgeschädigte",
+            description:
+              "Warum unser Service für Unfallgeschädigte kostenlos ist – die gegnerische Versicherung trägt Gutachter-, Anwalts- und weitere Kosten.",
+          }),
+          service({
+            name: "Kostenlose Unfallhilfe",
+            description:
+              "Komplett-Service für Unfallgeschädigte: Gutachten, Anwalts- und Werkstattvermittlung, Mietwagen – kostenlos, da die gegnerische Versicherung zahlt.",
+            path: "/kostenlose-dienstleistung",
+            serviceType: "Unfallhilfe",
+          }),
+          breadcrumb([
+            { name: "Startseite", path: "/" },
+            { name: "Leistungen", path: "/leistungen" },
+            { name: "Kostenlose Dienstleistung", path: "/kostenlose-dienstleistung" },
+          ]),
+        ])}
+      />
       <HeroWaveZone>
         <section
           className="hero"

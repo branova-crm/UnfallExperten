@@ -2,17 +2,42 @@ import Link from "next/link";
 import { Metadata } from "next";
 import Konfigurator from "@/components/Konfigurator";
 import HeroWaveZone from "@/components/HeroWaveZone";
+import JsonLd from "@/components/JsonLd";
+import { buildMetadata } from "@/lib/seo/metadata";
+import { graph, webPage, service, breadcrumb } from "@/lib/seo/jsonld";
 
-export const metadata: Metadata = {
-  title:
-    "Reparaturbestätigung – Nachweis für Ihre Reparatur | UnfallExperten NRW",
+export const metadata: Metadata = buildMetadata({
+  title: "Reparaturbestätigung – Nachweis der Reparatur | UnfallExperten NRW",
   description:
     "Professionelle Reparaturbestätigung vom KFZ-Sachverständigen in NRW. Nachweis für erfolgreiche Reparaturen – kostenlos bei Gutachtenauftrag. Jetzt anfragen!",
-};
+  path: "/reparaturbestaetigung",
+});
 
 export default function ReparaturbestaetigungPage() {
   return (
     <>
+      <JsonLd
+        data={graph([
+          webPage({
+            path: "/reparaturbestaetigung",
+            name: "Reparaturbestätigung in NRW",
+            description:
+              "Nachweis der fachgerechten Instandsetzung nach fiktiver Abrechnung – wichtig für Wertminderung und Folgeansprüche.",
+          }),
+          service({
+            name: "Reparaturbestätigung",
+            description:
+              "Reparaturbestätigung nach fiktiver Abrechnung: Nachweis der fachgerechten Instandsetzung Ihres Fahrzeugs durch einen Sachverständigen.",
+            path: "/reparaturbestaetigung",
+            serviceType: "Reparaturbestätigung",
+          }),
+          breadcrumb([
+            { name: "Startseite", path: "/" },
+            { name: "Leistungen", path: "/leistungen" },
+            { name: "Reparaturbestätigung", path: "/reparaturbestaetigung" },
+          ]),
+        ])}
+      />
       <HeroWaveZone>
         <section className="hero" style={{ minHeight: "85vh" }}>
           <div className="hero-bg">

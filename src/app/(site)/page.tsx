@@ -9,6 +9,18 @@ import GoogleMapsEmbed from "@/components/GoogleMapsEmbed";
 import HomeFallbeispieleSection from "@/components/HomeFallbeispieleSection";
 import TrustStatsSection from "@/components/TrustStatsSection";
 import HeroWaveZone from "@/components/HeroWaveZone";
+import JsonLd from "@/components/JsonLd";
+import { buildMetadata } from "@/lib/seo/metadata";
+import { graph, webPage, faqPage } from "@/lib/seo/jsonld";
+import { HOME_FAQ } from "@/lib/faq-home";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = buildMetadata({
+  title: "KFZ-Gutachter in NRW | Unfallgutachten kostenlos & schnell",
+  description:
+    "Unabhängige KFZ-Gutachter in ganz NRW: Unfall- & Schadensgutachten, kostenlos für Geschädigte, mobil vor Ort und 24/7 erreichbar. Jetzt kostenlos anfragen!",
+  path: "/",
+});
 
 const HERO_TITLE_WORDS = ["KFZ-Gutachter", "in", "deiner", "Nähe"] as const;
 
@@ -22,6 +34,17 @@ const HERO_CERT_BENEFITS = [
 export default function Home() {
   return (
     <div className="page-home">
+      <JsonLd
+        data={graph([
+          webPage({
+            path: "/",
+            name: "KFZ-Gutachter in NRW – UnfallExperten NRW",
+            description:
+              "Unabhängige KFZ-Gutachter in ganz NRW: Unfall- & Schadensgutachten, kostenlos für Geschädigte, mobil vor Ort und 24/7 erreichbar.",
+          }),
+          faqPage([...HOME_FAQ]),
+        ])}
+      />
       {/* 2) HERO */}
       <HeroWaveZone>
         <section className="hero" id="about">

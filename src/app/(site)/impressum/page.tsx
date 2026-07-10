@@ -1,16 +1,35 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import JsonLd from "@/components/JsonLd";
+import { buildMetadata } from "@/lib/seo/metadata";
+import { graph, webPage, breadcrumb } from "@/lib/seo/jsonld";
 import { SITE_CONTACT, telHref } from "@/lib/site-contact";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "Impressum | UnfallExperten NRW",
   description:
     "Impressum von KFZ Gutachter Euskirchen | UnfallExperten-NRW mit Anbieterkennzeichnung gemäß § 5 DDG und § 18 MStV.",
-};
+  path: "/impressum",
+  noindex: true,
+});
 
 export default function ImpressumPage() {
   return (
     <>
+      <JsonLd
+        data={graph([
+          webPage({
+            path: "/impressum",
+            name: "Impressum",
+            description:
+              "Anbieterkennzeichnung der UnfallExperten NRW gemäß § 5 DDG und § 18 MStV.",
+          }),
+          breadcrumb([
+            { name: "Startseite", path: "/" },
+            { name: "Impressum", path: "/impressum" },
+          ]),
+        ])}
+      />
       <section className="page-hero">
         <div className="container">
           <nav className="breadcrumb" aria-label="Brotkrumen">

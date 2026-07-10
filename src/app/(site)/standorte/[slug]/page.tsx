@@ -2,6 +2,9 @@ import { Metadata } from "next";
 import Link from "next/link";
 import Konfigurator from "@/components/Konfigurator";
 import HeroWaveZone from "@/components/HeroWaveZone";
+import JsonLd from "@/components/JsonLd";
+import { buildMetadata } from "@/lib/seo/metadata";
+import { graph, cityLocalBusiness, breadcrumb } from "@/lib/seo/jsonld";
 
 type Props = {
   params: Promise<{ slug: string }> | { slug: string };
@@ -22,18 +25,34 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const resolvedParams = await params;
   const city = formatCityName(resolvedParams.slug);
 
-  return {
+  return buildMetadata({
     title: `KFZ-Gutachter ${city} – Kostenlos & Schnell | UnfallExperten`,
     description: `Unfall in ${city}? Ihr KFZ-Gutachter vor Ort. Kostenloses Unfallgutachten für Geschädigte, schnelle Abwicklung, 24/7 erreichbar. Jetzt anrufen!`,
-  };
+    path: `/standorte/${resolvedParams.slug}`,
+  });
 }
 
 export default async function StandortDetail({ params }: Props) {
   const resolvedParams = await params;
   const city = formatCityName(resolvedParams.slug);
+  const path = `/standorte/${resolvedParams.slug}`;
 
   return (
     <div className="standort-detail-page">
+      <JsonLd
+        data={graph([
+          cityLocalBusiness({
+            city,
+            path,
+            description: `Ihr KFZ-Gutachter vor Ort in ${city} – kostenloses Unfallgutachten für Geschädigte, schnelle Abwicklung, 24/7 erreichbar.`,
+          }),
+          breadcrumb([
+            { name: "Startseite", path: "/" },
+            { name: "Standorte", path: "/standorte" },
+            { name: city, path },
+          ]),
+        ])}
+      />
       {/* LOCAL HERO */}
       <HeroWaveZone>
         <section

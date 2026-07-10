@@ -2,15 +2,39 @@ import Link from 'next/link';
 import { Metadata } from 'next';
 import Konfigurator from '@/components/Konfigurator';
 import HeroWaveZone from '@/components/HeroWaveZone';
+import JsonLd from '@/components/JsonLd';
+import { buildMetadata } from '@/lib/seo/metadata';
+import { graph, webPage, service, breadcrumb } from '@/lib/seo/jsonld';
 
-export const metadata: Metadata = {
-    title: 'Leistungen – KFZ-Gutachter NRW | UnfallExperten',
+export const metadata: Metadata = buildMetadata({
+    title: 'Unsere Leistungen – KFZ-Gutachter in NRW | UnfallExperten',
     description: 'Unsere Leistungen als KFZ-Gutachter in NRW: Unfall- & Schadensgutachten, Wertgutachten, Kaskoschäden und reparierte Schäden. Kostenlose Ersteinschätzung!',
-};
+    path: '/leistungen',
+});
 
 export default function LeistungenPage() {
     return (
         <>
+            <JsonLd
+                data={graph([
+                    webPage({
+                        path: '/leistungen',
+                        name: 'Unsere Leistungen – KFZ-Gutachter NRW',
+                        description:
+                            'Alle Gutachten-Leistungen im Überblick: Unfall- & Schadensgutachten, Wertgutachten, Kostenvoranschlag, Kaskoschaden und Reparaturbestätigung.',
+                    }),
+                    service({
+                        name: 'KFZ-Gutachten & Fahrzeugbewertung',
+                        description:
+                            'Unfall- & Schadensgutachten, Wertgutachten, Kostenvoranschlag, Kaskoschaden und Reparaturbestätigung durch unabhängige Sachverständige in NRW.',
+                        path: '/leistungen',
+                    }),
+                    breadcrumb([
+                        { name: 'Startseite', path: '/' },
+                        { name: 'Leistungen', path: '/leistungen' },
+                    ]),
+                ])}
+            />
             <HeroWaveZone surfaceColor="var(--clr-offwhite)">
             {/* HERO */}
             <section className="hero" style={{ minHeight: '85vh' }}>

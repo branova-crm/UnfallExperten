@@ -2,17 +2,42 @@ import Link from "next/link";
 import { Metadata } from "next";
 import Konfigurator from "@/components/Konfigurator";
 import HeroWaveZone from "@/components/HeroWaveZone";
+import JsonLd from "@/components/JsonLd";
+import { buildMetadata } from "@/lib/seo/metadata";
+import { graph, webPage, service, breadcrumb } from "@/lib/seo/jsonld";
 
-export const metadata: Metadata = {
-  title:
-    "Kostenvoranschlag KFZ – Bagatellschäden bewerten | UnfallExperten NRW",
+export const metadata: Metadata = buildMetadata({
+  title: "Kostenvoranschlag KFZ – Bagatellschäden bewerten | UnfallExperten",
   description:
-    "KFZ-Kostenvoranschlag in NRW – ideal for Bagatellschäden. Versteckte Schäden aufdecken, faire Schadensregulierung sichern. Jetzt kostenlos anfragen!",
-};
+    "KFZ-Kostenvoranschlag in NRW – ideal für Bagatellschäden. Versteckte Schäden aufdecken, faire Schadensregulierung sichern. Jetzt kostenlos anfragen!",
+  path: "/kostenvoranschlag",
+});
 
 export default function KostenvoranschlagPage() {
   return (
     <>
+      <JsonLd
+        data={graph([
+          webPage({
+            path: "/kostenvoranschlag",
+            name: "KFZ-Kostenvoranschlag in NRW",
+            description:
+              "Schnelle und nachvollziehbare Schadenskalkulation für Bagatellschäden – deckt auch versteckte Schäden auf.",
+          }),
+          service({
+            name: "KFZ-Kostenvoranschlag",
+            description:
+              "Transparente Schadenskalkulation für Bagatellschäden – ideal, wenn sich ein vollständiges Gutachten (noch) nicht lohnt.",
+            path: "/kostenvoranschlag",
+            serviceType: "Kostenvoranschlag",
+          }),
+          breadcrumb([
+            { name: "Startseite", path: "/" },
+            { name: "Leistungen", path: "/leistungen" },
+            { name: "Kostenvoranschlag", path: "/kostenvoranschlag" },
+          ]),
+        ])}
+      />
       <HeroWaveZone>
         <section className="hero" style={{ minHeight: "85vh" }}>
           <div className="hero-bg">

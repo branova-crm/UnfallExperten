@@ -1,16 +1,35 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import JsonLd from "@/components/JsonLd";
+import { buildMetadata } from "@/lib/seo/metadata";
+import { graph, webPage, breadcrumb } from "@/lib/seo/jsonld";
 import { SITE_ADDRESS_LINES, SITE_CONTACT, telHref } from "@/lib/site-contact";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "Datenschutzerklärung | UnfallExperten NRW",
   description:
     "Datenschutzerklärung von KFZ Gutachter Euskirchen | UnfallExperten-NRW – Informationen zur Verarbeitung personenbezogener Daten gemäß DSGVO.",
-};
+  path: "/datenschutz",
+  noindex: true,
+});
 
 export default function DatenschutzPage() {
   return (
     <>
+      <JsonLd
+        data={graph([
+          webPage({
+            path: "/datenschutz",
+            name: "Datenschutzerklärung",
+            description:
+              "Informationen zur Verarbeitung personenbezogener Daten gemäß DSGVO bei UnfallExperten NRW.",
+          }),
+          breadcrumb([
+            { name: "Startseite", path: "/" },
+            { name: "Datenschutz", path: "/datenschutz" },
+          ]),
+        ])}
+      />
       <section className="page-hero">
         <div className="container">
           <nav className="breadcrumb" aria-label="Brotkrumen">

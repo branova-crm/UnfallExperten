@@ -4,6 +4,8 @@ import { useState } from "react";
 import Link from "next/link";
 import Konfigurator from "@/components/Konfigurator";
 import HeroWaveZone from "@/components/HeroWaveZone";
+import JsonLd from "@/components/JsonLd";
+import { graph, cityLocalBusiness, faqPage, breadcrumb } from "@/lib/seo/jsonld";
 
 export interface StandortData {
   city: string;
@@ -25,30 +27,24 @@ export default function StandortPageTemplate({ data }: { data: StandortData }) {
     setActiveIndex(activeIndex === index ? null : index);
   };
 
-  const faqSchema =
-    faqs && faqs.length > 0
-      ? {
-          "@context": "https://schema.org",
-          "@type": "FAQPage",
-          mainEntity: faqs.map((f) => ({
-            "@type": "Question",
-            name: f.q,
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: f.a,
-            },
-          })),
-        }
-      : null;
+  const path = `/standorte/${slug}`;
+  const structuredData = graph([
+    cityLocalBusiness({
+      city,
+      path,
+      description: `Ihr KFZ-Gutachter vor Ort in ${city} – kostenloses Unfallgutachten für Geschädigte, schnelle Abwicklung, 24/7 erreichbar.`,
+    }),
+    breadcrumb([
+      { name: "Startseite", path: "/" },
+      { name: "Standorte", path: "/standorte" },
+      { name: city, path },
+    ]),
+    ...(faqs && faqs.length > 0 ? [faqPage(faqs)] : []),
+  ]);
 
   return (
     <div className="standort-detail-page">
-      {faqSchema && (
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-        />
-      )}
+      <JsonLd data={structuredData} />
       {/* 1. LOCAL HERO */}
       <HeroWaveZone>
         <section className="hero" style={{ minHeight: "85vh" }}>

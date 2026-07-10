@@ -3,16 +3,34 @@ import Link from "next/link";
 import ReferenzenGallery from "@/components/ReferenzenGallery";
 import ReferenzenFallbeispiele from "@/components/ReferenzenFallbeispiele";
 import HeroWaveZone from "@/components/HeroWaveZone";
+import JsonLd from "@/components/JsonLd";
+import { buildMetadata } from "@/lib/seo/metadata";
+import { graph, webPage, breadcrumb } from "@/lib/seo/jsonld";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "Referenzen – Echte Fälle & Gutachten | UnfallExperten NRW",
   description:
     "Einblick in echte Gutachtenarbeit: Fahrzeugbilder aus der Praxis. Referenzen und Schadensdokumentation in NRW.",
-};
+  path: "/referenzen",
+});
 
 export default function ReferenzenPage() {
   return (
     <>
+      <JsonLd
+        data={graph([
+          webPage({
+            path: "/referenzen",
+            name: "Referenzen & Fallbeispiele",
+            description:
+              "Echte Fallbeispiele und Schadensdokumentationen unserer KFZ-Gutachten aus NRW.",
+          }),
+          breadcrumb([
+            { name: "Startseite", path: "/" },
+            { name: "Referenzen", path: "/referenzen" },
+          ]),
+        ])}
+      />
       <HeroWaveZone>
         <section className="hero" style={{ minHeight: "85vh" }}>
           <div className="hero-bg">

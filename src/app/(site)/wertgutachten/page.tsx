@@ -2,16 +2,42 @@ import Link from "next/link";
 import { Metadata } from "next";
 import Konfigurator from "@/components/Konfigurator";
 import HeroWaveZone from "@/components/HeroWaveZone";
+import JsonLd from "@/components/JsonLd";
+import { buildMetadata } from "@/lib/seo/metadata";
+import { graph, webPage, service, breadcrumb } from "@/lib/seo/jsonld";
 
-export const metadata: Metadata = {
-  title: "Wertgutachten – Fahrzeugbewertung vom Experten | UnfallExperten NRW",
+export const metadata: Metadata = buildMetadata({
+  title: "Wertgutachten – Fahrzeugbewertung vom Experten | UnfallExperten",
   description:
     "Professionelles Wertgutachten für KFZ in NRW. Exakte Fahrzeugbewertung für Kauf, Verkauf, Leasing und Versicherung. Unabhängige Sachverständige. Jetzt anfragen!",
-};
+  path: "/wertgutachten",
+});
 
 export default function WertgutachtenPage() {
   return (
     <>
+      <JsonLd
+        data={graph([
+          webPage({
+            path: "/wertgutachten",
+            name: "Wertgutachten & Fahrzeugbewertung in NRW",
+            description:
+              "Exakte Fahrzeugbewertung für Kauf, Verkauf, Leasing, Oldtimer und Versicherung durch unabhängige Sachverständige.",
+          }),
+          service({
+            name: "Wertgutachten & Fahrzeugbewertung",
+            description:
+              "Neutrale Fahrzeugbewertung und Wertgutachten für Kauf, Verkauf, Leasing, Oldtimer und Versicherung in NRW.",
+            path: "/wertgutachten",
+            serviceType: "Wertgutachten",
+          }),
+          breadcrumb([
+            { name: "Startseite", path: "/" },
+            { name: "Leistungen", path: "/leistungen" },
+            { name: "Wertgutachten", path: "/wertgutachten" },
+          ]),
+        ])}
+      />
       <HeroWaveZone>
         <section className="hero" style={{ minHeight: "85vh" }}>
           <div className="hero-bg">

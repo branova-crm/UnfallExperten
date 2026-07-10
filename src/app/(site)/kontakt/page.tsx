@@ -1,17 +1,35 @@
 import { Metadata } from "next";
 import Konfigurator from "@/components/Konfigurator";
 import HeroWaveZone from "@/components/HeroWaveZone";
+import JsonLd from "@/components/JsonLd";
+import { buildMetadata } from "@/lib/seo/metadata";
+import { graph, contactPage, breadcrumb } from "@/lib/seo/jsonld";
 import { SITE_CONTACT, telHref, whatsappHref } from "@/lib/site-contact";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "Kontakt – Schnelle Hilfe nach dem Unfall | UnfallExperten NRW",
   description:
     "Kontaktieren Sie UnfallExperten NRW – 24/7 erreichbar per Telefon & WhatsApp. Kostenlose Beratung nach Unfall in NRW. Rückruf in 15 Minuten!",
-};
+  path: "/kontakt",
+});
 
 export default function KontaktPage() {
   return (
     <>
+      <JsonLd
+        data={graph([
+          contactPage({
+            path: "/kontakt",
+            name: "Kontakt – UnfallExperten NRW",
+            description:
+              "Kontaktieren Sie UnfallExperten NRW – 24/7 erreichbar per Telefon und WhatsApp, kostenlose Beratung nach dem Unfall.",
+          }),
+          breadcrumb([
+            { name: "Startseite", path: "/" },
+            { name: "Kontakt", path: "/kontakt" },
+          ]),
+        ])}
+      />
       <HeroWaveZone>
         <section className="hero" style={{ minHeight: "85vh" }}>
           <div className="hero-bg">

@@ -1,16 +1,42 @@
 import Link from "next/link";
 import { Metadata } from "next";
 import HeroWaveZone from "@/components/HeroWaveZone";
+import JsonLd from "@/components/JsonLd";
+import { buildMetadata } from "@/lib/seo/metadata";
+import { graph, webPage, itemList, breadcrumb } from "@/lib/seo/jsonld";
+import { STANDORT_ROUTES } from "@/lib/site-routes";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "Unsere Standorte – KFZ-Gutachter NRW-weit | UnfallExperten",
   description:
-    "Finden Sie Ihren KFZ-Gutachter vor Ort in NRW. UnfallExperten NRW ist in Köln, Düsseldorf, Dortmund, Essen und im ganzen Ruhrgebiet für Sie im Einsatz.",
-};
+    "Finden Sie Ihren KFZ-Gutachter vor Ort in NRW. UnfallExperten NRW ist in Köln, Bonn, Leverkusen und im gesamten Rheinland für Sie im Einsatz.",
+  path: "/standorte",
+});
 
 export default function StandortePage() {
   return (
     <>
+      <JsonLd
+        data={graph([
+          webPage({
+            path: "/standorte",
+            name: "Standorte – KFZ-Gutachter NRW-weit",
+            description:
+              "NRW-weite Standorte der UnfallExperten NRW – finden Sie Ihren KFZ-Gutachter vor Ort.",
+          }),
+          itemList(
+            STANDORT_ROUTES.map((r) => ({
+              name: r.title,
+              path: r.path,
+            })),
+            "Standorte",
+          ),
+          breadcrumb([
+            { name: "Startseite", path: "/" },
+            { name: "Standorte", path: "/standorte" },
+          ]),
+        ])}
+      />
       <HeroWaveZone>
         <section className="hero" style={{ minHeight: "85vh" }}>
           <div className="hero-bg">

@@ -1,17 +1,42 @@
 import { Metadata } from "next";
 import Konfigurator from "@/components/Konfigurator";
 import HeroWaveZone from "@/components/HeroWaveZone";
+import JsonLd from "@/components/JsonLd";
+import { buildMetadata } from "@/lib/seo/metadata";
+import { graph, webPage, service, breadcrumb } from "@/lib/seo/jsonld";
 
-export const metadata: Metadata = {
-  title:
-    "Kaskoschäden – Unabhängiges Gutachten bei Teil-/Vollkasko | UnfallExperten NRW",
+export const metadata: Metadata = buildMetadata({
+  title: "Kaskoschaden – Gutachten bei Teil-/Vollkasko | UnfallExperten NRW",
   description:
-    "Kaskoschaden in NRW? Unabhängiges Gutachten for Teil- und Vollkaskoschäden. Faire Entschädigung bei Vandalismus, Sturm, Wildunfall & mehr. Jetzt anfragen!",
-};
+    "Kaskoschaden in NRW? Unabhängiges Gutachten für Teil- und Vollkaskoschäden. Faire Entschädigung bei Vandalismus, Sturm, Wildunfall & mehr. Jetzt anfragen!",
+  path: "/kaskoschaden",
+});
 
 export default function KaskoPage() {
   return (
     <>
+      <JsonLd
+        data={graph([
+          webPage({
+            path: "/kaskoschaden",
+            name: "Kaskoschaden-Gutachten in NRW",
+            description:
+              "Unabhängiges Gutachten für Teil- und Vollkaskoschäden bei Vandalismus, Sturm, Hagel, Wildunfall und Diebstahl.",
+          }),
+          service({
+            name: "Kaskoschaden-Gutachten",
+            description:
+              "Gutachten und Begleitung bei Teil- und Vollkaskoschäden – für eine faire Entschädigung durch Ihre Versicherung.",
+            path: "/kaskoschaden",
+            serviceType: "Kaskoschaden",
+          }),
+          breadcrumb([
+            { name: "Startseite", path: "/" },
+            { name: "Leistungen", path: "/leistungen" },
+            { name: "Kaskoschaden", path: "/kaskoschaden" },
+          ]),
+        ])}
+      />
       <HeroWaveZone>
         <section
           className="hero"

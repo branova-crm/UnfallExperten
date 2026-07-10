@@ -2,17 +2,42 @@ import Link from "next/link";
 import { Metadata } from "next";
 import Konfigurator from "@/components/Konfigurator";
 import HeroWaveZone from "@/components/HeroWaveZone";
+import JsonLd from "@/components/JsonLd";
+import { buildMetadata } from "@/lib/seo/metadata";
+import { graph, webPage, service, breadcrumb } from "@/lib/seo/jsonld";
 
-export const metadata: Metadata = {
-  title:
-    "Unfall- & Schadensgutachten NRW – Unabhängig & Kostenlos | UnfallExperten",
+export const metadata: Metadata = buildMetadata({
+  title: "Unfall- & Schadensgutachten NRW – Kostenlos | UnfallExperten",
   description:
     "Unabhängiges Unfallgutachten in NRW – fachgerechte Schadensdokumentation, Wertminderung und Nutzungsausfall. Kostenlos für Geschädigte. Jetzt anfragen!",
-};
+  path: "/unfall-schadensgutachten",
+});
 
 export default function UnfallSchadensgutachtenPage() {
   return (
     <>
+      <JsonLd
+        data={graph([
+          webPage({
+            path: "/unfall-schadensgutachten",
+            name: "Unfall- & Schadensgutachten in NRW",
+            description:
+              "Unabhängiges Unfallgutachten mit Schadensdokumentation, Wertminderung und Nutzungsausfall – kostenlos für Geschädigte.",
+          }),
+          service({
+            name: "Unfall- & Schadensgutachten",
+            description:
+              "Rechtssicheres Schadensgutachten nach dem Unfall: Schadenshöhe, Wertminderung, Nutzungsausfall und Reparaturweg – kostenlos für Unfallgeschädigte in NRW.",
+            path: "/unfall-schadensgutachten",
+            serviceType: "Unfallgutachten",
+          }),
+          breadcrumb([
+            { name: "Startseite", path: "/" },
+            { name: "Leistungen", path: "/leistungen" },
+            { name: "Unfall- & Schadensgutachten", path: "/unfall-schadensgutachten" },
+          ]),
+        ])}
+      />
       <HeroWaveZone>
         <section className="hero" style={{ minHeight: "85vh" }}>
           <div className="hero-bg">

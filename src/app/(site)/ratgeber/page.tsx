@@ -1,12 +1,16 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import HeroWaveZone from "@/components/HeroWaveZone";
+import JsonLd from "@/components/JsonLd";
+import { buildMetadata } from "@/lib/seo/metadata";
+import { graph, webPage, itemList, breadcrumb } from "@/lib/seo/jsonld";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "Ratgeber – Wissen nach dem Unfall | UnfallExperten NRW",
   description:
     "Ratgeber zu Unfallgutachten, Versicherung und Schadensregulierung in NRW – kompakt erklärt mit Verweisen auf unsere Leistungen.",
-};
+  path: "/ratgeber",
+});
 
 const topics = [
   {
@@ -50,6 +54,24 @@ const topics = [
 export default function RatgeberPage() {
   return (
     <>
+      <JsonLd
+        data={graph([
+          webPage({
+            path: "/ratgeber",
+            name: "Ratgeber – Wissen nach dem Unfall",
+            description:
+              "Die wichtigsten Themen rund um Unfallgutachten, Versicherung und Schadensregulierung kompakt erklärt.",
+          }),
+          itemList(
+            topics.map((t) => ({ name: t.title, path: t.href })),
+            "Ratgeber-Themen",
+          ),
+          breadcrumb([
+            { name: "Startseite", path: "/" },
+            { name: "Ratgeber", path: "/ratgeber" },
+          ]),
+        ])}
+      />
       <HeroWaveZone>
         <section className="hero" style={{ minHeight: "85vh" }}>
           <div className="hero-bg">

@@ -3,14 +3,19 @@ import Image from 'next/image';
 import AboutFaq from '@/components/AboutFaq';
 import AboutJourneyTimeline from '@/components/AboutJourneyTimeline';
 import HeroWaveZone from '@/components/HeroWaveZone';
+import JsonLd from '@/components/JsonLd';
+import { buildMetadata } from '@/lib/seo/metadata';
+import { graph, aboutPage, breadcrumb } from '@/lib/seo/jsonld';
 import { SHOW_MEIN_WEG_SECTION } from '@/lib/content-flags';
 import { telHref, whatsappHref } from '@/lib/site-contact';
 
-export const metadata: Metadata = {
-    title: 'Über uns – UnfallExperten NRW | Ihre Gutachter-Experten',
+export const metadata: Metadata = buildMetadata({
+    title: 'Über uns – Ihre Gutachter-Experten | UnfallExperten NRW',
     description:
         'Lernen Sie UnfallExperten NRW und Berkay Okur kennen. Unabhängige Unterstützung nach einem Unfall, schnelle Schadenaufnahme und persönliche Begleitung in NRW.',
-};
+    path: '/ueber-uns',
+    type: 'profile',
+});
 
 const TEL = telHref();
 const WHATSAPP = whatsappHref('Hallo, ich habe eine Frage zu UnfallExperten.');
@@ -120,6 +125,20 @@ function WhatsAppIcon() {
 export default function UeberUnsPage() {
     return (
         <div className="about-page">
+            <JsonLd
+                data={graph([
+                    aboutPage({
+                        path: '/ueber-uns',
+                        name: 'Über UnfallExperten NRW',
+                        description:
+                            'Unabhängige KFZ-Sachverständige aus NRW – persönliche Begleitung nach dem Unfall, schnelle Schadenaufnahme und faire Regulierung.',
+                    }),
+                    breadcrumb([
+                        { name: 'Startseite', path: '/' },
+                        { name: 'Über uns', path: '/ueber-uns' },
+                    ]),
+                ])}
+            />
             <HeroWaveZone marqueeItems={HERO_PILLS} surfaceColor="#f4f7fd">
             {/* Premium Hero */}
             <section className="about-hero-premium about-hero">
