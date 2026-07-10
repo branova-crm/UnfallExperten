@@ -120,7 +120,7 @@ function WhatsAppIcon() {
 export default function UeberUnsPage() {
     return (
         <div className="about-page">
-            <HeroWaveZone marqueeItems={HERO_PILLS}>
+            <HeroWaveZone marqueeItems={HERO_PILLS} surfaceColor="#f4f7fd">
             {/* Premium Hero */}
             <section className="about-hero-premium about-hero">
                 <div className="hero-bg">

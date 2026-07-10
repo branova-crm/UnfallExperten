@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 export default function LeistungenPage() {
     return (
         <>
-            <HeroWaveZone>
+            <HeroWaveZone surfaceColor="var(--clr-offwhite)">
             {/* HERO */}
             <section className="hero" style={{ minHeight: '85vh' }}>
                 <div className="hero-bg">

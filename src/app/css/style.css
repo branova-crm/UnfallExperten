@@ -913,6 +913,16 @@ button {
     width: 100%;
 }
 
+/* Flächenfarbe unter der Welle – pro Seite über --hero-wave-surface steuerbar (Standard: Weiß) */
+.hero-wave-fill {
+    fill: var(--hero-wave-surface, #ffffff);
+}
+
+/* Dunkle Fläche oberhalb der Welle (nur Mobile-SVG) – setzt die Hero-Farbe fort */
+.hero-wave-fill--top {
+    fill: var(--hero-wave-top, #0d2868);
+}
+
 /* Desktop: gestreckt (none) – Container-Verhältnis passt zum Viewbox */
 .hero-wave-marquee-svg--desktop {
     height: 58px;
@@ -951,6 +961,13 @@ button {
         display: block;
         height: 56px;
         margin-bottom: -1px;
+    }
+
+    /* Container-Hintergrund = Flächenfarbe (nicht Dunkelblau):
+       Das Mobile-SVG liefert das Dunkelblau oberhalb der Welle selbst,
+       dadurch entsteht unten keine dunkle Trennlinie mehr. */
+    .hero-wave-marquee {
+        background: var(--hero-wave-surface, #ffffff);
     }
 
     .hero-wave-marquee-text {
@@ -4378,9 +4395,7 @@ section[id] {
     background: #f4f7fd;
 }
 
-.about-page .hero-wave-fill {
-    fill: #f4f7fd;
-}
+/* Flächenfarbe der Über-uns-Seite wird über die HeroWaveZone-Prop surfaceColor gesetzt. */
 
 .about-page .about-chapter--process .about-chapter-bg {
     background:
