@@ -2,6 +2,7 @@ import HeaderWrapper from '@/components/HeaderWrapper';
 import FooterWrapper from '@/components/FooterWrapper';
 import GlobalAnimations from '@/components/GlobalAnimations';
 import StickyCtaBar from '@/components/StickyCtaBar';
+import SchadenMeldenModal from '@/components/SchadenMeldenModal';
 import CookieBanner from '@/components/consent/CookieBanner';
 
 export default function SiteLayout({
@@ -15,6 +16,7 @@ export default function SiteLayout({
             <main>{children}</main>
             <FooterWrapper />
             <StickyCtaBar />
+            <SchadenMeldenModal />
             <GlobalAnimations />
             <CookieBanner />
         </>

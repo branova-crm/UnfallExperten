@@ -2,6 +2,7 @@
 
 import { useConsentOptional } from '@/components/consent/ConsentProvider';
 import { telHref, whatsappHref } from '@/lib/site-contact';
+import { openSchadenModal } from '@/lib/schaden-modal';
 
 const TEL = telHref();
 const WHATSAPP = whatsappHref('Hallo, ich habe einen Schaden zu melden.');
@@ -39,18 +40,8 @@ export default function StickyCtaBar() {
     const showStickyCta = consent?.showStickyCta ?? false;
 
     const handleReportClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
-        const contactSection = document.getElementById('contact');
-
-        if (!contactSection) {
-            return;
-        }
-
         event.preventDefault();
-        contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-
-        if (window.location.hash !== '#contact') {
-            window.history.pushState(null, '', '#contact');
-        }
+        openSchadenModal();
     };
 
     if (!showStickyCta) {

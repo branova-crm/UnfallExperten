@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import Konfigurator from "@/components/Konfigurator";
+import ContactForm from "@/components/ContactForm";
 import HeroWaveZone from "@/components/HeroWaveZone";
 import JsonLd from "@/components/JsonLd";
 import { buildMetadata } from "@/lib/seo/metadata";
@@ -215,7 +215,7 @@ export default function KontaktPage() {
                 </p>
               </div>
             </div>
-            <Konfigurator />
+            <ContactForm />
           </div>
         </div>
       </section>

@@ -7329,3 +7329,445 @@ section[id] {
         font-size: 0.82rem;
     }
 }
+
+/* =========================================================
+   Formulare (Kontakt & Schaden melden) – Corporate Identity
+   ========================================================= */
+.ue-form-card {
+    background: var(--clr-white);
+    border: 1px solid var(--clr-border);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 20px 50px rgba(13, 40, 104, 0.08);
+    padding: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+.ue-form-card__title {
+    color: var(--clr-primary);
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    margin: 0 0 0.35rem;
+}
+
+.ue-form-card__subtitle {
+    color: var(--clr-text-muted);
+    margin: 0 0 1.6rem;
+    font-size: 0.98rem;
+}
+
+.ue-form {
+    width: 100%;
+}
+
+.ue-form__group {
+    margin-bottom: 1.1rem;
+}
+
+.ue-form__row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+@media (max-width: 560px) {
+    .ue-form__row {
+        grid-template-columns: 1fr;
+    }
+}
+
+.ue-form__label {
+    display: block;
+    font-weight: 700;
+    color: var(--clr-primary);
+    font-size: 0.95rem;
+    margin-bottom: 0.45rem;
+    letter-spacing: 0.01em;
+}
+
+.ue-form__req {
+    color: var(--clr-accent);
+    margin-left: 2px;
+}
+
+.ue-form__input,
+.ue-form__textarea,
+.ue-form__select {
+    width: 100%;
+    padding: 0.85rem 1rem;
+    border: 1.5px solid var(--clr-border);
+    border-radius: var(--radius-sm);
+    font-family: inherit;
+    font-size: 1rem;
+    color: var(--clr-text);
+    background: var(--clr-white);
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.ue-form__textarea {
+    min-height: 130px;
+    resize: vertical;
+    line-height: 1.5;
+}
+
+.ue-form__select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%230d2868' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    padding-right: 2.6rem;
+    cursor: pointer;
+}
+
+.ue-form__input::placeholder,
+.ue-form__textarea::placeholder {
+    color: var(--clr-text-muted);
+    opacity: 0.75;
+}
+
+.ue-form__input:focus,
+.ue-form__textarea:focus,
+.ue-form__select:focus {
+    outline: none;
+    border-color: var(--clr-primary-light);
+    box-shadow: 0 0 0 3px rgba(26, 79, 189, 0.15);
+}
+
+.ue-form__privacy {
+    display: flex;
+    gap: 0.65rem;
+    align-items: flex-start;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: var(--clr-text-muted);
+    margin: 0.5rem 0 1.3rem;
+}
+
+.ue-form__privacy input {
+    margin-top: 0.15rem;
+    width: 18px;
+    height: 18px;
+    flex: 0 0 auto;
+    accent-color: var(--clr-primary);
+    cursor: pointer;
+}
+
+.ue-form__privacy a {
+    color: var(--clr-primary-light);
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+.ue-form__submit {
+    width: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 1rem 1.5rem;
+    border: none;
+    border-radius: var(--radius-full);
+    background: linear-gradient(135deg, var(--clr-primary), var(--clr-primary-light));
+    color: var(--clr-white);
+    font-size: 1.05rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
+    box-shadow: 0 12px 24px rgba(13, 40, 104, 0.18);
+}
+
+.ue-form__submit:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 16px 30px rgba(13, 40, 104, 0.25);
+}
+
+.ue-form__submit:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.ue-form__note {
+    margin: 1rem 0 0;
+    padding: 0.9rem 1.1rem;
+    border-radius: var(--radius-sm);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.ue-form__note--success {
+    background: #e9f7ef;
+    border: 1px solid #b7e0c6;
+    color: #1c7a43;
+}
+
+.ue-form__note--error {
+    background: #fdecec;
+    border: 1px solid #f5c2c2;
+    color: #b42318;
+}
+
+.ue-form__success-box {
+    text-align: center;
+    padding: 1.5rem 0.5rem;
+}
+
+.ue-form__success-box svg {
+    color: #1c9d54;
+    margin-bottom: 0.75rem;
+}
+
+.ue-form__success-box h3 {
+    color: var(--clr-primary);
+    margin: 0 0 0.5rem;
+}
+
+.ue-form__success-box p {
+    color: var(--clr-text-muted);
+    margin: 0;
+}
+
+/* ---- Modal (Schaden melden) ---- */
+.ue-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 100000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.ue-modal__overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(13, 40, 104, 0.55);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    animation: ueFade 0.2s ease;
+}
+
+.ue-modal__dialog {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 580px;
+    max-height: 92vh;
+    overflow-y: auto;
+    background: var(--clr-white);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.3);
+    padding: clamp(1.4rem, 4vw, 2.4rem);
+    animation: uePop 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ue-modal__header {
+    margin-bottom: 1.4rem;
+    padding-right: 2.5rem;
+}
+
+.ue-modal__eyebrow {
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--clr-accent);
+    margin-bottom: 0.4rem;
+}
+
+.ue-modal__title {
+    color: var(--clr-primary);
+    font-size: clamp(1.4rem, 4vw, 1.9rem);
+    margin: 0 0 0.4rem;
+}
+
+.ue-modal__subtitle {
+    color: var(--clr-text-muted);
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.ue-modal__close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    background: var(--clr-offwhite);
+    color: var(--clr-primary);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.15s ease;
+}
+
+.ue-modal__close:hover {
+    background: var(--clr-border);
+}
+
+body.ue-modal-open {
+    overflow: hidden;
+}
+
+@keyframes ueFade {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes uePop {
+    from { opacity: 0; transform: translateY(16px) scale(0.98); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* Schritt-Anzeige (Stepper) */
+.ue-form__steps {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.3rem;
+}
+
+.ue-form__step {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.ue-form__step-num {
+    width: 28px;
+    height: 28px;
+    flex: 0 0 auto;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.85rem;
+    background: var(--clr-offwhite);
+    color: var(--clr-text-muted);
+    border: 2px solid var(--clr-border);
+    transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.ue-form__step.is-active .ue-form__step-num {
+    background: var(--clr-primary);
+    color: var(--clr-white);
+    border-color: var(--clr-primary);
+}
+
+.ue-form__step.is-done .ue-form__step-num {
+    background: var(--clr-primary-light);
+    color: var(--clr-white);
+    border-color: var(--clr-primary-light);
+}
+
+.ue-form__step-label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--clr-text-muted);
+    white-space: nowrap;
+}
+
+.ue-form__step.is-active .ue-form__step-label,
+.ue-form__step.is-done .ue-form__step-label {
+    color: var(--clr-primary);
+}
+
+.ue-form__step-line {
+    flex: 1;
+    height: 2px;
+    background: var(--clr-border);
+    border-radius: 2px;
+    transition: background 0.2s ease;
+}
+
+.ue-form__step-line.is-done {
+    background: var(--clr-primary-light);
+}
+
+.ue-form__nav {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.ue-form__nav .ue-form__submit {
+    flex: 1;
+}
+
+.ue-form__btn-back {
+    flex: 0 0 auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.85rem 1.4rem;
+    border: 1.5px solid var(--clr-border);
+    border-radius: var(--radius-full);
+    background: var(--clr-offwhite);
+    color: var(--clr-primary);
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.ue-form__btn-back:hover {
+    background: var(--clr-border);
+}
+
+@media (max-width: 420px) {
+    .ue-form__step-label {
+        display: none;
+    }
+
+    .ue-form__step-label--current {
+        display: inline;
+    }
+}
+
+/* Kompaktere Darstellung im Modal */
+.ue-modal .ue-form__group {
+    margin-bottom: 0.8rem;
+}
+
+.ue-modal .ue-form__row {
+    gap: 0.8rem;
+}
+
+.ue-modal .ue-form__label {
+    font-size: 0.9rem;
+    margin-bottom: 0.35rem;
+}
+
+.ue-modal .ue-form__input,
+.ue-modal .ue-form__textarea,
+.ue-modal .ue-form__select {
+    padding: 0.7rem 0.9rem;
+    font-size: 0.95rem;
+}
+
+.ue-modal .ue-form__textarea {
+    min-height: 88px;
+}
+
+.ue-modal .ue-form__privacy {
+    margin: 0.4rem 0 1rem;
+    font-size: 0.85rem;
+}
+
+.ue-modal .ue-form__submit {
+    padding: 0.85rem 1.5rem;
+    font-size: 1rem;
+}
+
+.ue-modal__header {
+    margin-bottom: 1.1rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .ue-modal__overlay,
+    .ue-modal__dialog {
+        animation: none;
+    }
+}

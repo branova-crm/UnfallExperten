@@ -25,7 +25,9 @@ export const metadata: Metadata = {
   creator: SEO.brandName,
   publisher: SEO.brandName,
   icons: {
-    icon: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔧</text></svg>"
+    icon: [{ url: '/Favicon.svg', type: 'image/svg+xml' }],
+    shortcut: '/Favicon.svg',
+    apple: '/Favicon.svg',
   },
   robots: {
     index: true,

@@ -26,8 +26,11 @@ export async function POST(req: Request) {
             return NextResponse.json({ success: false, message: 'Privacy policy must be accepted' }, { status: 400 });
         }
 
-        // Validate required fields
-        if (!name || !phone || !interests) {
+        // Validate required fields.
+        // Schadenmeldung: nur Datenschutz-Zustimmung ist Pflicht (Felder optional).
+        // Alle anderen Quellen: Name + (Telefon oder E-Mail) erforderlich.
+        const isSchaden = interests === 'Schadenmeldung' || source === 'Schaden melden (Formular)';
+        if (!interests || (!isSchaden && (!name || (!phone && !email)))) {
             return NextResponse.json({ success: false, message: 'Missing required fields' }, { status: 400 });
         }
 
