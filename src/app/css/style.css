@@ -6813,6 +6813,12 @@ section[id] {
 
 .page-home .hero-cert-panel--without-seal .hero-cert-panel__list {
     width: fit-content;
+    align-items: center;
+}
+
+.page-home .hero-cert-panel--without-seal .hero-cert-panel__list li {
+    width: 100%;
+    justify-content: center;
 }
 
 .page-home .hero-cert-panel--without-seal .hero-cert-panel__rating {
