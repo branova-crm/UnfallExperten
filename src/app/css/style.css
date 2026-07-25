@@ -6805,7 +6805,19 @@ section[id] {
 }
 
 .page-home .hero-cert-panel--without-seal .hero-cert-panel__content {
+    flex: 0 1 auto;
+    width: fit-content;
     max-width: 540px;
+    align-items: center;
+}
+
+.page-home .hero-cert-panel--without-seal .hero-cert-panel__list {
+    width: fit-content;
+}
+
+.page-home .hero-cert-panel--without-seal .hero-cert-panel__rating {
+    align-items: center;
+    text-align: center;
 }
 
 .page-home .hero-cert-panel__seal {
