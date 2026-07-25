@@ -11,10 +11,12 @@
 - Startseite **Fallbeispiele** ausgeblendet, stattdessen **Bildergalerie-Karussell** (`HomeImageCarousel`)
 - DSGVO Consent-System vollständig implementiert und mit Datenschutz abgeglichen
 - Maps-Platzhalter Layout-Fixes (Titel/Adresse, Footer-Überlappung)
+- Startseite Hero: linker DGuSV-Banner/Seal vorübergehend ausgeblendet (`SHOW_HERO_CERT_SEAL = false` in `src/app/(site)/page.tsx`)
 
 ## Aktuell sichtbar statt versteckter Inhalte
 - `/ueber-uns`: Kein „Mein Weg“-Block
 - Startseite: Karussell-Galerie mit Bildern aus `/public/images/` (1–5.jpg, bmw_*)
+- Startseite Hero: Trust-/Benefits-Panel bleibt sichtbar, DGuSV-Banner links ist ausgeblendet
 
 ## Nächste Schritte (warten auf Inhalte)
 1. **Mein Weg:** Echte Timeline-Daten liefern → `SHOW_MEIN_WEG_SECTION = true` in `content-flags.ts`
@@ -29,3 +31,4 @@
 | Mein Weg (vollständig) | `src/components/AboutJourneyTimeline.tsx` |
 | Fallbeispiele Startseite | `src/components/CaseStudiesSection.tsx` |
 | Steuerung ein/aus | `src/lib/content-flags.ts` |
+| Hero DGuSV-Banner links | `SHOW_HERO_CERT_SEAL = true` in `src/app/(site)/page.tsx`; Asset: `public/dgusv.png`; Styles: `.hero-cert-panel__seal*` in `src/app/css/style.css` |

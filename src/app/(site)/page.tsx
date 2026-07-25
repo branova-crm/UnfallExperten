@@ -31,6 +31,8 @@ const HERO_CERT_BENEFITS = [
   "Hilfe direkt an der Unfallstelle",
 ] as const;
 
+const SHOW_HERO_CERT_SEAL = false;
+
 export default function Home() {
   return (
     <div className="page-home">
@@ -119,24 +121,28 @@ export default function Home() {
               </div>
             </div>
             <aside
-              className="hero-cert-panel hero-cert-panel--intro"
+              className={`hero-cert-panel hero-cert-panel--intro${
+                SHOW_HERO_CERT_SEAL ? "" : " hero-cert-panel--without-seal"
+              }`}
               aria-label="Zertifizierung und Kundenbewertung"
             >
               <div className="hero-cert-panel__body">
-                <div
-                  className="hero-cert-panel__seal hero-card-item"
-                  style={{ "--card-item-i": 0 } as React.CSSProperties}
-                >
-                  <img
-                    src="/dgusv.png"
-                    alt="DGuSV – Verifizierter Sachverständiger Gutachter"
-                    className="hero-cert-panel__seal-img"
-                    width={140}
-                    height={280}
-                    loading="eager"
-                    decoding="async"
-                  />
-                </div>
+                {SHOW_HERO_CERT_SEAL && (
+                  <div
+                    className="hero-cert-panel__seal hero-card-item"
+                    style={{ "--card-item-i": 0 } as React.CSSProperties}
+                  >
+                    <img
+                      src="/dgusv.png"
+                      alt="DGuSV – Verifizierter Sachverständiger Gutachter"
+                      className="hero-cert-panel__seal-img"
+                      width={140}
+                      height={280}
+                      loading="eager"
+                      decoding="async"
+                    />
+                  </div>
+                )}
                 <div className="hero-cert-panel__content">
                   <ul className="hero-cert-panel__list">
                     {HERO_CERT_BENEFITS.map((text, index) => (

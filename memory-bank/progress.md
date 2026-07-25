@@ -10,10 +10,12 @@
 - [x] Telefon 0160 29 29 29 1 siteweit
 - [x] Versteckte Sektionen per Feature-Flags (nicht gelöscht)
 - [x] Startseiten-Karussell als Fallbeispiel-Ersatz
+- [x] Startseiten-Hero: linker DGuSV-Banner/Seal vorübergehend ausgeblendet
 
 ## 🔄 Vorübergehend deaktiviert (Code vorhanden)
 - [ ] **Mein Weg** (`AboutJourneyTimeline`) – Flag: `SHOW_MEIN_WEG_SECTION`
 - [ ] **Fallbeispiele Startseite** (`CaseStudiesSection`) – Flag: `SHOW_HOME_CASE_STUDIES`
+- [ ] **Hero DGuSV-Banner links** (`SHOW_HERO_CERT_SEAL` in `src/app/(site)/page.tsx`)
 
 ## 📋 Offen / Backlog
 - [ ] Echte Biografie für „Mein Weg“ einpflegen

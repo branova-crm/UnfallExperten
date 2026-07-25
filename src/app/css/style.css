@@ -6800,6 +6800,14 @@ section[id] {
     width: 100%;
 }
 
+.page-home .hero-cert-panel--without-seal .hero-cert-panel__body {
+    justify-content: center;
+}
+
+.page-home .hero-cert-panel--without-seal .hero-cert-panel__content {
+    max-width: 540px;
+}
+
 .page-home .hero-cert-panel__seal {
     flex: 0 0 clamp(112px, 36%, 172px);
     width: clamp(112px, 36%, 172px);
